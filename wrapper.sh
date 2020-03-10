@@ -16,7 +16,7 @@ while true; do
     fi
 done
 
-# Load some data
+# Load Guided Match decision trees
 until cypher-shell -u neo4j -p sbx_graph -a bolt://localhost:7687 --debug -f ./guided_match.cypher
 do
   echo "Loading Guided Match decision tree data.."

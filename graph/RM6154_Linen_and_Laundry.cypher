@@ -87,7 +87,10 @@ CREATE
 // Add srv - Yes
 (ansGrpSPServiceStdWashAddSrvYes:AnswerGroup {name: 'ansGrpSPServiceStdWashAddSrvYes'}),
 (qiAdditionalServicesSPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPServiceStdWashAddSrvYes),
-(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansYes),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
 (ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansOther),
 (ansGrpSPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
@@ -106,7 +109,10 @@ CREATE
 // Add srv - Yes
 (ansGrpSPLinenHireStandardWashAddSrvYes:AnswerGroup {name: 'ansGrpSPLinenHireStandardWashAddSrvYes'}),
 (qiAdditionalServicesSPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPLinenHireStandardWashAddSrvYes),
-(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansYes),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
 (ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansOther),
 (ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
@@ -125,7 +131,10 @@ CREATE
 // Add srv - Yes
 (ansGrpSPTheatrePacksGownsAddSrvYes:AnswerGroup {name: 'ansGrpSPTheatrePacksGownsAddSrvYes'}),
 (qiAdditionalServicesSPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpSPTheatrePacksGownsAddSrvYes),
-(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansYes),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
 (ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansOther),
 (ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
@@ -144,7 +153,10 @@ CREATE
 // Add srv - Yes
 (ansGrpSPCleanroomServicesAddSrvYes:AnswerGroup {name: 'ansGrpSPCleanroomServicesAddSrvYes'}),
 (qiAdditionalServicesSPClnRmSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpSPCleanroomServicesAddSrvYes),
-(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansYes),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
 (ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansOther),
 (ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
@@ -170,14 +182,17 @@ CREATE
 // Add srv - Yes
 (ansGrpBPServiceStdWashAddSrvYes:AnswerGroup {name: 'ansGrpBPServiceStdWashAddSrvYes'}),
 (qiAdditionalServicesBPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPServiceStdWashAddSrvYes),
-(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansYes),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
 (ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansOther),
 (ansGrpBPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
 (ansGrpBPServiceStdWashAddSrvNo:AnswerGroup {name: 'ansGrpBPServiceStdWashAddSrvNo'}),
 (qiAdditionalServicesBPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPServiceStdWashAddSrvNo),
 (ansGrpBPServiceStdWashAddSrvNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpBPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1bFC),
+(ansGrpBPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1b),
 
 // BP - Linen hire + standard Wash
 (ansGrpBPLinenHireStandardWash:AnswerGroup {name: 'ansGrpBPLinenHireStandardWash'}),
@@ -188,7 +203,10 @@ CREATE
 // Add srv - Yes
 (ansGrpBPLinenHireStandardWashAddSrvYes:AnswerGroup {name: 'ansGrpBPLinenHireStandardWashAddSrvYes'}),
 (qiAdditionalServicesBPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPLinenHireStandardWashAddSrvYes),
-(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansYes),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
 (ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansOther),
 (ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
@@ -196,7 +214,7 @@ CREATE
 (ansGrpBPLinenHireStandardWashAddSrvNo:AnswerGroup {name: 'ansGrpBPLinenHireStandardWashAddSrvNo'}),
 (qiAdditionalServicesBPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPLinenHireStandardWashAddSrvNo),
 (ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1aFC),
+(ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1a),
 
 // BP - Theatre packs and gowns
 (ansGrpBPTheatrePacksGowns:AnswerGroup {name: 'ansGrpBPTheatrePacksGowns'}),
@@ -207,7 +225,10 @@ CREATE
 // Add srv - Yes
 (ansGrpBPTheatrePacksGownsAddSrvYes:AnswerGroup {name: 'ansGrpBPTheatrePacksGownsAddSrvYes'}),
 (qiAdditionalServicesBPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpBPTheatrePacksGownsAddSrvYes),
-(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansYes),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
 (ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansOther),
 (ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
@@ -226,7 +247,10 @@ CREATE
 // Add srv - Yes
 (ansGrpBPCleanroomServicesAddSrvYes:AnswerGroup {name: 'ansGrpBPCleanroomServicesAddSrvYes'}),
 (qiAdditionalServicesBPClnRmSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpBPCleanroomServicesAddSrvYes),
-(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansYes),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
 (ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansOther),
 (ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 

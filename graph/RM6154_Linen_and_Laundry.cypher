@@ -5,8 +5,6 @@ MATCH
 (qstnContractLength:QuestionDefinition {uuid: 'b879c25c-654e-11ea-bc55-0242ac130003'}),
 (qstnService:QuestionDefinition {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003'}),
 (qstnAdditionalServices:QuestionDefinition {uuid: 'b879c342-654e-11ea-bc55-0242ac130003'}),
-(qstnNeedsCapturedMandatoryList:QuestionDefinition {uuid: 'ccb59d82-75b5-11ea-bc55-0242ac130003'}),
-(qstnServiceRelatedMandatoryList:QuestionDefinition {uuid: 'ccb59e40-75b5-11ea-bc55-0242ac130003'}),
 
 // Required answer nodes:
 (ansYes:Answer {uuid: 'ccb598c8-75b5-11ea-bc55-0242ac130003'}),
@@ -29,12 +27,10 @@ CREATE
 (jrnyLinenLaundry:Journey {uuid: 'b87a0636-654e-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services', searchTerms: ['cleanroom', 'linen', 'laundry services', 'linen hire']}),
 
 // Agreement lots (journey endpoints)
-(lotLinenLaundryLot1bDA:Lot:Outcome {uuid: 'ccb59bfc-75b5-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services (Lot 1b - Direct Award)', description: 'Standard Wash Linen and Laundry Services', agreementId: 'RM6154', url: ''}),
-(lotLinenLaundryLot1bFC:Lot:Outcome {uuid: 'ccb59cc4-75b5-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services (Lot 1b - Further Competition)', description: 'Standard Wash Linen and Laundry Services', agreementId: 'RM6154', url: ''}),
-(lotLinenLaundryLot1aDA:Lot:Outcome {uuid: 'ccb5a002-75b5-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services (Lot 1a - Direct Award)', description: 'Linen Hire with Standard Wash Linen and Laundry Services', agreementId: 'RM6154', url: ''}),
-(lotLinenLaundryLot1aFC:Lot:Outcome {uuid: 'ccb5a1e2-75b5-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services (Lot 1a - Further Competition)', description: 'Linen Hire with Standard Wash Linen and Laundry Services', agreementId: 'RM6154', url: ''}),
-(lotLinenLaundryLot2:Lot:Outcome {uuid: 'ccb5a2b4-75b5-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services (Lot 2)', description: 'Specialist Laundry Services (Theatre Packs)', agreementId: 'RM6154', url: ''}),
-(lotLinenLaundryLot3:Lot:Outcome {uuid: 'ccb5a37c-75b5-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services (Lot 3)', description: 'Specialist Cleanroom Laundry Services', agreementId: 'RM6154', url: ''}),
+(lotLinenLaundryLot1b:Lot:Outcome {uuid: 'ccb59bfc-75b5-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services (Lot 1b)', description: 'Standard Wash Linen and Laundry Services', agreementId: 'RM6154', url: '', type: 'CAT'}),
+(lotLinenLaundryLot1a:Lot:Outcome {uuid: 'ccb5a002-75b5-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services (Lot 1a)', description: 'Linen Hire with Standard Wash Linen and Laundry Services', agreementId: 'RM6154', url: '', type: 'CAT'}),
+(lotLinenLaundryLot2:Lot:Outcome {uuid: 'ccb5a2b4-75b5-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services (Lot 2)', description: 'Specialist Laundry Services (Theatre Packs)', agreementId: 'RM6154', url: '', type: 'CAT'}),
+(lotLinenLaundryLot3:Lot:Outcome {uuid: 'ccb5a37c-75b5-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services (Lot 3)', description: 'Specialist Cleanroom Laundry Services', agreementId: 'RM6154', url: '', type: 'CAT'}),
 
 
 // Linen & Laundry specific answers
@@ -97,19 +93,7 @@ CREATE
 (ansGrpSPServiceStdWashAddSrvNo:AnswerGroup {name: 'ansGrpSPServiceStdWashAddSrvNo'}),
 (qiAdditionalServicesSPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPServiceStdWashAddSrvNo),
 (ansGrpSPServiceStdWashAddSrvNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpSPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(qiNeedsCapturedMandatoryList:QuestionInstance:Outcome {uuid: 'ccb5bca4-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnNeedsCapturedMandatoryList),
-
-// Needs captured mandatory list - Yes
-(ansGrpNeedsCapturedMandatoryListYes:AnswerGroup {name: 'ansGrpNeedsCapturedMandatoryListYes'}),
-(qiNeedsCapturedMandatoryList)-[:HAS_ANSWER_GROUP]->(ansGrpNeedsCapturedMandatoryListYes),
-(ansGrpNeedsCapturedMandatoryListYes)-[:HAS_ANSWER]->(ansYes),
-(ansGrpNeedsCapturedMandatoryListYes)-[:HAS_OUTCOME]->(lotLinenLaundryLot1bDA),
-
-// Needs captured mandatory list - No
-(ansGrpNeedsCapturedMandatoryListNo:AnswerGroup {name: 'ansGrpNeedsCapturedMandatoryListNo'}),
-(qiNeedsCapturedMandatoryList)-[:HAS_ANSWER_GROUP]->(ansGrpNeedsCapturedMandatoryListNo),
-(ansGrpNeedsCapturedMandatoryListNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpNeedsCapturedMandatoryListNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1bFC),
+(ansGrpSPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1b),
 
 // SP - Linen hire + standard Wash
 (ansGrpSPLinenHireStandardWash:AnswerGroup {name: 'ansGrpSPLinenHireStandardWash'}),
@@ -127,19 +111,7 @@ CREATE
 (ansGrpSPLinenHireStandardWashAddSrvNo:AnswerGroup {name: 'ansGrpSPLinenHireStandardWashAddSrvNo'}),
 (qiAdditionalServicesSPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPLinenHireStandardWashAddSrvNo),
 (ansGrpSPLinenHireStandardWashAddSrvNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpSPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(qiServiceRelatedMandatoryList:QuestionInstance:Outcome {uuid: 'ccb5bbdc-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnServiceRelatedMandatoryList),
-
-// Service related mandatory list - Yes
-(ansGrpServiceRelatedMandatoryListYes:AnswerGroup {name: 'ansGrpServiceRelatedMandatoryListYes'}),
-(qiServiceRelatedMandatoryList)-[:HAS_ANSWER_GROUP]->(ansGrpServiceRelatedMandatoryListYes),
-(ansGrpServiceRelatedMandatoryListYes)-[:HAS_ANSWER]->(ansYes),
-(ansGrpServiceRelatedMandatoryListYes)-[:HAS_OUTCOME]->(lotLinenLaundryLot1aDA),
-
-// Service related mandatory list - No
-(ansGrpServiceRelatedMandatoryListNo:AnswerGroup {name: 'ansGrpServiceRelatedMandatoryListNo'}),
-(qiServiceRelatedMandatoryList)-[:HAS_ANSWER_GROUP]->(ansGrpServiceRelatedMandatoryListNo),
-(ansGrpServiceRelatedMandatoryListNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpServiceRelatedMandatoryListNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1aFC),
+(ansGrpSPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1a),
 
 // SP - Theatre packs and gowns
 (ansGrpSPTheatrePacksGowns:AnswerGroup {name: 'ansGrpSPTheatrePacksGowns'}),

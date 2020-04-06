@@ -13,7 +13,7 @@ CREATE
 (:QuestionDefinition {uuid: 'b879c040-654e-11ea-bc55-0242ac130003', text: 'Are you looking for a product or a service?', type: 'BOOLEAN'}),
 (:QuestionDefinition {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003', text: 'How much is your budget?', type: 'BOOLEAN', hint: "An estimate is fine"}),
 (:QuestionDefinition {uuid: 'b879c25c-654e-11ea-bc55-0242ac130003', text: 'How long will the contract be for?', type: 'BOOLEAN', hint: "An estimate is fine. The contract might also be known as a 'Statement of Work.'"}),
-(:QuestionDefinition {uuid: 'b879c342-654e-11ea-bc55-0242ac130003', text: 'Do you need additional services?', type: 'BOOLEAN'}),
+(:QuestionDefinition {uuid: 'b879c342-654e-11ea-bc55-0242ac130003', text: 'Do you need additional services?', type: 'LIST'}),
 (:QuestionDefinition {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003', text: 'What sector are you buying for?', type: 'LIST'}),
 (:QuestionDefinition {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003', text: 'Choose which service you need:', type: 'LIST'}),
 (:QuestionDefinition {uuid: 'b87a0014-654e-11ea-bc55-0242ac130003', text: 'Choose which services you need:', type: 'MULTI_SELECT_LIST'}),

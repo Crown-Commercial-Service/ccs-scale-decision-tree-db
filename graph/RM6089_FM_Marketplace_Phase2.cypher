@@ -46,20 +46,20 @@ CREATE
 // Organisation / Sector
 (ansGrpOrgMod:AnswerGroup {name: 'ansGrpOrgMod'}),
 (qiOrganisation)-[:HAS_ANSWER_GROUP]->(ansGrpOrgMod),
-(ansGrpOrgMod)-[:HAS_ANSWER]->(ansOrgMoD),
+(ansGrpOrgMod)-[:HAS_ANSWER {order: 1}]->(ansOrgMoD),
 (ansGrpOrgMod)-[:HAS_OUTCOME]->(qiServicesMOD:QuestionInstance:Outcome {uuid: 'b879d86e-654e-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 
 (ansGrpOrgNonMod:AnswerGroup {name: 'ansGrpOrgNonMod'}),
 (qiOrganisation)-[:HAS_ANSWER_GROUP]->(ansGrpOrgNonMod),
-(ansGrpOrgNonMod)-[:HAS_ANSWER]->(ansOrgCG),
-(ansGrpOrgNonMod)-[:HAS_ANSWER]->(ansOrgDevolved),
-(ansGrpOrgNonMod)-[:HAS_ANSWER]->(ansOrgEdu),
-(ansGrpOrgNonMod)-[:HAS_ANSWER]->(ansOrgHealth),
-(ansGrpOrgNonMod)-[:HAS_ANSWER]->(ansOrgLG),
-(ansGrpOrgNonMod)-[:HAS_ANSWER]->(ansOrgBlueLight),
-(ansGrpOrgNonMod)-[:HAS_ANSWER]->(ansOrgHousing),
-(ansGrpOrgNonMod)-[:HAS_ANSWER]->(ansOrgCharities),
-(ansGrpOrgNonMod)-[:HAS_ANSWER]->(ansOrgWPS),
+(ansGrpOrgNonMod)-[:HAS_ANSWER {order: 2}]->(ansOrgCG),
+(ansGrpOrgNonMod)-[:HAS_ANSWER {order: 3}]->(ansOrgDevolved),
+(ansGrpOrgNonMod)-[:HAS_ANSWER {order: 4}]->(ansOrgEdu),
+(ansGrpOrgNonMod)-[:HAS_ANSWER {order: 5}]->(ansOrgHealth),
+(ansGrpOrgNonMod)-[:HAS_ANSWER {order: 6}]->(ansOrgLG),
+(ansGrpOrgNonMod)-[:HAS_ANSWER {order: 7}]->(ansOrgBlueLight),
+(ansGrpOrgNonMod)-[:HAS_ANSWER {order: 8}]->(ansOrgHousing),
+(ansGrpOrgNonMod)-[:HAS_ANSWER {order: 9}]->(ansOrgCharities),
+(ansGrpOrgNonMod)-[:HAS_ANSWER {order: 10}]->(ansOrgWPS),
 (ansGrpOrgNonMod)-[:HAS_OUTCOME]->(qiServicesNonMOD:QuestionInstance:Outcome {uuid: 'b879d9cc-654e-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnServices),
 
 // MOD branch - Select service(s) (Dynamic look up)
@@ -72,16 +72,15 @@ CREATE
 // MOD branch - Select Location(s)
 (ansGrpModLocNational:AnswerGroup {name: 'ansGrpModLocNational'}),
 (qiLocationMOD)-[:HAS_ANSWER_GROUP]->(ansGrpModLocNational),
-(ansGrpModLocNational)-[:HAS_ANSWER]->(ansLocNational),
+(ansGrpModLocNational)-[:HAS_ANSWER {order: 1}]->(ansLocNational),
 (ansGrpModLocNational)-[:HAS_OUTCOME]->(lotFM2Lot2bFC),
 
 (ansGrpModLocRegional:AnswerGroup {name: 'ansGrpModLocRegional'}),
 (qiLocationMOD)-[:HAS_ANSWER_GROUP]->(ansGrpModLocRegional),
-(ansGrpModLocRegional)-[:HAS_ANSWER]->(ansLocRegional),
+(ansGrpModLocRegional)-[:HAS_ANSWER {order: 2}]->(ansLocRegional),
 (ansGrpModLocRegional)-[:HAS_OUTCOME]->(lotFM2Lot2aFC),
 
 // Non-MOD branch (Dynamic)
-// Special cases - Housing or Security
 (ansGrpNonModSvcsDynamic:AnswerGroup {name: 'ansGrpNonModSvcsDynamic'}),
 (qiServicesNonMOD)-[:HAS_ANSWER_GROUP]->(ansGrpNonModSvcsDynamic),
 (ansGrpNonModSvcsDynamic)-[:HAS_OUTCOME]->(lotFM2Lot2cFC),
@@ -92,13 +91,13 @@ CREATE
 (ansGrpNonModSvcsDynamic)-[:MULTI_SELECT]->(resultGMEndRouteToFM),
 
 // Non-MoD Security sub-branch
-(ansGrpNonModSvcsSecurityPhysTech:AnswerGroup {name: 'ansGrpNonModSvcsSecurityPhysTech'}),
-(qiSecuritySubtype)-[:HAS_ANSWER_GROUP]->(ansGrpNonModSvcsSecurityPhysTech),
-(ansGrpNonModSvcsSecurityPhysTech)-[:HAS_ANSWER]->(ansSecPhysTech),
-(ansGrpNonModSvcsSecurityPhysTech)-[:HAS_ANSWER]->(ansSecPhys),
-(ansGrpNonModSvcsSecurityPhysTech)-[:HAS_OUTCOME]->(lotFM2Lot1aFC),
-
 (ansGrpNonModSvcsSecurityTech:AnswerGroup {name: 'ansGrpNonModSvcsSecurityTech'}),
 (qiSecuritySubtype)-[:HAS_ANSWER_GROUP]->(ansGrpNonModSvcsSecurityTech),
-(ansGrpNonModSvcsSecurityTech)-[:HAS_ANSWER]->(ansSecTech),
-(ansGrpNonModSvcsSecurityTech)-[:HAS_OUTCOME]->(lotFM2Lot1bFC);
+(ansGrpNonModSvcsSecurityTech)-[:HAS_ANSWER {order: 2}]->(ansSecTech),
+(ansGrpNonModSvcsSecurityTech)-[:HAS_OUTCOME]->(lotFM2Lot1bFC),
+
+(ansGrpNonModSvcsSecurityPhysTech:AnswerGroup {name: 'ansGrpNonModSvcsSecurityPhysTech'}),
+(qiSecuritySubtype)-[:HAS_ANSWER_GROUP]->(ansGrpNonModSvcsSecurityPhysTech),
+(ansGrpNonModSvcsSecurityPhysTech)-[:HAS_ANSWER {order: 1}]->(ansSecPhys),
+(ansGrpNonModSvcsSecurityPhysTech)-[:HAS_ANSWER {order: 3}]->(ansSecPhysTech),
+(ansGrpNonModSvcsSecurityPhysTech)-[:HAS_OUTCOME]->(lotFM2Lot1aFC);

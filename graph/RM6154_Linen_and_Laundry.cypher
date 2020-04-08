@@ -51,211 +51,214 @@ CREATE
 // Product - End GM - Route to FM
 (ansGrpProduct:AnswerGroup {name: 'ansGrpProduct'}),
 (qiProdService)-[:HAS_ANSWER_GROUP]->(ansGrpProduct),
-(ansGrpProduct)-[:HAS_ANSWER]->(ansProduct),
+(ansGrpProduct)-[:HAS_ANSWER {order: 1}]->(ansProduct),
 (ansGrpProduct)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
 // Service
 (ansGrpService:AnswerGroup {name: 'ansGrpService'}),
 (qiProdService)-[:HAS_ANSWER_GROUP]->(ansGrpService),
-(ansGrpService)-[:HAS_ANSWER]->(ansService),
+(ansGrpService)-[:HAS_ANSWER {order: 2}]->(ansService),
 (ansGrpService)-[:HAS_OUTCOME]->(qiBudget:QuestionInstance:Outcome {uuid: 'ccb5a4f8-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnBudget),
 
 // Service - Small Projects Branch
+// Budget < £1m
 (ansGrpBudgetLTMillion:AnswerGroup {name: 'ansGrpBudgetLTMillion'}),
 (qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetLTMillion),
-(ansGrpBudgetLTMillion)-[:HAS_ANSWER]->(ansBudgetLTMillion),
+(ansGrpBudgetLTMillion)-[:HAS_ANSWER {order: 1}]->(ansBudgetLTMillion),
 (ansGrpBudgetLTMillion)-[:HAS_OUTCOME]->(qiContractLengthSP:QuestionInstance:Outcome {uuid: 'ccb5a6ec-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnContractLength),
 
 // Contract Length
 (ansGrpContractLengthLT12Months:AnswerGroup {name: 'ansGrpContractLengthLT12Months'}),
 (qiContractLengthSP)-[:HAS_ANSWER_GROUP]->(ansGrpContractLengthLT12Months),
-(ansGrpContractLengthLT12Months)-[:HAS_ANSWER]->(ansContractLengthLT12Months),
+(ansGrpContractLengthLT12Months)-[:HAS_ANSWER {order: 1}]->(ansContractLengthLT12Months),
 (ansGrpContractLengthLT12Months)-[:HAS_OUTCOME]->(qiServiceSP:QuestionInstance:Outcome {uuid: 'ccb5a872-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 
 (ansGrpContractLengthGT12Months:AnswerGroup {name: 'ansGrpContractLengthGT12Months'}),
 (qiContractLengthSP)-[:HAS_ANSWER_GROUP]->(ansGrpContractLengthGT12Months),
-(ansGrpContractLengthGT12Months)-[:HAS_ANSWER]->(ansContractLengthGT12Months),
+(ansGrpContractLengthGT12Months)-[:HAS_ANSWER {order: 2}]->(ansContractLengthGT12Months),
 (ansGrpContractLengthGT12Months)-[:HAS_OUTCOME]->(qiServiceBP:QuestionInstance:Outcome {uuid: 'ccb5a930-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 
+// Budget > £1m
+(ansGrpBudgetGTMillion:AnswerGroup {name: 'ansGrpBudgetGTMillion'}),
+(qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetGTMillion),
+(ansGrpBudgetGTMillion)-[:HAS_ANSWER {order: 2}]->(ansBudgetGTMillion),
+(ansGrpBudgetGTMillion)-[:HAS_OUTCOME]->(qiServiceBP),
+
 // SP (< 12 months)
-// SP - Standard Wash
-(ansGrpSPServiceStdWash:AnswerGroup {name: 'ansGrpSPServiceStdWash'}),
-(qiServiceSP)-[:HAS_ANSWER_GROUP]->(ansGrpSPServiceStdWash),
-(ansGrpSPServiceStdWash)-[:HAS_ANSWER]->(ansStandardWash),
-(ansGrpSPServiceStdWash)-[:HAS_OUTCOME]->(qiAdditionalServicesSPStndWash:QuestionInstance:Outcome {uuid: 'ccb5a9f8-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
-
-// Add srv - Yes
-(ansGrpSPServiceStdWashAddSrvYes:AnswerGroup {name: 'ansGrpSPServiceStdWashAddSrvYes'}),
-(qiAdditionalServicesSPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPServiceStdWashAddSrvYes),
-(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
-(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
-(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
-(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
-(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansOther),
-(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
-
-// Add srv - No
-(ansGrpSPServiceStdWashAddSrvNo:AnswerGroup {name: 'ansGrpSPServiceStdWashAddSrvNo'}),
-(qiAdditionalServicesSPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPServiceStdWashAddSrvNo),
-(ansGrpSPServiceStdWashAddSrvNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpSPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1b),
-
-// SP - Linen hire + standard Wash
-(ansGrpSPLinenHireStandardWash:AnswerGroup {name: 'ansGrpSPLinenHireStandardWash'}),
-(qiServiceSP)-[:HAS_ANSWER_GROUP]->(ansGrpSPLinenHireStandardWash),
-(ansGrpSPLinenHireStandardWash)-[:HAS_ANSWER]->(ansLinenHireStandardWash),
-(ansGrpSPLinenHireStandardWash)-[:HAS_OUTCOME]->(qiAdditionalServicesSPLHStndWash:QuestionInstance:Outcome {uuid: 'ccb5b326-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
-
-// Add srv - Yes
-(ansGrpSPLinenHireStandardWashAddSrvYes:AnswerGroup {name: 'ansGrpSPLinenHireStandardWashAddSrvYes'}),
-(qiAdditionalServicesSPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPLinenHireStandardWashAddSrvYes),
-(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
-(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
-(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
-(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
-(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansOther),
-(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
-
-// Add srv - No
-(ansGrpSPLinenHireStandardWashAddSrvNo:AnswerGroup {name: 'ansGrpSPLinenHireStandardWashAddSrvNo'}),
-(qiAdditionalServicesSPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPLinenHireStandardWashAddSrvNo),
-(ansGrpSPLinenHireStandardWashAddSrvNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpSPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1a),
-
-// SP - Theatre packs and gowns
-(ansGrpSPTheatrePacksGowns:AnswerGroup {name: 'ansGrpSPTheatrePacksGowns'}),
-(qiServiceSP)-[:HAS_ANSWER_GROUP]->(ansGrpSPTheatrePacksGowns),
-(ansGrpSPTheatrePacksGowns)-[:HAS_ANSWER]->(ansTheatrePacksGowns),
-(ansGrpSPTheatrePacksGowns)-[:HAS_OUTCOME]->(qiAdditionalServicesSPTPGowns:QuestionInstance:Outcome {uuid: 'ccb5b5a6-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
-
-// Add srv - Yes
-(ansGrpSPTheatrePacksGownsAddSrvYes:AnswerGroup {name: 'ansGrpSPTheatrePacksGownsAddSrvYes'}),
-(qiAdditionalServicesSPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpSPTheatrePacksGownsAddSrvYes),
-(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
-(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
-(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
-(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
-(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansOther),
-(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
-
-// Add srv - No
-(ansGrpSPTheatrePacksGownsAddSrvNo:AnswerGroup {name: 'ansGrpSPTheatrePacksGownsAddSrvNo'}),
-(qiAdditionalServicesSPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpSPTheatrePacksGownsAddSrvNo),
-(ansGrpSPTheatrePacksGownsAddSrvNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpSPTheatrePacksGownsAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot2),
-
 // SP - Cleanroom services
 (ansGrpSPCleanroomServices:AnswerGroup {name: 'ansGrpSPCleanroomServices'}),
 (qiServiceSP)-[:HAS_ANSWER_GROUP]->(ansGrpSPCleanroomServices),
-(ansGrpSPCleanroomServices)-[:HAS_ANSWER]->(ansCleanroomServices),
+(ansGrpSPCleanroomServices)-[:HAS_ANSWER {order: 1}]->(ansCleanroomServices),
 (ansGrpSPCleanroomServices)-[:HAS_OUTCOME]->(qiAdditionalServicesSPClnRmSvcs:QuestionInstance:Outcome {uuid: 'ccb5b678-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
-
-// Add srv - Yes
-(ansGrpSPCleanroomServicesAddSrvYes:AnswerGroup {name: 'ansGrpSPCleanroomServicesAddSrvYes'}),
-(qiAdditionalServicesSPClnRmSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpSPCleanroomServicesAddSrvYes),
-(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
-(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
-(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
-(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
-(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansOther),
-(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
 // Add srv - No
 (ansGrpSPCleanroomServicesAddSrvNo:AnswerGroup {name: 'ansGrpSPCleanroomServicesAddSrvNo'}),
 (qiAdditionalServicesSPClnRmSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpSPCleanroomServicesAddSrvNo),
-(ansGrpSPCleanroomServicesAddSrvNo)-[:HAS_ANSWER]->(ansNo),
+(ansGrpSPCleanroomServicesAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
 (ansGrpSPCleanroomServicesAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot3),
+
+// Add srv - Yes
+(ansGrpSPCleanroomServicesAddSrvYes:AnswerGroup {name: 'ansGrpSPCleanroomServicesAddSrvYes'}),
+(qiAdditionalServicesSPClnRmSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpSPCleanroomServicesAddSrvYes),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 2}]->(ansSecurity),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansGroundsMaintenance),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+
+// SP - Theatre packs and gowns
+(ansGrpSPTheatrePacksGowns:AnswerGroup {name: 'ansGrpSPTheatrePacksGowns'}),
+(qiServiceSP)-[:HAS_ANSWER_GROUP]->(ansGrpSPTheatrePacksGowns),
+(ansGrpSPTheatrePacksGowns)-[:HAS_ANSWER {order: 2}]->(ansTheatrePacksGowns),
+(ansGrpSPTheatrePacksGowns)-[:HAS_OUTCOME]->(qiAdditionalServicesSPTPGowns:QuestionInstance:Outcome {uuid: 'ccb5b5a6-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
+
+// Add srv - No
+(ansGrpSPTheatrePacksGownsAddSrvNo:AnswerGroup {name: 'ansGrpSPTheatrePacksGownsAddSrvNo'}),
+(qiAdditionalServicesSPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpSPTheatrePacksGownsAddSrvNo),
+(ansGrpSPTheatrePacksGownsAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
+(ansGrpSPTheatrePacksGownsAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot2),
+
+// Add srv - Yes
+(ansGrpSPTheatrePacksGownsAddSrvYes:AnswerGroup {name: 'ansGrpSPTheatrePacksGownsAddSrvYes'}),
+(qiAdditionalServicesSPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpSPTheatrePacksGownsAddSrvYes),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 2}]->(ansSecurity),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansGroundsMaintenance),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+
+// SP - Linen hire + standard Wash
+(ansGrpSPLinenHireStandardWash:AnswerGroup {name: 'ansGrpSPLinenHireStandardWash'}),
+(qiServiceSP)-[:HAS_ANSWER_GROUP]->(ansGrpSPLinenHireStandardWash),
+(ansGrpSPLinenHireStandardWash)-[:HAS_ANSWER {order: 3}]->(ansLinenHireStandardWash),
+(ansGrpSPLinenHireStandardWash)-[:HAS_OUTCOME]->(qiAdditionalServicesSPLHStndWash:QuestionInstance:Outcome {uuid: 'ccb5b326-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
+
+// Add srv - No
+(ansGrpSPLinenHireStandardWashAddSrvNo:AnswerGroup {name: 'ansGrpSPLinenHireStandardWashAddSrvNo'}),
+(qiAdditionalServicesSPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPLinenHireStandardWashAddSrvNo),
+(ansGrpSPLinenHireStandardWashAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
+(ansGrpSPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1a),
+
+// Add srv - Yes
+(ansGrpSPLinenHireStandardWashAddSrvYes:AnswerGroup {name: 'ansGrpSPLinenHireStandardWashAddSrvYes'}),
+(qiAdditionalServicesSPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPLinenHireStandardWashAddSrvYes),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 2}]->(ansSecurity),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansGroundsMaintenance),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+
+// SP - Standard Wash
+(ansGrpSPServiceStdWash:AnswerGroup {name: 'ansGrpSPServiceStdWash'}),
+(qiServiceSP)-[:HAS_ANSWER_GROUP]->(ansGrpSPServiceStdWash),
+(ansGrpSPServiceStdWash)-[:HAS_ANSWER {order: 4}]->(ansStandardWash),
+(ansGrpSPServiceStdWash)-[:HAS_OUTCOME]->(qiAdditionalServicesSPStndWash:QuestionInstance:Outcome {uuid: 'ccb5a9f8-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
+
+// Add srv - No
+(ansGrpSPServiceStdWashAddSrvNo:AnswerGroup {name: 'ansGrpSPServiceStdWashAddSrvNo'}),
+(qiAdditionalServicesSPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPServiceStdWashAddSrvNo),
+(ansGrpSPServiceStdWashAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
+(ansGrpSPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1b),
+
+// Add srv - Yes
+(ansGrpSPServiceStdWashAddSrvYes:AnswerGroup {name: 'ansGrpSPServiceStdWashAddSrvYes'}),
+(qiAdditionalServicesSPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPServiceStdWashAddSrvYes),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 2}]->(ansSecurity),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansGroundsMaintenance),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
 // BP (> 12 months)
 // Service - Big Projects Branch
-(ansGrpBudgetGTMillion:AnswerGroup {name: 'ansGrpBudgetGTMillion'}),
-(qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetGTMillion),
-(ansGrpBudgetGTMillion)-[:HAS_ANSWER]->(ansBudgetGTMillion),
-(ansGrpBudgetGTMillion)-[:HAS_OUTCOME]->(qiServiceBP),
-
-// BP - Standard Wash
-(ansGrpBPServiceStdWash:AnswerGroup {name: 'ansGrpBPServiceStdWash'}),
-(qiServiceBP)-[:HAS_ANSWER_GROUP]->(ansGrpBPServiceStdWash),
-(ansGrpBPServiceStdWash)-[:HAS_ANSWER]->(ansStandardWash),
-(ansGrpBPServiceStdWash)-[:HAS_OUTCOME]->(qiAdditionalServicesBPStndWash:QuestionInstance:Outcome {uuid: 'ccb5b754-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
-
-// Add srv - Yes
-(ansGrpBPServiceStdWashAddSrvYes:AnswerGroup {name: 'ansGrpBPServiceStdWashAddSrvYes'}),
-(qiAdditionalServicesBPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPServiceStdWashAddSrvYes),
-(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
-(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
-(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
-(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
-(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER]->(ansOther),
-(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
-
-(ansGrpBPServiceStdWashAddSrvNo:AnswerGroup {name: 'ansGrpBPServiceStdWashAddSrvNo'}),
-(qiAdditionalServicesBPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPServiceStdWashAddSrvNo),
-(ansGrpBPServiceStdWashAddSrvNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpBPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1b),
-
-// BP - Linen hire + standard Wash
-(ansGrpBPLinenHireStandardWash:AnswerGroup {name: 'ansGrpBPLinenHireStandardWash'}),
-(qiServiceBP)-[:HAS_ANSWER_GROUP]->(ansGrpBPLinenHireStandardWash),
-(ansGrpBPLinenHireStandardWash)-[:HAS_ANSWER]->(ansLinenHireStandardWash),
-(ansGrpBPLinenHireStandardWash)-[:HAS_OUTCOME]->(qiAdditionalServicesBPLHStndWash:QuestionInstance:Outcome {uuid: 'ccb5b81c-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
-
-// Add srv - Yes
-(ansGrpBPLinenHireStandardWashAddSrvYes:AnswerGroup {name: 'ansGrpBPLinenHireStandardWashAddSrvYes'}),
-(qiAdditionalServicesBPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPLinenHireStandardWashAddSrvYes),
-(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
-(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
-(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
-(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
-(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER]->(ansOther),
-(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
-
-// Add srv - No
-(ansGrpBPLinenHireStandardWashAddSrvNo:AnswerGroup {name: 'ansGrpBPLinenHireStandardWashAddSrvNo'}),
-(qiAdditionalServicesBPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPLinenHireStandardWashAddSrvNo),
-(ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1a),
-
-// BP - Theatre packs and gowns
-(ansGrpBPTheatrePacksGowns:AnswerGroup {name: 'ansGrpBPTheatrePacksGowns'}),
-(qiServiceBP)-[:HAS_ANSWER_GROUP]->(ansGrpSPTheatrePacksGowns),
-(ansGrpBPTheatrePacksGowns)-[:HAS_ANSWER]->(ansTheatrePacksGowns),
-(ansGrpBPTheatrePacksGowns)-[:HAS_OUTCOME]->(qiAdditionalServicesBPTPGowns:QuestionInstance:Outcome {uuid: 'ccb5ba4c-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
-
-// Add srv - Yes
-(ansGrpBPTheatrePacksGownsAddSrvYes:AnswerGroup {name: 'ansGrpBPTheatrePacksGownsAddSrvYes'}),
-(qiAdditionalServicesBPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpBPTheatrePacksGownsAddSrvYes),
-(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
-(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
-(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
-(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
-(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER]->(ansOther),
-(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
-
-// Add srv - No
-(ansGrpBPTheatrePacksGownsAddSrvNo:AnswerGroup {name: 'ansGrpBPTheatrePacksGownsAddSrvNo'}),
-(qiAdditionalServicesBPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpBPTheatrePacksGownsAddSrvNo),
-(ansGrpBPTheatrePacksGownsAddSrvNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpBPTheatrePacksGownsAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot2),
-
 // BP - Cleanroom services
 (ansGrpBPCleanroomServices:AnswerGroup {name: 'ansGrpBPCleanroomServices'}),
 (qiServiceBP)-[:HAS_ANSWER_GROUP]->(ansGrpBPCleanroomServices),
-(ansGrpBPCleanroomServices)-[:HAS_ANSWER]->(ansCleanroomServices),
+(ansGrpBPCleanroomServices)-[:HAS_ANSWER {order: 1}]->(ansCleanroomServices),
 (ansGrpBPCleanroomServices)-[:HAS_OUTCOME]->(qiAdditionalServicesBPClnRmSvcs:QuestionInstance:Outcome {uuid: 'ccb5bb14-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
-
-// Add srv - Yes
-(ansGrpBPCleanroomServicesAddSrvYes:AnswerGroup {name: 'ansGrpBPCleanroomServicesAddSrvYes'}),
-(qiAdditionalServicesBPClnRmSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpBPCleanroomServicesAddSrvYes),
-(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansSecurity),
-(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansGroundsMaintenance),
-(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansCatering),
-(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansPestControl),
-(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER]->(ansOther),
-(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
 // Add srv - No
 (ansGrpBPCleanroomServicesAddSrvNo:AnswerGroup {name: 'ansGrpBPCleanroomServicesAddSrvNo'}),
 (qiAdditionalServicesBPClnRmSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpBPCleanroomServicesAddSrvNo),
-(ansGrpBPCleanroomServicesAddSrvNo)-[:HAS_ANSWER]->(ansNo),
-(ansGrpBPCleanroomServicesAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot3);
+(ansGrpBPCleanroomServicesAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
+(ansGrpBPCleanroomServicesAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot3),
+
+// Add srv - Yes
+(ansGrpBPCleanroomServicesAddSrvYes:AnswerGroup {name: 'ansGrpBPCleanroomServicesAddSrvYes'}),
+(qiAdditionalServicesBPClnRmSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpBPCleanroomServicesAddSrvYes),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 2}]->(ansSecurity),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansGroundsMaintenance),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+
+// BP - Theatre packs and gowns
+(ansGrpBPTheatrePacksGowns:AnswerGroup {name: 'ansGrpBPTheatrePacksGowns'}),
+(qiServiceBP)-[:HAS_ANSWER_GROUP]->(ansGrpSPTheatrePacksGowns),
+(ansGrpBPTheatrePacksGowns)-[:HAS_ANSWER {order: 2}]->(ansTheatrePacksGowns),
+(ansGrpBPTheatrePacksGowns)-[:HAS_OUTCOME]->(qiAdditionalServicesBPTPGowns:QuestionInstance:Outcome {uuid: 'ccb5ba4c-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
+
+// Add srv - No
+(ansGrpBPTheatrePacksGownsAddSrvNo:AnswerGroup {name: 'ansGrpBPTheatrePacksGownsAddSrvNo'}),
+(qiAdditionalServicesBPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpBPTheatrePacksGownsAddSrvNo),
+(ansGrpBPTheatrePacksGownsAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
+(ansGrpBPTheatrePacksGownsAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot2),
+
+// Add srv - Yes
+(ansGrpBPTheatrePacksGownsAddSrvYes:AnswerGroup {name: 'ansGrpBPTheatrePacksGownsAddSrvYes'}),
+(qiAdditionalServicesBPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpBPTheatrePacksGownsAddSrvYes),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 2}]->(ansSecurity),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansGroundsMaintenance),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+
+// BP - Linen hire + standard Wash
+(ansGrpBPLinenHireStandardWash:AnswerGroup {name: 'ansGrpBPLinenHireStandardWash'}),
+(qiServiceBP)-[:HAS_ANSWER_GROUP]->(ansGrpBPLinenHireStandardWash),
+(ansGrpBPLinenHireStandardWash)-[:HAS_ANSWER {order: 3}]->(ansLinenHireStandardWash),
+(ansGrpBPLinenHireStandardWash)-[:HAS_OUTCOME]->(qiAdditionalServicesBPLHStndWash:QuestionInstance:Outcome {uuid: 'ccb5b81c-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
+
+// Add srv - No
+(ansGrpBPLinenHireStandardWashAddSrvNo:AnswerGroup {name: 'ansGrpBPLinenHireStandardWashAddSrvNo'}),
+(qiAdditionalServicesBPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPLinenHireStandardWashAddSrvNo),
+(ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
+(ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1a),
+
+// Add srv - Yes
+(ansGrpBPLinenHireStandardWashAddSrvYes:AnswerGroup {name: 'ansGrpBPLinenHireStandardWashAddSrvYes'}),
+(qiAdditionalServicesBPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPLinenHireStandardWashAddSrvYes),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 2}]->(ansSecurity),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansGroundsMaintenance),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+
+// BP - Standard Wash
+(ansGrpBPServiceStdWash:AnswerGroup {name: 'ansGrpBPServiceStdWash'}),
+(qiServiceBP)-[:HAS_ANSWER_GROUP]->(ansGrpBPServiceStdWash),
+(ansGrpBPServiceStdWash)-[:HAS_ANSWER {order: 4}]->(ansStandardWash),
+(ansGrpBPServiceStdWash)-[:HAS_OUTCOME]->(qiAdditionalServicesBPStndWash:QuestionInstance:Outcome {uuid: 'ccb5b754-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnAdditionalServices),
+
+// Add srv - No
+(ansGrpBPServiceStdWashAddSrvNo:AnswerGroup {name: 'ansGrpBPServiceStdWashAddSrvNo'}),
+(qiAdditionalServicesBPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPServiceStdWashAddSrvNo),
+(ansGrpBPServiceStdWashAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
+(ansGrpBPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1b),
+
+// Add srv - Yes
+(ansGrpBPServiceStdWashAddSrvYes:AnswerGroup {name: 'ansGrpBPServiceStdWashAddSrvYes'}),
+(qiAdditionalServicesBPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPServiceStdWashAddSrvYes),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 2}]->(ansSecurity),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansGroundsMaintenance),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM);

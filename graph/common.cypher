@@ -19,6 +19,7 @@ CREATE
 (:QuestionDefinition {uuid: 'b87a0014-654e-11ea-bc55-0242ac130003', text: 'Choose which services you need:', type: 'MULTI_SELECT_LIST'}),
 (:QuestionDefinition {uuid: 'b879c662-654e-11ea-bc55-0242ac130003', text: 'Do you require nationwide or regional services?', hint: 'Nationwide suppliers are able to work across the country. Regional suppliers work in their own area.', type: 'BOOLEAN'}),
 (:QuestionDefinition {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'What kind of security do you need?', type: 'LIST'}),
+(:QuestionDefinition {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003', text: 'Select the location you need this service', type: 'LIST'}),
 
 // Answer definitions
 // Yes, No, Other etc
@@ -30,8 +31,8 @@ CREATE
 (:Answer {uuid: 'b879fcf4-654e-11ea-bc55-0242ac130003', text: 'Product', hint: 'A product is an item you can buy, such as a kettle.  It requires no ongoing contract.'}),
 (:Answer {uuid: 'b879fe0c-654e-11ea-bc55-0242ac130003', text: 'Service', hint: 'A service is a contract for something to happen, one time or regularly, such as window cleaning. It may involve leasing a product as part of the service, for example supplying mobile phones with a network and data.'}),
 
-// Organisations
-(:Answer {uuid: 'b8799ee4-654e-11ea-bc55-0242ac130003', text: 'Ministry of Defence or Defence Infrastructure Organisation'}),
+// Sectors
+(:Answer {uuid: 'b8799ee4-654e-11ea-bc55-0242ac130003', text: 'Ministry of Defence'}),
 (:Answer {uuid: 'b879a178-654e-11ea-bc55-0242ac130003', text: 'Central Goverment'}),
 (:Answer {uuid: 'b879a286-654e-11ea-bc55-0242ac130003', text: 'Devolved'}),
 (:Answer {uuid: 'b879a3bc-654e-11ea-bc55-0242ac130003', text: 'Education'}),
@@ -46,6 +47,10 @@ CREATE
 (:Answer {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'Nationwide'}),
 (:Answer {uuid: 'b879c856-654e-11ea-bc55-0242ac130003', text: 'Regional'}),
 
+(:Answer {uuid: 'ccb5c046-75b5-11ea-bc55-0242ac130003', text: 'England or Wales'}),
+(:Answer {uuid: 'ccb5c104-75b5-11ea-bc55-0242ac130003', text: 'Scotland'}),
+(:Answer {uuid: 'ccb5c1cc-75b5-11ea-bc55-0242ac130003', text: 'Northern Ireland'}),
+
 // Security
 (:Answer {uuid: 'b879d490-654e-11ea-bc55-0242ac130003', text: 'Physical and Technical', hint: 'This had both a physical presence and technical requirement'}),
 (:Answer {uuid: 'b879d54e-654e-11ea-bc55-0242ac130003', text: 'Physical', hint: 'This has a physical presence such as guards'}),
@@ -54,11 +59,13 @@ CREATE
 // Budget
 (:Answer {uuid: 'b87a0780-654e-11ea-bc55-0242ac130003', text: 'Less than £1million'}),
 (:Answer {uuid: 'b87a08a2-654e-11ea-bc55-0242ac130003', text: '£1million or more'}),
+(:Answer {uuid: 'ccb5c294-75b5-11ea-bc55-0242ac130003', text: 'Less than £20k'}),
+(:Answer {uuid: 'ccb5c4ec-75b5-11ea-bc55-0242ac130003', text: '£20k or more'}),
 
 // Contract length
 (:Answer {uuid: 'b87a09a6-654e-11ea-bc55-0242ac130003', text: 'Up to 1 year'}),
 (:Answer {uuid: 'b87a0adc-654e-11ea-bc55-0242ac130003', text: '1 year or more'}),
 
 // Common endpoints
-(:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003', name: 'Facilities Management Marketplace', description: 'UK-wide facilities management (FM) services organised regionally and available to all public sector entities. Includes maintenance, cleaning, security, helpdesk etc.', agreementId: 'RM3830', url: '', type: 'OTHER'}),
-(:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', name: 'CCS Support', description: 'Placeholder for CCS support', type: 'SUPPORT'});
+(:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003', agreementName: 'Facilities Management Marketplace', description: 'UK-wide facilities management (FM) services organised regionally and available to all public sector entities. Includes maintenance, cleaning, security, helpdesk etc.', agreementId: 'RM3830', url: '', type: 'OTHER'}),
+(:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', agreementName: 'CCS Support', description: 'Placeholder for CCS support', type: 'SUPPORT'});

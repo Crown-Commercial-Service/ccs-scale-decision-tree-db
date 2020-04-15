@@ -114,6 +114,7 @@ CREATE
 (qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceFinanceComplex),
 (ansGrpCGServiceFinanceComplex)-[:HAS_ANSWER {order: 9}]->(ansFinanceComplex),
 (ansGrpCGServiceFinanceComplex)-[:HAS_OUTCOME]->(lotLegalEDisclosure),
+(ansGrpCGServiceFinanceComplex)-[:HAS_OUTCOME]->(lotLegalGLAS),
 
 // Sector(CG) -> Service(Multiple, Other)
 (ansGrpCGServiceMultiOther:AnswerGroup {name: 'ansGrpCGServiceMultiOther'}),

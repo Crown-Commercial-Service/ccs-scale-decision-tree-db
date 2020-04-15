@@ -101,13 +101,13 @@ CREATE
 (ansGrpCGBudgetLT20k:AnswerGroup {name: 'ansGrpCGBudgetLT20k'}),
 (qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetLT20k),
 (ansGrpCGBudgetLT20k)-[:HAS_ANSWER {order: 1}]->(ansBudgetLT20k),
-(ansGrpCGBudgetLT20k)-[:HAS_OUTCOME]->(lotLegalGLAS),
+(ansGrpCGBudgetLT20k)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot1),
 
 // Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget(>£20k)
 (ansGrpCGBudgetGT20k:AnswerGroup {name: 'ansGrpCGBudgetGT20k'}),
 (qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetGT20k),
 (ansGrpCGBudgetGT20k)-[:HAS_ANSWER {order: 2}]->(ansBudgetGT20k),
-(ansGrpCGBudgetGT20k)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot1),
+(ansGrpCGBudgetGT20k)-[:HAS_OUTCOME]->(lotLegalGLAS),
 
 // Sector(CG) -> Service(Finance & Complex)
 (ansGrpCGServiceFinanceComplex:AnswerGroup {name: 'ansGrpCGServiceFinanceComplex'}),

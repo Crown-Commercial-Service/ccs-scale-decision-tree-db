@@ -7,11 +7,11 @@ MATCH
 
 // Required answer nodes:
 (ansSectorCG:Answer {uuid: 'b879a178-654e-11ea-bc55-0242ac130003'}),
+(ansSectorLG:Answer {uuid: 'b879a5ec-654e-11ea-bc55-0242ac130003'}),
 (ansSectorMoD:Answer {uuid: 'b8799ee4-654e-11ea-bc55-0242ac130003'}),
 (ansSectorDevolved:Answer {uuid: 'b879a286-654e-11ea-bc55-0242ac130003'}),
 (ansSectorEdu:Answer {uuid: 'b879a3bc-654e-11ea-bc55-0242ac130003'}),
 (ansSectorHealth:Answer {uuid: 'b879a48e-654e-11ea-bc55-0242ac130003'}),
-(ansSectorLG:Answer {uuid: 'b879a5ec-654e-11ea-bc55-0242ac130003'}),
 (ansSectorBlueLight:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003'}),
 (ansSectorHousing:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003'}),
 (ansSectorCharities:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003'}),
@@ -45,6 +45,94 @@ CREATE
 (lotLegalWPSLegalSvcsLot3:Lot:Outcome {uuid: 'ccb5cce4-75b5-11ea-bc55-0242ac130003', agreementName: 'WPS Legal Services', lotName: 'Lot 3 (Property & Construction)', description: 'Legal services for the wider public sector.', agreementId: 'RM3788', url: '', type: 'CAT'}),
 (lotLegalWPSLegalSvcsLot4:Lot:Outcome {uuid: 'ccb5cdac-75b5-11ea-bc55-0242ac130003', agreementName: 'WPS Legal Services', lotName: 'Lot 4 (Transport Rail)', description: 'Legal services for the wider public sector.', agreementId: 'RM3788', url: '', type: 'CAT'}),
 
+// Legal Services specific answers
+(ansRail:Answer {uuid: 'ccb5d1ee-75b5-11ea-bc55-0242ac130003', text: 'Rail', hint: 'Rail-specific legal advice only for Department for Transport, covering rail franchising'}),
+(ansEDisclosure:Answer {uuid: 'ccb5d2b6-75b5-11ea-bc55-0242ac130003', text: 'eDisclosure', hint: 'Management of disclosure of electronic documents in a legal dispute'}),
+(ansEDiscovery:Answer {uuid: 'ccb5d608-75b5-11ea-bc55-0242ac130003', text: 'eDiscovery', hint: 'Management of discovery of electronic documents in a legal dispute'}),
+(ansCostsLawyer:Answer {uuid: 'ccb5d702-75b5-11ea-bc55-0242ac130003', text: 'Costs lawyer', hint: 'Legal professional involved in working out costs of legal fees and claims'}),
+(ansLegalCostsDraftsmen:Answer {uuid: 'ccb5d7d4-75b5-11ea-bc55-0242ac130003', text: 'Legal costs draftman', hint: 'Specialist legal professional who settles the legals costs of court cases'}),
+(ansEmpLitigation:Answer {uuid: 'ccb5d8a6-75b5-11ea-bc55-0242ac130003', text: 'Employment litigation', hint: 'Legal services related to defence or claim against employment law'}),
+(ansProperty:Answer {uuid: 'ccb5da72-75b5-11ea-bc55-0242ac130003', text: 'Property', hint: 'Legal services related to property law - for example, the purchase or building of a government-owned building'}),
+(ansLitigation:Answer {uuid: 'ccb5db3a-75b5-11ea-bc55-0242ac130003', text: 'Litigation', hint: 'Legal services related to the process of taking or defending legal action'}),
+(ansFinanceComplex:Answer {uuid: 'ccb5dbee-75b5-11ea-bc55-0242ac130003', text: 'Finance & Complex', hint: 'Financial legal action such as prosecuting fraud'}),
+(ansPropertyConstruction:Answer {uuid: 'ccb5df2c-75b5-11ea-bc55-0242ac130003', text: 'Property and construction', hint: 'This is for large scale and high value building works, such as a hospital'}),
+(ansTransport:Answer {uuid: 'ccb5dff4-75b5-11ea-bc55-0242ac130003', text: 'Transport', hint: 'Transport-specific legal advice'}),
+(ansMulti:Answer {uuid: 'ccb5dcac-75b5-11ea-bc55-0242ac130003', text: 'Multiple', hint: 'More than one item from this list'}),
+(ansAnythingElse:Answer {uuid: 'ccb5dd74-75b5-11ea-bc55-0242ac130003', text: 'Anything else', hint: 'An item not listed here'}),
 
+// Tree Structure
+(jrnyLegalServices)-[:FIRST_QUESTION]->(qiSector:QuestionInstance:Outcome {uuid: 'ccb5e0bc-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
 
+// Central Government Branch (Sector CG)
+(ansGrpSectorCentGov:AnswerGroup {name: 'ansGrpSectorCentGov'}),
+(qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSectorCentGov),
+(ansGrpSectorCentGov)-[:HAS_ANSWER {order: 1}]->(ansSectorCG),
+(ansGrpSectorCentGov)-[:HAS_OUTCOME]->(qiCentGovService:QuestionInstance:Outcome {uuid: 'ccb5e184-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
+
+// Sector(CG) -> Service(Rail)
+(ansGrpCGServiceRail:AnswerGroup {name: 'ansGrpCGServiceRail'}),
+(qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceRail),
+(ansGrpCGServiceRail)-[:HAS_ANSWER {order: 1}]->(ansRail),
+(ansGrpCGServiceRail)-[:HAS_OUTCOME]->(lotLegalRail),
+
+// Sector(CG) -> Service(eDisclosure, eDiscovery)
+(ansGrpCGServiceEDisc:AnswerGroup {name: 'ansGrpCGServiceEDisc'}),
+(qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceEDisc),
+(ansGrpCGServiceEDisc)-[:HAS_ANSWER {order: 2}]->(ansEDisclosure),
+(ansGrpCGServiceEDisc)-[:HAS_ANSWER {order: 3}]->(ansEDiscovery),
+(ansGrpCGServiceEDisc)-[:HAS_OUTCOME]->(lotLegalEDisclosure),
+
+// Sector(CG) -> Service(Costs Lawyer, Legal Costs Draftsmen)
+(ansGrpCGServiceCostsLawyer:AnswerGroup {name: 'ansGrpCGServiceCostsLawyer'}),
+(qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceCostsLawyer),
+(ansGrpCGServiceCostsLawyer)-[:HAS_ANSWER {order: 4}]->(ansCostsLawyer),
+(ansGrpCGServiceCostsLawyer)-[:HAS_ANSWER {order: 5}]->(ansLegalCostsDraftsmen),
+(ansGrpCGServiceCostsLawyer)-[:HAS_OUTCOME]->(lotLegalCostsLawyerSvcs),
+
+// Sector(CG) -> Service(Employment Litigation, Property, Litigation)
+(ansGrpCGServiceEmpLitProp:AnswerGroup {name: 'ansGrpCGServiceEmpLitProp'}),
+(qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceEmpLitProp),
+(ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 6}]->(ansEmpLitigation),
+(ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 7}]->(ansProperty),
+(ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 8}]->(ansLitigation),
+(ansGrpCGServiceEmpLitProp)-[:HAS_OUTCOME]->(qiCentGovBudget:QuestionInstance:Outcome {uuid: 'ccb6124e-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnBudget),
+
+// Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget(<£20k)
+(ansGrpCGBudgetLT20k:AnswerGroup {name: 'ansGrpCGBudgetLT20k'}),
+(qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetLT20k),
+(ansGrpCGBudgetLT20k)-[:HAS_ANSWER {order: 1}]->(ansBudgetLT20k),
+(ansGrpCGBudgetLT20k)-[:HAS_OUTCOME]->(lotLegalGLAS),
+
+// Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget(>£20k)
+(ansGrpCGBudgetGT20k:AnswerGroup {name: 'ansGrpCGBudgetGT20k'}),
+(qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetGT20k),
+(ansGrpCGBudgetGT20k)-[:HAS_ANSWER {order: 2}]->(ansBudgetGT20k),
+(ansGrpCGBudgetGT20k)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot1),
+
+// Sector(CG) -> Service(Finance & Complex)
+(ansGrpCGServiceFinanceComplex:AnswerGroup {name: 'ansGrpCGServiceFinanceComplex'}),
+(qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceFinanceComplex),
+(ansGrpCGServiceFinanceComplex)-[:HAS_ANSWER {order: 9}]->(ansFinanceComplex),
+(ansGrpCGServiceFinanceComplex)-[:HAS_OUTCOME]->(lotLegalEDisclosure),
+
+// Sector(CG) -> Service(Multiple, Other)
+(ansGrpCGServiceMultiOther:AnswerGroup {name: 'ansGrpCGServiceMultiOther'}),
+(qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceMultiOther),
+(ansGrpCGServiceMultiOther)-[:HAS_ANSWER {order: 10}]->(ansMulti),
+(ansGrpCGServiceMultiOther)-[:HAS_ANSWER {order: 11}]->(ansAnythingElse),
+(ansGrpCGServiceMultiOther)-[:HAS_OUTCOME]->(lotLegalGLAS),
+
+// Non CG Branch (WPS)
+(ansGrpSectorWPS:AnswerGroup {name: 'ansGrpSectorWPS'}),
+(qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSectorWPS),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 2}]->(ansSectorLG),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 3}]->(ansSectorMoD),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 4}]->(ansSectorDevolved),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 5}]->(ansSectorEdu),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 6}]->(ansSectorHealth),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 10}]->(ansSectorWPS),
+(ansGrpSectorWPS)-[:HAS_OUTCOME]->(qiWPSService:QuestionInstance:Outcome {uuid: 'ccb61140-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 ;

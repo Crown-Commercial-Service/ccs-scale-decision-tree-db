@@ -30,18 +30,19 @@ CREATE
 // Product / Service
 (:Answer {uuid: 'b879fcf4-654e-11ea-bc55-0242ac130003', text: 'Product', hint: 'A product is an item you can buy, such as a kettle.  It requires no ongoing contract.'}),
 (:Answer {uuid: 'b879fe0c-654e-11ea-bc55-0242ac130003', text: 'Service', hint: 'A service is a contract for something to happen, one time or regularly, such as window cleaning. It may involve leasing a product as part of the service, for example supplying mobile phones with a network and data.'}),
+(:Answer {uuid: 'ccb61596-75b5-11ea-bc55-0242ac130003', text: 'Both, product and service', hint: 'Some contracts involve purchasing products and leasing a service, such as buying laptops and subscribing to anti-virus software on an ongoing basis.'}),
 
 // Sectors
-(:Answer {uuid: 'b8799ee4-654e-11ea-bc55-0242ac130003', text: 'Ministry of Defence'}),
-(:Answer {uuid: 'b879a178-654e-11ea-bc55-0242ac130003', text: 'Central Goverment'}),
-(:Answer {uuid: 'b879a286-654e-11ea-bc55-0242ac130003', text: 'Devolved'}),
-(:Answer {uuid: 'b879a3bc-654e-11ea-bc55-0242ac130003', text: 'Education'}),
-(:Answer {uuid: 'b879a48e-654e-11ea-bc55-0242ac130003', text: 'Health'}),
-(:Answer {uuid: 'b879a5ec-654e-11ea-bc55-0242ac130003', text: 'Local Goverment'}),
-(:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003', text: 'Blue Light'}),
-(:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003', text: 'Housing'}),
-(:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003', text: 'Charities'}),
-(:Answer {uuid: 'b879ab14-654e-11ea-bc55-0242ac130003', text: 'Wider Public Sector'}),
+(:Answer {uuid: 'b8799ee4-654e-11ea-bc55-0242ac130003', text: 'Ministry of Defence', hint: 'Ministry of Defence projects and operations'}),
+(:Answer {uuid: 'b879a178-654e-11ea-bc55-0242ac130003', text: 'Central Goverment', hint: 'Central government must use the Crown Commercial Service'}),
+(:Answer {uuid: 'b879a286-654e-11ea-bc55-0242ac130003', text: 'Devolved', hint: 'Devolved government orgs such as those in Scotland and Wales'}),
+(:Answer {uuid: 'b879a3bc-654e-11ea-bc55-0242ac130003', text: 'Education', hint: 'Schools, universities and other places of learning'}),
+(:Answer {uuid: 'b879a48e-654e-11ea-bc55-0242ac130003', text: 'Health', hint: 'Hospitals, clinics and work related to public health and medicine'}),
+(:Answer {uuid: 'b879a5ec-654e-11ea-bc55-0242ac130003', text: 'Local Goverment', hint: 'Councils and other local government funded bodies'}),
+(:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003', text: 'Blue Light', hint: 'Emergency services'}),
+(:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003', text: 'Housing', hint: 'National and regional housing works'}),
+(:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003', text: 'Charities', hint: 'Charities and charitible foundations'}),
+(:Answer {uuid: 'b879ab14-654e-11ea-bc55-0242ac130003', text: 'Wider Public Sector', hint: 'Buyers from the wider public sector have a choice of who they may purchase through. The Crown Commercial Service may be just one of these options'}),
 
 // locations
 (:Answer {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'Nationwide'}),

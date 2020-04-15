@@ -27,7 +27,7 @@ MATCH
 (ansBudgetGT20k:Answer {uuid: 'ccb5c4ec-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
-(jrnyLegalServices:Journey {uuid: 'ccb5c730-75b5-11ea-bc55-0242ac130003', name: 'Legal Services', searchTerms: ['legal', 'property', 'solicitor']}),
+(jrnyLegalServices:Journey {uuid: 'ccb5c730-75b5-11ea-bc55-0242ac130003', name: 'Wider Public Sector Legal Services', searchTerms: ['legal', 'property', 'solicitor']}),
 
 // Agreement lots (journey endpoints)
 (lotLegalRail:Lot:Outcome {uuid: 'ccb5c802-75b5-11ea-bc55-0242ac130003', agreementName: 'Rail Legal Services', description: 'Rail-specific legal advice only for Department for Transport, covering rail franchising. Not for use by the wider public sector. Replaces part of RM919.', agreementId: 'RM3756', url: '', type: 'CAT'}),
@@ -135,4 +135,58 @@ CREATE
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 10}]->(ansSectorWPS),
 (ansGrpSectorWPS)-[:HAS_OUTCOME]->(qiWPSService:QuestionInstance:Outcome {uuid: 'ccb61140-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
-;
+
+// Sector(WPS) -> Service(Property & Construction)
+(ansGrpWPSServicePropConstruct:AnswerGroup {name: 'ansGrpWPSServicePropConstruct'}),
+(qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceRail),
+(ansGrpWPSServicePropConstruct)-[:HAS_ANSWER {order: 1}]->(ansPropertyConstruction),
+(ansGrpWPSServicePropConstruct)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot3),
+
+// Sector(WPS) -> Service(eDisclosure, eDiscovery)
+(ansGrpWPSServiceEDisc:AnswerGroup {name: 'ansGrpWPSServiceEDisc'}),
+(qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceEDisc),
+(ansGrpWPSServiceEDisc)-[:HAS_ANSWER {order: 2}]->(ansEDisclosure),
+(ansGrpWPSServiceEDisc)-[:HAS_ANSWER {order: 3}]->(ansEDiscovery),
+(ansGrpWPSServiceEDisc)-[:HAS_OUTCOME]->(lotLegalEDisclosure),
+
+// Sector(WPS) -> Service(Costs Lawyer, Legal Costs Draftsmen)
+(ansGrpWPSServiceCostsLawyer:AnswerGroup {name: 'ansGrpWPSServiceCostsLawyer'}),
+(qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceCostsLawyer),
+(ansGrpWPSServiceCostsLawyer)-[:HAS_ANSWER {order: 4}]->(ansCostsLawyer),
+(ansGrpWPSServiceCostsLawyer)-[:HAS_ANSWER {order: 5}]->(ansLegalCostsDraftsmen),
+(ansGrpWPSServiceCostsLawyer)-[:HAS_OUTCOME]->(lotLegalCostsLawyerSvcs),
+
+// Sector(WPS) -> Service(Transport, Rail)
+(ansGrpWPSServiceTransRail:AnswerGroup {name: 'ansGrpWPSServiceTransRail'}),
+(qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceTransRail),
+(ansGrpWPSServiceTransRail)-[:HAS_ANSWER {order: 6}]->(ansTransport),
+(ansGrpWPSServiceTransRail)-[:HAS_ANSWER {order: 7}]->(ansRail),
+(ansGrpWPSServiceTransRail)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot4),
+
+// Sector(WPS) -> Service(Multiple, Other)
+(ansGrpWPSServiceMultiOther:AnswerGroup {name: 'ansGrpWPSServiceMultiOther'}),
+(qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceMultiOther),
+(ansGrpWPSServiceMultiOther)-[:HAS_ANSWER {order: 8}]->(ansMulti),
+(ansGrpWPSServiceMultiOther)-[:HAS_ANSWER {order: 9}]->(ansAnythingElse),
+(ansGrpWPSServiceMultiOther)-[:HAS_OUTCOME]->(qiWPSLocation:QuestionInstance:Outcome {uuid: 'ccb61320-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnLocation),
+
+// Sector(WPS) -> Service(Multiple, Other) -> Location(England or Wales)
+(ansGrpWPSLocationEngWales:AnswerGroup {name: 'ansGrpWPSLocationEngWales'}),
+(qiWPSLocation)-[:HAS_ANSWER_GROUP]->(ansGrpWPSLocationEngWales),
+(ansGrpWPSLocationEngWales)-[:HAS_ANSWER {order: 1}]->(ansLocEnglandWales),
+(ansGrpWPSLocationEngWales)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot1),
+(ansGrpWPSLocationEngWales)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot2a),
+
+// Sector(WPS) -> Service(Multiple, Other) -> Location(England or Wales)
+(ansGrpWPSLocationScotland:AnswerGroup {name: 'ansGrpWPSLocationScotland'}),
+(qiWPSLocation)-[:HAS_ANSWER_GROUP]->(ansGrpWPSLocationScotland),
+(ansGrpWPSLocationScotland)-[:HAS_ANSWER {order: 2}]->(ansLocScotland),
+(ansGrpWPSLocationScotland)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot1),
+(ansGrpWPSLocationScotland)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot2b),
+
+// Sector(WPS) -> Service(Multiple, Other) -> Location(England or Wales)
+(ansGrpWPSLocationNorthIreland:AnswerGroup {name: 'ansGrpWPSLocationNorthIreland'}),
+(qiWPSLocation)-[:HAS_ANSWER_GROUP]->(ansGrpWPSLocationNorthIreland),
+(ansGrpWPSLocationNorthIreland)-[:HAS_ANSWER {order: 3}]->(ansLocNorthernIreland),
+(ansGrpWPSLocationNorthIreland)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot1),
+(ansGrpWPSLocationNorthIreland)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot2c);

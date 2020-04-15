@@ -138,7 +138,7 @@ CREATE
 
 // Sector(WPS) -> Service(Property & Construction)
 (ansGrpWPSServicePropConstruct:AnswerGroup {name: 'ansGrpWPSServicePropConstruct'}),
-(qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceRail),
+(qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServicePropConstruct),
 (ansGrpWPSServicePropConstruct)-[:HAS_ANSWER {order: 1}]->(ansPropertyConstruction),
 (ansGrpWPSServicePropConstruct)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot3),
 

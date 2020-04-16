@@ -68,5 +68,5 @@ CREATE
 (:Answer {uuid: 'b87a0adc-654e-11ea-bc55-0242ac130003', text: '1 year or more'}),
 
 // Common endpoints
-(:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003', agreementName: 'Facilities Management Marketplace', description: 'UK-wide facilities management (FM) services organised regionally and available to all public sector entities. Includes maintenance, cleaning, security, helpdesk etc.', agreementId: 'RM3830', url: '', type: 'OTHER'}),
-(:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', agreementName: 'CCS Support', description: 'Placeholder for CCS support', type: 'SUPPORT'});
+(:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003', agreementName: 'Facilities Management Marketplace', description: 'UK-wide facilities management (FM) services organised regionally and available to all public sector entities. Includes maintenance, cleaning, security, helpdesk etc.', agreementId: 'RM3830', url: '', type: 'OTHER', scale: false}),
+(:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', agreementName: 'CCS Support', description: 'Placeholder for CCS support', type: 'SUPPORT', scale: false});

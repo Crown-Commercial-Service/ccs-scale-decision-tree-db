@@ -32,14 +32,14 @@ CREATE
 (jrnyFM2:Journey {uuid: 'b879de86-654e-11ea-bc55-0242ac130003', name: 'FM Marketplace Phase 2', searchTerms: ['security', 'workplace', 'facilities', 'housing']}),
 
 // Outcomes (Agreement Lots)
-(lotFM2Lot2bFC:Lot:Outcome {uuid: 'b879e03e-654e-11ea-bc55-0242ac130003', name: 'Workplace Services (FM Marketplace Phase 2 - Lot 2b)', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
-(lotFM2Lot2aFC:Lot:Outcome {uuid: 'b879e106-654e-11ea-bc55-0242ac130003', name: 'Workplace Services (FM Marketplace Phase 2 - Lot 2a)', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
-(lotFM2Lot3FC:Lot:Outcome {uuid: 'b879e250-654e-11ea-bc55-0242ac130003', name: 'Workplace Services (FM Marketplace Phase 2 - Lot 3)', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
-(lotFM2Lot2cFC:Lot:Outcome {uuid: 'b879e386-654e-11ea-bc55-0242ac130003', name: 'Workplace Services (FM Marketplace Phase 2 - Lot 2c)', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
+(lotFM2Lot2bFC:Lot:Outcome {uuid: 'b879e03e-654e-11ea-bc55-0242ac130003', agreementName: 'Workplace Services (FM Marketplace Phase 2)', lotName: 'Lot 2b - Defence Housing Maintenance Services (Regional)', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
+(lotFM2Lot2aFC:Lot:Outcome {uuid: 'b879e106-654e-11ea-bc55-0242ac130003', agreementName: 'Workplace Services (FM Marketplace Phase 2)', lotName: 'Lot 2a - Defence Housing Management Services (National)', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
+(lotFM2Lot3FC:Lot:Outcome {uuid: 'b879e250-654e-11ea-bc55-0242ac130003', agreementName: 'Workplace Services (FM Marketplace Phase 2)', lotName: 'Lot 3 - MOD Facilities Management Marketplace', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
+(lotFM2Lot2cFC:Lot:Outcome {uuid: 'b879e386-654e-11ea-bc55-0242ac130003', agreementName: 'Workplace Services (FM Marketplace Phase 2)', lotName: 'Lot 2c - Housing Maintenance and Management Services', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
 
 // Security specific
-(lotFM2Lot1aFC:Lot:Outcome {uuid: 'b879e476-654e-11ea-bc55-0242ac130003', name: 'Workplace Services (FM Marketplace Phase 2 - Lot 1a)', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
-(lotFM2Lot1bFC:Lot:Outcome {uuid: 'b879e566-654e-11ea-bc55-0242ac130003', name: 'Workplace Services (FM Marketplace Phase 2 - Lot 1b)', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
+(lotFM2Lot1aFC:Lot:Outcome {uuid: 'b879e476-654e-11ea-bc55-0242ac130003', agreementName: 'Workplace Services (FM Marketplace Phase 2)', lotName: 'Lot 1a - Security Services', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
+(lotFM2Lot1bFC:Lot:Outcome {uuid: 'b879e566-654e-11ea-bc55-0242ac130003', agreementName: 'Workplace Services (FM Marketplace Phase 2)', lotName: 'Lot 1b - Technical Security', description: 'Security, housing and defence facilities management (FM) services.', agreementId: 'RM6089', url: '', type: 'CAT'}),
 
 (jrnyFM2)-[:FIRST_QUESTION {name: jrnyFM2.name + '-> qiOrganisation' }]->(qiOrganisation:QuestionInstance:Outcome {uuid: 'b879d774-654e-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnOrganisation),
 

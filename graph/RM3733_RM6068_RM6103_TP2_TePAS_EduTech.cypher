@@ -26,7 +26,7 @@ MATCH
 
 CREATE
 // Journey
-(jrnyTechEduTach:Journey {uuid: 'ccb6174e-75b5-11ea-bc55-0242ac130003', name: 'Tech / EduTech', searchTerms: ['laptop', 'laptops', 'hardware', 'audio', 'visual', 'av']}),
+(jrnyTechEduTach:Journey {uuid: 'ccb6174e-75b5-11ea-bc55-0242ac130003', name: 'Tech / EduTech', searchTerms: ['laptop', 'laptops', 'hardware', 'audio', 'visual', 'av', 'video', 'broadband', 'software']}),
 
 // Agreement lots (journey endpoints)
 // TP2

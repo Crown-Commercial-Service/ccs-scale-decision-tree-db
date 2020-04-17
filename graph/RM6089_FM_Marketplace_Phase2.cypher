@@ -1,7 +1,6 @@
 MATCH
 // Required QuestionDefinition nodes:
 (qstnOrganisation:QuestionDefinition {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003'}),
-(qstnServices:QuestionDefinition {uuid: 'b87a0014-654e-11ea-bc55-0242ac130003'}),
 (qstnService:QuestionDefinition {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003'}),
 (qstnLocation:QuestionDefinition {uuid: 'b879c662-654e-11ea-bc55-0242ac130003'}),
 (qstnSubService:QuestionDefinition {uuid: 'b879c784-654e-11ea-bc55-0242ac130003'}),
@@ -29,7 +28,7 @@ MATCH
 (resultCCSSupport:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
-(jrnyFM2:Journey {uuid: 'b879de86-654e-11ea-bc55-0242ac130003', name: 'FM Marketplace Phase 2', searchTerms: ['security', 'workplace', 'facilities', 'housing']}),
+(jrnyFM2:Journey {uuid: 'b879de86-654e-11ea-bc55-0242ac130003', name: 'FM Marketplace Phase 2', searchTerms: ['security', 'workplace', 'facilities', 'housing', 'water cooler']}),
 
 // Outcomes (Agreement Lots)
 (lotFM2Lot2bFC:Lot:Outcome {uuid: 'b879e03e-654e-11ea-bc55-0242ac130003', agreementName: 'Workplace Services (FM Marketplace Phase 2)', lotName: 'Lot 2b', agreementDescription: 'Security, housing and defence facilities management (FM) services.', lotDescription: 'Defence Housing Maintenance Services (Regional)', agreementId: 'RM6089', url: '', type: 'CAT', scale: false}),
@@ -64,7 +63,7 @@ CREATE
 (ansGrpOrgNonMod)-[:HAS_ANSWER {order: 8}]->(ansOrgHousing),
 (ansGrpOrgNonMod)-[:HAS_ANSWER {order: 9}]->(ansOrgCharities),
 (ansGrpOrgNonMod)-[:HAS_ANSWER {order: 10}]->(ansOrgWPS),
-(ansGrpOrgNonMod)-[:HAS_OUTCOME]->(qiServicesNonMOD:QuestionInstance:Outcome {uuid: 'b879d9cc-654e-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnServices),
+(ansGrpOrgNonMod)-[:HAS_OUTCOME]->(qiServicesNonMOD:QuestionInstance:Outcome {uuid: 'b879d9cc-654e-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 
 // MOD branch - Select service(s) (Dynamic look up)
 (ansGrpModSvcsDynamic:AnswerGroup {name: 'ansGrpModSvcsDynamic'}),

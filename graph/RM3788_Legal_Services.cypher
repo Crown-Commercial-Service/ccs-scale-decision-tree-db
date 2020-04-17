@@ -27,23 +27,31 @@ MATCH
 (ansBudgetGT20k:Answer {uuid: 'ccb5c4ec-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
-(jrnyLegalServices:Journey {uuid: 'ccb5c730-75b5-11ea-bc55-0242ac130003', name: 'Wider Public Sector Legal Services', searchTerms: ['legal', 'property', 'solicitor']}),
+(jrnyLegalServices:Journey {uuid: 'ccb5c730-75b5-11ea-bc55-0242ac130003', name: 'Wider Public Sector Legal Services', searchTerms: ['legal', 'injury', 'solicitor']}),
 
 // Agreement lots (journey endpoints)
-(lotLegalRail:Lot:Outcome {uuid: 'ccb5c802-75b5-11ea-bc55-0242ac130003', agreementName: 'Rail Legal Services', description: 'Rail-specific legal advice only for Department for Transport, covering rail franchising. Not for use by the wider public sector. Replaces part of RM919.', agreementId: 'RM3756', url: '', type: 'CAT'}),
-(lotLegalEDisclosure:Lot:Outcome {uuid: 'ccb5c9c4-75b5-11ea-bc55-0242ac130003', agreementName: 'eDisclosure Services', description: 'Provides eDisclosure services for all public sector customers. You can choose an end-to-end service up to and including top secret, or component parts of disclosure.', agreementId: 'RM3717', url: '', type: 'CAT'}),
-(lotLegalCostsLawyerSvcs:Lot:Outcome {uuid: 'ccb5ca8c-75b5-11ea-bc55-0242ac130003', agreementName: 'Costs Lawyer Services', description: 'A simple and compliant costs law services for central government departments, arm’s length bodies and the wider public sector across England and Wales.', agreementId: 'RM6137', url: '', type: 'CAT'}),
-(lotLegalGLAS:Lot:Outcome {uuid: 'ccb5cb54-75b5-11ea-bc55-0242ac130003', agreementName: 'General Legal Advice Services', description: 'Legal advice for central government, covering 23 most commonly required areas of law including major projects including litigation and advisory services.', agreementId: 'RM3786', url: '', type: 'CAT'}),
+(lotLegalRail:Lot:Outcome {uuid: 'ccb5c802-75b5-11ea-bc55-0242ac130003', agreementName: 'Rail Legal Services', agreementDescription: "This agreement is designed for the Department for Transport’s rail division to provide specific legal advice for rail services, in particular rail franchising. Although the agreement is designed for the DfT, other central government departments and arms-length bodies may be able to access the suppliers.", agreementId: 'RM3756', url: '', type: 'CAT', scale: false}),
+
+(lotLegalEDisclosure:Lot:Outcome {uuid: 'ccb5c9c4-75b5-11ea-bc55-0242ac130003', agreementName: 'eDisclosure Services', agreementDescription: "This framework provides eDisclosure and eDiscovery services to all public sector customers, including central government and wider public sector. It was designed with input from government customers and suppliers. You can select an end-to-end service or buy component parts of a disclosure procedure from a menu. The frameworks offers a streamlined procurement process, a range of market leading suppliers and fixed rates for standard services. You can buy through a direct award or you can run a further competition.", agreementId: 'RM3717', url: '', type: 'CAT', scale: false}),
+
+(lotLegalCostsLawyerSvcs:Lot:Outcome {uuid: 'ccb5ca8c-75b5-11ea-bc55-0242ac130003', agreementName: 'Costs Lawyer Services', agreementDescription: "The agreement covers the  routine and complex costs litigation work for the receiving party and/or paying party in England and Wales, covering the following services - consultancy and negotiation, estimates and statement of costs, advocacy and/or attending hearings, instructing counsel and costs law advice.", agreementId: 'RM6137', url: '', type: 'CAT', scale: false}),
+
+(lotLegalGLAS:Lot:Outcome {uuid: 'ccb5cb54-75b5-11ea-bc55-0242ac130003', agreementName: 'General Legal Advice Services', agreementDescription: 'Legal advice for central government, covering 23 most commonly required areas of law including major projects including litigation and advisory services.', agreementId: 'RM3786', url: '', type: 'CAT', scale: false}),
+
+(lotLegalFinanceComplex:Lot:Outcome {uuid: '698c2d62-7fc8-11ea-bc55-0242ac130003', agreementName: 'Finance & Complex Legal Services', agreementDescription: "Legal advice on complex corporate finance matters for high-value, high-profile projects. For government departments, executive agencies and arm’s length bodies.", agreementId: 'RM3787', url: '', type: 'CAT', scale: false}),
 
 // WPS Lots
-(lotLegalWPSLegalSvcsLot1:Lot:Outcome {uuid: 'ccb5cc12-75b5-11ea-bc55-0242ac130003', agreementName: 'WPS Legal Services', lotName: 'Lot 1 (Regional Service Provision)', description: 'Legal services for the wider public sector.', agreementId: 'RM3788', url: '', type: 'CAT'}),
+(lotLegalWPSLegalSvcsLot1:Lot:Outcome {uuid: 'ccb5cc12-75b5-11ea-bc55-0242ac130003', agreementName: 'Legal services for the wider public sector', lotName: 'Lot 1', agreementDescription: "This panel has been established to provide a simple and compliant route to market for a range of legal services requirements primarily to the wider public sector.", lotDescription: "Provides customers with legal services provided by regional firms, covering a range of legal specialisms.  Good for low to medium value transactions", agreementId: 'RM3788', url: '', type: 'CAT', scale: true}),
 
-(lotLegalWPSLegalSvcsLot2a:Lot:Outcome {uuid: 'ccb5cfaa-75b5-11ea-bc55-0242ac130003', agreementName: 'WPS Legal Services', lotName: 'Lot 2a (Full Service Firms - England & Wales)', description: 'Legal services for the wider public sector.', agreementId: 'RM3788', url: '', type: 'CAT'}),
-(lotLegalWPSLegalSvcsLot2b:Lot:Outcome {uuid: 'ccb5d072-75b5-11ea-bc55-0242ac130003', agreementName: 'WPS Legal Services', lotName: 'Lot 2b (Full Service Firms - Scotland)', description: 'Legal services for the wider public sector.', agreementId: 'RM3788', url: '', type: 'CAT'}),
-(lotLegalWPSLegalSvcsLot2c:Lot:Outcome {uuid: 'ccb5d130-75b5-11ea-bc55-0242ac130003', agreementName: 'WPS Legal Services', lotName: 'Lot 2c (Full Service Firms - Northern Ireland)', description: 'Legal services for the wider public sector.', agreementId: 'RM3788', url: '', type: 'CAT'}),
+(lotLegalWPSLegalSvcsLot2a:Lot:Outcome {uuid: 'ccb5cfaa-75b5-11ea-bc55-0242ac130003', agreementName: 'Legal services for the wider public sector', lotName: 'Lot 2a', agreementDescription: 'This panel has been established to provide a simple and compliant route to market for a range of legal services requirements primarily to the wider public sector.', lotDescription: "Provides customers with commercial legal services for all seventeen legal specialisms, provided by \"full service firms\", covering the jurisdiction of England and Wales.", agreementId: 'RM3788', url: '', type: 'CAT', scale: true}),
 
-(lotLegalWPSLegalSvcsLot3:Lot:Outcome {uuid: 'ccb5cce4-75b5-11ea-bc55-0242ac130003', agreementName: 'WPS Legal Services', lotName: 'Lot 3 (Property & Construction)', description: 'Legal services for the wider public sector.', agreementId: 'RM3788', url: '', type: 'CAT'}),
-(lotLegalWPSLegalSvcsLot4:Lot:Outcome {uuid: 'ccb5cdac-75b5-11ea-bc55-0242ac130003', agreementName: 'WPS Legal Services', lotName: 'Lot 4 (Transport Rail)', description: 'Legal services for the wider public sector.', agreementId: 'RM3788', url: '', type: 'CAT'}),
+(lotLegalWPSLegalSvcsLot2b:Lot:Outcome {uuid: 'ccb5d072-75b5-11ea-bc55-0242ac130003', agreementName: 'Legal services for the wider public sector', lotName: 'Lot 2b', agreementDescription: 'This panel has been established to provide a simple and compliant route to market for a range of legal services requirements primarily to the wider public sector.', lotDescription: "Full Service Firms - Scotland", agreementId: 'RM3788', url: '', type: 'CAT', scale: true}),
+
+(lotLegalWPSLegalSvcsLot2c:Lot:Outcome {uuid: 'ccb5d130-75b5-11ea-bc55-0242ac130003', agreementName: 'Legal services for the wider public sector', lotName: 'Lot 2c', agreementDescription: 'This panel has been established to provide a simple and compliant route to market for a range of legal services requirements primarily to the wider public sector.', lotDescription: "Full Service Firms - Northern Ireland", agreementId: 'RM3788', url: '', type: 'CAT', scale: true}),
+
+(lotLegalWPSLegalSvcsLot3:Lot:Outcome {uuid: 'ccb5cce4-75b5-11ea-bc55-0242ac130003', agreementName: 'Legal services for the wider public sector', lotName: 'Lot 3: Property & Construction', agreementDescription: 'This panel has been established to provide a simple and compliant route to market for a range of legal services requirements primarily to the wider public sector.', lotDescription: "Provides customers with legal services for property and construction contained within the mandatory service requirements on a national (UK) basis", agreementId: 'RM3788', url: '', type: 'CAT', scale: true}),
+
+(lotLegalWPSLegalSvcsLot4:Lot:Outcome {uuid: 'ccb5cdac-75b5-11ea-bc55-0242ac130003', agreementName: 'Legal services for the wider public sector', lotName: 'Lot 4: Transport Rail', agreementDescription: 'This panel has been established to provide a simple and compliant route to market for a range of legal services requirements primarily to the wider public sector.', lotDescription: "Provides customers with legal services for transport rail contained within the mandatory service requirements on a national (UK) basis.", agreementId: 'RM3788', url: '', type: 'CAT', scale: true}),
 
 // Legal Services specific answers
 (ansRail:Answer {uuid: 'ccb5d1ee-75b5-11ea-bc55-0242ac130003', text: 'Rail', hint: 'Rail-specific legal advice only for Department for Transport, covering rail franchising'}),
@@ -110,18 +118,13 @@ CREATE
 (ansGrpCGBudgetGT20k)-[:HAS_OUTCOME]->(lotLegalGLAS),
 
 // Sector(CG) -> Service(Finance & Complex)
-(ansGrpCGServiceFinanceComplex:AnswerGroup {name: 'ansGrpCGServiceFinanceComplex'}),
-(qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceFinanceComplex),
-(ansGrpCGServiceFinanceComplex)-[:HAS_ANSWER {order: 9}]->(ansFinanceComplex),
-(ansGrpCGServiceFinanceComplex)-[:HAS_OUTCOME]->(lotLegalEDisclosure),
-(ansGrpCGServiceFinanceComplex)-[:HAS_OUTCOME]->(lotLegalGLAS),
-
-// Sector(CG) -> Service(Multiple, Other)
-(ansGrpCGServiceMultiOther:AnswerGroup {name: 'ansGrpCGServiceMultiOther'}),
-(qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceMultiOther),
-(ansGrpCGServiceMultiOther)-[:HAS_ANSWER {order: 10}]->(ansMulti),
-(ansGrpCGServiceMultiOther)-[:HAS_ANSWER {order: 11}]->(ansAnythingElse),
-(ansGrpCGServiceMultiOther)-[:HAS_OUTCOME]->(lotLegalGLAS),
+(ansGrpCGServiceFinCompMultiOther:AnswerGroup {name: 'ansGrpCGServiceFinCompMultiOther'}),
+(qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceFinCompMultiOther),
+(ansGrpCGServiceFinCompMultiOther)-[:HAS_ANSWER {order: 9}]->(ansFinanceComplex),
+(ansGrpCGServiceFinCompMultiOther)-[:HAS_ANSWER {order: 10}]->(ansMulti),
+(ansGrpCGServiceFinCompMultiOther)-[:HAS_ANSWER {order: 11}]->(ansAnythingElse),
+(ansGrpCGServiceFinCompMultiOther)-[:HAS_OUTCOME]->(lotLegalFinanceComplex),
+(ansGrpCGServiceFinCompMultiOther)-[:HAS_OUTCOME]->(lotLegalGLAS),
 
 // Non CG Branch (WPS)
 (ansGrpSectorWPS:AnswerGroup {name: 'ansGrpSectorWPS'}),

@@ -30,7 +30,7 @@ CREATE
 
 // Agreement lots (journey endpoints)
 // TP2
-(lotTP2Lot6:Lot:Outcome {uuid: 'ccb61820-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Products 2', lotName: 'Lot 6', agreementDescription: 'Technology Products 2 (TP2) offers public sector customers a flexible and compliant way to source all their technology product needs (hardware and software).  Further competition Lots 1-5 have expired, Lot 6 catalogue is extended.', lotDescription: 'Catalogue', agreementId: 'RM3733', url: '', type: 'BAT', scale: true}),
+(lotTP2Lot6:Lot:Outcome {uuid: 'ccb61820-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Products 2', lotName: 'Lot 6', agreementDescription: 'Technology Products 2 (TP2) offers public sector customers a flexible and compliant way to source all their technology product needs (hardware and software).  Further competition Lots 1-5 have expired, Lot 6 catalogue is extended.', lotDescription: 'Designed for day to day purchases for low complexity requirements or high urgency products.', agreementId: 'RM3733', url: '', type: 'BAT', scale: true}),
 
 // EduTech
 (lotEduTechLot1:Lot:Outcome {uuid: '698c28d0-7fc8-11ea-bc55-0242ac130003', agreementName: 'Education Technology', lotName: 'Lot 1', agreementDescription: 'Educational establishments can buy ICT (Information and Communication Technologies) goods and technology services through one agreement.', lotDescription: 'This is a direct replacement of ICT Services for Education (RM1050) agreement. The agreement provides customers with the capability to obtain ICT goods and or services for their specific needs, whether it is a new build requirement or an ICT refresh.', agreementId: 'RM6103', url: '', type: 'CAT', scale: false}),

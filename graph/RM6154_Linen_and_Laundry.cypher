@@ -52,7 +52,7 @@ CREATE
 (ansSecurity:Answer {uuid: 'ccb5958a-75b5-11ea-bc55-0242ac130003', text: 'Security', hint: 'For example, guards or CCTV'}),
 (ansGroundsMaintenance:Answer {uuid: 'ccb59666-75b5-11ea-bc55-0242ac130003', text: 'Grounds maintenance', hint: 'For example, regular window cleaning or path resurfacing'}),
 (ansCatering:Answer {uuid: 'ccb59742-75b5-11ea-bc55-0242ac130003', text: 'Catering', hint: 'For example, regular pre-made food delivery or onsite cooking'}),
-(ansPestControl:Answer {uuid: 'ccb59800-75b5-11ea-bc55-0242ac130003', text: 'Pest Control', 'For example, dealing with wasps or mice'}),
+(ansPestControl:Answer {uuid: 'ccb59800-75b5-11ea-bc55-0242ac130003', text: 'Pest Control', hint: 'For example, dealing with wasps or mice'}),
 
 // Tree Structure
 (jrnyLinenLaundry)-[:FIRST_QUESTION]->(qiProdService:QuestionInstance:Outcome {uuid: 'ccb5a43a-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnProductOrService),

@@ -28,13 +28,19 @@ CREATE
 (jrnyLinenLaundry:Journey {uuid: 'b87a0636-654e-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services', searchTerms: ['cleanroom', 'linen', 'laundry services', 'linen hire']}),
 
 // Agreement lots (journey endpoints)
-(lotLinenLaundryLot1b:Lot:Outcome {uuid: 'ccb59bfc-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 1b', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Standard Wash Linen and Laundry Services", agreementId: 'RM6154', url: '', type: 'CAT', scale: true}),
+// Lots 1a & 1b (indeterminate RTM)
+(lotLinenLaundryLot1b:Lot:Outcome {uuid: 'ccb59bfc-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 1b', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 1b will be responsible for providing standard wash linen and laundry services which includes the processing (wash and finish) and transportation (collection and return) of linen items to the buyer. Providing your needs meet the criteria, Lot 1b has a direct award facility. This option can be useful if you need a short term solution while you carry out a review of your needs.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true}),
 
-(lotLinenLaundryLot1a:Lot:Outcome {uuid: 'ccb5a002-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 1a', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Linen Hire with Standard Wash Linen and Laundry Services", agreementId: 'RM6154', url: '', type: 'CAT', scale: true}),
+(lotLinenLaundryLot1a:Lot:Outcome {uuid: 'ccb5a002-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 1a', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 1a will be responsible for providing standard wash linen and laundry services which includes the processing (wash and finish) and transportation (collection and return) of linen items to the buyer, including the hire of linen items. Providing your needs meet the criteria, Lot 1a has a direct award facility. This option can be useful if you need a short term solution while you carry out a review of your needs.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true}),
 
-(lotLinenLaundryLot2:Lot:Outcome {uuid: 'ccb5a2b4-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 2', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Specialist Laundry Services (Theatre Packs)", agreementId: 'RM6154', url: '', type: 'CAT', scale: true}),
+// Lots 1a & 1b (FC)
+(lotLinenLaundryLot1bFC:Lot:Outcome {uuid: '698c30b4-7fc8-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 1b', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 1b will be responsible for providing standard wash linen and laundry services which includes the processing (wash and finish) and transportation (collection and return) of linen items to the buyer. Providing your needs meet the criteria, Lot 1b has a direct award facility. This option can be useful if you need a short term solution while you carry out a review of your needs.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true, routeToMarket: "FC"}),
 
-(lotLinenLaundryLot3:Lot:Outcome {uuid: 'ccb5a37c-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 3', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Specialist Cleanroom Laundry Services", agreementId: 'RM6154', url: '', type: 'CAT', scale: true}),
+(lotLinenLaundryLot1aFC:Lot:Outcome {uuid: '698c317c-7fc8-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 1a', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 1a will be responsible for providing standard wash linen and laundry services which includes the processing (wash and finish) and transportation (collection and return) of linen items to the buyer, including the hire of linen items. Providing your needs meet the criteria, Lot 1a has a direct award facility. This option can be useful if you need a short term solution while you carry out a review of your needs.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true, routeToMarket: "FC"}),
+
+(lotLinenLaundryLot2:Lot:Outcome {uuid: 'ccb5a2b4-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 2', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 2 will be responsible for providing specialist laundry services (theater packs and drapes, CE marked) to the standard asset out in the framework specification or the customer's specification at call off. This includes the processing (wash and finish) and transportation (collection and return) of items, which are hired to the buyer from the supplier.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true, routeToMarket: "FC"}),
+
+(lotLinenLaundryLot3:Lot:Outcome {uuid: 'ccb5a37c-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 3', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 3 will be responsible for the provision of Specialist Cleanroom Laundry Services including the processing (wash and finish) and transportation (collection and return) of cleanroom garments at the ISO classification specified by the buyer at further competition.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true, routeToMarket: "FC"}),
 
 
 // Linen & Laundry specific answers
@@ -232,7 +238,7 @@ CREATE
 (ansGrpBPLinenHireStandardWashAddSrvNo:AnswerGroup {name: 'ansGrpBPLinenHireStandardWashAddSrvNo'}),
 (qiAdditionalServicesBPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPLinenHireStandardWashAddSrvNo),
 (ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1a),
+(ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1aFC),
 
 // Add srv - Yes
 (ansGrpBPLinenHireStandardWashAddSrvYes:AnswerGroup {name: 'ansGrpBPLinenHireStandardWashAddSrvYes'}),
@@ -254,7 +260,7 @@ CREATE
 (ansGrpBPServiceStdWashAddSrvNo:AnswerGroup {name: 'ansGrpBPServiceStdWashAddSrvNo'}),
 (qiAdditionalServicesBPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPServiceStdWashAddSrvNo),
 (ansGrpBPServiceStdWashAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpBPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1b),
+(ansGrpBPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1bFC),
 
 // Add srv - Yes
 (ansGrpBPServiceStdWashAddSrvYes:AnswerGroup {name: 'ansGrpBPServiceStdWashAddSrvYes'}),

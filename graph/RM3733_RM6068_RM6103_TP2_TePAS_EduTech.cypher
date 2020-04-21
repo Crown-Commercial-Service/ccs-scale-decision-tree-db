@@ -19,7 +19,6 @@ MATCH
 (ansSectorBlueLight:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003'}),
 (ansSectorHousing:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003'}),
 (ansSectorCharities:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003'}),
-(ansSectorWPS:Answer {uuid: 'b879ab14-654e-11ea-bc55-0242ac130003'}),
 
 // Generic endpoints
 (resultGMEndRouteToFM:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003'})
@@ -118,7 +117,6 @@ CREATE
 (ansGrpProductSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpProductSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpProductSectorNonEdu)-[:HAS_ANSWER {order: 10}]->(ansSectorWPS),
 (ansGrpProductSectorNonEdu)-[:HAS_OUTCOME]->(lotTP2Lot6),
 
 // Product / Service? (Service)
@@ -150,7 +148,6 @@ CREATE
 (ansGrpServiceBroadbandFibreSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpServiceBroadbandFibreSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpServiceBroadbandFibreSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpServiceBroadbandFibreSectorNonEdu)-[:HAS_ANSWER {order: 10}]->(ansSectorWPS),
 (ansGrpServiceBroadbandFibreSectorNonEdu)-[:HAS_OUTCOME]->(lotNetworkServices2),
 
 // Product / Service? (Service) -> Service? (Broadband Service)
@@ -176,7 +173,6 @@ CREATE
 (ansGrpServiceBroadbandServiceSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpServiceBroadbandServiceSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpServiceBroadbandServiceSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpServiceBroadbandServiceSectorNonEdu)-[:HAS_ANSWER {order: 10}]->(ansSectorWPS),
 (ansGrpServiceBroadbandServiceSectorNonEdu)-[:HAS_OUTCOME]->(lotNetworkServices2),
 
 // Product / Service? (Service) -> Service? (Other) -> Tech Services 2
@@ -245,7 +241,6 @@ CREATE
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_ANSWER {order: 10}]->(ansSectorWPS),
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_OUTCOME]->(lotTePASLot2),
 
 // Product / Service(Product & Service) -> Service? (H/Sftware/ICT Solutions) -> Sector?
@@ -271,7 +266,6 @@ CREATE
 (ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_ANSWER {order: 10}]->(ansSectorWPS),
 (ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_OUTCOME]->(lotTePASLot1),
 
 // Product / Service(Product & Service) -> Service? (AV) -> Sector?
@@ -297,5 +291,4 @@ CREATE
 (ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_ANSWER {order: 10}]->(ansSectorWPS),
 (ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_OUTCOME]->(lotTePASLot2);

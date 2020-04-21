@@ -15,7 +15,6 @@ MATCH
 (ansSectorBlueLight:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003'}),
 (ansSectorHousing:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003'}),
 (ansSectorCharities:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003'}),
-(ansSectorWPS:Answer {uuid: 'b879ab14-654e-11ea-bc55-0242ac130003'}),
 
 // Locations
 (ansLocEnglandWales:Answer {uuid: 'ccb5c046-75b5-11ea-bc55-0242ac130003'}),
@@ -137,7 +136,6 @@ CREATE
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpSectorWPS)-[:HAS_ANSWER {order: 10}]->(ansSectorWPS),
 (ansGrpSectorWPS)-[:HAS_OUTCOME]->(qiWPSService:QuestionInstance:Outcome {uuid: 'ccb61140-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 
 // Sector(WPS) -> Service(Property & Construction)

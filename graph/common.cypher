@@ -42,7 +42,6 @@ CREATE
 (:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003', text: 'Blue Light', hint: 'Emergency services'}),
 (:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003', text: 'Housing', hint: 'National and regional housing works'}),
 (:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003', text: 'Charities', hint: 'Charities and charitible foundations'}),
-(:Answer {uuid: 'b879ab14-654e-11ea-bc55-0242ac130003', text: 'Wider Public Sector', hint: 'Buyers from the wider public sector have a choice of who they may purchase through. The Crown Commercial Service may be just one of these options'}),
 
 // locations
 (:Answer {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'Nationwide'}),

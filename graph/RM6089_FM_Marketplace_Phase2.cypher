@@ -15,7 +15,6 @@ MATCH
 (ansOrgBlueLight:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003'}),
 (ansOrgHousing:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003'}),
 (ansOrgCharities:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003'}),
-(ansOrgWPS:Answer {uuid: 'b879ab14-654e-11ea-bc55-0242ac130003'}),
 
 (ansLocNational:Answer {uuid: 'b879c784-654e-11ea-bc55-0242ac130003'}),
 (ansLocRegional:Answer {uuid: 'b879c856-654e-11ea-bc55-0242ac130003'}),
@@ -62,7 +61,6 @@ CREATE
 (ansGrpOrgNonMod)-[:HAS_ANSWER {order: 7}]->(ansOrgBlueLight),
 (ansGrpOrgNonMod)-[:HAS_ANSWER {order: 8}]->(ansOrgHousing),
 (ansGrpOrgNonMod)-[:HAS_ANSWER {order: 9}]->(ansOrgCharities),
-(ansGrpOrgNonMod)-[:HAS_ANSWER {order: 10}]->(ansOrgWPS),
 (ansGrpOrgNonMod)-[:HAS_OUTCOME]->(qiServicesNonMOD:QuestionInstance:Outcome {uuid: 'b879d9cc-654e-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 
 // MOD branch - Select service(s) (Dynamic look up)

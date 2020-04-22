@@ -1,13 +1,9 @@
 #!/bin/bash
-set -m
+set -meo pipefail
 
 function load_gm_data() {
   echo "Loading Guided Match decision tree data from file: ${1}"
-  until cypher-shell -u neo4j -p sbx_graph -a bolt://localhost:7687 --debug -f ./graph/$1
-  do
-    echo "Waiting for load of ${1} to complete..."
-    sleep 5
-  done
+  cypher-shell -u neo4j -p sbx_graph -a bolt://localhost:7687 --debug -f ./graph/$1
 }
 
 # Start the primary process in the background

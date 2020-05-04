@@ -1,10 +1,10 @@
 MATCH
 // Required QuestionDefinition nodes:
-(qstnProductOrService:QuestionDefinition {uuid: 'b879c040-654e-11ea-bc55-0242ac130003'}),
-(qstnBudget:QuestionDefinition {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003'}),
-(qstnContractLength:QuestionDefinition {uuid: 'b879c25c-654e-11ea-bc55-0242ac130003'}),
-(qstnService:QuestionDefinition {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003'}),
-(qstnAdditionalServices:QuestionDefinition {uuid: 'b879c342-654e-11ea-bc55-0242ac130003'}),
+(qstnProductOrService:Question {uuid: 'b879c040-654e-11ea-bc55-0242ac130003'}),
+(qstnBudget:Question {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003'}),
+(qstnContractLength:Question {uuid: 'b879c25c-654e-11ea-bc55-0242ac130003'}),
+(qstnService:Question {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003'}),
+(qstnAdditionalServices:Question {uuid: 'b879c342-654e-11ea-bc55-0242ac130003'}),
 
 // Required answer nodes:
 (ansYes:Answer {uuid: 'ccb598c8-75b5-11ea-bc55-0242ac130003'}),
@@ -18,31 +18,11 @@ MATCH
 (ansBudgetGTMillion:Answer {uuid: 'b87a08a2-654e-11ea-bc55-0242ac130003'}),
 
 (ansContractLengthLT12Months:Answer {uuid: 'b87a09a6-654e-11ea-bc55-0242ac130003'}),
-(ansContractLengthGT12Months:Answer {uuid: 'b87a0adc-654e-11ea-bc55-0242ac130003'}),
-
-// Generic endpoints
-(resultGMEndRouteToFM:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003'})
+(ansContractLengthGT12Months:Answer {uuid: 'b87a0adc-654e-11ea-bc55-0242ac130003'})
 
 CREATE
 // Journey
-(jrnyLinenLaundry:Journey {uuid: 'b87a0636-654e-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services', searchTerms: ['cleanroom', 'linen', 'laundry services', 'linen hire']}),
-
-// Agreement lots (journey endpoints)
-// Lots 1a & 1b (indeterminate RTM)
-(lotLinenLaundryLot1a:Lot:Outcome {uuid: 'ccb5a002-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 1a: Linen Hire with Standard Wash Linen and Laundry Services', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 1a will be responsible for providing standard wash linen and laundry services which includes the processing (wash and finish) and transportation (collection and return) of linen items to the buyer, including the hire of linen items. Providing your needs meet the criteria, Lot 1a has a direct award facility. This option can be useful if you need a short term solution while you carry out a review of your needs.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true}),
-
-(lotLinenLaundryLot1b:Lot:Outcome {uuid: 'ccb59bfc-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 1b: Standard Wash Linen and Laundry Services', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 1b will be responsible for providing standard wash linen and laundry services which includes the processing (wash and finish) and transportation (collection and return) of linen items to the buyer. Providing your needs meet the criteria, Lot 1b has a direct award facility. This option can be useful if you need a short term solution while you carry out a review of your needs.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true}),
-
-// Lots 1a & 1b (FC)
-(lotLinenLaundryLot1aFC:Lot:Outcome {uuid: '698c317c-7fc8-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 1a: Linen Hire with Standard Wash Linen and Laundry Services', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 1a will be responsible for providing standard wash linen and laundry services which includes the processing (wash and finish) and transportation (collection and return) of linen items to the buyer, including the hire of linen items. Providing your needs meet the criteria, Lot 1a has a direct award facility. This option can be useful if you need a short term solution while you carry out a review of your needs.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true, routeToMarket: "FC"}),
-
-(lotLinenLaundryLot1bFC:Lot:Outcome {uuid: '698c30b4-7fc8-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 1b: Standard Wash Linen and Laundry Services', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 1b will be responsible for providing standard wash linen and laundry services which includes the processing (wash and finish) and transportation (collection and return) of linen items to the buyer. Providing your needs meet the criteria, Lot 1b has a direct award facility. This option can be useful if you need a short term solution while you carry out a review of your needs.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true, routeToMarket: "FC"}),
-
-// Lots 2 & 3
-(lotLinenLaundryLot2:Lot:Outcome {uuid: 'ccb5a2b4-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 2: Specialist Laundry Services (Theatre Packs)', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 2 will be responsible for providing specialist laundry services (theater packs and drapes, CE marked) to the standard asset out in the framework specification or the customer's specification at call off. This includes the processing (wash and finish) and transportation (collection and return) of items, which are hired to the buyer from the supplier.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true, routeToMarket: "FC"}),
-
-(lotLinenLaundryLot3:Lot:Outcome {uuid: 'ccb5a37c-75b5-11ea-bc55-0242ac130003', agreementName: 'Linen and Laundry Services', lotName: 'Lot 3: Specialist Cleanroom Laundry Services', agreementDescription: 'Standard collection, wash, finish and return of buyer owned and hired laundry from the supplier, specialist laundry and cleanroom services.', lotDescription: "Suppliers appointed to Lot 3 will be responsible for the provision of Specialist Cleanroom Laundry Services including the processing (wash and finish) and transportation (collection and return) of cleanroom garments at the ISO classification specified by the buyer at further competition.", agreementId: 'RM6154', url: '', type: 'CAT', scale: true, routeToMarket: "FC"}),
-
+(jrnyLinenLaundry:Journey {uuid: 'b87a0636-654e-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services'}),
 
 // Linen & Laundry specific answers
 (ansStandardWash:Answer {uuid: 'b87a0bcc-654e-11ea-bc55-0242ac130003', text: 'Standard wash', hint: 'Laundry service including washing, finishing, collection and return of Buyer’s own linen items.'}),
@@ -62,7 +42,7 @@ CREATE
 (ansGrpProduct:AnswerGroup {name: 'ansGrpProduct'}),
 (qiProdService)-[:HAS_ANSWER_GROUP]->(ansGrpProduct),
 (ansGrpProduct)-[:HAS_ANSWER {order: 1}]->(ansProduct),
-(ansGrpProduct)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+(ansGrpProduct)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
 
 // Service
 (ansGrpService:AnswerGroup {name: 'ansGrpService'}),
@@ -105,7 +85,7 @@ CREATE
 (ansGrpSPCleanroomServicesAddSrvNo:AnswerGroup {name: 'ansGrpSPCleanroomServicesAddSrvNo'}),
 (qiAdditionalServicesSPClnRmSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpSPCleanroomServicesAddSrvNo),
 (ansGrpSPCleanroomServicesAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpSPCleanroomServicesAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot3),
+(ansGrpSPCleanroomServicesAddSrvNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', routeToMarket: "FC", scale: true}),
 
 // Add srv - Yes
 (ansGrpSPCleanroomServicesAddSrvYes:AnswerGroup {name: 'ansGrpSPCleanroomServicesAddSrvYes'}),
@@ -115,7 +95,7 @@ CREATE
 (ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
 (ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
 (ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
-(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
 
 // SP - Theatre packs and gowns
 (ansGrpSPTheatrePacksGowns:AnswerGroup {name: 'ansGrpSPTheatrePacksGowns'}),
@@ -127,7 +107,7 @@ CREATE
 (ansGrpSPTheatrePacksGownsAddSrvNo:AnswerGroup {name: 'ansGrpSPTheatrePacksGownsAddSrvNo'}),
 (qiAdditionalServicesSPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpSPTheatrePacksGownsAddSrvNo),
 (ansGrpSPTheatrePacksGownsAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpSPTheatrePacksGownsAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot2),
+(ansGrpSPTheatrePacksGownsAddSrvNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', routeToMarket: "FC", scale: true}),
 
 // Add srv - Yes
 (ansGrpSPTheatrePacksGownsAddSrvYes:AnswerGroup {name: 'ansGrpSPTheatrePacksGownsAddSrvYes'}),
@@ -137,7 +117,7 @@ CREATE
 (ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
 (ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
 (ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
-(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
 
 // SP - Linen hire + standard Wash
 (ansGrpSPLinenHireStandardWash:AnswerGroup {name: 'ansGrpSPLinenHireStandardWash'}),
@@ -149,7 +129,7 @@ CREATE
 (ansGrpSPLinenHireStandardWashAddSrvNo:AnswerGroup {name: 'ansGrpSPLinenHireStandardWashAddSrvNo'}),
 (qiAdditionalServicesSPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPLinenHireStandardWashAddSrvNo),
 (ansGrpSPLinenHireStandardWashAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpSPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1a),
+(ansGrpSPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
 
 // Add srv - Yes
 (ansGrpSPLinenHireStandardWashAddSrvYes:AnswerGroup {name: 'ansGrpSPLinenHireStandardWashAddSrvYes'}),
@@ -159,7 +139,7 @@ CREATE
 (ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
 (ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
 (ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
-(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
 
 // SP - Standard Wash
 (ansGrpSPServiceStdWash:AnswerGroup {name: 'ansGrpSPServiceStdWash'}),
@@ -171,7 +151,7 @@ CREATE
 (ansGrpSPServiceStdWashAddSrvNo:AnswerGroup {name: 'ansGrpSPServiceStdWashAddSrvNo'}),
 (qiAdditionalServicesSPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPServiceStdWashAddSrvNo),
 (ansGrpSPServiceStdWashAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpSPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1b),
+(ansGrpSPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
 
 // Add srv - Yes
 (ansGrpSPServiceStdWashAddSrvYes:AnswerGroup {name: 'ansGrpSPServiceStdWashAddSrvYes'}),
@@ -181,7 +161,7 @@ CREATE
 (ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
 (ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
 (ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
-(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
 
 // BP (> 12 months)
 // Service - Big Projects Branch
@@ -195,7 +175,7 @@ CREATE
 (ansGrpBPCleanroomServicesAddSrvNo:AnswerGroup {name: 'ansGrpBPCleanroomServicesAddSrvNo'}),
 (qiAdditionalServicesBPClnRmSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpBPCleanroomServicesAddSrvNo),
 (ansGrpBPCleanroomServicesAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpBPCleanroomServicesAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot3),
+(ansGrpBPCleanroomServicesAddSrvNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', routeToMarket: "FC", scale: true}),
 
 // Add srv - Yes
 (ansGrpBPCleanroomServicesAddSrvYes:AnswerGroup {name: 'ansGrpBPCleanroomServicesAddSrvYes'}),
@@ -205,7 +185,7 @@ CREATE
 (ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
 (ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
 (ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
-(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
 
 // BP - Theatre packs and gowns
 (ansGrpBPTheatrePacksGowns:AnswerGroup {name: 'ansGrpBPTheatrePacksGowns'}),
@@ -217,7 +197,7 @@ CREATE
 (ansGrpBPTheatrePacksGownsAddSrvNo:AnswerGroup {name: 'ansGrpBPTheatrePacksGownsAddSrvNo'}),
 (qiAdditionalServicesBPTPGowns)-[:HAS_ANSWER_GROUP]->(ansGrpBPTheatrePacksGownsAddSrvNo),
 (ansGrpBPTheatrePacksGownsAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpBPTheatrePacksGownsAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot2),
+(ansGrpBPTheatrePacksGownsAddSrvNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', routeToMarket: "FC", scale: true}),
 
 // Add srv - Yes
 (ansGrpBPTheatrePacksGownsAddSrvYes:AnswerGroup {name: 'ansGrpBPTheatrePacksGownsAddSrvYes'}),
@@ -227,7 +207,7 @@ CREATE
 (ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
 (ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
 (ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
-(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
 
 // BP - Linen hire + standard Wash
 (ansGrpBPLinenHireStandardWash:AnswerGroup {name: 'ansGrpBPLinenHireStandardWash'}),
@@ -239,7 +219,7 @@ CREATE
 (ansGrpBPLinenHireStandardWashAddSrvNo:AnswerGroup {name: 'ansGrpBPLinenHireStandardWashAddSrvNo'}),
 (qiAdditionalServicesBPLHStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPLinenHireStandardWashAddSrvNo),
 (ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1aFC),
+(ansGrpBPLinenHireStandardWashAddSrvNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', routeToMarket: "FC", scale: true}),
 
 // Add srv - Yes
 (ansGrpBPLinenHireStandardWashAddSrvYes:AnswerGroup {name: 'ansGrpBPLinenHireStandardWashAddSrvYes'}),
@@ -249,7 +229,7 @@ CREATE
 (ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
 (ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
 (ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
-(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
 
 // BP - Standard Wash
 (ansGrpBPServiceStdWash:AnswerGroup {name: 'ansGrpBPServiceStdWash'}),
@@ -261,7 +241,7 @@ CREATE
 (ansGrpBPServiceStdWashAddSrvNo:AnswerGroup {name: 'ansGrpBPServiceStdWashAddSrvNo'}),
 (qiAdditionalServicesBPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpBPServiceStdWashAddSrvNo),
 (ansGrpBPServiceStdWashAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpBPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(lotLinenLaundryLot1bFC),
+(ansGrpBPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '1b', url: '', type: 'CAT', routeToMarket: "FC", scale: true}),
 
 // Add srv - Yes
 (ansGrpBPServiceStdWashAddSrvYes:AnswerGroup {name: 'ansGrpBPServiceStdWashAddSrvYes'}),
@@ -271,4 +251,4 @@ CREATE
 (ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansCatering),
 (ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 5}]->(ansPestControl),
 (ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 6}]->(ansOther),
-(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(resultGMEndRouteToFM);
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'});

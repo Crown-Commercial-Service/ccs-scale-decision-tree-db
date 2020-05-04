@@ -3,23 +3,23 @@
 
 // Label Unique Constraints (implicitly also creates indexes)
 CREATE CONSTRAINT unique_answer_uuid ON (a:Answer) ASSERT a.uuid IS UNIQUE;
-CREATE CONSTRAINT unique_question_uuid ON (qd:QuestionDefinition) ASSERT qd.uuid IS UNIQUE;
+CREATE CONSTRAINT unique_question_uuid ON (qd:Question) ASSERT qd.uuid IS UNIQUE;
 CREATE CONSTRAINT unique_question_instance_uuid ON (qi:QuestionInstance) ASSERT qi.uuid IS UNIQUE;
 CREATE CONSTRAINT unique_journey_uuid ON (j:Journey) ASSERT j.uuid IS UNIQUE;
 CREATE CONSTRAINT unique_journey_result_uuid ON (lot:Lot) ASSERT lot.uuid IS UNIQUE;
 
 CREATE
-// Question definitions
-(:QuestionDefinition {uuid: 'b879c040-654e-11ea-bc55-0242ac130003', text: 'Are you looking for a product or a service?', type: 'BOOLEAN'}),
-(:QuestionDefinition {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003', text: 'How much is your budget?', type: 'BOOLEAN', hint: "An estimate is fine"}),
-(:QuestionDefinition {uuid: 'b879c25c-654e-11ea-bc55-0242ac130003', text: 'How long will the contract be for?', type: 'BOOLEAN', hint: "An estimate is fine. The contract might also be known as a 'Statement of Work.'"}),
-(:QuestionDefinition {uuid: 'b879c342-654e-11ea-bc55-0242ac130003', text: 'Do you need additional services?', type: 'LIST'}),
-(:QuestionDefinition {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003', text: 'What sector are you buying for?', type: 'LIST'}),
-(:QuestionDefinition {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003', text: 'Choose which service you need:', type: 'LIST'}),
-(:QuestionDefinition {uuid: 'b87a0014-654e-11ea-bc55-0242ac130003', text: 'Choose which services you need:', type: 'MULTI_SELECT_LIST'}),
-(:QuestionDefinition {uuid: 'b879c662-654e-11ea-bc55-0242ac130003', text: 'Do you require nationwide or regional services?', hint: 'Nationwide suppliers are able to work across the country. Regional suppliers work in their own area.', type: 'BOOLEAN'}),
-(:QuestionDefinition {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'What kind of security do you need?', type: 'LIST'}),
-(:QuestionDefinition {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003', text: 'Select the location you need this service', type: 'LIST'}),
+// Questions
+(:Question {uuid: 'b879c040-654e-11ea-bc55-0242ac130003', text: 'Are you looking for a product or a service?', type: 'BOOLEAN'}),
+(:Question {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003', text: 'How much is your budget?', type: 'BOOLEAN', hint: "An estimate is fine"}),
+(:Question {uuid: 'b879c25c-654e-11ea-bc55-0242ac130003', text: 'How long will the contract be for?', type: 'BOOLEAN', hint: "An estimate is fine. The contract might also be known as a 'Statement of Work.'"}),
+(:Question {uuid: 'b879c342-654e-11ea-bc55-0242ac130003', text: 'Do you need additional services?', type: 'LIST'}),
+(:Question {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003', text: 'What sector are you buying for?', type: 'LIST'}),
+(:Question {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003', text: 'Choose which service you need:', type: 'LIST'}),
+(:Question {uuid: 'b87a0014-654e-11ea-bc55-0242ac130003', text: 'Choose which services you need:', type: 'MULTI_SELECT_LIST'}),
+(:Question {uuid: 'b879c662-654e-11ea-bc55-0242ac130003', text: 'Do you require nationwide or regional services?', hint: 'Nationwide suppliers are able to work across the country. Regional suppliers work in their own area.', type: 'BOOLEAN'}),
+(:Question {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'What kind of security do you need?', type: 'LIST'}),
+(:Question {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003', text: 'Select the location you need this service', type: 'LIST'}),
 
 // Answer definitions
 // Yes, No, Other etc
@@ -64,8 +64,4 @@ CREATE
 
 // Contract length
 (:Answer {uuid: 'b87a09a6-654e-11ea-bc55-0242ac130003', text: 'Up to 1 year'}),
-(:Answer {uuid: 'b87a0adc-654e-11ea-bc55-0242ac130003', text: '1 year or more'}),
-
-// Common endpoints
-(:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003', agreementName: 'Facilities Management Marketplace', agreementDescription: 'UK-wide facilities management (FM) services organised regionally and available to all public sector entities. Includes maintenance, cleaning, security, helpdesk etc.', agreementId: 'RM3830', url: '', type: 'OTHER', scale: false}),
-(:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', agreementName: 'CCS Support', agreementDescription: 'Placeholder for CCS support', type: 'SUPPORT', scale: false});
+(:Answer {uuid: 'b87a0adc-654e-11ea-bc55-0242ac130003', text: '1 year or more'});

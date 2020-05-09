@@ -7,7 +7,7 @@ MATCH
 (qstnAdditionalServices:QuestionDefinition {uuid: 'b879c342-654e-11ea-bc55-0242ac130003'}),
 
 // Required answer nodes:
-(ansYes:Answer {uuid: 'ccb598c8-75b5-11ea-bc55-0242ac130003'}),
+(ansConditionalBudgetYes:Answer {uuid: 'f2af32c0-8a66-477a-8b02-0f9dbca92288'}),
 (ansNo:Answer {uuid: 'ccb59b2a-75b5-11ea-bc55-0242ac130003'}),
 (ansOther:Answer {uuid: 'ccb5bf88-75b5-11ea-bc55-0242ac130003'}),
 
@@ -70,12 +70,11 @@ CREATE
 (ansGrpService)-[:HAS_ANSWER {order: 2}]->(ansService),
 (ansGrpService)-[:HAS_OUTCOME]->(qiBudget:QuestionInstance:Outcome {uuid: 'ccb5a4f8-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnBudget),
 
-// Service - Small Projects Branch
-// Budget < £1m
-(ansGrpBudgetLTMillion:AnswerGroup {name: 'ansGrpBudgetLTMillion'}),
-(qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetLTMillion),
-(ansGrpBudgetLTMillion)-[:HAS_ANSWER {order: 1}]->(ansBudgetLTMillion),
-(ansGrpBudgetLTMillion)-[:HAS_OUTCOME]->(qiContractLengthSP:QuestionInstance:Outcome {uuid: 'ccb5a6ec-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnContractLength),
+// Budget Unkown (SP branch, < £1m)
+(ansGrpBudgetUnknown:AnswerGroup {name: 'ansGrpBudgetUnknown'}),
+(qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetUnknown),
+(ansGrpBudgetUnknown)-[:HAS_ANSWER {order: 2}]->(ansNo),
+(ansGrpBudgetUnknown)-[:HAS_OUTCOME]->(qiContractLengthSP:QuestionInstance:Outcome {uuid: 'ccb5a6ec-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnContractLength),
 
 // Contract Length
 (ansGrpContractLengthLT12Months:AnswerGroup {name: 'ansGrpContractLengthLT12Months'}),
@@ -88,11 +87,13 @@ CREATE
 (ansGrpContractLengthGT12Months)-[:HAS_ANSWER {order: 2}]->(ansContractLengthGT12Months),
 (ansGrpContractLengthGT12Months)-[:HAS_OUTCOME]->(qiServiceBP:QuestionInstance:Outcome {uuid: 'ccb5a930-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 
-// Budget > £1m
-(ansGrpBudgetGTMillion:AnswerGroup {name: 'ansGrpBudgetGTMillion'}),
-(qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetGTMillion),
-(ansGrpBudgetGTMillion)-[:HAS_ANSWER {order: 2}]->(ansBudgetGTMillion),
-(ansGrpBudgetGTMillion)-[:HAS_OUTCOME]->(qiServiceBP),
+// Budget Known (routing based on bounds)
+// TODO: Remove artificial upper & lower bounds
+(ansGrpBudgetKnown:AnswerGroup {name: 'ansGrpBudgetKnown'}),
+(qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetKnown),
+(ansGrpBudgetKnown)-[:HAS_ANSWER {order: 1}]->(ansConditionalBudgetYes),
+(ansGrpBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 1000000}]->(qiContractLengthSP),
+(ansGrpBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 1000000, upperBoundExclusive: 9223372036854775807}]->(qiServiceBP),
 
 // SP (< 12 months)
 // SP - Cleanroom services

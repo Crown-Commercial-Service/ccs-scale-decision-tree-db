@@ -1,8 +1,8 @@
 MATCH
 // Required QuestionDefinition nodes:
-(qstnProductOrService:QuestionDefinition {uuid: 'b879c040-654e-11ea-bc55-0242ac130003'}),
-(qstnService:QuestionDefinition {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003'}),
-(qstnSector:QuestionDefinition {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003'}),
+(qstnProductOrService:Question {uuid: 'b879c040-654e-11ea-bc55-0242ac130003'}),
+(qstnService:Question {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003'}),
+(qstnSector:Question {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003'}),
 
 // Required answer nodes:
 (ansProduct:Answer {uuid: 'b879fcf4-654e-11ea-bc55-0242ac130003'}),
@@ -18,50 +18,11 @@ MATCH
 (ansSectorHealth:Answer {uuid: 'b879a48e-654e-11ea-bc55-0242ac130003'}),
 (ansSectorBlueLight:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003'}),
 (ansSectorHousing:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003'}),
-(ansSectorCharities:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003'}),
-
-// Generic endpoints
-(resultGMEndRouteToFM:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003'})
+(ansSectorCharities:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003'})
 
 CREATE
 // Journey
-(jrnyTechEduTach:Journey {uuid: 'ccb6174e-75b5-11ea-bc55-0242ac130003', name: 'Tech / EduTech', searchTerms: ['laptop', 'laptops', 'hardware', 'audio', 'visual', 'av', 'video', 'broadband', 'software']}),
-
-// Agreement lots (journey endpoints)
-// TP2
-(lotTP2Lot6:Lot:Outcome {uuid: 'ccb61820-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Products 2', lotName: 'Lot 6: Catalogue', agreementDescription: 'Technology Products 2 (TP2) offers public sector customers a flexible and compliant way to source all their technology product needs (hardware and software).  Further competition Lots 1-5 have expired, Lot 6 catalogue is extended.', lotDescription: 'Designed for day to day purchases for low complexity requirements or high urgency products.', agreementId: 'RM3733', url: '', type: 'BAT', scale: true}),
-
-// EduTech
-(lotEduTechLot1:Lot:Outcome {uuid: '698c28d0-7fc8-11ea-bc55-0242ac130003', agreementName: 'Education Technology', lotName: 'Lot 1: ICT Solutions', agreementDescription: 'Educational establishments can buy ICT (Information and Communication Technologies) goods and technology services through one agreement.', lotDescription: 'This is a direct replacement of ICT Services for Education (RM1050) agreement. The agreement provides customers with the capability to obtain ICT goods and or services for their specific needs, whether it is a new build requirement or an ICT refresh.', agreementId: 'RM6103', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
-
-(lotEduTechLot2:Lot:Outcome {uuid: '698c2ca4-7fc8-11ea-bc55-0242ac130003', agreementName: 'Education Technology', lotName: 'Lot 2: Broadband Fibre Infrastructure', agreementDescription: 'Educational establishments can buy ICT (Information and Communication Technologies) goods and technology services through one agreement.', lotDescription: "The provision of a design and installation of broadband fibre infrastructure. Suppliers under this lot are capable of supplying overall design, provision of fibre to the premises, testing of fibre and 'last mile' installation.", agreementId: 'RM6103', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
-
-(lotEduTechLot3:Lot:Outcome {uuid: 'ccb618e8-75b5-11ea-bc55-0242ac130003', agreementName: 'Education Technology', lotName: 'Lot 3: Broadband Services', agreementDescription: 'Educational establishments can buy ICT (Information and Communication Technologies) goods and technology services through one agreement.',  lotDescription: "The provision of connectivity services. Suppliers under this lot are capable of supplying full fibre broadband services (new services/upgrade of existing), support and maintenance, internet filtering, firewall, eSafety and IP connectivity.", agreementId: 'RM6103', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
-
-// EduTech - Lots 4 & 5 BaT DA (Products)
-(lotEduTechLot4BaTDA:Lot:Outcome {uuid: 'ccb61a32-75b5-11ea-bc55-0242ac130003', agreementName: 'Education Technology', lotName: 'Lot 4: Hardware', agreementDescription: 'Educational establishments can buy ICT (Information and Communication Technologies) goods and technology services through one agreement.', lotDescription: "The provision of ICT hardware, software and some networking equipment. Suppliers can supply hardware (laptops, desktops), networking: (switches, cabling, routers), peripherals (printers, mice, charging trolleys) and software (part of a package).", agreementId: 'RM6103', url: '', type: 'BAT', scale: true, routeToMarket: "DA"}),
-
-(lotEduTechLot5BaTDA:Lot:Outcome {uuid: 'ccb61b7c-75b5-11ea-bc55-0242ac130003', agreementName: 'Education Technology', lotName: 'Lot 5: Audio Visual', agreementDescription: 'Educational establishments can buy ICT (Information and Communication Technologies) goods and technology services through one agreement.', lotDescription: "The provision and installation of sound and/or visual equipment. Suppliers under this lot are capable of supplying interactive solutions (whiteboards, tables), digital signage, televisions, AV software, auditorium solutions, training.", agreementId: 'RM6103', url: '', type: 'BAT', scale: true, routeToMarket: "DA"}),
-
-// EduTech - Lots 4 & 5 CaT FC (Products & Services or Services only)
-(lotEduTechLot4CaTFC:Lot:Outcome {uuid: '698c2e20-7fc8-11ea-bc55-0242ac130003', agreementName: 'Education Technology', lotName: 'Lot 4: Hardware', agreementDescription: 'Educational establishments can buy ICT (Information and Communication Technologies) goods and technology services through one agreement.', lotDescription: "The provision of ICT hardware, software and some networking equipment. Suppliers can supply hardware (laptops, desktops), networking: (switches, cabling, routers), peripherals (printers, mice, charging trolleys) and software (part of a package).", agreementId: 'RM6103', url: '', type: 'CAT', scale: true, routeToMarket: "FC"}),
-
-(lotEduTechLot5CaTFC:Lot:Outcome {uuid: '698c2ede-7fc8-11ea-bc55-0242ac130003', agreementName: 'Education Technology', lotName: 'Lot 5: Audio Visual', agreementDescription: 'Educational establishments can buy ICT (Information and Communication Technologies) goods and technology services through one agreement.', lotDescription: "The provision and installation of sound and/or visual equipment. Suppliers under this lot are capable of supplying interactive solutions (whiteboards, tables), digital signage, televisions, AV software, auditorium solutions, training.", agreementId: 'RM6103', url: '', type: 'CAT', scale: true, routeToMarket: "FC"}),
-
-// TS2 (Tech Services)
-(lotTS2:Lot:Outcome {uuid: 'ccb61c76-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Services 2', agreementDescription: 'ICT services from strategy and service design through transition to operational deployment. Includes large project services and up to top secret classification.', agreementId: 'RM3804', url: '', type: 'CAT', scale: false}),
-
-// TePAS
-(lotTePASLot1:Lot:Outcome {uuid: 'ccb61ec4-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Products & Associated Services', lotName: 'Lot 1: Hardware & Software & Associated Services', agreementDescription: 'Offers public sector buyers a compliant route to market for technology product needs (hardware and software) and all associated services.', lotDescription: 'Combined hardware and software requirements or combined hardware and software and associated services requirements.', agreementId: 'RM6068', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
-
-(lotTePASLot2:Lot:Outcome {uuid: 'ccb6202c-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Products & Associated Services', lotName: 'Lot 2: Hardware and Associated Services', agreementDescription: 'Offers public sector buyers a compliant route to market for technology product needs (hardware and software) and all associated services.', lotDescription: 'Hardware requirements, including but not limited to; end user devices, infrastructure hardware, consumables and peripheral equipment.', agreementId: 'RM6068', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
-
-(lotTePASLot3:Lot:Outcome {uuid: 'ccb6214e-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Products & Associated Services', lotName: 'Lot 3: Software and Associated Services', agreementDescription: 'Offers public sector buyers a compliant route to market for technology product needs (hardware and software) and all associated services.', lotDescription: 'Software requirements, including but not limited to; commercial off the shelf software (COTS software), open source software, software licenses and associated services.', agreementId: 'RM6068', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
-
-(lotTePASLot4:Lot:Outcome {uuid: 'ccb622ac-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Products & Associated Services', lotName: 'Lot 4: Information Assured Products & Associated Services', agreementDescription: 'Offers public sector buyers a compliant route to market for technology product needs (hardware and software) and all associated services.', lotDescription: 'Hardware and software requirements with protective and information assurance.', agreementId: 'RM6068', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
-
-// Network Services 2
-(lotNetworkServices2:Lot:Outcome {uuid: 'ccb6252c-75b5-11ea-bc55-0242ac130003', agreementName: 'Network Services 2', agreementDescription: 'Telecommunications services including networks for the entire public sector, their associated bodies and agencies, the voluntary sector and charities.', agreementId: 'RM3808', url: '', type: 'CAT', scale: false}),
+(jrnyTechEduTach:Journey {uuid: 'ccb6174e-75b5-11ea-bc55-0242ac130003', name: 'Tech / EduTech'}),
 
 // Tech/EduTech specific answers
 // Services
@@ -99,12 +60,13 @@ CREATE
 (ansGrpProduct)-[:HAS_ANSWER {order: 1}]->(ansProduct),
 (ansGrpProduct)-[:HAS_OUTCOME]->(qiProductOnlySector:QuestionInstance:Outcome {uuid: '698c22ea-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
 
-// Product / Service (Product) -> Sector (Edu) -> EduTech Lots 4&5
+// Product / Service (Product) -> Sector (Edu) -> EduTech Lots 4&5 BaT DA
 (ansGrpProductSectorEdu:AnswerGroup {name: 'ansGrpProductSectorEdu'}),
 (qiProductOnlySector)-[:HAS_ANSWER_GROUP]->(ansGrpProductSectorEdu),
 (ansGrpProductSectorEdu)-[:HAS_ANSWER {order: 1}]->(ansSectorEdu),
-(ansGrpProductSectorEdu)-[:HAS_OUTCOME]->(lotEduTechLot4BaTDA),
-(ansGrpProductSectorEdu)-[:HAS_OUTCOME]->(lotEduTechLot5BaTDA),
+(ansGrpProductSectorEdu)-[:HAS_OUTCOME]->(eduTechLots4n5BatDA:Agreement:Outcome {number: 'RM6103'}),
+(eduTechLots4n5BatDA)-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'BAT', routeToMarket: "DA", scale: true}),
+(eduTechLots4n5BatDA)-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'BAT', routeToMarket: "DA", scale: true}),
 
 // Product / Service (Product) -> Sector (Non-Edu) -> TP2 Lot 6
 (ansGrpProductSectorNonEdu:AnswerGroup {name: 'ansGrpProductSectorNonEdu'}),
@@ -117,7 +79,7 @@ CREATE
 (ansGrpProductSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpProductSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpProductSectorNonEdu)-[:HAS_OUTCOME]->(lotTP2Lot6),
+(ansGrpProductSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3733'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'BAT', scale: true}),
 
 // Product / Service? (Service)
 (ansGrpService:AnswerGroup {name: 'ansGrpService'}),
@@ -135,7 +97,7 @@ CREATE
 (ansGrpServiceBroadbandFibreSectorEdu:AnswerGroup {name: 'ansGrpServiceBroadbandFibreSectorEdu'}),
 (qiServiceBFIInfraSector)-[:HAS_ANSWER_GROUP]->(ansGrpServiceBroadbandFibreSectorEdu),
 (ansGrpServiceBroadbandFibreSectorEdu)-[:HAS_ANSWER {order: 1}]->(ansSectorEdu),
-(ansGrpServiceBroadbandFibreSectorEdu)-[:HAS_OUTCOME]->(lotEduTechLot2),
+(ansGrpServiceBroadbandFibreSectorEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6103'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', routeToMarket: "FC", scale: false}),
 
 // Product / Service? (Service) -> Service? (Broadband Fibre Infra) -> Sector? (Non-Edu) -> Network Services 2
 (ansGrpServiceBroadbandFibreSectorNonEdu:AnswerGroup {name: 'ansGrpServiceBroadbandFibreSectorNonEdu'}),
@@ -148,7 +110,7 @@ CREATE
 (ansGrpServiceBroadbandFibreSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpServiceBroadbandFibreSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpServiceBroadbandFibreSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpServiceBroadbandFibreSectorNonEdu)-[:HAS_OUTCOME]->(lotNetworkServices2),
+(ansGrpServiceBroadbandFibreSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3808'}),
 
 // Product / Service? (Service) -> Service? (Broadband Service)
 (ansGrpServiceBroadbandService:AnswerGroup {name: 'ansGrpServiceBroadbandService'}),
@@ -160,7 +122,7 @@ CREATE
 (ansGrpServiceBroadbandServiceSectorEdu:AnswerGroup {name: 'ansGrpServiceBroadbandServiceSectorEdu'}),
 (qiServiceBBSvcSector)-[:HAS_ANSWER_GROUP]->(ansGrpServiceBroadbandServiceSectorEdu),
 (ansGrpServiceBroadbandServiceSectorEdu)-[:HAS_ANSWER {order: 1}]->(ansSectorEdu),
-(ansGrpServiceBroadbandServiceSectorEdu)-[:HAS_OUTCOME]->(lotEduTechLot3),
+(ansGrpServiceBroadbandServiceSectorEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6103'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', routeToMarket: "FC", scale: false}),
 
 // Product / Service? (Service) -> Service? (Broadband Service) -> Sector? (Non-Edu) -> Network Services 2
 (ansGrpServiceBroadbandServiceSectorNonEdu:AnswerGroup {name: 'ansGrpServiceBroadbandServiceSectorNonEdu'}),
@@ -173,7 +135,7 @@ CREATE
 (ansGrpServiceBroadbandServiceSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpServiceBroadbandServiceSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpServiceBroadbandServiceSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpServiceBroadbandServiceSectorNonEdu)-[:HAS_OUTCOME]->(lotNetworkServices2),
+(ansGrpServiceBroadbandServiceSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3808'}),
 
 // Product / Service? (Service) -> Service? (Other) -> Tech Services 2
 (ansGrpServiceOtherService:AnswerGroup {name: 'ansGrpServiceOtherService'}),
@@ -182,7 +144,7 @@ CREATE
 (ansGrpServiceOtherService)-[:HAS_ANSWER {order: 4}]->(ansTransitionTransformation),
 (ansGrpServiceOtherService)-[:HAS_ANSWER {order: 5}]->(ansOperationalServices),
 (ansGrpServiceOtherService)-[:HAS_ANSWER {order: 6}]->(ansProgsLargeProjects),
-(ansGrpServiceOtherService)-[:HAS_OUTCOME]->(lotTS2),
+(ansGrpServiceOtherService)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3804'}),
 
 // Product / Service(Product & Service)
 (ansGrpProductAndService:AnswerGroup {name: 'ansGrpProductAndService'}),
@@ -210,13 +172,13 @@ CREATE
 (ansGrpProductAndServiceInfoAss:AnswerGroup {name: 'ansGrpProductAndServiceInfoAss'}),
 (qiProductAndServiceWhichService)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceInfoAss),
 (ansGrpProductAndServiceInfoAss)-[:HAS_ANSWER {order: 12}]->(ansInfoAssuredServices),
-(ansGrpProductAndServiceInfoAss)-[:HAS_OUTCOME]->(lotTePASLot4),
+(ansGrpProductAndServiceInfoAss)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6068'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', routeToMarket: "FC", scale: false}),
 
 // Product / Service(Product & Service) -> Service? (Software) -> TePAS Lot 3
 (ansGrpProductAndServiceSoftware:AnswerGroup {name: 'ansGrpProductAndServiceSoftware'}),
 (qiProductAndServiceWhichService)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceSoftware),
 (ansGrpProductAndServiceSoftware)-[:HAS_ANSWER {order: 13}]->(ansSoftware),
-(ansGrpProductAndServiceSoftware)-[:HAS_OUTCOME]->(lotTePASLot3),
+(ansGrpProductAndServiceSoftware)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6068'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', routeToMarket: "FC", scale: false}),
 
 // Product / Service(Product & Service) -> Service? (Hardware) -> Sector?
 (ansGrpProductAndServiceHardware:AnswerGroup {name: 'ansGrpProductAndServiceHardware'}),
@@ -228,7 +190,7 @@ CREATE
 (ansGrpProductAndServiceHardwareSectorEdu:AnswerGroup {name: 'ansGrpProductAndServiceHardwareSectorEdu'}),
 (qiProductAndServiceHardwareSector)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceHardwareSectorEdu),
 (ansGrpProductAndServiceHardwareSectorEdu)-[:HAS_ANSWER {order: 1}]->(ansSectorEdu),
-(ansGrpProductAndServiceHardwareSectorEdu)-[:HAS_OUTCOME]->(lotEduTechLot4CaTFC),
+(ansGrpProductAndServiceHardwareSectorEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6103'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', routeToMarket: "FC", scale: true}),
 
 // Product / Service(Product & Service) -> Service? (Hardware) -> Sector? (Non-Edu) -> TePAS Lot 2
 (ansGrpProductAndServiceHardwareSectorNonEdu:AnswerGroup {name: 'ansGrpProductAndServiceHardwareSectorNonEdu'}),
@@ -241,7 +203,7 @@ CREATE
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_OUTCOME]->(lotTePASLot2),
+(ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6068'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', routeToMarket: "FC", scale: false}),
 
 // Product / Service(Product & Service) -> Service? (H/Sftware/ICT Solutions) -> Sector?
 (ansGrpProductAndServiceHdSftwareICT:AnswerGroup {name: 'ansGrpProductAndServiceHdSftwareICT'}),
@@ -253,7 +215,7 @@ CREATE
 (ansGrpProductAndServiceHdSftwareICTSectorEdu:AnswerGroup {name: 'ansGrpProductAndServiceHdSftwareICTSectorEdu'}),
 (qiProductAndServiceHdSftwareICTSector)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceHdSftwareICTSectorEdu),
 (ansGrpProductAndServiceHdSftwareICTSectorEdu)-[:HAS_ANSWER {order: 1}]->(ansSectorEdu),
-(ansGrpProductAndServiceHdSftwareICTSectorEdu)-[:HAS_OUTCOME]->(lotEduTechLot1),
+(ansGrpProductAndServiceHdSftwareICTSectorEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6103'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', routeToMarket: "FC", scale: false}),
 
 // Product / Service(Product & Service) -> Service? (H/Sftware/ICT Solutions) -> Sector? (Non-Edu) -> TePAS Lot 1
 (ansGrpProductAndServiceHdSftwareICTSectorNonEdu:AnswerGroup {name: 'ansGrpProductAndServiceHdSftwareICTSectorNonEdu'}),
@@ -266,7 +228,7 @@ CREATE
 (ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_OUTCOME]->(lotTePASLot1),
+(ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6068'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', routeToMarket: "FC", scale: false}),
 
 // Product / Service(Product & Service) -> Service? (AV) -> Sector?
 (ansGrpProductAndServiceAV:AnswerGroup {name: 'ansGrpProductAndServiceAV'}),
@@ -278,7 +240,7 @@ CREATE
 (ansGrpProductAndServiceAVSectorEdu:AnswerGroup {name: 'ansGrpProductAndServiceAVSectorEdu'}),
 (qiProductAndServiceAVSector)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceAVSectorEdu),
 (ansGrpProductAndServiceAVSectorEdu)-[:HAS_ANSWER {order: 1}]->(ansSectorEdu),
-(ansGrpProductAndServiceAVSectorEdu)-[:HAS_OUTCOME]->(lotEduTechLot5CaTFC),
+(ansGrpProductAndServiceAVSectorEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6103'})-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'CAT', routeToMarket: "FC", scale: true}),
 
 // Product / Service(Product & Service) -> Service? (AV) -> Sector? (Non-Edu) -> TePAS Lot 2
 (ansGrpProductAndServiceAVSectorNonEdu:AnswerGroup {name: 'ansGrpProductAndServiceAVSectorNonEdu'}),
@@ -291,4 +253,4 @@ CREATE
 (ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_OUTCOME]->(lotTePASLot2);
+(ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6068'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', routeToMarket: "FC", scale: false});

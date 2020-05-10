@@ -22,8 +22,8 @@ MATCH
 (ansLocNorthernIreland:Answer {uuid: 'ccb5c1cc-75b5-11ea-bc55-0242ac130003'}),
 
 // Budget
-(ansBudgetLT20k:Answer {uuid: 'ccb5c294-75b5-11ea-bc55-0242ac130003'}),
-(ansBudgetGT20k:Answer {uuid: 'ccb5c4ec-75b5-11ea-bc55-0242ac130003'})
+(ansConditionalBudgetYes:Answer {uuid: 'f2af32c0-8a66-477a-8b02-0f9dbca92288'}),
+(ansNo:Answer {uuid: 'ccb59b2a-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
 (jrnyLegalServices:Journey {uuid: 'ccb5c730-75b5-11ea-bc55-0242ac130003', name: 'Wider Public Sector Legal Services', searchTerms: ['legal', 'injury', 'solicitor']}),
@@ -104,17 +104,20 @@ CREATE
 (ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 8}]->(ansLitigation),
 (ansGrpCGServiceEmpLitProp)-[:HAS_OUTCOME]->(qiCentGovBudget:QuestionInstance:Outcome {uuid: 'ccb6124e-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnBudget),
 
-// Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget(<£20k)
-(ansGrpCGBudgetLT20k:AnswerGroup {name: 'ansGrpCGBudgetLT20k'}),
-(qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetLT20k),
-(ansGrpCGBudgetLT20k)-[:HAS_ANSWER {order: 1}]->(ansBudgetLT20k),
-(ansGrpCGBudgetLT20k)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot1),
+// Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget(Unknown - <£20k)
+(ansGrpCGBudgetUnknown:AnswerGroup {name: 'ansGrpCGBudgetUnknown'}),
+(qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetUnknown),
+(ansGrpCGBudgetUnknown)-[:HAS_ANSWER {order: 1}]->(ansNo),
+(ansGrpCGBudgetUnknown)-[:HAS_OUTCOME]->(lotLegalWPSLegalSvcsLot1),
+(ansGrpCGBudgetUnknown)-[:HAS_OUTCOME]->(lotLegalGLAS),
 
-// Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget(>£20k)
-(ansGrpCGBudgetGT20k:AnswerGroup {name: 'ansGrpCGBudgetGT20k'}),
-(qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetGT20k),
-(ansGrpCGBudgetGT20k)-[:HAS_ANSWER {order: 2}]->(ansBudgetGT20k),
-(ansGrpCGBudgetGT20k)-[:HAS_OUTCOME]->(lotLegalGLAS),
+// Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget(Known)
+// TODO: Remove artificial upper & lower bounds
+(ansGrpCGBudgetKnown:AnswerGroup {name: 'ansGrpCGBudgetKnown'}),
+(qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetKnown),
+(ansGrpCGBudgetKnown)-[:HAS_ANSWER {order: 2}]->(ansConditionalBudgetYes),
+(ansGrpCGBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 20000}]->(lotLegalWPSLegalSvcsLot1),
+(ansGrpCGBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 20000, upperBoundExclusive: 9223372036854775807}]->(lotLegalGLAS),
 
 // Sector(CG) -> Service(Finance & Complex)
 (ansGrpCGServiceFinCompMultiOther:AnswerGroup {name: 'ansGrpCGServiceFinCompMultiOther'}),

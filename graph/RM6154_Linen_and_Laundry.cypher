@@ -14,9 +14,6 @@ MATCH
 (ansProduct:Answer {uuid: 'b879fcf4-654e-11ea-bc55-0242ac130003'}),
 (ansService:Answer {uuid: 'b879fe0c-654e-11ea-bc55-0242ac130003'}),
 
-(ansBudgetLTMillion:Answer {uuid: 'b87a0780-654e-11ea-bc55-0242ac130003'}),
-(ansBudgetGTMillion:Answer {uuid: 'b87a08a2-654e-11ea-bc55-0242ac130003'}),
-
 (ansContractLengthLT12Months:Answer {uuid: 'b87a09a6-654e-11ea-bc55-0242ac130003'}),
 (ansContractLengthGT12Months:Answer {uuid: 'b87a0adc-654e-11ea-bc55-0242ac130003'}),
 

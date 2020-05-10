@@ -11,7 +11,7 @@ CREATE CONSTRAINT unique_journey_result_uuid ON (lot:Lot) ASSERT lot.uuid IS UNI
 CREATE
 // Question definitions
 (:QuestionDefinition {uuid: 'b879c040-654e-11ea-bc55-0242ac130003', text: 'Are you looking for a product or a service?', type: 'BOOLEAN'}),
-(:QuestionDefinition {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003', text: 'Do you know your budget?', type: 'CONDITIONAL_NUMERIC_INPUT', hint: "This helps us find our best buying options. An estimate is fine"}),
+(:QuestionDefinition {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003', text: 'Do you know your budget?', type: 'CONDITIONAL_NUMERIC_INPUT', hint: "This helps us find your best buying options. An estimate is fine."}),
 (:QuestionDefinition {uuid: 'b879c25c-654e-11ea-bc55-0242ac130003', text: 'How long will the contract be for?', type: 'BOOLEAN', hint: "An estimate is fine. The contract might also be known as a 'Statement of Work.'"}),
 (:QuestionDefinition {uuid: 'b879c342-654e-11ea-bc55-0242ac130003', text: 'Do you need additional services?', type: 'LIST'}),
 (:QuestionDefinition {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003', text: 'What sector are you buying for?', type: 'LIST'}),

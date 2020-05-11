@@ -8,17 +8,16 @@ MATCH
 
 // Required answer nodes:
 (ansConditionalBudgetYes:Answer {uuid: 'f2af32c0-8a66-477a-8b02-0f9dbca92288'}),
+(ansConditionalContractYes:Answer {uuid: '007adb34-90f0-4867-9616-195ded25afe5'}),
 (ansNo:Answer {uuid: 'ccb59b2a-75b5-11ea-bc55-0242ac130003'}),
 (ansOther:Answer {uuid: 'ccb5bf88-75b5-11ea-bc55-0242ac130003'}),
 
 (ansProduct:Answer {uuid: 'b879fcf4-654e-11ea-bc55-0242ac130003'}),
 (ansService:Answer {uuid: 'b879fe0c-654e-11ea-bc55-0242ac130003'}),
 
-(ansContractLengthLT12Months:Answer {uuid: 'b87a09a6-654e-11ea-bc55-0242ac130003'}),
-(ansContractLengthGT12Months:Answer {uuid: 'b87a0adc-654e-11ea-bc55-0242ac130003'}),
-
 // Generic endpoints
-(resultGMEndRouteToFM:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003'})
+(resultGMEndRouteToFM:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003'}),
+(resultCCSSupport:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
 // Journey
@@ -59,7 +58,7 @@ CREATE
 (ansGrpProduct:AnswerGroup {name: 'ansGrpProduct'}),
 (qiProdService)-[:HAS_ANSWER_GROUP]->(ansGrpProduct),
 (ansGrpProduct)-[:HAS_ANSWER {order: 1}]->(ansProduct),
-(ansGrpProduct)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
+(ansGrpProduct)-[:HAS_OUTCOME]->(resultCCSSupport),
 
 // Service
 (ansGrpService:AnswerGroup {name: 'ansGrpService'}),
@@ -71,25 +70,26 @@ CREATE
 (ansGrpBudgetUnknown:AnswerGroup {name: 'ansGrpBudgetUnknown'}),
 (qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetUnknown),
 (ansGrpBudgetUnknown)-[:HAS_ANSWER {order: 2}]->(ansNo),
-(ansGrpBudgetUnknown)-[:HAS_OUTCOME]->(qiContractLengthSP:QuestionInstance:Outcome {uuid: 'ccb5a6ec-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnContractLength),
+(ansGrpBudgetUnknown)-[:HAS_OUTCOME]->(qiContractLength:QuestionInstance:Outcome {uuid: 'ccb5a6ec-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnContractLength),
 
 // Contract Length
-(ansGrpContractLengthLT12Months:AnswerGroup {name: 'ansGrpContractLengthLT12Months'}),
-(qiContractLengthSP)-[:HAS_ANSWER_GROUP]->(ansGrpContractLengthLT12Months),
-(ansGrpContractLengthLT12Months)-[:HAS_ANSWER {order: 1}]->(ansContractLengthLT12Months),
-(ansGrpContractLengthLT12Months)-[:HAS_OUTCOME]->(qiServiceSP:QuestionInstance:Outcome {uuid: 'ccb5a872-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
+(ansGrpContractLengthKnown:AnswerGroup {name: 'ansGrpContractLengthKnown'}),
+(qiContractLength)-[:HAS_ANSWER_GROUP]->(ansGrpContractLengthKnown),
+(ansGrpContractLengthKnown)-[:HAS_ANSWER {order: 1}]->(ansConditionalContractYes),
+(ansGrpContractLengthKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 12}]->(qiServiceSP:QuestionInstance:Outcome {uuid: 'ccb5a872-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
+(ansGrpContractLengthKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 12, upperBoundExclusive: 9223372036854775807}]->(qiServiceBP:QuestionInstance:Outcome {uuid: 'ccb5a930-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 
-(ansGrpContractLengthGT12Months:AnswerGroup {name: 'ansGrpContractLengthGT12Months'}),
-(qiContractLengthSP)-[:HAS_ANSWER_GROUP]->(ansGrpContractLengthGT12Months),
-(ansGrpContractLengthGT12Months)-[:HAS_ANSWER {order: 2}]->(ansContractLengthGT12Months),
-(ansGrpContractLengthGT12Months)-[:HAS_OUTCOME]->(qiServiceBP:QuestionInstance:Outcome {uuid: 'ccb5a930-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
+(ansGrpContractLengthUnknown:AnswerGroup {name: 'ansGrpContractLengthUnknown'}),
+(qiContractLength)-[:HAS_ANSWER_GROUP]->(ansGrpContractLengthUnknown),
+(ansGrpContractLengthUnknown)-[:HAS_ANSWER {order: 2}]->(ansNo),
+(ansGrpContractLengthUnknown)-[:HAS_OUTCOME]->(qiServiceSP),
 
 // Budget Known (routing based on bounds)
 // TODO: Remove artificial upper & lower bounds
 (ansGrpBudgetKnown:AnswerGroup {name: 'ansGrpBudgetKnown'}),
 (qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetKnown),
 (ansGrpBudgetKnown)-[:HAS_ANSWER {order: 1}]->(ansConditionalBudgetYes),
-(ansGrpBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 1000000}]->(qiContractLengthSP),
+(ansGrpBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 1000000}]->(qiContractLength),
 (ansGrpBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 1000000, upperBoundExclusive: 9223372036854775807}]->(qiServiceBP),
 
 // SP (< 12 months)

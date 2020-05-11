@@ -1,7 +1,7 @@
 MATCH
 // Required QuestionDefinition nodes:
 (qstnSector:QuestionDefinition {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003'}),
-(qstnService:QuestionDefinition {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003'}),
+(qstnServiceArea:QuestionDefinition {uuid: '59561c74-8d8f-4863-a01d-5cca0a289986'}),
 (qstnLocation:QuestionDefinition {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003'}),
 (qstnBudget:QuestionDefinition {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003'}),
 
@@ -74,7 +74,7 @@ CREATE
 (ansGrpSectorCentGov:AnswerGroup {name: 'ansGrpSectorCentGov'}),
 (qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSectorCentGov),
 (ansGrpSectorCentGov)-[:HAS_ANSWER {order: 1}]->(ansSectorCG),
-(ansGrpSectorCentGov)-[:HAS_OUTCOME]->(qiCentGovService:QuestionInstance:Outcome {uuid: 'ccb5e184-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
+(ansGrpSectorCentGov)-[:HAS_OUTCOME]->(qiCentGovService:QuestionInstance:Outcome {uuid: 'ccb5e184-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnServiceArea),
 
 // Sector(CG) -> Service(Rail)
 (ansGrpCGServiceRail:AnswerGroup {name: 'ansGrpCGServiceRail'}),
@@ -139,7 +139,7 @@ CREATE
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpSectorWPS)-[:HAS_OUTCOME]->(qiWPSService:QuestionInstance:Outcome {uuid: 'ccb61140-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
+(ansGrpSectorWPS)-[:HAS_OUTCOME]->(qiWPSService:QuestionInstance:Outcome {uuid: 'ccb61140-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnServiceArea),
 
 // Sector(WPS) -> Service(Property & Construction)
 (ansGrpWPSServicePropConstruct:AnswerGroup {name: 'ansGrpWPSServicePropConstruct'}),

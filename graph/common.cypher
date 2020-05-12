@@ -16,7 +16,7 @@ CREATE
 (:QuestionDefinition {uuid: 'b879c342-654e-11ea-bc55-0242ac130003', text: 'Do you need additional facilities management services?', hint: "These are services related to managing a facility such as security, grounds maintenance, catering or pest control", type: 'LIST'}),
 (:QuestionDefinition {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003', text: 'Which sector are you buying for?', hint: "Choose one option:", type: 'LIST'}),
 (:QuestionDefinition {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003', text: 'Which service do you need?', hint: "Choose one option:", type: 'LIST'}),
-(:QuestionDefinition {uuid: 'b87a0014-654e-11ea-bc55-0242ac130003', text: 'Choose which services you need:', type: 'MULTI_SELECT_LIST'}),
+(:QuestionDefinition {uuid: 'b87a0014-654e-11ea-bc55-0242ac130003', text: 'Which services do you need?', hint: "Choose one or more options:", type: 'MULTI_SELECT_LIST'}),
 (:QuestionDefinition {uuid: 'b879c662-654e-11ea-bc55-0242ac130003', text: 'Do you require nationwide or regional services?', hint: 'Nationwide suppliers are able to work across the country. Regional suppliers work in their own area.', type: 'BOOLEAN'}),
 (:QuestionDefinition {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'What kind of security do you need?', type: 'LIST'}),
 (:QuestionDefinition {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003', text: 'Where do you need this service?', hint: "Choose one option:", type: 'LIST'}),

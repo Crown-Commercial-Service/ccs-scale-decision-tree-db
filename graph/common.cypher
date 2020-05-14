@@ -7,6 +7,7 @@ CREATE CONSTRAINT unique_question_uuid ON (qd:QuestionDefinition) ASSERT qd.uuid
 CREATE CONSTRAINT unique_question_instance_uuid ON (qi:QuestionInstance) ASSERT qi.uuid IS UNIQUE;
 CREATE CONSTRAINT unique_journey_uuid ON (j:Journey) ASSERT j.uuid IS UNIQUE;
 CREATE CONSTRAINT unique_journey_result_uuid ON (lot:Lot) ASSERT lot.uuid IS UNIQUE;
+CREATE CONSTRAINT unique_multi_select_uuid ON (ms:MultiSelect) ASSERT ms.uuid IS UNIQUE;
 
 CREATE
 // Question definitions

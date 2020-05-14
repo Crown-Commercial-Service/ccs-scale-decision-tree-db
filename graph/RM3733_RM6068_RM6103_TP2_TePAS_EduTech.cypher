@@ -220,40 +220,40 @@ CREATE
 (qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceInfoAss),
 (ansGrpProductAndServiceInfoAss)-[:HAS_ANSWER {order: 1}]->(ansInfoAssuredServices),
 (ansGrpProductAndServiceInfoAss)-[:HAS_OUTCOME]->(lotTePASLot4),
-(ansGrpProductAndServiceInfoAss)-[:MULTI_SELECT {group: 'bat'}]->(qiProductOnlySector),
-(ansGrpProductAndServiceInfoAss)-[:MULTI_SELECT {group: 'cat', mixOverride: 'bat'}]->(qiProductAndServiceCaTMultiSelectSector),
+(ansGrpProductAndServiceInfoAss)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'fc4852e3-5df8-49ff-8bdd-152e43867ef8', group: 'bat', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiProductOnlySector),
+(ansGrpProductAndServiceInfoAss)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '32ff5083-37b6-47bf-8f5c-1a950e6210d1', group: 'cat', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
 
 // Product / Service(Product & Service) -> Service? (Software) -> TePAS Lot 3
 (ansGrpProductAndServiceSoftware:AnswerGroup {name: 'ansGrpProductAndServiceSoftware'}),
 (qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceSoftware),
 (ansGrpProductAndServiceSoftware)-[:HAS_ANSWER {order: 2}]->(ansSoftware),
 (ansGrpProductAndServiceSoftware)-[:HAS_OUTCOME]->(lotTePASLot3),
-(ansGrpProductAndServiceSoftware)-[:MULTI_SELECT {group: 'bat'}]->(qiProductOnlySector),
-(ansGrpProductAndServiceSoftware)-[:MULTI_SELECT {group: 'cat', mixOverride: 'bat'}]->(qiProductAndServiceCaTMultiSelectSector),
+(ansGrpProductAndServiceSoftware)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '16332b55-e292-4fbc-abe6-1795d51c7750', group: 'bat', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiProductOnlySector),
+(ansGrpProductAndServiceSoftware)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '58b64052-d437-48aa-981a-6b7f6ea06372', group: 'cat', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
 
 // Product / Service(Product & Service) -> Service? (Hardware) -> Sector?
 (ansGrpProductAndServiceHardware:AnswerGroup {name: 'ansGrpProductAndServiceHardware'}),
 (qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceHardware),
 (ansGrpProductAndServiceHardware)-[:HAS_ANSWER {order: 3}]->(ansHardware),
 (ansGrpProductAndServiceHardware)-[:HAS_OUTCOME]->(qiProductAndServiceHardwareSector:QuestionInstance:Outcome {uuid: '698c2bc8-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
-(ansGrpProductAndServiceHardware)-[:MULTI_SELECT {group: 'bat'}]->(qiProductOnlySector),
-(ansGrpProductAndServiceHardware)-[:MULTI_SELECT {group: 'cat', mixOverride: 'bat'}]->(qiProductAndServiceCaTMultiSelectSector),
+(ansGrpProductAndServiceHardware)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'cf47cab7-6197-4b4e-b6d4-f47d6e8f53d4', group: 'bat', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiProductOnlySector),
+(ansGrpProductAndServiceHardware)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'ae786bb8-5502-4df5-ab46-de297c539708', group: 'cat', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
 
 // Product / Service(Product & Service) -> Service? (H/Sftware/ICT Solutions) -> Sector?
 (ansGrpProductAndServiceHdSftwareICT:AnswerGroup {name: 'ansGrpProductAndServiceHdSftwareICT'}),
 (qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceHdSftwareICT),
 (ansGrpProductAndServiceHdSftwareICT)-[:HAS_ANSWER {order: 4}]->(ansHardwareSoftwareICTSolutions),
 (ansGrpProductAndServiceHdSftwareICT)-[:HAS_OUTCOME]->(qiProductAndServiceHdSftwareICTSector:QuestionInstance:Outcome {uuid: '698c2812-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
-(ansGrpProductAndServiceHdSftwareICT)-[:MULTI_SELECT {group: 'bat'}]->(qiProductOnlySector),
-(ansGrpProductAndServiceHdSftwareICT)-[:MULTI_SELECT {group: 'cat', mixOverride: 'bat'}]->(qiProductAndServiceCaTMultiSelectSector),
+(ansGrpProductAndServiceHdSftwareICT)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '7f2ba6c7-219d-49ea-b8d9-ddcff36bab95', group: 'bat', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiProductOnlySector),
+(ansGrpProductAndServiceHdSftwareICT)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '423f0e8d-da1a-498d-ae76-0bd6a43b92c4', group: 'cat', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
 
 // Product / Service(Product & Service) -> Service? (AV) -> Sector?
 (ansGrpProductAndServiceAV:AnswerGroup {name: 'ansGrpProductAndServiceAV'}),
 (qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceAV),
 (ansGrpProductAndServiceAV)-[:HAS_ANSWER {order: 5}]->(ansAV),
 (ansGrpProductAndServiceAV)-[:HAS_OUTCOME]->(qiProductAndServiceAVSector:QuestionInstance:Outcome {uuid: '698c2998-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
-(ansGrpProductAndServiceAV)-[:MULTI_SELECT {group: 'bat'}]->(qiProductOnlySector),
-(ansGrpProductAndServiceAV)-[:MULTI_SELECT {group: 'cat', mixOverride: 'bat'}]->(qiProductAndServiceCaTMultiSelectSector),
+(ansGrpProductAndServiceAV)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '16a6a3ff-c1b2-478c-921c-fdab77e2bf6a', group: 'bat', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiProductOnlySector),
+(ansGrpProductAndServiceAV)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '5cf7ad84-766a-4bca-b553-00be59aebeaa', group: 'cat', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
 
 // Product / Service(Product & Service) -> Service? (Additional 'CaT' services) -> Sector?
 (ansGrpProductAndServiceBaT:AnswerGroup {name: 'ansGrpProductAndServiceBaT'}),
@@ -270,7 +270,7 @@ CREATE
 (ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 15}]->(ansStorage),
 (ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 16}]->(ansDisposal),
 (ansGrpProductAndServiceBaT)-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
-(ansGrpProductAndServiceBaT)-[:MULTI_SELECT {group: 'cat'}]->(qiProductAndServiceCaTMultiSelectSector),
+(ansGrpProductAndServiceBaT)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '5f2b56d9-38b9-4617-a031-3309ea9be110', group: 'cat', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
 
 // Product / Service(Product & Service) -> Service? (Hardware) -> Sector? (Edu) -> EduTech Lot 4
 (ansGrpProductAndServiceHardwareSectorEdu:AnswerGroup {name: 'ansGrpProductAndServiceHardwareSectorEdu'}),

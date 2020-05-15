@@ -65,7 +65,7 @@ CREATE
 (ansPropertyConstruction:Answer {uuid: 'ccb5df2c-75b5-11ea-bc55-0242ac130003', text: 'Property and construction', hint: 'This is for large scale and high value building works, such as a hospital'}),
 (ansTransport:Answer {uuid: 'ccb5dff4-75b5-11ea-bc55-0242ac130003', text: 'Transport', hint: 'Transport-specific legal advice'}),
 (ansMulti:Answer {uuid: 'ccb5dcac-75b5-11ea-bc55-0242ac130003', text: 'Multiple', hint: 'More than one item from this list'}),
-(ansAnythingElse:Answer {uuid: 'ccb5dd74-75b5-11ea-bc55-0242ac130003', text: 'Anything else', hint: 'An item not listed here'}),
+(ansAnythingElse:Answer {uuid: 'ccb5dd74-75b5-11ea-bc55-0242ac130003', text: 'Anything else', hint: 'A legal service not listed here'}),
 
 // Tree Structure
 (jrnyLegalServices)-[:FIRST_QUESTION]->(qiSector:QuestionInstance:Outcome {uuid: 'ccb5e0bc-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
@@ -124,7 +124,7 @@ CREATE
 (qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceFinCompMultiOther),
 (ansGrpCGServiceFinCompMultiOther)-[:HAS_ANSWER {order: 9}]->(ansFinanceComplex),
 (ansGrpCGServiceFinCompMultiOther)-[:HAS_ANSWER {order: 10}]->(ansMulti),
-(ansGrpCGServiceFinCompMultiOther)-[:HAS_ANSWER {order: 11}]->(ansAnythingElse),
+(ansGrpCGServiceFinCompMultiOther)-[:HAS_ANSWER {order: 11, mutex: true}]->(ansAnythingElse),
 (ansGrpCGServiceFinCompMultiOther)-[:HAS_OUTCOME]->(lotLegalFinanceComplex),
 (ansGrpCGServiceFinCompMultiOther)-[:HAS_OUTCOME]->(lotLegalGLAS),
 
@@ -172,7 +172,7 @@ CREATE
 (ansGrpWPSServiceMultiOther:AnswerGroup {name: 'ansGrpWPSServiceMultiOther'}),
 (qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceMultiOther),
 (ansGrpWPSServiceMultiOther)-[:HAS_ANSWER {order: 8}]->(ansMulti),
-(ansGrpWPSServiceMultiOther)-[:HAS_ANSWER {order: 9}]->(ansAnythingElse),
+(ansGrpWPSServiceMultiOther)-[:HAS_ANSWER {order: 9, mutex: true}]->(ansAnythingElse),
 (ansGrpWPSServiceMultiOther)-[:HAS_OUTCOME]->(qiWPSLocation:QuestionInstance:Outcome {uuid: 'ccb61320-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnLocation),
 
 // Sector(WPS) -> Service(Multiple, Other) -> Location(England or Wales)

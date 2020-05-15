@@ -17,7 +17,7 @@ MATCH
 
 // Generic endpoints
 (resultGMEndRouteToFM:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003'}),
-(resultCCSSupport:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
+(resultCCSEscapePage:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
 // Journey
@@ -58,7 +58,7 @@ CREATE
 (ansGrpProduct:AnswerGroup {name: 'ansGrpProduct'}),
 (qiProdService)-[:HAS_ANSWER_GROUP]->(ansGrpProduct),
 (ansGrpProduct)-[:HAS_ANSWER {order: 1}]->(ansProduct),
-(ansGrpProduct)-[:HAS_OUTCOME]->(resultCCSSupport),
+(ansGrpProduct)-[:HAS_OUTCOME]->(resultCCSEscapePage),
 
 // Service
 (ansGrpService:AnswerGroup {name: 'ansGrpService'}),

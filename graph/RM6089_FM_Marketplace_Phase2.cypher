@@ -24,7 +24,7 @@ MATCH
 (ansSecTech:Answer {uuid: 'b879d648-654e-11ea-bc55-0242ac130003'}),
 
 (resultGMEndRouteToFM:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003'}),
-(resultCCSSupport:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
+(resultCCSEscapePage:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
 (jrnyFM2:Journey {uuid: 'b879de86-654e-11ea-bc55-0242ac130003', name: 'FM Marketplace Phase 2', searchTerms: ['security', 'workplace', 'facilities', 'housing', 'water cooler']}),
@@ -68,7 +68,7 @@ CREATE
 (qiServicesMOD)-[:HAS_ANSWER_GROUP]->(ansGrpModSvcsDynamic),
 (ansGrpModSvcsDynamic)-[:HAS_OUTCOME]->(qiLocationMOD:QuestionInstance:Outcome {uuid: 'b879dae4-654e-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnLocation),
 (ansGrpModSvcsDynamic)-[:HAS_OUTCOME]->(lotFM2Lot3FC),
-(ansGrpModSvcsDynamic)-[:HAS_OUTCOME]->(resultCCSSupport),
+(ansGrpModSvcsDynamic)-[:HAS_OUTCOME]->(resultCCSEscapePage),
 
 // MOD branch - Select Location(s)
 (ansGrpModLocNational:AnswerGroup {name: 'ansGrpModLocNational'}),

@@ -19,7 +19,9 @@ MATCH
 (ansSectorHealth:Answer {uuid: 'b879a48e-654e-11ea-bc55-0242ac130003'}),
 (ansSectorBlueLight:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003'}),
 (ansSectorHousing:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003'}),
-(ansSectorCharities:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003'})
+(ansSectorCharities:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003'}),
+
+(resultCCSEscapePage:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
 // Journey
@@ -91,6 +93,9 @@ CREATE
 (ansHardware:Answer {uuid: '698c1e80-7fc8-11ea-bc55-0242ac130003', text: 'Hardware', hint: 'For example, laptops, printers and keyboards'}),
 (ansHardwareSoftwareICTSolutions:Answer {uuid: '698c2060-7fc8-11ea-bc55-0242ac130003', text: 'Hardware and software ICT solutions', hint: 'For example, laptops with pre-installed software for professional video editing'}),
 (ansAV:Answer {uuid: '698c2146-7fc8-11ea-bc55-0242ac130003', text: 'Audio visual', hint: 'For example, purchase and installation of an AV system for a town hall, or whiteboards in a classroom'}),
+
+(ansAnythingElseProdSvc:Answer {uuid: '4be75c91-fb94-45fd-b35b-f6bab73b30a9', text: 'Anything else', hint: 'A technology product or service not listed here'}),
+(ansAnythingElseSvc:Answer {uuid: 'ca55a200-9c0e-4545-a3a6-c526e11be9f1', text: 'Anything else', hint: 'A technology service not listed here'}),
 
 // Tree Structure
 (jrnyTechEduTach)-[:FIRST_QUESTION]->(qiProdService:QuestionInstance:Outcome {uuid: '698c220e-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnProductOrService),
@@ -186,6 +191,12 @@ CREATE
 (ansGrpServiceOtherService)-[:HAS_ANSWER {order: 6}]->(ansProgsLargeProjects),
 (ansGrpServiceOtherService)-[:HAS_OUTCOME]->(lotTS2),
 
+// Product / Service? (Service) -> Service? (Anything Else?) -> Escape Page
+(ansGrpServiceAnythingElse:AnswerGroup {name: 'ansGrpServiceAnythingElse'}),
+(qiServiceOnlyWhichService)-[:HAS_ANSWER_GROUP]->(ansGrpServiceAnythingElse),
+(ansGrpServiceAnythingElse)-[:HAS_ANSWER {order: 7, mutex: true}]->(ansAnythingElseSvc),
+(ansGrpServiceAnythingElse)-[:HAS_OUTCOME]->(resultCCSEscapePage),
+
 // Product / Service(Product & Service)
 (ansGrpProductAndService:AnswerGroup {name: 'ansGrpProductAndService'}),
 (qiProdService)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndService),
@@ -269,6 +280,7 @@ CREATE
 (ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 14}]->(ansPreDeliveryInspect),
 (ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 15}]->(ansStorage),
 (ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 16}]->(ansDisposal),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 17, mutex: true}]->(ansAnythingElseProdSvc),
 (ansGrpProductAndServiceBaT)-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
 (ansGrpProductAndServiceBaT)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '5f2b56d9-38b9-4617-a031-3309ea9be110', group: 'cat', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
 

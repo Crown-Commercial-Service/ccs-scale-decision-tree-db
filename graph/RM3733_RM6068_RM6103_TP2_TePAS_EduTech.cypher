@@ -73,8 +73,8 @@ CREATE
 (ansBroadbandService:Answer {uuid: 'ccb627ca-75b5-11ea-bc55-0242ac130003', text: 'Broadband service', hint: 'For example, finding an internet service provider (ISP)'}),
 (ansTechStrategyAndSvcDesign:Answer {uuid: 'ccb6289c-75b5-11ea-bc55-0242ac130003', text: 'Technology strategy and service design', hint: 'For example, Capability ​​analysis, Enterprise ​​architecture, and Service ​​design'}),
 (ansTransitionTransformation:Answer {uuid: 'ccb629f0-75b5-11ea-bc55-0242ac130003', text: 'Transition and transformation', hint: 'For example the implementation​​ of ​​new​​ services,​​ service​​ providers, architectures​​ or​​ processes'}),
-(ansOperationalServices:Answer {uuid: 'ccb62ab8-75b5-11ea-bc55-0242ac130003', text: 'Operational services'}),
-(ansProgsLargeProjects:Answer {uuid: 'ccb62be4-75b5-11ea-bc55-0242ac130003', text: 'Programmes and large projects'}),
+(ansOperationalServices:Answer {uuid: 'ccb62ab8-75b5-11ea-bc55-0242ac130003', text: 'Operational services', hint: 'The​​ services,​​ processes​​ and​​ tools ​​needed ​​to​​ manage ​​the provisioning,​​ capacity, ​​performance,​​ security ​​and availability​​ of​​ the​​ technology ​​environment'}),
+(ansProgsLargeProjects:Answer {uuid: 'ccb62be4-75b5-11ea-bc55-0242ac130003', text: 'Programmes and large projects', hint: 'These are technology services offered at or above official government security level. You should only choose this if you require Secret or Top Secret level programmes or large projects.'}),
 
 // Service & product
 (ansDelivery:Answer {uuid: 'ccb62d24-75b5-11ea-bc55-0242ac130003', text: 'Delivery', hint: 'Book courier and delivery options'}),

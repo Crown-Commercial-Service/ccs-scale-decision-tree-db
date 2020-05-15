@@ -74,4 +74,4 @@ CREATE
 
 // Common endpoints
 (:Lot:Outcome {uuid: 'b879e69c-654e-11ea-bc55-0242ac130003', agreementName: 'Facilities Management Marketplace', agreementDescription: 'UK-wide facilities management (FM) services organised regionally and available to all public sector entities. Includes maintenance, cleaning, security, helpdesk etc.', agreementId: 'RM3830', url: '', type: 'OTHER', scale: false}),
-(:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', agreementName: 'CCS Support', agreementDescription: 'Placeholder for CCS support', type: 'SUPPORT', scale: false});
+(:Lot:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', agreementName: 'Escape Page', agreementDescription: 'Placeholder for Escape Page aka CCS support', type: 'SUPPORT', scale: false});

@@ -2,6 +2,7 @@ MATCH
 // Required QuestionDefinition nodes:
 (qstnProductOrService:QuestionDefinition {uuid: 'b879c040-654e-11ea-bc55-0242ac130003'}),
 (qstnService:QuestionDefinition {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003'}),
+(qstnServices:QuestionDefinition {uuid: 'b87a0014-654e-11ea-bc55-0242ac130003'}),
 (qstnSector:QuestionDefinition {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003'}),
 
 // Required answer nodes:
@@ -18,7 +19,7 @@ MATCH
 (ansSectorHealth:Answer {uuid: 'b879a48e-654e-11ea-bc55-0242ac130003'}),
 (ansSectorBlueLight:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003'}),
 (ansSectorHousing:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003'}),
-(ansSectorCharities:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003'}),
+(ansSectorCharities:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003'})
 
 CREATE
 // Journey
@@ -29,6 +30,8 @@ CREATE
 (lotTP2Lot6:Lot:Outcome {uuid: 'ccb61820-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Products 2', lotName: 'Lot 6: Catalogue', agreementDescription: 'Technology Products 2 (TP2) offers public sector customers a flexible and compliant way to source all their technology product needs (hardware and software).  Further competition Lots 1-5 have expired, Lot 6 catalogue is extended.', lotDescription: 'Designed for day to day purchases for low complexity requirements or high urgency products.', agreementId: 'RM3733', url: '', type: 'BAT', scale: true}),
 
 // EduTech
+(lotEduTech:Lot:Outcome {uuid: 'fcd65c93-08a2-41a8-b2bf-4eeb7ed5ccc6', agreementName: 'Education Technology', agreementDescription: 'Educational establishments can buy ICT (Information and Communication Technologies) goods and technology services through one agreement.', agreementId: 'RM6103', url: '', type: 'CAT', scale: false}),
+
 (lotEduTechLot1:Lot:Outcome {uuid: '698c28d0-7fc8-11ea-bc55-0242ac130003', agreementName: 'Education Technology', lotName: 'Lot 1: ICT Solutions', agreementDescription: 'Educational establishments can buy ICT (Information and Communication Technologies) goods and technology services through one agreement.', lotDescription: 'This is a direct replacement of ICT Services for Education (RM1050) agreement. The agreement provides customers with the capability to obtain ICT goods and or services for their specific needs, whether it is a new build requirement or an ICT refresh.', agreementId: 'RM6103', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
 
 (lotEduTechLot2:Lot:Outcome {uuid: '698c2ca4-7fc8-11ea-bc55-0242ac130003', agreementName: 'Education Technology', lotName: 'Lot 2: Broadband Fibre Infrastructure', agreementDescription: 'Educational establishments can buy ICT (Information and Communication Technologies) goods and technology services through one agreement.', lotDescription: "The provision of a design and installation of broadband fibre infrastructure. Suppliers under this lot are capable of supplying overall design, provision of fibre to the premises, testing of fibre and 'last mile' installation.", agreementId: 'RM6103', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
@@ -49,6 +52,8 @@ CREATE
 (lotTS2:Lot:Outcome {uuid: 'ccb61c76-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Services 2', agreementDescription: 'ICT services from strategy and service design through transition to operational deployment. Includes large project services and up to top secret classification.', agreementId: 'RM3804', url: '', type: 'CAT', scale: false}),
 
 // TePAS
+(lotTePAS:Lot:Outcome {uuid: 'e51e21fe-fe84-4967-b3a0-19d0dbda5a03', agreementName: 'Technology Products & Associated Services', agreementDescription: 'Offers public sector buyers a compliant route to market for technology product needs (hardware and software) and all associated services.', agreementId: 'RM6068', url: '', type: 'CAT', scale: false}),
+
 (lotTePASLot1:Lot:Outcome {uuid: 'ccb61ec4-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Products & Associated Services', lotName: 'Lot 1: Hardware & Software & Associated Services', agreementDescription: 'Offers public sector buyers a compliant route to market for technology product needs (hardware and software) and all associated services.', lotDescription: 'Combined hardware and software requirements or combined hardware and software and associated services requirements.', agreementId: 'RM6068', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
 
 (lotTePASLot2:Lot:Outcome {uuid: 'ccb6202c-75b5-11ea-bc55-0242ac130003', agreementName: 'Technology Products & Associated Services', lotName: 'Lot 2: Hardware and Associated Services', agreementDescription: 'Offers public sector buyers a compliant route to market for technology product needs (hardware and software) and all associated services.', lotDescription: 'Hardware requirements, including but not limited to; end user devices, infrastructure hardware, consumables and peripheral equipment.', agreementId: 'RM6068', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
@@ -185,41 +190,87 @@ CREATE
 (ansGrpProductAndService:AnswerGroup {name: 'ansGrpProductAndService'}),
 (qiProdService)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndService),
 (ansGrpProductAndService)-[:HAS_ANSWER {order: 3}]->(ansProductAndService),
-(ansGrpProductAndService)-[:HAS_OUTCOME]->(qiProductAndServiceWhichService:QuestionInstance:Outcome {uuid: '698c23bc-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
-
-// Product / Service(Product & Service) -> Service? (BaT) -> Sector?
-(ansGrpProductAndServiceBaT:AnswerGroup {name: 'ansGrpProductAndServiceBaT'}),
-(qiProductAndServiceWhichService)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceBaT),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 1}]->(ansDelivery),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 2}]->(ansExtendedWarranty),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 3}]->(ansAssetTagging),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 4}]->(ansTraining),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 5}]->(ansInstallation),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 6}]->(ansImaging),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 7}]->(ansConfiguration),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 8}]->(ansNetworkTest),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 9}]->(ansPreDeliveryInspect),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 10}]->(ansStorage),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 11}]->(ansDisposal),
-(ansGrpProductAndServiceBaT)-[:HAS_OUTCOME]->(qiProductOnlySector),
+(ansGrpProductAndService)-[:HAS_OUTCOME]->(qiProductAndServiceChooseServices:QuestionInstance:Outcome {uuid: '698c23bc-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnServices),
 
 // Product / Service(Product & Service) -> Service? (Info Assured products) -> TePAS Lot 4
+
+// CaT Single / Multi select routing
+(qiProductAndServiceCaTMultiSelectSector:QuestionInstance:Outcome {uuid: '330cf5ac-79e8-4e36-886e-c66d3dbfef31'})-[:DEFINED_BY]->(qstnSector),
+
+// Product / Service(Product & Service) -> Service? (CaT/BaT Multi) -> Sector? (Edu) -> TePAS
+(ansGrpProductAndServiceCaTMultiSelectEdu:AnswerGroup {name: 'ansGrpProductAndServiceCaTMultiSelectEdu'}),
+(qiProductAndServiceCaTMultiSelectSector)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceCaTMultiSelectEdu),
+(ansGrpProductAndServiceCaTMultiSelectEdu)-[:HAS_ANSWER {order: 1}]->(ansSectorEdu),
+(ansGrpProductAndServiceCaTMultiSelectEdu)-[:HAS_OUTCOME]->(lotEduTech),
+
+// Product / Service(Product & Service) -> Service? (CaT/BaT Multi) -> Sector? (Non-Edu) -> TePAS
+(ansGrpProductAndServiceCaTMultiSelectNonEdu:AnswerGroup {name: 'ansGrpProductAndServiceCaTMultiSelectNonEdu'}),
+(qiProductAndServiceCaTMultiSelectSector)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceCaTMultiSelectNonEdu),
+(ansGrpProductAndServiceCaTMultiSelectNonEdu)-[:HAS_ANSWER {order: 2}]->(ansSectorCG),
+(ansGrpProductAndServiceCaTMultiSelectNonEdu)-[:HAS_ANSWER {order: 3}]->(ansSectorLG),
+(ansGrpProductAndServiceCaTMultiSelectNonEdu)-[:HAS_ANSWER {order: 4}]->(ansSectorMoD),
+(ansGrpProductAndServiceCaTMultiSelectNonEdu)-[:HAS_ANSWER {order: 5}]->(ansSectorDevolved),
+(ansGrpProductAndServiceCaTMultiSelectNonEdu)-[:HAS_ANSWER {order: 6}]->(ansSectorHealth),
+(ansGrpProductAndServiceCaTMultiSelectNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
+(ansGrpProductAndServiceCaTMultiSelectNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
+(ansGrpProductAndServiceCaTMultiSelectNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
+(ansGrpProductAndServiceCaTMultiSelectNonEdu)-[:HAS_OUTCOME]->(lotTePAS),
+
 (ansGrpProductAndServiceInfoAss:AnswerGroup {name: 'ansGrpProductAndServiceInfoAss'}),
-(qiProductAndServiceWhichService)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceInfoAss),
-(ansGrpProductAndServiceInfoAss)-[:HAS_ANSWER {order: 12}]->(ansInfoAssuredServices),
+(qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceInfoAss),
+(ansGrpProductAndServiceInfoAss)-[:HAS_ANSWER {order: 1}]->(ansInfoAssuredServices),
 (ansGrpProductAndServiceInfoAss)-[:HAS_OUTCOME]->(lotTePASLot4),
+(ansGrpProductAndServiceInfoAss)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'fc4852e3-5df8-49ff-8bdd-152e43867ef8', group: 'bat', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiProductOnlySector),
+(ansGrpProductAndServiceInfoAss)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '32ff5083-37b6-47bf-8f5c-1a950e6210d1', group: 'cat', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
 
 // Product / Service(Product & Service) -> Service? (Software) -> TePAS Lot 3
 (ansGrpProductAndServiceSoftware:AnswerGroup {name: 'ansGrpProductAndServiceSoftware'}),
-(qiProductAndServiceWhichService)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceSoftware),
-(ansGrpProductAndServiceSoftware)-[:HAS_ANSWER {order: 13}]->(ansSoftware),
+(qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceSoftware),
+(ansGrpProductAndServiceSoftware)-[:HAS_ANSWER {order: 2}]->(ansSoftware),
 (ansGrpProductAndServiceSoftware)-[:HAS_OUTCOME]->(lotTePASLot3),
+(ansGrpProductAndServiceSoftware)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '16332b55-e292-4fbc-abe6-1795d51c7750', group: 'bat', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiProductOnlySector),
+(ansGrpProductAndServiceSoftware)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '58b64052-d437-48aa-981a-6b7f6ea06372', group: 'cat', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
 
 // Product / Service(Product & Service) -> Service? (Hardware) -> Sector?
 (ansGrpProductAndServiceHardware:AnswerGroup {name: 'ansGrpProductAndServiceHardware'}),
-(qiProductAndServiceWhichService)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceHardware),
-(ansGrpProductAndServiceHardware)-[:HAS_ANSWER {order: 14}]->(ansHardware),
+(qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceHardware),
+(ansGrpProductAndServiceHardware)-[:HAS_ANSWER {order: 3}]->(ansHardware),
 (ansGrpProductAndServiceHardware)-[:HAS_OUTCOME]->(qiProductAndServiceHardwareSector:QuestionInstance:Outcome {uuid: '698c2bc8-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
+(ansGrpProductAndServiceHardware)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'cf47cab7-6197-4b4e-b6d4-f47d6e8f53d4', group: 'bat', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiProductOnlySector),
+(ansGrpProductAndServiceHardware)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'ae786bb8-5502-4df5-ab46-de297c539708', group: 'cat', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
+
+// Product / Service(Product & Service) -> Service? (H/Sftware/ICT Solutions) -> Sector?
+(ansGrpProductAndServiceHdSftwareICT:AnswerGroup {name: 'ansGrpProductAndServiceHdSftwareICT'}),
+(qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceHdSftwareICT),
+(ansGrpProductAndServiceHdSftwareICT)-[:HAS_ANSWER {order: 4}]->(ansHardwareSoftwareICTSolutions),
+(ansGrpProductAndServiceHdSftwareICT)-[:HAS_OUTCOME]->(qiProductAndServiceHdSftwareICTSector:QuestionInstance:Outcome {uuid: '698c2812-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
+(ansGrpProductAndServiceHdSftwareICT)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '7f2ba6c7-219d-49ea-b8d9-ddcff36bab95', group: 'bat', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiProductOnlySector),
+(ansGrpProductAndServiceHdSftwareICT)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '423f0e8d-da1a-498d-ae76-0bd6a43b92c4', group: 'cat', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
+
+// Product / Service(Product & Service) -> Service? (AV) -> Sector?
+(ansGrpProductAndServiceAV:AnswerGroup {name: 'ansGrpProductAndServiceAV'}),
+(qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceAV),
+(ansGrpProductAndServiceAV)-[:HAS_ANSWER {order: 5}]->(ansAV),
+(ansGrpProductAndServiceAV)-[:HAS_OUTCOME]->(qiProductAndServiceAVSector:QuestionInstance:Outcome {uuid: '698c2998-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
+(ansGrpProductAndServiceAV)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '16a6a3ff-c1b2-478c-921c-fdab77e2bf6a', group: 'bat', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiProductOnlySector),
+(ansGrpProductAndServiceAV)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '5cf7ad84-766a-4bca-b553-00be59aebeaa', group: 'cat', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
+
+// Product / Service(Product & Service) -> Service? (Additional 'CaT' services) -> Sector?
+(ansGrpProductAndServiceBaT:AnswerGroup {name: 'ansGrpProductAndServiceBaT'}),
+(qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceBaT),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 6, multiSelectGroups: ['cat']}]->(ansDelivery),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 7}]->(ansExtendedWarranty),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 8}]->(ansAssetTagging),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 9}]->(ansTraining),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 10}]->(ansInstallation),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 11}]->(ansImaging),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 12}]->(ansConfiguration),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 13}]->(ansNetworkTest),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 14}]->(ansPreDeliveryInspect),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 15}]->(ansStorage),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 16}]->(ansDisposal),
+(ansGrpProductAndServiceBaT)-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
+(ansGrpProductAndServiceBaT)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '5f2b56d9-38b9-4617-a031-3309ea9be110', group: 'cat', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(qiProductAndServiceCaTMultiSelectSector),
 
 // Product / Service(Product & Service) -> Service? (Hardware) -> Sector? (Edu) -> EduTech Lot 4
 (ansGrpProductAndServiceHardwareSectorEdu:AnswerGroup {name: 'ansGrpProductAndServiceHardwareSectorEdu'}),
@@ -240,12 +291,6 @@ CREATE
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_OUTCOME]->(lotTePASLot2),
 
-// Product / Service(Product & Service) -> Service? (H/Sftware/ICT Solutions) -> Sector?
-(ansGrpProductAndServiceHdSftwareICT:AnswerGroup {name: 'ansGrpProductAndServiceHdSftwareICT'}),
-(qiProductAndServiceWhichService)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceHdSftwareICT),
-(ansGrpProductAndServiceHdSftwareICT)-[:HAS_ANSWER {order: 15}]->(ansHardwareSoftwareICTSolutions),
-(ansGrpProductAndServiceHdSftwareICT)-[:HAS_OUTCOME]->(qiProductAndServiceHdSftwareICTSector:QuestionInstance:Outcome {uuid: '698c2812-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
-
 // Product / Service(Product & Service) -> Service? (H/Sftware/ICT Solutions) -> Sector? (Edu) -> EduTech Lot 1
 (ansGrpProductAndServiceHdSftwareICTSectorEdu:AnswerGroup {name: 'ansGrpProductAndServiceHdSftwareICTSectorEdu'}),
 (qiProductAndServiceHdSftwareICTSector)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceHdSftwareICTSectorEdu),
@@ -264,12 +309,6 @@ CREATE
 (ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
 (ansGrpProductAndServiceHdSftwareICTSectorNonEdu)-[:HAS_OUTCOME]->(lotTePASLot1),
-
-// Product / Service(Product & Service) -> Service? (AV) -> Sector?
-(ansGrpProductAndServiceAV:AnswerGroup {name: 'ansGrpProductAndServiceAV'}),
-(qiProductAndServiceWhichService)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceAV),
-(ansGrpProductAndServiceAV)-[:HAS_ANSWER {order: 16}]->(ansAV),
-(ansGrpProductAndServiceAV)-[:HAS_OUTCOME]->(qiProductAndServiceAVSector:QuestionInstance:Outcome {uuid: '698c2998-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
 
 // Product / Service(Product & Service) -> Service? (AV) -> Sector? (Edu) -> EduTech Lot 5
 (ansGrpProductAndServiceAVSectorEdu:AnswerGroup {name: 'ansGrpProductAndServiceAVSectorEdu'}),

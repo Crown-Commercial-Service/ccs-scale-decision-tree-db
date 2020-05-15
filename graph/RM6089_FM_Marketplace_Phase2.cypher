@@ -89,7 +89,7 @@ CREATE
 (ansGrpNonModSvcsDynamic)-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
 // Multi-select (+1 services = route resultGMEndRouteToFM)
-(ansGrpNonModSvcsDynamic)-[:MULTI_SELECT]->(resultGMEndRouteToFM),
+(ansGrpNonModSvcsDynamic)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '3fe8413c-d5d4-4c77-aeac-02c23c84e631', group: 'all', primary: true})-[:HAS_OUTCOME]->(resultGMEndRouteToFM),
 
 // Non-MoD Security sub-branch
 (ansGrpNonModSvcsSecurityTech:AnswerGroup {name: 'ansGrpNonModSvcsSecurityTech'}),

@@ -30,8 +30,8 @@ CREATE
 (:Answer {uuid: 'ccb5bf88-75b5-11ea-bc55-0242ac130003', text: 'Other', hint: 'An item not listed here'}),
 
 // Conditional 'Yes' e.g. for budget and contract length questions
-(:Answer {uuid: 'f2af32c0-8a66-477a-8b02-0f9dbca92288', text: 'Yes', conditionalInputText: "How much is your budget?", conditionalInputHint: "An estimate is fine"}),
-(:Answer {uuid: '007adb34-90f0-4867-9616-195ded25afe5', text: 'Yes', conditionalInputText: "How many months will the contract be for?", conditionalInputHint: "An estimate is fine"}),
+(:Answer {uuid: 'f2af32c0-8a66-477a-8b02-0f9dbca92288', text: 'Yes', conditionalInputText: "How much is your budget?", conditionalInputHint: "An estimate is fine (£)"}),
+(:Answer {uuid: '007adb34-90f0-4867-9616-195ded25afe5', text: 'Yes', conditionalInputText: "How long will the contract be for?", conditionalInputHint: "Enter a time period in months. An estimate is fine. The contract might also be known as a ‘Statement of Work’"}),
 
 // Product / Service
 (:Answer {uuid: 'b879fcf4-654e-11ea-bc55-0242ac130003', text: 'Product', hint: 'A product is an item you can buy, such as a kettle.  It requires no ongoing contract.'}),

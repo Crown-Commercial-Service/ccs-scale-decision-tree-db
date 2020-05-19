@@ -21,7 +21,7 @@ CREATE
 (:QuestionDefinition {uuid: 'b879c662-654e-11ea-bc55-0242ac130003', text: 'Do you require nationwide or regional services?', hint: 'Nationwide suppliers are able to work across the country. Regional suppliers work in their own area.', type: 'BOOLEAN'}),
 (:QuestionDefinition {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'What kind of security do you need?', type: 'LIST'}),
 (:QuestionDefinition {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003', text: 'Where do you need this service?', hint: "Choose one option:", type: 'LIST'}),
-(:QuestionDefinition {uuid: '59561c74-8d8f-4863-a01d-5cca0a289986', text: 'Which service area do you need?', hint: "Choose one option:", type: 'LIST'}),
+(:QuestionDefinition {uuid: '59561c74-8d8f-4863-a01d-5cca0a289986', text: 'Which service area do you need?', hint: "Choose one or more options:", type: 'MULTI_SELECT_LIST'}),
 
 // Answer definitions
 // Yes, No, Other etc
@@ -31,7 +31,7 @@ CREATE
 
 // Conditional 'Yes' e.g. for budget and contract length questions
 (:Answer {uuid: 'f2af32c0-8a66-477a-8b02-0f9dbca92288', text: 'Yes', conditionalInputText: "How much is your budget?", conditionalInputHint: "An estimate is fine (£)"}),
-(:Answer {uuid: '007adb34-90f0-4867-9616-195ded25afe5', text: 'Yes', conditionalInputText: "How long will the contract be for?", conditionalInputHint: "Enter a time period in months. An estimate is fine. The contract might also be known as a ‘Statement of Work’"}),
+(:Answer {uuid: '007adb34-90f0-4867-9616-195ded25afe5', text: 'Yes', conditionalInputText: "How long will the contract be for?", conditionalInputHint: "Enter a time period in months. An estimate is fine."}),
 
 // Product / Service
 (:Answer {uuid: 'b879fcf4-654e-11ea-bc55-0242ac130003', text: 'Product', hint: 'A product is an item you can buy, such as a kettle.  It requires no ongoing contract.'}),

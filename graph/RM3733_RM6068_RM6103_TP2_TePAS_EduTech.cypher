@@ -26,7 +26,7 @@ MATCH
 
 CREATE
 // Journey
-(jrnyTechEduTach:Journey {uuid: 'ccb6174e-75b5-11ea-bc55-0242ac130003', name: 'Tech / EduTech'}),
+(jrnyTechEduTech:Journey {uuid: 'ccb6174e-75b5-11ea-bc55-0242ac130003', name: 'Tech / EduTech'}),
 
 // Tech/EduTech specific answers
 // Services
@@ -59,7 +59,7 @@ CREATE
 (ansAnythingElseSvc:Answer {uuid: 'ca55a200-9c0e-4545-a3a6-c526e11be9f1', text: 'Anything else', hint: 'A technology service not listed here'}),
 
 // Tree Structure
-(jrnyTechEduTach)-[:FIRST_QUESTION]->(qiProdService:QuestionInstance:Outcome {uuid: '698c220e-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnProductOrService),
+(jrnyTechEduTech)-[:FIRST_QUESTION]->(qiProdService:QuestionInstance:Outcome {uuid: '698c220e-7fc8-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnProductOrService),
 
 // Product / Service (Product)
 (ansGrpProduct:AnswerGroup {name: 'ansGrpProduct'}),
@@ -230,7 +230,7 @@ CREATE
 // Product / Service(Product & Service) -> Service? (Additional 'CaT' services) -> Sector?
 (ansGrpProductAndServiceBaT:AnswerGroup {name: 'ansGrpProductAndServiceBaT'}),
 (qiProductAndServiceChooseServices)-[:HAS_ANSWER_GROUP]->(ansGrpProductAndServiceBaT),
-(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 6, multiSelectGroups: ['cat']}]->(ansDelivery),
+(ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 6}]->(ansDelivery),
 (ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 7}]->(ansExtendedWarranty),
 (ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 8}]->(ansAssetTagging),
 (ansGrpProductAndServiceBaT)-[:HAS_ANSWER {order: 9}]->(ansTraining),

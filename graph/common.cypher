@@ -21,16 +21,14 @@ CREATE
 (:Question {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'What kind of security do you need?', type: 'LIST'}),
 (:Question {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003', text: 'Where do you need this service?', hint: "Choose one option:", type: 'LIST'}),
 (:Question {uuid: '59561c74-8d8f-4863-a01d-5cca0a289986', text: 'Which service area do you need?', hint: "Choose one or more options:", type: 'MULTI_SELECT_LIST'}),
+(:Question {uuid: '931a3024-8612-422b-8e6f-480007105c2e', text: 'How much is your budget?', hint: 'An estimate is fine (£)', type: 'NUMBER'}),
+(:Question {uuid: '754c6fbb-4525-4468-89d6-148ac26ec7f9', text: 'How long will the contract be for?', hint: 'Enter a time period in months. An estimate is fine.', type: 'NUMBER'}),
 
 // Answer definitions
-// Yes, No, Other etc
+// Yes, No, Other
 (:Answer {uuid: 'ccb598c8-75b5-11ea-bc55-0242ac130003', text: 'Yes'}),
 (:Answer {uuid: 'ccb59b2a-75b5-11ea-bc55-0242ac130003', text: 'No'}),
 (:Answer {uuid: 'ccb5bf88-75b5-11ea-bc55-0242ac130003', text: 'Other', hint: 'An item not listed here'}),
-
-// Conditional 'Yes' e.g. for budget and contract length questions
-(:Answer {uuid: 'f2af32c0-8a66-477a-8b02-0f9dbca92288', text: 'Yes', conditionalInputText: "How much is your budget?", conditionalInputHint: "An estimate is fine (£)"}),
-(:Answer {uuid: '007adb34-90f0-4867-9616-195ded25afe5', text: 'Yes', conditionalInputText: "How long will the contract be for?", conditionalInputHint: "Enter a time period in months. An estimate is fine."}),
 
 // Product / Service
 (:Answer {uuid: 'b879fcf4-654e-11ea-bc55-0242ac130003', text: 'Product', hint: 'A product is an item you can buy, such as a kettle.  It requires no ongoing contract.'}),
@@ -60,16 +58,6 @@ CREATE
 (:Answer {uuid: 'b879d490-654e-11ea-bc55-0242ac130003', text: 'Physical and Technical', hint: 'This had both a physical presence and technical requirement'}),
 (:Answer {uuid: 'b879d54e-654e-11ea-bc55-0242ac130003', text: 'Physical', hint: 'This has a physical presence such as guards'}),
 (:Answer {uuid: 'b879d648-654e-11ea-bc55-0242ac130003', text: 'Technical', hint: 'This has a technology element such as CCTV'}),
-
-// Budget
-(:Answer {uuid: 'b87a0780-654e-11ea-bc55-0242ac130003', text: 'Less than £1million'}),
-(:Answer {uuid: 'b87a08a2-654e-11ea-bc55-0242ac130003', text: '£1million or more'}),
-(:Answer {uuid: 'ccb5c294-75b5-11ea-bc55-0242ac130003', text: 'Less than £20k'}),
-(:Answer {uuid: 'ccb5c4ec-75b5-11ea-bc55-0242ac130003', text: '£20k or more'}),
-
-// Contract length
-(:Answer {uuid: 'b87a09a6-654e-11ea-bc55-0242ac130003', text: 'Up to 1 year'}),
-(:Answer {uuid: 'b87a0adc-654e-11ea-bc55-0242ac130003', text: '1 year or more'}),
 
 // Reusable outcome types
 (:Support:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', text: 'CCS Escape Page'});

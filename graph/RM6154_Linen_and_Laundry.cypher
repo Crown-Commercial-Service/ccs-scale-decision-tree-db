@@ -1,12 +1,14 @@
 MATCH
-// Required QuestionDefinition nodes:
+// Questions
 (qstnProductOrService:Question {uuid: 'b879c040-654e-11ea-bc55-0242ac130003'}),
-(qstnBudget:Question {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003'}),
-(qstnContractLength:Question {uuid: 'b879c25c-654e-11ea-bc55-0242ac130003'}),
 (qstnService:Question {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003'}),
 (qstnAdditionalServices:Question {uuid: 'b879c342-654e-11ea-bc55-0242ac130003'}),
+(qstnBudgetKnown:Question {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003'}),
+(qstnBudgetValue:Question {uuid: '931a3024-8612-422b-8e6f-480007105c2e'}),
+(qstnContractLengthKnown:Question {uuid: 'b879c25c-654e-11ea-bc55-0242ac130003'}),
+(qstnContractLengthValue:Question {uuid: '754c6fbb-4525-4468-89d6-148ac26ec7f9'}),
 
-// Required answer nodes:
+// Answers
 (ansYes:Answer {uuid: 'ccb598c8-75b5-11ea-bc55-0242ac130003'}),
 (ansNo:Answer {uuid: 'ccb59b2a-75b5-11ea-bc55-0242ac130003'}),
 (ansOther:Answer {uuid: 'ccb5bf88-75b5-11ea-bc55-0242ac130003'}),
@@ -14,11 +16,8 @@ MATCH
 (ansProduct:Answer {uuid: 'b879fcf4-654e-11ea-bc55-0242ac130003'}),
 (ansService:Answer {uuid: 'b879fe0c-654e-11ea-bc55-0242ac130003'}),
 
-(ansBudgetLTMillion:Answer {uuid: 'b87a0780-654e-11ea-bc55-0242ac130003'}),
-(ansBudgetGTMillion:Answer {uuid: 'b87a08a2-654e-11ea-bc55-0242ac130003'}),
-
-(ansContractLengthLT12Months:Answer {uuid: 'b87a09a6-654e-11ea-bc55-0242ac130003'}),
-(ansContractLengthGT12Months:Answer {uuid: 'b87a0adc-654e-11ea-bc55-0242ac130003'})
+// Outcomes
+(resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
 // Journey
@@ -42,37 +41,38 @@ CREATE
 (ansGrpProduct:AnswerGroup {name: 'ansGrpProduct'}),
 (qiProdService)-[:HAS_ANSWER_GROUP]->(ansGrpProduct),
 (ansGrpProduct)-[:HAS_ANSWER {order: 1}]->(ansProduct),
-(ansGrpProduct)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpProduct)-[:HAS_OUTCOME]->(resultCCSEscapePage),
 
 // Service
 (ansGrpService:AnswerGroup {name: 'ansGrpService'}),
 (qiProdService)-[:HAS_ANSWER_GROUP]->(ansGrpService),
 (ansGrpService)-[:HAS_ANSWER {order: 2}]->(ansService),
-(ansGrpService)-[:HAS_OUTCOME]->(qiBudget:QuestionInstance:Outcome {uuid: 'ccb5a4f8-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnBudget),
+(ansGrpService)-[:HAS_OUTCOME]->(qiBudget:QuestionInstance:Outcome {uuid: 'ccb5a4f8-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnBudgetKnown),
 
-// Service - Small Projects Branch
-// Budget < £1m
-(ansGrpBudgetLTMillion:AnswerGroup {name: 'ansGrpBudgetLTMillion'}),
-(qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetLTMillion),
-(ansGrpBudgetLTMillion)-[:HAS_ANSWER {order: 1}]->(ansBudgetLTMillion),
-(ansGrpBudgetLTMillion)-[:HAS_OUTCOME]->(qiContractLengthSP:QuestionInstance:Outcome {uuid: 'ccb5a6ec-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnContractLength),
+// Budget Unkown (SP branch, < £1m)
+(ansGrpBudgetUnknown:AnswerGroup {name: 'ansGrpBudgetUnknown'}),
+(qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetUnknown),
+(ansGrpBudgetUnknown)-[:HAS_ANSWER {order: 2}]->(ansNo),
+(ansGrpBudgetUnknown)-[:HAS_OUTCOME]->(qiContractLengthKnown:QuestionInstance:Outcome {uuid: 'ccb5a6ec-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnContractLengthKnown),
 
-// Contract Length
-(ansGrpContractLengthLT12Months:AnswerGroup {name: 'ansGrpContractLengthLT12Months'}),
-(qiContractLengthSP)-[:HAS_ANSWER_GROUP]->(ansGrpContractLengthLT12Months),
-(ansGrpContractLengthLT12Months)-[:HAS_ANSWER {order: 1}]->(ansContractLengthLT12Months),
-(ansGrpContractLengthLT12Months)-[:HAS_OUTCOME]->(qiServiceSP:QuestionInstance:Outcome {uuid: 'ccb5a872-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
+(ansGrpContractLengthKnown:AnswerGroup {name: 'ansGrpContractLengthKnown'}),
+(qiContractLengthKnown)-[:HAS_ANSWER_GROUP]->(ansGrpContractLengthKnown),
+(ansGrpContractLengthKnown)-[:HAS_ANSWER {order: 1}]->(ansYes)-[:HAS_CONDITIONAL_INPUT]->(:QuestionInstance)-[:DEFINED_BY]->(qstnContractLengthValue),
+(ansGrpContractLengthKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 12}]->(qiServiceSP:QuestionInstance:Outcome {uuid: 'ccb5a872-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
+(ansGrpContractLengthKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 12, upperBoundExclusive: 9223372036854775807}]->(qiServiceBP:QuestionInstance:Outcome {uuid: 'ccb5a930-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 
-(ansGrpContractLengthGT12Months:AnswerGroup {name: 'ansGrpContractLengthGT12Months'}),
-(qiContractLengthSP)-[:HAS_ANSWER_GROUP]->(ansGrpContractLengthGT12Months),
-(ansGrpContractLengthGT12Months)-[:HAS_ANSWER {order: 2}]->(ansContractLengthGT12Months),
-(ansGrpContractLengthGT12Months)-[:HAS_OUTCOME]->(qiServiceBP:QuestionInstance:Outcome {uuid: 'ccb5a930-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
+(ansGrpContractLengthUnknown:AnswerGroup {name: 'ansGrpContractLengthUnknown'}),
+(qiContractLengthKnown)-[:HAS_ANSWER_GROUP]->(ansGrpContractLengthUnknown),
+(ansGrpContractLengthUnknown)-[:HAS_ANSWER {order: 2}]->(ansNo),
+(ansGrpContractLengthUnknown)-[:HAS_OUTCOME]->(qiServiceSP),
 
-// Budget > £1m
-(ansGrpBudgetGTMillion:AnswerGroup {name: 'ansGrpBudgetGTMillion'}),
-(qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetGTMillion),
-(ansGrpBudgetGTMillion)-[:HAS_ANSWER {order: 2}]->(ansBudgetGTMillion),
-(ansGrpBudgetGTMillion)-[:HAS_OUTCOME]->(qiServiceBP),
+// Budget Known (routing based on bounds)
+// TODO: Remove artificial upper & lower bounds
+(ansGrpBudgetKnown:AnswerGroup {name: 'ansGrpBudgetKnown'}),
+(qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetKnown),
+(ansGrpBudgetKnown)-[:HAS_ANSWER {order: 1}]->(ansYes)-[:HAS_CONDITIONAL_INPUT]->(:QuestionInstance)-[:DEFINED_BY]->(qstnBudgetValue),
+(ansGrpBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 1000000}]->(qiContractLengthKnown),
+(ansGrpBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 1000000, upperBoundExclusive: 9223372036854775807}]->(qiServiceBP),
 
 // SP (< 12 months)
 // SP - Cleanroom services

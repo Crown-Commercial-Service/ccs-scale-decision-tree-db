@@ -1,11 +1,12 @@
 MATCH
-// Required QuestionDefinition nodes:
+// Questions
 (qstnSector:Question {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003'}),
 (qstnServiceArea:Question {uuid: '59561c74-8d8f-4863-a01d-5cca0a289986'}),
 (qstnLocation:Question {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003'}),
-(qstnBudget:Question {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003'}),
+(qstnBudgetKnown:Question {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003'}),
+(qstnBudgetValue:Question {uuid: '931a3024-8612-422b-8e6f-480007105c2e'}),
 
-// Required answer nodes:
+// Answers
 (ansSectorCG:Answer {uuid: 'b879a178-654e-11ea-bc55-0242ac130003'}),
 (ansSectorLG:Answer {uuid: 'b879a5ec-654e-11ea-bc55-0242ac130003'}),
 (ansSectorMoD:Answer {uuid: 'b8799ee4-654e-11ea-bc55-0242ac130003'}),
@@ -21,8 +22,8 @@ MATCH
 (ansLocScotland:Answer {uuid: 'ccb5c104-75b5-11ea-bc55-0242ac130003'}),
 (ansLocNorthernIreland:Answer {uuid: 'ccb5c1cc-75b5-11ea-bc55-0242ac130003'}),
 
-// Budget
-(ansConditionalBudgetYes:Answer {uuid: 'f2af32c0-8a66-477a-8b02-0f9dbca92288'}),
+// Yes / No
+(ansYes:Answer {uuid: 'ccb598c8-75b5-11ea-bc55-0242ac130003'}),
 (ansNo:Answer {uuid: 'ccb59b2a-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
@@ -40,7 +41,6 @@ CREATE
 (ansFinanceComplex:Answer {uuid: 'ccb5dbee-75b5-11ea-bc55-0242ac130003', text: 'Finance & Complex', hint: 'Financial legal action such as prosecuting fraud'}),
 (ansPropertyConstruction:Answer {uuid: 'ccb5df2c-75b5-11ea-bc55-0242ac130003', text: 'Property and construction', hint: 'This is for large scale and high value building works, such as a hospital'}),
 (ansTransport:Answer {uuid: 'ccb5dff4-75b5-11ea-bc55-0242ac130003', text: 'Transport', hint: 'Transport-specific legal advice'}),
-(ansMulti:Answer {uuid: 'ccb5dcac-75b5-11ea-bc55-0242ac130003', text: 'Multiple', hint: 'More than one item from this list'}),
 (ansAnythingElse:Answer {uuid: 'ccb5dd74-75b5-11ea-bc55-0242ac130003', text: 'Anything else', hint: 'A legal service not listed here'}),
 
 // Tree Structure
@@ -87,25 +87,25 @@ CREATE
 (ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 6}]->(ansEmpLitigation),
 (ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 7}]->(ansProperty),
 (ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 8}]->(ansLitigation),
-(ansGrpCGServiceEmpLitProp)-[:HAS_OUTCOME]->(qiCentGovBudget:QuestionInstance:Outcome {uuid: 'ccb6124e-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnBudget),
+(ansGrpCGServiceEmpLitProp)-[:HAS_OUTCOME]->(qiCentGovBudget:QuestionInstance:Outcome {uuid: 'ccb6124e-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnBudgetKnown),
 (ansGrpCGServiceEmpLitProp)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'd6f34b9f-3667-4f06-82a8-e334b36d5157', group: 'cg_multi_emplit_prop', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiCentGovBudget),
 (ansGrpCGServiceEmpLitProp)-[:HAS_MULTI_SELECT]->(multiCGServiceEmpLitProp:MultiSelect {uuid: 'a4bf03aa-c24a-4c77-80b5-f6dd602eeb8a', group: 'cg_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3787'}),
 (multiCGServiceEmpLitProp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
 
-// Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget(Unknown - <£20k)
-(ansGrpCGBudgetUnknown:AnswerGroup {name: 'ansGrpCGBudgetUnknown'}),
-(qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetUnknown),
-(ansGrpCGBudgetUnknown)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpCGBudgetUnknown)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
-(ansGrpCGBudgetUnknown)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
-
-// Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget(Known)
+// Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget (known)
 // TODO: Remove artificial upper & lower bounds
 (ansGrpCGBudgetKnown:AnswerGroup {name: 'ansGrpCGBudgetKnown'}),
 (qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetKnown),
-(ansGrpCGBudgetKnown)-[:HAS_ANSWER {order: 2}]->(ansConditionalBudgetYes),
+(ansGrpCGBudgetKnown)-[:HAS_ANSWER {order: 1}]->(ansYes)-[:HAS_CONDITIONAL_INPUT]->(:QuestionInstance)-[:DEFINED_BY]->(qstnBudgetValue),
 (ansGrpCGBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 20000}]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 (ansGrpCGBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 20000, upperBoundExclusive: 9223372036854775807}]->(:Agreement:Outcome {number: 'RM3786'}),
+
+// Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget (unknown)
+(ansGrpCGBudgetUnknown:AnswerGroup {name: 'ansGrpCGBudgetUnknown'}),
+(qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetUnknown),
+(ansGrpCGBudgetUnknown)-[:HAS_ANSWER {order: 2}]->(ansNo),
+(ansGrpCGBudgetUnknown)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+(ansGrpCGBudgetUnknown)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
 
 // Sector(CG) -> Service(Finance & Complex)
 (ansGrpCGServiceFinCompMultiOther:AnswerGroup {name: 'ansGrpCGServiceFinCompMultiOther'}),

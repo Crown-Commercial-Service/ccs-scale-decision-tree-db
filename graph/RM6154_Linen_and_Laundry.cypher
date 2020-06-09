@@ -9,10 +9,8 @@ MATCH
 (qstnContractLengthValue:Question {uuid: '754c6fbb-4525-4468-89d6-148ac26ec7f9'}),
 
 // Answers
-(ansYes:Answer {uuid: 'ccb598c8-75b5-11ea-bc55-0242ac130003'}),
 (ansNo:Answer {uuid: 'ccb59b2a-75b5-11ea-bc55-0242ac130003'}),
 (ansOther:Answer {uuid: 'ccb5bf88-75b5-11ea-bc55-0242ac130003'}),
-
 (ansProduct:Answer {uuid: 'b879fcf4-654e-11ea-bc55-0242ac130003'}),
 (ansService:Answer {uuid: 'b879fe0c-654e-11ea-bc55-0242ac130003'}),
 
@@ -20,6 +18,10 @@ MATCH
 (resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
+// Additional answer nodes for conditional input
+(ansYesBudgetKnown:Answer {uuid: '1144b698-c399-4b89-adb6-eb78bc3941ad', text: 'Yes'}),
+(ansYesContractKnown:Answer {uuid: '01e3a952-0083-4cae-9b2c-bf4065d5884b', text: 'Yes'}),
+
 // Journey
 (jrnyLinenLaundry:Journey {uuid: 'b87a0636-654e-11ea-bc55-0242ac130003', name: 'Linen and Laundry Services'}),
 
@@ -47,17 +49,17 @@ CREATE
 (ansGrpService:AnswerGroup {name: 'ansGrpService'}),
 (qiProdService)-[:HAS_ANSWER_GROUP]->(ansGrpService),
 (ansGrpService)-[:HAS_ANSWER {order: 2}]->(ansService),
-(ansGrpService)-[:HAS_OUTCOME]->(qiBudget:QuestionInstance:Outcome {uuid: 'ccb5a4f8-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnBudgetKnown),
+(ansGrpService)-[:HAS_OUTCOME]->(qiBudget:QuestionInstance:Outcome {uuid: 'ccb5a4f8-75b5-11ea-bc55-0242ac130003', conditionalInput: true})-[:DEFINED_BY]->(qstnBudgetKnown),
 
 // Budget Unkown (SP branch, < £1m)
 (ansGrpBudgetUnknown:AnswerGroup {name: 'ansGrpBudgetUnknown'}),
 (qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetUnknown),
 (ansGrpBudgetUnknown)-[:HAS_ANSWER {order: 2}]->(ansNo),
-(ansGrpBudgetUnknown)-[:HAS_OUTCOME]->(qiContractLengthKnown:QuestionInstance:Outcome {uuid: 'ccb5a6ec-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnContractLengthKnown),
+(ansGrpBudgetUnknown)-[:HAS_OUTCOME]->(qiContractLengthKnown:QuestionInstance:Outcome {uuid: 'ccb5a6ec-75b5-11ea-bc55-0242ac130003', conditionalInput: true})-[:DEFINED_BY]->(qstnContractLengthKnown),
 
 (ansGrpContractLengthKnown:AnswerGroup {name: 'ansGrpContractLengthKnown'}),
 (qiContractLengthKnown)-[:HAS_ANSWER_GROUP]->(ansGrpContractLengthKnown),
-(ansGrpContractLengthKnown)-[:HAS_ANSWER {order: 1}]->(ansYes)-[:HAS_CONDITIONAL_INPUT]->(:QuestionInstance)-[:DEFINED_BY]->(qstnContractLengthValue),
+(ansGrpContractLengthKnown)-[:HAS_ANSWER {order: 1}]->(ansYesContractKnown)-[:HAS_CONDITIONAL_INPUT]->(qstnContractLengthValue),
 (ansGrpContractLengthKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 12}]->(qiServiceSP:QuestionInstance:Outcome {uuid: 'ccb5a872-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 (ansGrpContractLengthKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 12, upperBoundExclusive: 9223372036854775807}]->(qiServiceBP:QuestionInstance:Outcome {uuid: 'ccb5a930-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnService),
 
@@ -70,7 +72,7 @@ CREATE
 // TODO: Remove artificial upper & lower bounds
 (ansGrpBudgetKnown:AnswerGroup {name: 'ansGrpBudgetKnown'}),
 (qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpBudgetKnown),
-(ansGrpBudgetKnown)-[:HAS_ANSWER {order: 1}]->(ansYes)-[:HAS_CONDITIONAL_INPUT]->(:QuestionInstance)-[:DEFINED_BY]->(qstnBudgetValue),
+(ansGrpBudgetKnown)-[:HAS_ANSWER {order: 1}]->(ansYesBudgetKnown)-[:HAS_CONDITIONAL_INPUT]->(qstnBudgetValue),
 (ansGrpBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 1000000}]->(qiContractLengthKnown),
 (ansGrpBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 1000000, upperBoundExclusive: 9223372036854775807}]->(qiServiceBP),
 
@@ -151,7 +153,7 @@ CREATE
 (ansGrpSPServiceStdWashAddSrvNo:AnswerGroup {name: 'ansGrpSPServiceStdWashAddSrvNo'}),
 (qiAdditionalServicesSPStndWash)-[:HAS_ANSWER_GROUP]->(ansGrpSPServiceStdWashAddSrvNo),
 (ansGrpSPServiceStdWashAddSrvNo)-[:HAS_ANSWER {order: 1}]->(ansNo),
-(ansGrpSPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
+(ansGrpSPServiceStdWashAddSrvNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '1b', url: '', type: 'CAT', scale: true}),
 
 // Add srv - Yes
 (ansGrpSPServiceStdWashAddSrvYes:AnswerGroup {name: 'ansGrpSPServiceStdWashAddSrvYes'}),

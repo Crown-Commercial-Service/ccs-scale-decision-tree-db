@@ -33,9 +33,7 @@ load_gm_data "MCF2_Consultancy.cypher"
 
 echo "Data load complete"
 
-# Create a read-only service account:
-createUserCypher="CREATE USER ${DB_READ_ONLY_USERNAME} IF NOT EXISTS SET PASSWORD '${DB_READ_ONLY_PASSWORD}' SET PASSWORD CHANGE NOT REQUIRED;"
-grantReaderRoleCypher="GRANT ROLE reader TO ${DB_READ_ONLY_USERNAME};"
+# Create a service account (for use by Decision Tree service):
+createUserCypher="CREATE USER ${DB_SERVICE_ACCOUNT_USERNAME} IF NOT EXISTS SET PASSWORD '${DB_SERVICE_ACCOUNT_PASSWORD}' SET PASSWORD CHANGE NOT REQUIRED;"
 cypher-shell -u ${DB_ADMIN_USERNAME} -p ${DB_ADMIN_PASSWORD} -a bolt://localhost:7687 -d system --debug "${createUserCypher}"
-#cypher-shell -u ${DB_ADMIN_USERNAME} -p ${DB_ADMIN_PASSWORD} -a bolt://localhost:7687 -d system --debug "${grantReaderRoleCypher}"
 fg %1

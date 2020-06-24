@@ -11,6 +11,7 @@ CREATE CONSTRAINT unique_multi_select_uuid ON (ms:MultiSelect) ASSERT ms.uuid IS
 CREATE
 // Question definitions
 (:Question {uuid: 'b879c040-654e-11ea-bc55-0242ac130003', text: 'Are you looking for a product, service or both?', hint: "Choose one option:", type: 'LIST'}),
+(:Question {uuid: '00888ff8-4327-4f46-a03b-8c6556b1fcac', text: 'Are you looking for a product or a service?', hint: "Choose one option:", type: 'LIST'}),
 (:Question {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003', text: 'Do you know your budget?', type: 'BOOLEAN', conditionalInput: true, hint: "This helps us find your best buying options. An estimate is fine."}),
 (:Question {uuid: 'b879c25c-654e-11ea-bc55-0242ac130003', text: 'Do you know how long the contract will be for?', type: 'BOOLEAN', conditionalInput: true, hint: "This helps us find your best buying options. An estimate is fine. The contract might also be known as a ‘Statement of Work’"}),
 (:Question {uuid: 'b879c342-654e-11ea-bc55-0242ac130003', text: 'Do you need additional facilities management services?', hint: "These are services related to managing a facility such as security, grounds maintenance, catering or pest control", type: 'LIST'}),

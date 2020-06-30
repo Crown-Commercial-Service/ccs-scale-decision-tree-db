@@ -263,7 +263,7 @@ CREATE
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6068'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', routeToMarket: "FC", scale: false}),
+(ansGrpProductAndServiceHardwareSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6068'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', routeToMarket: "FC", scale: false}),
 
 // Product / Service(Product & Service) -> Service? (H/Sftware/ICT Solutions) -> Sector? (Edu) -> EduTech Lot 1
 (ansGrpProductAndServiceHdSftwareICTSectorEdu:AnswerGroup {name: 'ansGrpProductAndServiceHdSftwareICTSectorEdu'}),

@@ -31,11 +31,11 @@ CREATE
 // Tech/EduTech specific answers
 // Services
 (ansBroadbandFibreInfra:Answer {uuid: 'ccb6263a-75b5-11ea-bc55-0242ac130003', text: 'Broadband fibre infrastructure', hint: 'For example, upgrade of broadband installation with new fibres'}),
-(ansBroadbandService:Answer {uuid: 'ccb627ca-75b5-11ea-bc55-0242ac130003', text: 'Broadband service', hint: 'For example, finding an internet service provider (ISP)'}),
-(ansTechStrategyAndSvcDesign:Answer {uuid: 'ccb6289c-75b5-11ea-bc55-0242ac130003', text: 'Technology strategy and service design', hint: 'For example, Capability ​​analysis, Enterprise ​​architecture, and Service ​​design'}),
+(ansBroadbandService:Answer {uuid: 'ccb627ca-75b5-11ea-bc55-0242ac130003', text: 'Broadband service', hint: 'For example, finding an Internet Service Provider (ISP)'}),
+(ansTechStrategyAndSvcDesign:Answer {uuid: 'ccb6289c-75b5-11ea-bc55-0242ac130003', text: 'Technology strategy and service design', hint: 'For example, capability ​​analysis, enterprise ​​architecture, and service ​​design'}),
 (ansTransitionTransformation:Answer {uuid: 'ccb629f0-75b5-11ea-bc55-0242ac130003', text: 'Transition and transformation', hint: 'For example the implementation​​ of ​​new​​ services,​​ service​​ providers, architectures​​ or​​ processes'}),
 (ansOperationalServices:Answer {uuid: 'ccb62ab8-75b5-11ea-bc55-0242ac130003', text: 'Operational services', hint: 'The​​ services,​​ processes​​ and​​ tools ​​needed ​​to​​ manage ​​the provisioning,​​ capacity, ​​performance,​​ security ​​and availability​​ of​​ the​​ technology ​​environment'}),
-(ansProgsLargeProjects:Answer {uuid: 'ccb62be4-75b5-11ea-bc55-0242ac130003', text: 'Programmes and large projects', hint: 'These are technology services offered at or above official government security level. You should only choose this if you require Secret or Top Secret level programmes or large projects.'}),
+(ansProgsLargeProjects:Answer {uuid: 'ccb62be4-75b5-11ea-bc55-0242ac130003', text: 'Programmes and large projects', hint: 'These are technology services offered at or above official government security level. You should only choose this if you require Secret or Top Secret level programmes or large projects'}),
 
 // Service & product
 (ansDelivery:Answer {uuid: 'ccb62d24-75b5-11ea-bc55-0242ac130003', text: 'Delivery', hint: 'Book courier and delivery options'}),
@@ -43,11 +43,11 @@ CREATE
 (ansAssetTagging:Answer {uuid: 'ccb634f4-75b5-11ea-bc55-0242ac130003', text: 'Asset tagging', hint: 'Get technology units tagged for inventory and insurance purposes'}),
 (ansTraining:Answer {uuid: 'ccb63616-75b5-11ea-bc55-0242ac130003', text: 'Training', hint: 'Book training by the hour'}),
 (ansInstallation:Answer {uuid: 'ccb63760-75b5-11ea-bc55-0242ac130003', text: 'Installation', hint: 'Book installation per unit or per product'}),
-(ansImaging:Answer {uuid: 'ccb63832-75b5-11ea-bc55-0242ac130003', text: 'Imaging', hint: 'Book an imaging service'}),
-(ansConfiguration:Answer {uuid: 'ccb638f0-75b5-11ea-bc55-0242ac130003', text: 'Configuration', hint: 'Book configuration services by the hour'}),
+(ansImaging:Answer {uuid: 'ccb63832-75b5-11ea-bc55-0242ac130003', text: 'Imaging', hint: 'Installing images on new devices, so company logos show on device launch'}),
+(ansConfiguration:Answer {uuid: 'ccb638f0-75b5-11ea-bc55-0242ac130003', text: 'Configuration', hint: 'Configuration services by the hour'}),
 (ansNetworkTest:Answer {uuid: 'ccb63a4e-75b5-11ea-bc55-0242ac130003', text: 'Network test', hint: 'Book by project'}),
-(ansPreDeliveryInspect:Answer {uuid: 'ccb63ba2-75b5-11ea-bc55-0242ac130003', text: 'Pre-delivery inspection', hint: 'Book by product'}),
-(ansStorage:Answer {uuid: 'ccb63d14-75b5-11ea-bc55-0242ac130003', text: 'Storage', hint: 'Technology unit storage, by area or by day'}),
+(ansPreDeliveryInspect:Answer {uuid: 'ccb63ba2-75b5-11ea-bc55-0242ac130003', text: 'Pre-delivery inspection', hint: 'Inspection of the premises, such as checking for asbestos in walls and ceilings'}),
+(ansStorage:Answer {uuid: 'ccb63d14-75b5-11ea-bc55-0242ac130003', text: 'Storage', hint: 'Technology unit storage provided by area or by day'}),
 (ansDisposal:Answer {uuid: '698c1aa2-7fc8-11ea-bc55-0242ac130003', text: 'Disposal', hint: 'Tech disposal and recycle services, by weight or by product'}),
 (ansInfoAssuredServices:Answer {uuid: '698c1cb4-7fc8-11ea-bc55-0242ac130003', text: 'Information assured services', hint: 'Services with an extra layer of security required by Ministry of Defence and some other organisations. Includes IT service desk, system installation, training, hire of goods, hardware asset management, software asset management, escrow and more.'}),
 (ansSoftware:Answer {uuid: '698c1da4-7fc8-11ea-bc55-0242ac130003', text: 'Software', hint: 'For example, software licenses, open source software, commercial software'}),

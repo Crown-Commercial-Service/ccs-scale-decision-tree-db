@@ -301,4 +301,4 @@ CREATE
 (ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6068'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', routeToMarket: "FC", scale: false});
+(ansGrpProductAndServiceAVSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6068'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', routeToMarket: "FC", scale: false});

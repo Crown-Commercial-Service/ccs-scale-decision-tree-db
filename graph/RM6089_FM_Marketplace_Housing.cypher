@@ -1,38 +1,61 @@
+MATCH
+// Questions
+(qstnHousingType:Question {uuid: '4d9acc00-13eb-4854-8455-3213f381e0de'}),
+(qstnSector:Question {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003'}),
+
+// Answers
+(ansSectorMoD:Answer {uuid: 'b8799ee4-654e-11ea-bc55-0242ac130003'}),
+(ansSectorCG:Answer {uuid: 'b879a178-654e-11ea-bc55-0242ac130003'}),
+(ansSectorLG:Answer {uuid: 'b879a5ec-654e-11ea-bc55-0242ac130003'}),
+(ansSectorDevolved:Answer {uuid: 'b879a286-654e-11ea-bc55-0242ac130003'}),
+(ansSectorEdu:Answer {uuid: 'b879a3bc-654e-11ea-bc55-0242ac130003'}),
+(ansSectorHealth:Answer {uuid: 'b879a48e-654e-11ea-bc55-0242ac130003'}),
+(ansSectorBlueLight:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003'}),
+(ansSectorHousing:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003'}),
+(ansSectorCharities:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003'}),
+
+// Outcomes
+(resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
+
 CREATE
+// Answers
+(ansHousingMgmtMaintenance:Answer {uuid: 'a70a802f-a0cf-4a97-87ba-f2cf1647e72d', text: 'Housing management and maintenance'}),
+(ansEstateServices:Answer {uuid: '26f9107e-75a5-460e-ac62-a41fad737d2a', text: 'Estate services'}),
+
 // Journey
-(jrnyFM2Housing:Journey {uuid: '12fda7dc-d635-11ea-87d0-0242ac130003', name: 'FM Marketplace Phase 2 - Housing'}),
-
-// Specific questions
-(qstnHousingType:Question {uuid: 'fbdd93be-d634-11ea-87d0-0242ac130003', text: 'What Type of Housing?', type: 'LIST'}),
-(qstnSector:Question {uuid: 'fbdd9850-d634-11ea-87d0-0242ac130003', text: 'What Sector?', type: 'LIST'}),
-
-// Specific answers
-(ansHousingEstates:Answer {uuid: 'fbdd9986-d634-11ea-87d0-0242ac130003', text: 'Estates', hint: 'Estates.'}),
-(ansHousingMOD:Answer {uuid: 'fbdd9a58-d634-11ea-87d0-0242ac130003', text: 'MOD', hint: 'MOD.'}),
-(ansHousingNonMOD:Answer {uuid: 'fbdd9b20-d634-11ea-87d0-0242ac130003', text: 'Non MOD', hint: 'Non MOD.'}),
-
-// Outcomes (Agreement Lots)
-(lotFM2Lot2a:Lot:Outcome {uuid: '12fdaa5c-d635-11ea-87d0-0242ac130003', agreementName: 'Workplace Services (FM Marketplace Phase 2)', lotName: 'Lot 2a: TODO', agreementDescription: 'Security, housing and defence facilities management (FM) services.', lotDescription: 'Defence Housing Maintenance Services (Regional)', agreementId: 'RM6089', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
-(lotFM2Lot2b:Lot:Outcome {uuid: '12fdab2e-d635-11ea-87d0-0242ac130003', agreementName: 'Workplace Services (FM Marketplace Phase 2)', lotName: 'Lot 2b: TODO', agreementDescription: 'Security, housing and defence facilities management (FM) services.', lotDescription: 'Defence Housing Management Services (National)', agreementId: 'RM6089', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
-(lotFM2Lot2c:Lot:Outcome {uuid: '12fdabf6-d635-11ea-87d0-0242ac130003', agreementName: 'Workplace Services (FM Marketplace Phase 2)', lotName: 'Lot 2c: TODO', agreementDescription: 'Security, housing and defence facilities management (FM) services.', lotDescription: 'MOD Facilities Management Marketplace', agreementId: 'RM6089', url: '', type: 'CAT', scale: false, routeToMarket: "FC"}),
+(jrnyFM2Housing:Journey {uuid: 'f08a2055-6502-4d5f-81f8-2e3f111ff7ae', name: 'FM Marketplace Phase 2 - Housing'}),
 
 // Tree Structure
 (jrnyFM2Housing)-[:FIRST_QUESTION]->(qiHousingType:QuestionInstance:Outcome {uuid: '2b6b7a4c-d635-11ea-87d0-0242ac130003'})-[:DEFINED_BY]->(qstnHousingType),
 
-// Estates - End GM - Route to Non Scale
-(ansGrpEstates:AnswerGroup {name: 'ansGrpEstates'}),
-(qiHousingType)-[:HAS_ANSWER_GROUP]->(ansGrpEstates),
-(ansGrpEstates)-[:HAS_ANSWER {order: 1}]->(ansHousingEstates),
-(ansGrpEstates)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+// Housing management and maintenance
+(ansGrpHouseMgmtMaintenance:AnswerGroup {name: 'ansGrpHouseMgmtMaintenance'}),
+(qiHousingType)-[:HAS_ANSWER_GROUP]->(ansGrpHouseMgmtMaintenance),
+(ansGrpHouseMgmtMaintenance)-[:HAS_ANSWER {order: 1}]->(ansHousingMgmtMaintenance),
+(ansGrpHouseMgmtMaintenance)-[:HAS_OUTCOME]->(qiSector:QuestionInstance:Outcome {uuid: '06f8c620-ccd1-4852-b1d7-2ef3caf322e2'})-[:DEFINED_BY]->(qstnSector),
 
-// MOD
-(ansGrpMOD:AnswerGroup {name: 'ansGrpMOD'}),
-(qiHousingType)-[:HAS_ANSWER_GROUP]->(ansGrpMOD),
-(ansGrpMOD)-[:HAS_ANSWER {order: 1}]->(ansHousingMOD),
-(ansGrpMOD)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '2a', url: '', type: 'CAT', routeToMarket: "FC", scale: true}),
+// Estate Services
+(ansGrpEstateServices:AnswerGroup {name: 'ansGrpEstateServices'}),
+(qiHousingType)-[:HAS_ANSWER_GROUP]->(ansGrpEstateServices),
+(ansGrpEstateServices)-[:HAS_ANSWER {order: 2}]->(ansEstateServices),
+(ansGrpEstateServices)-[:HAS_OUTCOME]->(resultCCSEscapePage),
 
-// Estates - End GM - Route to Non Scale
-(ansGrpNonMOD:AnswerGroup {name: 'ansGrpNonMOD'}),
-(qiHousingType)-[:HAS_ANSWER_GROUP]->(ansGrpMOD),
-(ansGrpNonMOD)-[:HAS_ANSWER {order: 1}]->(ansHousingNonMOD),
-(ansGrpNonMOD)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '2c', url: '', type: 'CAT', routeToMarket: "FC", scale: true})
+// Housing Type (Housing Mgmt & Maintenance) -> Sector (MoD)
+(ansGrpSectorMoD:AnswerGroup {name: 'ansGrpSectorMoD'}),
+(qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSectorMoD),
+(ansGrpSectorMoD)-[:HAS_ANSWER {order: 1}]->(ansSectorMoD),
+(ansGrpSectorMoD)-[:HAS_OUTCOME]->(fm2:Agreement:Outcome {number: 'RM6089'}),
+(fm2)-[:HAS_LOT]->(:Lot {number: '2a', url: '', type: 'CAT', scale: true}),
+(fm2)-[:HAS_LOT]->(:Lot {number: '2b', url: '', type: 'CAT', scale: true}),
+
+// Housing Type (Housing Mgmt & Maintenance) -> Sector (Other)
+(ansGrpSectorWPS:AnswerGroup {name: 'ansGrpSectorWPS'}),
+(qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSectorWPS),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 2}]->(ansSectorCG),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 3}]->(ansSectorEdu),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 4}]->(ansSectorDevolved),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 5}]->(ansSectorHealth),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 6}]->(ansSectorBlueLight),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 7}]->(ansSectorHousing),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 8}]->(ansSectorCharities),
+(ansGrpSectorWPS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '2c', url: '', type: 'CAT', scale: true});

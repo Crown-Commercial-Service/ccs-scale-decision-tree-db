@@ -1,6 +1,6 @@
 MATCH
 // Questions
-(qstnHousingType:Question {uuid: '4d9acc00-13eb-4854-8455-3213f381e0de'}),
+(qstnServices:Question {uuid: 'b87a0014-654e-11ea-bc55-0242ac130003'}),
 (qstnSector:Question {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003'}),
 
 // Answers - Sectors
@@ -31,10 +31,50 @@ MATCH
 
 CREATE
 // Journey
-(jrnyFM2Facilities:Journey {uuid: '7f7dcab1-9736-4012-960e-03da3b841c4c', name: 'FM Marketplace Phase 2 - Housing'}),
-
+(jrnyFM2Facilities:Journey {uuid: '7f7dcab1-9736-4012-960e-03da3b841c4c', name: 'FM Marketplace Phase 2 - Facilities'}),
 
 // Tree Structure
-(jrnyFM2Housing)-[:FIRST_QUESTION]->(qiHousingType:QuestionInstance:Outcome {uuid: '2b6b7a4c-d635-11ea-87d0-0242ac130003'})-[:DEFINED_BY]->(qstnHousingType);
+(jrnyFM2Facilities)-[:FIRST_QUESTION]->(qiServices:QuestionInstance:Outcome {uuid: 'f19fb557-543d-4c18-ba21-e5587fc56f63'})-[:DEFINED_BY]->(qstnServices),
+(qiSector:QuestionInstance:Outcome {uuid: '1add4fed-cd58-497a-a924-db5c38dfb418'})-[:DEFINED_BY]->(qstnSector),
 
-// TODO...
+(ansGrpSvcsCleaning:AnswerGroup {name: 'ansGrpSvcsCleaning'}),
+(qiServices)-[:HAS_ANSWER_GROUP]->(ansGrpSvcsCleaning),
+(ansGrpSvcsCleaning)-[:HAS_ANSWER {order: 5}]->(ansCleaning),
+(ansGrpSvcsCleaning)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSvcsCleaning)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '62415e0b-d2b5-459b-9fb2-8d9a98fa7a7b', group: 'svcs_cleaning_multi', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(qiSector),
+
+(ansGrpSvcsFacilities:AnswerGroup {name: 'ansGrpSvcsFacilities'}),
+(qiServices)-[:HAS_ANSWER_GROUP]->(ansGrpSvcsFacilities),
+(ansGrpSvcsFacilities)-[:HAS_ANSWER {order: 1}]->(ansMaintenance),
+(ansGrpSvcsFacilities)-[:HAS_ANSWER {order: 2}]->(ansGroundsHortic),
+(ansGrpSvcsFacilities)-[:HAS_ANSWER {order: 3}]->(ansStatutoryInspections),
+(ansGrpSvcsFacilities)-[:HAS_ANSWER {order: 4}]->(ansCatering),
+(ansGrpSvcsFacilities)-[:HAS_ANSWER {order: 6}]->(ansReception),
+(ansGrpSvcsFacilities)-[:HAS_ANSWER {order: 7}]->(ansSecurity),
+(ansGrpSvcsFacilities)-[:HAS_ANSWER {order: 8}]->(ansWaste),
+(ansGrpSvcsFacilities)-[:HAS_ANSWER {order: 9}]->(ansCAFM),
+(ansGrpSvcsFacilities)-[:HAS_OUTCOME]->(qiSector),
+(ansGrpSvcsFacilities)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '82c1726c-09e1-4840-bc54-657895be4724', group: 'svcs_cleaning_multi', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(qiSector),
+
+(ansGrpSvcsAnythingElse:AnswerGroup {name: 'ansGrpSvcsAnythingElse'}),
+(qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSvcsAnythingElse),
+(ansGrpSvcsAnythingElse)-[:HAS_ANSWER {order: 10, mutex: true}]->(ansAnythingElse),
+(ansGrpSvcsAnythingElse)-[:HAS_OUTCOME]->(resultCCSEscapePage),
+(ansGrpSvcsAnythingElse)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '435b453f-a150-4c27-8b17-6b2359ace48f', group: 'svcs_cleaning_multi', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(resultCCSEscapePage),
+
+(ansGrpSectorMoD:AnswerGroup {name: 'ansGrpSectorMoD'}),
+(qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSectorMoD),
+(ansGrpSectorMoD)-[:HAS_ANSWER {order: 1}]->(ansSectorMoD),
+(ansGrpSectorMoD)-[:HAS_OUTCOME]->(fm2:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+
+// Housing Type (Housing Mgmt & Maintenance) -> Sector (Other)
+(ansGrpSectorWPS:AnswerGroup {name: 'ansGrpSectorWPS'}),
+(qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSectorWPS),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 2}]->(ansSectorCG),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 3}]->(ansSectorEdu),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 4}]->(ansSectorDevolved),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 5}]->(ansSectorHealth),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 6}]->(ansSectorBlueLight),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 7}]->(ansSectorHousing),
+(ansGrpSectorWPS)-[:HAS_ANSWER {order: 8}]->(ansSectorCharities),
+(ansGrpSectorWPS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'});

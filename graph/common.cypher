@@ -63,5 +63,17 @@ CREATE
 (:Answer {uuid: 'b879d54e-654e-11ea-bc55-0242ac130003', text: 'Physical', hint: 'This has a physical presence such as guards'}),
 (:Answer {uuid: 'b879d648-654e-11ea-bc55-0242ac130003', text: 'Technical', hint: 'This has a technology element such as CCTV'}),
 
+// Facilities management services
+(:Answer {uuid: '1596bd37-bc03-4f3e-abb8-560c1160cc30', text: 'Maintenance services', hint: 'Maintenance of building assets such as ventilation, security systems and plumbing systems'}),
+(:Answer {uuid: '2e57ca18-5cb5-43d6-86eb-61eff804ab0e', text: 'Grounds maintenance and horticultural services', hint: 'Including hard and soft landscaping, tree surgery, snow and ice clearance and planting'}),
+(:Answer {uuid: '61e636e8-8019-4a03-83dc-4a1e16177253', text: 'Statutory inspections and testing', hint: 'Including condition surveys, water hygiene, asbestos management and appliance testing'}),
+(:Answer {uuid: '3f3cd237-77e7-4211-b8e0-61af9f40dfee', text: 'Catering services', hint: 'Meeting hospitality, event catering, full restaurant services and vending services'}),
+(:Answer {uuid: '06807bdd-8e02-4c56-9e20-802f5c3865cd', text: 'Cleaning services', hint: 'Routine and reactive cleaning services, including pest control'}),
+(:Answer {uuid: '484725a9-829c-4bbe-91a4-9b1bbd6ef90b', text: 'Reception services', hint: 'Taxi booking, car park management and voice announcements'}),
+(:Answer {uuid: '2918104d-a410-41f8-9096-22dd80858649', text: 'Security and guarding services', hint: 'Guarding services such as alarm response, access control, passes, and perimeter guarding'}),
+(:Answer {uuid: '2ed4e18d-0886-4472-be10-e5fb1a6c5dd1', text: 'Waste services', hint: 'Collection, storage and removal of general, recycled, classified, clinical and medical waste'}),
+(:Answer {uuid: '6c0ff503-4aac-4e80-84d1-26c9c106c992', text: 'Computer Aided Facility Management (CAFM) and helpdesk provision', hint: 'CAFM to support service delivery, and helpdesk services for ad-hoc requests and reporting faults'}),
+(:Answer {uuid: '6a6b0c54-2bee-4a73-864d-beb1f7a3ef1e', text: 'Anything else', hint: 'A facilities management services not listed here'}),
+
 // Reusable outcome types
 (:Support:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', text: 'CCS Escape Page'});

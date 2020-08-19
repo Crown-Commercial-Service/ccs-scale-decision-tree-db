@@ -15,13 +15,16 @@ CREATE
 (:Question {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003', text: 'Do you know your budget?', type: 'BOOLEAN', conditionalInput: true, hint: "This helps us match you to your best buying options. An estimate is fine."}),
 (:Question {uuid: 'b879c25c-654e-11ea-bc55-0242ac130003', text: 'Do you know how long the contract will be for?', type: 'BOOLEAN', conditionalInput: true, hint: "This helps us match you to your best buying options. An estimate is fine. The contract might also be known as a ‘Statement of Work’."}),
 (:Question {uuid: 'b879c342-654e-11ea-bc55-0242ac130003', text: 'Do you need any additional facility management services?', hint: "<p>These are services related to managing a facility, such as security, grounds maintenance, catering or pest control.</p><p>Select all that apply.</p>", type: 'LIST'}),
+(:Question {uuid: '1ecbbf8d-7d40-4711-b9e8-9e4e710d8ced', text: 'Do you need any additional facility management services?', hint: "<p>Choose one option.</p><p>Where you need multiple services, select your main service.</p>", type: 'LIST'}),
 (:Question {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003', text: 'Which sector are you buying for?', hint: "Choose one option:", type: 'LIST'}),
 (:Question {uuid: '4d9acc00-13eb-4854-8455-3213f381e0de', text: 'What type of housing services do you need', hint: "Choose one option:", type: 'LIST'}),
 (:Question {uuid: 'b879c55e-654e-11ea-bc55-0242ac130003', text: 'Which service do you need?', hint: "Choose one option:", type: 'LIST'}),
 (:Question {uuid: 'e415219f-f3e9-40a6-ab2b-ba73f44ce56d', text: 'Which service do you need?', hint: "Choose one option. Where you need multiple services, select your main service.", type: 'LIST'}),
 (:Question {uuid: 'b87a0014-654e-11ea-bc55-0242ac130003', text: 'Which services do you need?', hint: "Choose one or more options:", type: 'MULTI_SELECT_LIST'}),
 (:Question {uuid: 'b879c662-654e-11ea-bc55-0242ac130003', text: 'Do you require nationwide or regional services?', hint: 'Nationwide suppliers are able to work across the country. Regional suppliers work in their own area.', type: 'BOOLEAN'}),
-(:Question {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'What kind of security do you need?', type: 'LIST'}),
+(:Question {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'What type of security do you need?', hint: "Choose one option:", type: 'LIST'}),
+(:Question {uuid: '1b99e1a4-432f-4700-bcc2-7cbb2538fc20', text: 'What type of security service do you need?', hint: "Select all that apply.", type: 'MULTI_SELECT_LIST'}),
+(:Question {uuid: '9a6301b0-e9f7-46b4-ad64-14da3396b2c7', text: 'What type of technical security do you need?', hint: "Choose one option:", type: 'LIST'}),
 (:Question {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003', text: 'Where do you need this service?', hint: "Choose one option:", type: 'LIST'}),
 (:Question {uuid: '59561c74-8d8f-4863-a01d-5cca0a289986', text: 'Which service area do you need?', hint: "Select all that apply.", type: 'MULTI_SELECT_LIST'}),
 (:Question {uuid: '931a3024-8612-422b-8e6f-480007105c2e', text: 'How much is your budget?', hint: 'An estimate is fine (£)', type: 'NUMBER', unit: 'CURRENCY'}),
@@ -59,9 +62,10 @@ CREATE
 (:Answer {uuid: 'ccb5c1cc-75b5-11ea-bc55-0242ac130003', text: 'Northern Ireland'}),
 
 // Security
-(:Answer {uuid: 'b879d490-654e-11ea-bc55-0242ac130003', text: 'Physical and Technical', hint: 'This had both a physical presence and technical requirement'}),
-(:Answer {uuid: 'b879d54e-654e-11ea-bc55-0242ac130003', text: 'Physical', hint: 'This has a physical presence such as guards'}),
-(:Answer {uuid: 'b879d648-654e-11ea-bc55-0242ac130003', text: 'Technical', hint: 'This has a technology element such as CCTV'}),
+(:Answer {uuid: 'b879d490-654e-11ea-bc55-0242ac130003', text: 'Security services', hint: 'For example guarding, patrols, CCTV monitoring and alarm response'}),
+(:Answer {uuid: 'b879d54e-654e-11ea-bc55-0242ac130003', text: 'Technical security', hint: 'For example risk assessments, and the design and installation of electronic or physical security systems'}),
+(:Answer {uuid: 'b879d648-654e-11ea-bc55-0242ac130003', text: 'Security services and technical security', hint: 'Security services and technical security combined and delivered from the same supplier'}),
+(:Answer {uuid: 'f3d45e3d-4c73-41c6-a9d7-92ac422129e4', text: 'Security software', hint: 'Computer programs designed to enhance IT security'}),
 
 // Facilities management services
 (:Answer {uuid: '1596bd37-bc03-4f3e-abb8-560c1160cc30', text: 'Maintenance services', hint: 'Maintenance of building assets such as ventilation, security systems and plumbing systems'}),

@@ -35,6 +35,7 @@ CREATE
 (:Answer {uuid: 'ccb598c8-75b5-11ea-bc55-0242ac130003', text: 'Yes'}),
 (:Answer {uuid: 'ccb59b2a-75b5-11ea-bc55-0242ac130003', text: 'No'}),
 (:Answer {uuid: 'ccb5bf88-75b5-11ea-bc55-0242ac130003', text: 'Other', hint: 'An item not listed here'}),
+(:Answer {uuid: '26883201-a99f-4ac7-8ac7-a2840b16f7a0', text: 'No, I have everything I need'}),
 
 // Product / Service
 (:Answer {uuid: 'b879fcf4-654e-11ea-bc55-0242ac130003', text: 'Product', hint: "A product is an item you can buy, such as a laptop. It's a one-off purchase and involves no ongoing contract."}),

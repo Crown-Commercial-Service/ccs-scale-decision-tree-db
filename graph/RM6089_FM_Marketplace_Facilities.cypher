@@ -41,6 +41,7 @@ CREATE
 (qiServices)-[:HAS_ANSWER_GROUP]->(ansGrpSvcsCleaning),
 (ansGrpSvcsCleaning)-[:HAS_ANSWER {order: 5}]->(ansCleaning),
 (ansGrpSvcsCleaning)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSvcsCleaning)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6130'}),
 (ansGrpSvcsCleaning)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '62415e0b-d2b5-459b-9fb2-8d9a98fa7a7b', group: 'svcs_cleaning_multi', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(qiSector),
 
 (ansGrpSvcsFacilities:AnswerGroup {name: 'ansGrpSvcsFacilities'}),

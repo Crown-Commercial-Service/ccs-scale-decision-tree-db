@@ -57,7 +57,7 @@ CREATE
 (ansGrpSvcsFacilities)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '82c1726c-09e1-4840-bc54-657895be4724', group: 'svcs_cleaning_multi', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(qiSector),
 
 (ansGrpSvcsAnythingElse:AnswerGroup {name: 'ansGrpSvcsAnythingElse'}),
-(qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSvcsAnythingElse),
+(qiServices)-[:HAS_ANSWER_GROUP]->(ansGrpSvcsAnythingElse),
 (ansGrpSvcsAnythingElse)-[:HAS_ANSWER {order: 10, mutex: true}]->(ansAnythingElse),
 (ansGrpSvcsAnythingElse)-[:HAS_OUTCOME]->(resultCCSEscapePage),
 (ansGrpSvcsAnythingElse)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '435b453f-a150-4c27-8b17-6b2359ace48f', group: 'svcs_cleaning_multi', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(resultCCSEscapePage),

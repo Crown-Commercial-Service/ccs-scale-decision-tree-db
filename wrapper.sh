@@ -25,11 +25,12 @@ done
 
 # Load Guided Match decision trees
 load_gm_data "common.cypher"
+load_gm_data "RM3733_RM6068_RM6103_TP2_TePAS_EduTech.cypher"
 load_gm_data "RM6089_FM_Marketplace_Housing.cypher"
 load_gm_data "RM6089_FM_Marketplace_Facilities.cypher"
+load_gm_data "RM6089_FM_Marketplace_Security.cypher"
 load_gm_data "RM6154_Linen_and_Laundry.cypher"
 load_gm_data "RM3788_Legal_Services.cypher"
-load_gm_data "RM3733_RM6068_RM6103_TP2_TePAS_EduTech.cypher"
 #load_gm_data "MCF2_Consultancy.cypher"
 
 echo "Data load complete"

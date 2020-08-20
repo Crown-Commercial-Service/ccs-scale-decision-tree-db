@@ -4,7 +4,8 @@ MATCH
 (qstnSecurityServiceType:Question {uuid: '1b99e1a4-432f-4700-bcc2-7cbb2538fc20'}),
 (qstnTechSecurityType:Question {uuid: '9a6301b0-e9f7-46b4-ad64-14da3396b2c7'}),
 (qstnSector:Question {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003'}),
-(qstnAddFacMgmt:Question {uuid: 'b879c342-654e-11ea-bc55-0242ac130003'}),
+(qstnAddFacMgmtMultiSelect:Question {uuid: 'b879c342-654e-11ea-bc55-0242ac130003'}),
+(qstnAddFacMgmtSingleSelect:Question {uuid: '1ecbbf8d-7d40-4711-b9e8-9e4e710d8ced'}),
 
 // Answers
 (ansNoIHaveEverything:Answer {uuid: '26883201-a99f-4ac7-8ac7-a2840b16f7a0'}),
@@ -61,6 +62,8 @@ CREATE
 // Tree Structure
 (jrnyFM2Security)-[:FIRST_QUESTION]->(qiSecurityType:QuestionInstance:Outcome {uuid: '2f74aac3-23eb-4a70-9193-563d607421c5'})-[:DEFINED_BY]->(qstnSecurityType),
 
+(qiSecServiceAddFacMgmtSecSrvAndTech:QuestionInstance:Outcome {uuid: 'befdac95-7220-4591-9f59-b4ee9ac36bc9'})-[:DEFINED_BY]->(qstnAddFacMgmtSingleSelect),
+
 // Security Type -> Security Services
 (ansGrpSecTypeSecServices:AnswerGroup {name: 'ansGrpSecTypeSecServices'}),
 (qiSecurityType)-[:HAS_ANSWER_GROUP]->(ansGrpSecTypeSecServices),
@@ -78,11 +81,13 @@ CREATE
 (ansGrpSecServicesTypeGP:AnswerGroup {name: 'ansGrpSecServicesTypeGP'}),
 (qiSecServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesTypeGP),
 (ansGrpSecServicesTypeGP)-[:HAS_ANSWER {order: 1}]->(ansGuardingPatrols),
-(ansGrpSecServicesTypeGP)-[:HAS_OUTCOME]->(qiSecServiceAddFacMgmtGP:QuestionInstance:Outcome {uuid: 'a973494d-2191-45c2-9c88-e8d6c9dd19c1'})-[:DEFINED_BY]->(qstnAddFacMgmt),
+(ansGrpSecServicesTypeGP)-[:HAS_OUTCOME]->(qiSecServiceAddFacMgmtSecSvcs:QuestionInstance:Outcome {uuid: 'a973494d-2191-45c2-9c88-e8d6c9dd19c1'})-[:DEFINED_BY]->(qstnAddFacMgmtMultiSelect),
+(ansGrpSecServicesTypeGP)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '6aab7dd8-20d1-499c-a5d1-e1c0b749e3e2', group: 'sec_svcs_type_sec_svcs', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiSecServiceAddFacMgmtSecSvcs),
+(ansGrpSecServicesTypeGP)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'ec8e2aa8-c807-4c97-b16c-17902ffb85f7', group: 'sec_svcs_type_sec_mixed', mixPrecedence: 1, primary: false})-[:HAS_OUTCOME]->(qiSecServiceAddFacMgmtSecSrvAndTech),
 
 // Security Type -> Security Services -> Security Service Type -> Security Services -> Add Facilities Management (Yes)
 (ansGrpSecServicesAddFacMgmt:AnswerGroup {name: 'ansGrpSecServicesAddFacMgmt'}),
-(qiSecServiceAddFacMgmtGP)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesAddFacMgmt),
+(qiSecServiceAddFacMgmtSecSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesAddFacMgmt),
 (ansGrpSecServicesAddFacMgmt)-[:HAS_ANSWER {order: 1}]->(ansMaintenance),
 (ansGrpSecServicesAddFacMgmt)-[:HAS_ANSWER {order: 2}]->(ansGroundsHortic),
 (ansGrpSecServicesAddFacMgmt)-[:HAS_ANSWER {order: 3}]->(ansStatutoryInspections),
@@ -91,7 +96,7 @@ CREATE
 (ansGrpSecServicesAddFacMgmt)-[:HAS_ANSWER {order: 6}]->(ansReception),
 (ansGrpSecServicesAddFacMgmt)-[:HAS_ANSWER {order: 7}]->(ansWaste),
 (ansGrpSecServicesAddFacMgmt)-[:HAS_OUTCOME]->(qiSectorSecServicesSector:QuestionInstance:Outcome {uuid: '48f56201-616a-41b3-95cc-d22a0619b677'})-[:DEFINED_BY]->(qstnSector),
-(ansGrpSecServicesAddFacMgmt)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '359728d4-b4f7-4b21-b2cf-68e6c5a33c81', group: 'svcs_cleaning_multi', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(qiSectorSecServicesSector),
+(ansGrpSecServicesAddFacMgmt)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '359728d4-b4f7-4b21-b2cf-68e6c5a33c81', group: 'sec_svcs_add_fac_mgmt', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(qiSectorSecServicesSector),
 
 // Security Type -> Security Services -> Security Service Type -> Security Services -> Add Facilities Management (Yes) -> Sector (MoD)
 (ansGrpSecServicesMoD:AnswerGroup {name: 'ansGrpSecServicesMoD'}),
@@ -113,7 +118,7 @@ CREATE
 
 // Security Type -> Security Services -> Security Service Type -> Security Services -> Add Facilities Management (No)
 (ansGrpSecServicesAddFacMgmtNo:AnswerGroup {name: 'ansGrpSecServicesAddFacMgmtNo'}),
-(qiSecServiceAddFacMgmtGP)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesAddFacMgmtNo),
+(qiSecServiceAddFacMgmtSecSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesAddFacMgmtNo),
 (ansGrpSecServicesAddFacMgmtNo)-[:HAS_ANSWER {order: 8}]->(ansNoIHaveEverything),
 (ansGrpSecServicesAddFacMgmtNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
 
@@ -122,7 +127,47 @@ CREATE
 (qiSecServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesTypeARH),
 (ansGrpSecServicesTypeARH)-[:HAS_ANSWER {order: 2}]->(ansAlarmResponseCentres),
 (ansGrpSecServicesTypeARH)-[:HAS_ANSWER {order: 3}]->(ansHelpdeskServices),
-(ansGrpSecServicesTypeARH)-[:HAS_OUTCOME]->(qiSecServiceAddFacMgmtSecSrvAndTech:QuestionInstance:Outcome {uuid: 'befdac95-7220-4591-9f59-b4ee9ac36bc9'})-[:DEFINED_BY]->(qstnAddFacMgmt),
+(ansGrpSecServicesTypeARH)-[:HAS_OUTCOME]->(qiSecServiceAddFacMgmtSecSrvAndTech),
+(ansGrpSecServicesTypeARH)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '77460b83-c44d-46a3-97a3-115614e5a013', group: 'sec_svcs_type_sec_mixed', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(qiSecServiceAddFacMgmtSecSrvAndTech),
+
+// Security Type -> Security Services -> Security Service Type -> Alarm Response / Helpdesk -> Add Facilities Management (Yes) -> Sector (WPS)
+(ansGrpSecServicesAddFacMgmtSecSrvAndTech:AnswerGroup {name: 'ansGrpSecServicesAddFacMgmtSecSrvAndTech'}),
+(qiSecServiceAddFacMgmtSecSrvAndTech)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesAddFacMgmtSecSrvAndTech),
+(ansGrpSecServicesAddFacMgmtSecSrvAndTech)-[:HAS_ANSWER {order: 1}]->(ansMaintenance),
+(ansGrpSecServicesAddFacMgmtSecSrvAndTech)-[:HAS_ANSWER {order: 2}]->(ansGroundsHortic),
+(ansGrpSecServicesAddFacMgmtSecSrvAndTech)-[:HAS_ANSWER {order: 3}]->(ansStatutoryInspections),
+(ansGrpSecServicesAddFacMgmtSecSrvAndTech)-[:HAS_ANSWER {order: 4}]->(ansCatering),
+(ansGrpSecServicesAddFacMgmtSecSrvAndTech)-[:HAS_ANSWER {order: 5}]->(ansCleaning),
+(ansGrpSecServicesAddFacMgmtSecSrvAndTech)-[:HAS_ANSWER {order: 6}]->(ansReception),
+(ansGrpSecServicesAddFacMgmtSecSrvAndTech)-[:HAS_ANSWER {order: 7}]->(ansWaste),
+(ansGrpSecServicesAddFacMgmtSecSrvAndTech)-[:HAS_OUTCOME]->(qiSectorSecSrvAndTechSector:QuestionInstance:Outcome {uuid: '033e3d54-3273-4244-a78d-dd8146c28f6d'})-[:DEFINED_BY]->(qstnSector),
+
+// Security Type -> Security Services -> Security Service Type -> Alarm Response / Helpdesk -> Add Facilities Management (Yes) -> Sector (MoD)
+(ansGrpSecServicesSecSrvAndTechMoD:AnswerGroup {name: 'ansGrpSecServicesSecSrvAndTechMoD'}),
+(qiSectorSecSrvAndTechSector)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesSecSrvAndTechMoD),
+(ansGrpSecServicesSecSrvAndTechMoD)-[:HAS_ANSWER {order: 1}]->(ansSectorMoD),
+(ansGrpSecServicesSecSrvAndTechMoD)-[:HAS_OUTCOME]->(agrRM6089:Agreement:Outcome {number: 'RM6089'}),
+(agrRM6089)-[:HAS_LOT]->(:Lot {number: '3', type: 'CAT', scale: true}),
+(agrRM6089)-[:HAS_LOT]->(:Lot {number: '1a', type: 'CAT', scale: true}),
+
+// Security Type -> Security Services -> Security Service Type -> Alarm Response / Helpdesk -> Add Facilities Management (Yes) -> Sector (WPS)
+(ansGrpSecServicesSecSrvAndTechWPS:AnswerGroup {name: 'ansGrpSecServicesSecSrvAndTechWPS'}),
+(qiSectorSecSrvAndTechSector)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesSecSrvAndTechWPS),
+(ansGrpSecServicesSecSrvAndTechWPS)-[:HAS_ANSWER {order: 2}]->(ansSectorCG),
+(ansGrpSecServicesSecSrvAndTechWPS)-[:HAS_ANSWER {order: 3}]->(ansSectorEdu),
+(ansGrpSecServicesSecSrvAndTechWPS)-[:HAS_ANSWER {order: 4}]->(ansSectorDevolved),
+(ansGrpSecServicesSecSrvAndTechWPS)-[:HAS_ANSWER {order: 5}]->(ansSectorHealth),
+(ansGrpSecServicesSecSrvAndTechWPS)-[:HAS_ANSWER {order: 6}]->(ansSectorBlueLight),
+(ansGrpSecServicesSecSrvAndTechWPS)-[:HAS_ANSWER {order: 7}]->(ansSectorHousing),
+(ansGrpSecServicesSecSrvAndTechWPS)-[:HAS_ANSWER {order: 8}]->(ansSectorCharities),
+(ansGrpSecServicesSecSrvAndTechWPS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSecServicesSecSrvAndTechWPS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '1a', type: 'CAT', scale: true}),
+
+// Security Type -> Security Services -> Security Service Type -> Alarm Response / Helpdesk -> Add Facilities Management (No)
+(ansGrpSecServicesAddFacMgmtSecSrvAndTechNo:AnswerGroup {name: 'ansGrpSecServicesAddFacMgmtSecSrvAndTechNo'}),
+(qiSecServiceAddFacMgmtSecSrvAndTech)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesAddFacMgmtSecSrvAndTechNo),
+(ansGrpSecServicesAddFacMgmtSecSrvAndTechNo)-[:HAS_ANSWER {order: 8}]->(ansNoIHaveEverything),
+(ansGrpSecServicesAddFacMgmtSecSrvAndTechNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
 
 // Security Type -> Security Services -> Security Service Type -> Technical
 (ansGrpSecServicesTypeTech:AnswerGroup {name: 'ansGrpSecServicesTypeTech'}),
@@ -132,6 +177,8 @@ CREATE
 (ansGrpSecServicesTypeTech)-[:HAS_ANSWER {order: 6}]->(ansElectronicSecurity),
 (ansGrpSecServicesTypeTech)-[:HAS_ANSWER {order: 7}]->(ansPhysicalSecurity),
 (ansGrpSecServicesTypeTech)-[:HAS_OUTCOME]->(qiTechSecType),
+(ansGrpSecServicesTypeTech)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '7a01e9f3-c016-44fa-853c-381df198bdf2', group: 'sec_svcs_type_tech', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiSecServiceAddFacMgmtSecSvcs),
+(ansGrpSecServicesTypeTech)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '98153f0f-d580-4a3c-8255-4136a477568f', group: 'sec_svcs_type_sec_mixed', mixPrecedence: 1, primary: false})-[:HAS_OUTCOME]->(qiSecServiceAddFacMgmtSecSrvAndTech),
 
 // Security Type -> Software -> -- LINK TO TECH PRODUCTS FIRST QUESTION --
 (ansGrpSecTypeSoftware:AnswerGroup {name: 'ansGrpSecTypeSoftware'}),

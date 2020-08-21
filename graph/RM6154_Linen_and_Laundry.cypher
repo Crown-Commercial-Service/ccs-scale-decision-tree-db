@@ -98,7 +98,8 @@ CREATE
 (ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansCatering),
 (ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansPestControl),
 (ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 5, mutex: true}]->(ansAnythingElseFacManSvcs),
-(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(spCleanroomRM3830:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSPCleanroomServicesAddSrvYes)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'bd6ae0b7-d76c-4e09-8ec1-63154103ba94', group: 'add_fac_mgmt', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(spCleanroomRM3830),
 
 // SP - Theatre packs and gowns
 (ansGrpSPTheatrePacksGowns:AnswerGroup {name: 'ansGrpSPTheatrePacksGowns'}),
@@ -120,7 +121,8 @@ CREATE
 (ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansCatering),
 (ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansPestControl),
 (ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 5, mutex: true}]->(ansAnythingElseFacManSvcs),
-(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(spTheatrePacksRM3830:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSPTheatrePacksGownsAddSrvYes)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'ac9febb2-ce6f-4e35-9241-ac98e5b389cf', group: 'add_fac_mgmt', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(spTheatrePacksRM3830),
 
 // SP - Linen hire + standard Wash
 (ansGrpSPLinenHireStandardWash:AnswerGroup {name: 'ansGrpSPLinenHireStandardWash'}),
@@ -142,7 +144,8 @@ CREATE
 (ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansCatering),
 (ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansPestControl),
 (ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 5, mutex: true}]->(ansAnythingElseFacManSvcs),
-(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(spLinenHireRM3830:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSPLinenHireStandardWashAddSrvYes)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'c2dd62a6-30f4-4ee2-b744-8f9aac63e4eb', group: 'add_fac_mgmt', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(spLinenHireRM3830),
 
 // SP - Standard Wash
 (ansGrpSPServiceStdWash:AnswerGroup {name: 'ansGrpSPServiceStdWash'}),
@@ -164,7 +167,8 @@ CREATE
 (ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansCatering),
 (ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansPestControl),
 (ansGrpSPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 5, mutex: true}]->(ansAnythingElseFacManSvcs),
-(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(spLinenHireRM3830:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSPServiceStdWashAddSrvYes)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '1cd5b19b-2a85-451f-a41d-ceac170f7d64', group: 'add_fac_mgmt', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(spLinenHireRM3830),
 
 // BP (> 12 months)
 // Service - Big Projects Branch
@@ -188,7 +192,8 @@ CREATE
 (ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansCatering),
 (ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansPestControl),
 (ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_ANSWER {order: 5, mutex: true}]->(ansAnythingElseFacManSvcs),
-(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_OUTCOME]->(spBPCleanroomSvcsRM3830:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpBPCleanroomServicesAddSrvYes)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'fa0789a0-b109-44c1-8925-34af716a9d99', group: 'add_fac_mgmt', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(spBPCleanroomSvcsRM3830),
 
 // BP - Theatre packs and gowns
 (ansGrpBPTheatrePacksGowns:AnswerGroup {name: 'ansGrpBPTheatrePacksGowns'}),
@@ -210,7 +215,8 @@ CREATE
 (ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansCatering),
 (ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansPestControl),
 (ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_ANSWER {order: 5, mutex: true}]->(ansAnythingElseFacManSvcs),
-(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_OUTCOME]->(spBPTheatrePacksRM3830:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpBPTheatrePacksGownsAddSrvYes)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '5e66c2a3-2a2c-4bb9-988f-5a0530163910', group: 'add_fac_mgmt', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(spBPTheatrePacksRM3830),
 
 // BP - Linen hire + standard Wash
 (ansGrpBPLinenHireStandardWash:AnswerGroup {name: 'ansGrpBPLinenHireStandardWash'}),
@@ -232,7 +238,8 @@ CREATE
 (ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansCatering),
 (ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansPestControl),
 (ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_ANSWER {order: 5, mutex: true}]->(ansAnythingElseFacManSvcs),
-(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_OUTCOME]->(spBPLinenHireRM3830:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpBPLinenHireStandardWashAddSrvYes)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '5e66c2a3-2a2c-4bb9-988f-5a0530163910', group: 'add_fac_mgmt', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(spBPLinenHireRM3830),
 
 // BP - Standard Wash
 (ansGrpBPServiceStdWash:AnswerGroup {name: 'ansGrpBPServiceStdWash'}),
@@ -254,4 +261,5 @@ CREATE
 (ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 3}]->(ansCatering),
 (ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansPestControl),
 (ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 5, mutex: true}]->(ansAnythingElseFacManSvcs),
-(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'});
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(spBPStdWashRM3830:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '5e66c2a3-2a2c-4bb9-988f-5a0530163910', group: 'add_fac_mgmt', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(spBPStdWashRM3830),

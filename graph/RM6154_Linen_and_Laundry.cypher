@@ -262,4 +262,4 @@ CREATE
 (ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 4}]->(ansPestControl),
 (ansGrpBPServiceStdWashAddSrvYes)-[:HAS_ANSWER {order: 5, mutex: true}]->(ansAnythingElseFacManSvcs),
 (ansGrpBPServiceStdWashAddSrvYes)-[:HAS_OUTCOME]->(spBPStdWashRM3830:Agreement:Outcome {number: 'RM3830'}),
-(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '5e66c2a3-2a2c-4bb9-988f-5a0530163910', group: 'add_fac_mgmt', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(spBPStdWashRM3830),
+(ansGrpBPServiceStdWashAddSrvYes)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '5e66c2a3-2a2c-4bb9-988f-5a0530163910', group: 'add_fac_mgmt', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(spBPStdWashRM3830);

@@ -119,7 +119,7 @@ CREATE
 // Security Type -> Security Services -> Security Service Type -> Security Services -> Add Facilities Management (No)
 (ansGrpSecServicesAddFacMgmtNo:AnswerGroup {name: 'ansGrpSecServicesAddFacMgmtNo'}),
 (qiSecServiceAddFacMgmtSecSvcs)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesAddFacMgmtNo),
-(ansGrpSecServicesAddFacMgmtNo)-[:HAS_ANSWER {order: 8}]->(ansNoIHaveEverything),
+(ansGrpSecServicesAddFacMgmtNo)-[:HAS_ANSWER {order: 8, mutex: true}]->(ansNoIHaveEverything),
 (ansGrpSecServicesAddFacMgmtNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
 
 // Security Type -> Security Services -> Security Service Type -> Alarm Response / Helpdesk

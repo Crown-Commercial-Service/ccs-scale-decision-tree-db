@@ -177,8 +177,15 @@ CREATE
 (ansGrpSecServicesTypeTech)-[:HAS_ANSWER {order: 6}]->(ansElectronicSecurity),
 (ansGrpSecServicesTypeTech)-[:HAS_ANSWER {order: 7}]->(ansPhysicalSecurity),
 (ansGrpSecServicesTypeTech)-[:HAS_OUTCOME]->(qiTechSecType),
-(ansGrpSecServicesTypeTech)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '7a01e9f3-c016-44fa-853c-381df198bdf2', group: 'sec_svcs_type_tech', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiSecServiceAddFacMgmtSecSvcs),
+(ansGrpSecServicesTypeTech)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '7a01e9f3-c016-44fa-853c-381df198bdf2', group: 'sec_svcs_type_tech', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiTechSecType),
 (ansGrpSecServicesTypeTech)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '98153f0f-d580-4a3c-8255-4136a477568f', group: 'sec_svcs_type_sec_mixed', mixPrecedence: 1, primary: false})-[:HAS_OUTCOME]->(qiSecServiceAddFacMgmtSecSrvAndTech),
+
+(ansGrpSecServicesTypeOther:AnswerGroup {name: 'ansGrpSecServicesTypeOther'}),
+(qiSecServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpSecServicesTypeOther),
+(ansGrpSecServicesTypeOther)-[:HAS_ANSWER {order: 8, mutex: true}]->(ansAnythingElse),
+(ansGrpSecServicesTypeOther)-[:HAS_OUTCOME]->(agrRM6089b:Agreement:Outcome {number: 'RM6089'}),
+(agrRM6089b)-[:HAS_LOT]->(:Lot {number: '1a', type: 'CAT', scale: true}),
+(agrRM6089b)-[:HAS_LOT]->(:Lot {number: '1b', type: 'CAT', scale: true}),
 
 // Security Type -> Software -> -- LINK TO TECH PRODUCTS FIRST QUESTION --
 (ansGrpSecTypeSoftware:AnswerGroup {name: 'ansGrpSecTypeSoftware'}),

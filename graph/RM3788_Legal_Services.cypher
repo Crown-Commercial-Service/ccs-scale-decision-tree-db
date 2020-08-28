@@ -33,10 +33,8 @@ CREATE
 
 // Legal Services specific answers
 (ansRail:Answer {uuid: 'ccb5d1ee-75b5-11ea-bc55-0242ac130003', text: 'Rail', hint: 'Rail-specific legal advice, covering rail franchising. For Department of Transport only'}),
-(ansEDisclosure:Answer {uuid: 'ccb5d2b6-75b5-11ea-bc55-0242ac130003', text: 'eDisclosure', hint: 'Management of disclosure of electronic documents in a legal dispute'}),
-(ansEDiscovery:Answer {uuid: 'ccb5d608-75b5-11ea-bc55-0242ac130003', text: 'eDiscovery', hint: 'Management of discovery of electronic documents in a legal dispute'}),
-(ansCostsLawyer:Answer {uuid: 'ccb5d702-75b5-11ea-bc55-0242ac130003', text: 'Costs lawyer', hint: 'Legal professional involved in working out costs of legal fees and claims'}),
-(ansLegalCostsDraftsmen:Answer {uuid: 'ccb5d7d4-75b5-11ea-bc55-0242ac130003', text: 'Legal costs draftman', hint: 'Specialist legal professional who settles the legal costs of court cases'}),
+(ansEDisc:Answer {uuid: 'ccb5d2b6-75b5-11ea-bc55-0242ac130003', text: 'eDisclosure and/or eDiscovery', hint: 'Management of disclosure or discovery of electronic documents in a legal dispute'}),
+(ansCostsLawyer:Answer {uuid: 'ccb5d702-75b5-11ea-bc55-0242ac130003', text: 'Costs lawyer and/or Legal costs draftsmen', hint: 'Legal professional involved in working out costs of legal fees and claims'}),
 (ansEmpLitigation:Answer {uuid: 'ccb5d8a6-75b5-11ea-bc55-0242ac130003', text: 'Employment litigation', hint: 'Legal services related to defence or claim against employment law'}),
 (ansProperty:Answer {uuid: 'ccb5da72-75b5-11ea-bc55-0242ac130003', text: 'Property', hint: 'Legal services related to property law'}),
 (ansLitigation:Answer {uuid: 'ccb5db3a-75b5-11ea-bc55-0242ac130003', text: 'Litigation', hint: 'Legal services related to the process of taking or defending legal action'}),
@@ -66,8 +64,7 @@ CREATE
 // Sector(CG) -> Service(eDisclosure, eDiscovery)
 (ansGrpCGServiceEDisc:AnswerGroup {name: 'ansGrpCGServiceEDisc'}),
 (qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceEDisc),
-(ansGrpCGServiceEDisc)-[:HAS_ANSWER {order: 2}]->(ansEDisclosure),
-(ansGrpCGServiceEDisc)-[:HAS_ANSWER {order: 3}]->(ansEDiscovery),
+(ansGrpCGServiceEDisc)-[:HAS_ANSWER {order: 2}]->(ansEDisc),
 (ansGrpCGServiceEDisc)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3717'}),
 (ansGrpCGServiceEDisc)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'e0d4e36d-7735-48e7-ad52-9955dfcf60b6', group: 'cg_multi_edisc', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3717'}),
 (ansGrpCGServiceEDisc)-[:HAS_MULTI_SELECT]->(multiCGServiceEDisc:MultiSelect {uuid: 'a5a57a54-9be2-46b9-b362-bb7df6111d89', group: 'cg_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3787'}),
@@ -77,7 +74,6 @@ CREATE
 (ansGrpCGServiceCostsLawyer:AnswerGroup {name: 'ansGrpCGServiceCostsLawyer'}),
 (qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceCostsLawyer),
 (ansGrpCGServiceCostsLawyer)-[:HAS_ANSWER {order: 4}]->(ansCostsLawyer),
-(ansGrpCGServiceCostsLawyer)-[:HAS_ANSWER {order: 5}]->(ansLegalCostsDraftsmen),
 (ansGrpCGServiceCostsLawyer)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6137'}),
 (ansGrpCGServiceCostsLawyer)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '3844230f-edc4-4f8b-82b0-d567ce33c7bb', group: 'cg_multi_costs_lawyer', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6137'}),
 (ansGrpCGServiceCostsLawyer)-[:HAS_MULTI_SELECT]->(multiCGServiceCostsLawyer:MultiSelect {uuid: '35f96ad9-3619-4632-adf8-326c88105b92', group: 'cg_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3787'}),
@@ -145,8 +141,7 @@ CREATE
 // Sector(WPS) -> Service(eDisclosure, eDiscovery)
 (ansGrpWPSServiceEDisc:AnswerGroup {name: 'ansGrpWPSServiceEDisc'}),
 (qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceEDisc),
-(ansGrpWPSServiceEDisc)-[:HAS_ANSWER {order: 2}]->(ansEDisclosure),
-(ansGrpWPSServiceEDisc)-[:HAS_ANSWER {order: 3}]->(ansEDiscovery),
+(ansGrpWPSServiceEDisc)-[:HAS_ANSWER {order: 2}]->(ansEDisc),
 (ansGrpWPSServiceEDisc)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3717'}),
 (ansGrpWPSServiceEDisc)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '11672d87-0338-46b9-a402-32bc3b6e4593', group: 'wps_multi_edisc', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3717'}),
 (ansGrpWPSServiceEDisc)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'cf878a1f-8acb-44d9-b860-b5c6f7bfa2c7', group: 'wps_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiWPSLocation),
@@ -155,7 +150,6 @@ CREATE
 (ansGrpWPSServiceCostsLawyer:AnswerGroup {name: 'ansGrpWPSServiceCostsLawyer'}),
 (qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceCostsLawyer),
 (ansGrpWPSServiceCostsLawyer)-[:HAS_ANSWER {order: 4}]->(ansCostsLawyer),
-(ansGrpWPSServiceCostsLawyer)-[:HAS_ANSWER {order: 5}]->(ansLegalCostsDraftsmen),
 (ansGrpWPSServiceCostsLawyer)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6137'}),
 (ansGrpWPSServiceCostsLawyer)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '56051e5f-94d0-43a1-85e6-0ffa53aec71a', group: 'wps_multi_costs_lawyer', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6137'}),
 (ansGrpWPSServiceCostsLawyer)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '824a1c11-abf3-4497-a070-4a51844e17b8', group: 'wps_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiWPSLocation),

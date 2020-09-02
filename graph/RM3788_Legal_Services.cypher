@@ -32,7 +32,7 @@ CREATE
 (jrnyLegalServices:Journey {uuid: 'ccb5c730-75b5-11ea-bc55-0242ac130003', name: 'Wider Public Sector Legal Services'}),
 
 // Legal Services specific answers
-(ansRail:Answer {uuid: 'ccb5d1ee-75b5-11ea-bc55-0242ac130003', text: 'Rail', hint: 'Rail-specific legal advice, covering rail franchising. For Department of Transport only'}),
+(ansRail:Answer {uuid: 'ccb5d1ee-75b5-11ea-bc55-0242ac130003', text: 'Rail', hint: 'Rail-specific legal advice, for Department of Transport and its associated bodies only'}),
 (ansEDisc:Answer {uuid: 'ccb5d2b6-75b5-11ea-bc55-0242ac130003', text: 'eDisclosure and eDiscovery', hint: 'Management of discovery and disclosure of electronic documents in a legal dispute'}),
 (ansCostsLawyer:Answer {uuid: 'ccb5d702-75b5-11ea-bc55-0242ac130003', text: 'Costs lawyer and legal costs draftsmen', hint: 'Legal professionals responsible for legal costs'}),
 (ansEmpLitigation:Answer {uuid: 'ccb5d8a6-75b5-11ea-bc55-0242ac130003', text: 'Employment litigation', hint: 'Legal services related to defence or claim against employment law'}),

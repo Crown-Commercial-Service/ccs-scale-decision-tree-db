@@ -45,7 +45,7 @@ CREATE
 
 // Sectors
 (:Answer {uuid: 'b8799ee4-654e-11ea-bc55-0242ac130003', text: 'Ministry of Defence or defence infrastructure organisation', hint: 'Ministry of Defence projects and operations'}),
-(:Answer {uuid: 'b879a178-654e-11ea-bc55-0242ac130003', text: 'Central Government', hint: 'Central government must use the Crown Commercial Service'}),
+(:Answer {uuid: 'b879a178-654e-11ea-bc55-0242ac130003', text: 'CCS is the default route to market for central government departments'}),
 (:Answer {uuid: 'b879a286-654e-11ea-bc55-0242ac130003', text: 'Devolved', hint: 'Devolved government organisations in Scotland, Wales and Northern Ireland'}),
 (:Answer {uuid: 'b879a3bc-654e-11ea-bc55-0242ac130003', text: 'Education', hint: 'Schools, universities and other places of learning'}),
 (:Answer {uuid: 'b879a48e-654e-11ea-bc55-0242ac130003', text: 'Health', hint: 'Hospitals, clinics and work related to public health and medicine'}),

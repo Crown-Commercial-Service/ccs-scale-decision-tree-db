@@ -3,8 +3,8 @@ MATCH
 (qstnSector:Question {uuid: 'b879c46e-654e-11ea-bc55-0242ac130003'}),
 (qstnServiceArea:Question {uuid: '59561c74-8d8f-4863-a01d-5cca0a289986'}),
 (qstnLocation:Question {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003'}),
-(qstnBudgetKnown:Question {uuid: 'b879c16c-654e-11ea-bc55-0242ac130003'}),
-(qstnBudgetValue:Question {uuid: '931a3024-8612-422b-8e6f-480007105c2e'}),
+(qstnLegalFeesKnown:Question {uuid: 'd3a82a1e-ed20-11ea-adc1-0242ac120002'}),
+(qstnLegalFeesValue:Question {uuid: '6a122d52-ed20-11ea-adc1-0242ac120002'}),
 
 // Answers
 (ansSectorCG:Answer {uuid: 'b879a178-654e-11ea-bc55-0242ac130003'}),
@@ -85,7 +85,7 @@ CREATE
 (ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 6}]->(ansEmpLitigation),
 (ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 7}]->(ansProperty),
 (ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 8}]->(ansLitigation),
-(ansGrpCGServiceEmpLitProp)-[:HAS_OUTCOME]->(qiCentGovBudget:QuestionInstance:Outcome {uuid: 'ccb6124e-75b5-11ea-bc55-0242ac130003', conditionalInput: true})-[:DEFINED_BY]->(qstnBudgetKnown),
+(ansGrpCGServiceEmpLitProp)-[:HAS_OUTCOME]->(qiCentGovBudget:QuestionInstance:Outcome {uuid: 'ccb6124e-75b5-11ea-bc55-0242ac130003', conditionalInput: true})-[:DEFINED_BY]->(qstnLegalFeesKnown),
 (ansGrpCGServiceEmpLitProp)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'd6f34b9f-3667-4f06-82a8-e334b36d5157', group: 'cg_multi_emplit_prop', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiCentGovBudget),
 (ansGrpCGServiceEmpLitProp)-[:HAS_MULTI_SELECT]->(multiCGServiceEmpLitProp:MultiSelect {uuid: 'a4bf03aa-c24a-4c77-80b5-f6dd602eeb8a', group: 'cg_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3787'}),
 (multiCGServiceEmpLitProp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
@@ -94,7 +94,7 @@ CREATE
 // TODO: Remove artificial upper & lower bounds
 (ansGrpCGBudgetKnown:AnswerGroup {name: 'ansGrpCGBudgetKnown'}),
 (qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetKnown),
-(ansGrpCGBudgetKnown)-[:HAS_ANSWER {order: 1}]->(ansYesBudgetKnown)-[:HAS_CONDITIONAL_INPUT]->(qstnBudgetValue),
+(ansGrpCGBudgetKnown)-[:HAS_ANSWER {order: 1}]->(ansYesBudgetKnown)-[:HAS_CONDITIONAL_INPUT]->(qstnLegalFeesValue),
 (ansGrpCGBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 20000}]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 (ansGrpCGBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 20000, upperBoundExclusive: 9223372036854775807}]->(:Agreement:Outcome {number: 'RM3786'}),
 

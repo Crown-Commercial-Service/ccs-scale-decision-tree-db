@@ -29,6 +29,9 @@ CREATE
 (:Question {uuid: '59561c74-8d8f-4863-a01d-5cca0a289986', text: 'Which service area do you need?', hint: "Select all that apply.", type: 'MULTI_SELECT_LIST'}),
 (:Question {uuid: '931a3024-8612-422b-8e6f-480007105c2e', text: 'How much is your budget?', hint: 'An estimate is fine (£)', type: 'NUMBER', unit: 'CURRENCY'}),
 (:Question {uuid: '754c6fbb-4525-4468-89d6-148ac26ec7f9', text: 'How long will the contract be for?', hint: 'Enter a time period in months. An estimate is fine.', type: 'NUMBER', unit: 'MONTHS'}),
+(:Question {uuid: 'd3a82a1e-ed20-11ea-adc1-0242ac120002', text: 'Do you know your budget?', type: 'BOOLEAN', conditionalInput: true, hint: "This question refers to your fees per legal matter"}),
+(:Question {uuid: '6a122d52-ed20-11ea-adc1-0242ac120002', text: 'How much are your legal fees per matter?', hint: 'An estimate is fine (£)', type: 'NUMBER', unit: 'CURRENCY'}),
+
 
 // Answer definitions
 // Yes, No, Other
@@ -45,7 +48,7 @@ CREATE
 
 // Sectors
 (:Answer {uuid: 'b8799ee4-654e-11ea-bc55-0242ac130003', text: 'Ministry of Defence or defence infrastructure organisation', hint: 'Ministry of Defence projects and operations'}),
-(:Answer {uuid: 'b879a178-654e-11ea-bc55-0242ac130003', text: 'Central Government', hint: 'Central government must use the Crown Commercial Service'}),
+(:Answer {uuid: 'b879a178-654e-11ea-bc55-0242ac130003', text: 'Central Government', hint: 'CCS is the default route to market for central government departments'}),
 (:Answer {uuid: 'b879a286-654e-11ea-bc55-0242ac130003', text: 'Devolved', hint: 'Devolved government organisations in Scotland, Wales and Northern Ireland'}),
 (:Answer {uuid: 'b879a3bc-654e-11ea-bc55-0242ac130003', text: 'Education', hint: 'Schools, universities and other places of learning'}),
 (:Answer {uuid: 'b879a48e-654e-11ea-bc55-0242ac130003', text: 'Health', hint: 'Hospitals, clinics and work related to public health and medicine'}),

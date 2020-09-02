@@ -33,8 +33,8 @@ CREATE
 
 // Legal Services specific answers
 (ansRail:Answer {uuid: 'ccb5d1ee-75b5-11ea-bc55-0242ac130003', text: 'Rail', hint: 'Rail-specific legal advice, covering rail franchising. For Department of Transport only'}),
-(ansEDisc:Answer {uuid: 'ccb5d2b6-75b5-11ea-bc55-0242ac130003', text: 'eDisclosure and/or eDiscovery', hint: 'Management of disclosure or discovery of electronic documents in a legal dispute'}),
-(ansCostsLawyer:Answer {uuid: 'ccb5d702-75b5-11ea-bc55-0242ac130003', text: 'Costs lawyer and/or Legal costs draftsmen', hint: 'Legal professional involved in working out costs of legal fees and claims'}),
+(ansEDisc:Answer {uuid: 'ccb5d2b6-75b5-11ea-bc55-0242ac130003', text: 'eDisclosure and eDiscovery', hint: 'Management of discovery and disclosure of electronic documents in a legal dispute'}),
+(ansCostsLawyer:Answer {uuid: 'ccb5d702-75b5-11ea-bc55-0242ac130003', text: 'Costs lawyer and legal costs draftsmen', hint: 'Legal professionals responsible for legal costs'}),
 (ansEmpLitigation:Answer {uuid: 'ccb5d8a6-75b5-11ea-bc55-0242ac130003', text: 'Employment litigation', hint: 'Legal services related to defence or claim against employment law'}),
 (ansProperty:Answer {uuid: 'ccb5da72-75b5-11ea-bc55-0242ac130003', text: 'Property', hint: 'Legal services related to property law'}),
 (ansLitigation:Answer {uuid: 'ccb5db3a-75b5-11ea-bc55-0242ac130003', text: 'Litigation', hint: 'Legal services related to the process of taking or defending legal action'}),

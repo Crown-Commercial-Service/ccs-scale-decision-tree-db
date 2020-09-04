@@ -51,7 +51,7 @@ CREATE
 (ansGrpSectorCentGov:AnswerGroup {name: 'ansGrpSectorCentGov'}),
 (qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSectorCentGov),
 (ansGrpSectorCentGov)-[:HAS_ANSWER {order: 1}]->(ansSectorCG),
-(ansGrpSectorCentGov)-[:HAS_ANSWER {order: 2}]->(ansSectorMoD),
+(ansGrpSectorCentGov)-[:HAS_ANSWER {order: 3}]->(ansSectorMoD),
 (ansGrpSectorCentGov)-[:HAS_OUTCOME]->(qiCentGovService:QuestionInstance:Outcome {uuid: 'ccb5e184-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnServiceArea),
 
 // Sector(CG) -> Service(Rail)

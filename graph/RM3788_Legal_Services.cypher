@@ -59,27 +59,18 @@ CREATE
 (qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceRail),
 (ansGrpCGServiceRail)-[:HAS_ANSWER {order: 1}]->(ansRail),
 (ansGrpCGServiceRail)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3756'}),
-(ansGrpCGServiceRail)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '590b099b-41ac-49a0-82c1-380c50b22bc4', group: 'cg_multi_rail', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3756'}),
-(ansGrpCGServiceRail)-[:HAS_MULTI_SELECT]->(multiCGServiceRail:MultiSelect {uuid: 'b3ab9577-01f6-43d7-85c0-7ac110715fb9', group: 'cg_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3787'}),
-(multiCGServiceRail)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
 
 // Sector(CG) -> Service(eDisclosure, eDiscovery)
 (ansGrpCGServiceEDisc:AnswerGroup {name: 'ansGrpCGServiceEDisc'}),
 (qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceEDisc),
 (ansGrpCGServiceEDisc)-[:HAS_ANSWER {order: 2}]->(ansEDisc),
 (ansGrpCGServiceEDisc)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3717'}),
-(ansGrpCGServiceEDisc)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'e0d4e36d-7735-48e7-ad52-9955dfcf60b6', group: 'cg_multi_edisc', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3717'}),
-(ansGrpCGServiceEDisc)-[:HAS_MULTI_SELECT]->(multiCGServiceEDisc:MultiSelect {uuid: 'a5a57a54-9be2-46b9-b362-bb7df6111d89', group: 'cg_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3787'}),
-(multiCGServiceEDisc)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
 
 // Sector(CG) -> Service(Costs Lawyer, Legal Costs Draftsmen)
 (ansGrpCGServiceCostsLawyer:AnswerGroup {name: 'ansGrpCGServiceCostsLawyer'}),
 (qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceCostsLawyer),
 (ansGrpCGServiceCostsLawyer)-[:HAS_ANSWER {order: 4}]->(ansCostsLawyer),
 (ansGrpCGServiceCostsLawyer)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6137'}),
-(ansGrpCGServiceCostsLawyer)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '3844230f-edc4-4f8b-82b0-d567ce33c7bb', group: 'cg_multi_costs_lawyer', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6137'}),
-(ansGrpCGServiceCostsLawyer)-[:HAS_MULTI_SELECT]->(multiCGServiceCostsLawyer:MultiSelect {uuid: '35f96ad9-3619-4632-adf8-326c88105b92', group: 'cg_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3787'}),
-(multiCGServiceCostsLawyer)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
 
 // Sector(CG) -> Service(Employment Litigation, Property, Litigation)
 (ansGrpCGServiceEmpLitProp:AnswerGroup {name: 'ansGrpCGServiceEmpLitProp'}),
@@ -88,9 +79,6 @@ CREATE
 (ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 7}]->(ansProperty),
 (ansGrpCGServiceEmpLitProp)-[:HAS_ANSWER {order: 8}]->(ansLitigation),
 (ansGrpCGServiceEmpLitProp)-[:HAS_OUTCOME]->(qiCentGovBudget:QuestionInstance:Outcome {uuid: 'ccb6124e-75b5-11ea-bc55-0242ac130003', conditionalInput: true})-[:DEFINED_BY]->(qstnLegalFeesKnown),
-(ansGrpCGServiceEmpLitProp)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'd6f34b9f-3667-4f06-82a8-e334b36d5157', group: 'cg_multi_emplit_prop', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(qiCentGovBudget),
-(ansGrpCGServiceEmpLitProp)-[:HAS_MULTI_SELECT]->(multiCGServiceEmpLitProp:MultiSelect {uuid: 'a4bf03aa-c24a-4c77-80b5-f6dd602eeb8a', group: 'cg_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3787'}),
-(multiCGServiceEmpLitProp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
 
 // Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget (known)
 // TODO: Remove artificial upper & lower bounds
@@ -114,8 +102,6 @@ CREATE
 (ansGrpCGServiceFinCompMultiOther)-[:HAS_ANSWER {order: 10, mutex: true}]->(ansAnythingElse),
 (ansGrpCGServiceFinCompMultiOther)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3787'}),
 (ansGrpCGServiceFinCompMultiOther)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
-(ansGrpCGServiceFinCompMultiOther)-[:HAS_MULTI_SELECT]->(multiCGServiceFinCompMultiOther:MultiSelect {uuid: '0209722e-6099-45d2-bdb5-ae69d793feef', group: 'cg_multi_svcs', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3787'}),
-(multiCGServiceFinCompMultiOther)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
 
 // Non CG Branch (WPS)
 (ansGrpSectorWPS:AnswerGroup {name: 'ansGrpSectorWPS'}),

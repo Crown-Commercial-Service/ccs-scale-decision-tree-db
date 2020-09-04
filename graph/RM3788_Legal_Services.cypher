@@ -122,32 +122,24 @@ CREATE
 (qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServicePropConstruct),
 (ansGrpWPSServicePropConstruct)-[:HAS_ANSWER {order: 1}]->(ansPropertyConstruction),
 (ansGrpWPSServicePropConstruct)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
-(ansGrpWPSServicePropConstruct)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '2e2296e1-c2e7-42bc-9e23-b4bbc03fe847', group: 'wps_multi_prop_const', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
-(ansGrpWPSServicePropConstruct)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '9c5466b3-fe4f-475d-a9db-f05898c2d964', group: 'wps_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiWPSLocation),
 
 // Sector(WPS) -> Service(eDisclosure, eDiscovery)
 (ansGrpWPSServiceEDisc:AnswerGroup {name: 'ansGrpWPSServiceEDisc'}),
 (qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceEDisc),
 (ansGrpWPSServiceEDisc)-[:HAS_ANSWER {order: 2}]->(ansEDisc),
 (ansGrpWPSServiceEDisc)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3717'}),
-(ansGrpWPSServiceEDisc)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '11672d87-0338-46b9-a402-32bc3b6e4593', group: 'wps_multi_edisc', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3717'}),
-(ansGrpWPSServiceEDisc)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'cf878a1f-8acb-44d9-b860-b5c6f7bfa2c7', group: 'wps_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiWPSLocation),
 
 // Sector(WPS) -> Service(Costs Lawyer, Legal Costs Draftsmen)
 (ansGrpWPSServiceCostsLawyer:AnswerGroup {name: 'ansGrpWPSServiceCostsLawyer'}),
 (qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceCostsLawyer),
 (ansGrpWPSServiceCostsLawyer)-[:HAS_ANSWER {order: 4}]->(ansCostsLawyer),
 (ansGrpWPSServiceCostsLawyer)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6137'}),
-(ansGrpWPSServiceCostsLawyer)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '56051e5f-94d0-43a1-85e6-0ffa53aec71a', group: 'wps_multi_costs_lawyer', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6137'}),
-(ansGrpWPSServiceCostsLawyer)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '824a1c11-abf3-4497-a070-4a51844e17b8', group: 'wps_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiWPSLocation),
 
 // Sector(WPS) -> Service(Transport, Rail)
 (ansGrpWPSServiceTransRail:AnswerGroup {name: 'ansGrpWPSServiceTransRail'}),
 (qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceTransRail),
 (ansGrpWPSServiceTransRail)-[:HAS_ANSWER {order: 6}]->(ansTransportAndRail),
 (ansGrpWPSServiceTransRail)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
-(ansGrpWPSServiceTransRail)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'cb1c9133-822b-4234-9a88-d746b4c450e4', group: 'wps_multi_trans_rail', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
-(ansGrpWPSServiceTransRail)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'fbc3aa56-ed2f-481b-9c37-cbdb34b2afa3', group: 'wps_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiWPSLocation),
 
 // Sector(WPS) -> Service(Multiple, Other)
 (ansGrpWPSServiceMultiOther:AnswerGroup {name: 'ansGrpWPSServiceMultiOther'}),

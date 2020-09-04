@@ -152,7 +152,7 @@ CREATE
 // Security Type -> Security Services & Technical Security -> Security service type (anything else)
 (ansGrpSecTypeSecTechServicesTypeOther:AnswerGroup {name: 'ansGrpSecTypeSecTechServicesTypeOther'}),
 (qiSecTechServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpSecTypeSecTechServicesTypeOther),
-(ansGrpSecTypeSecTechServicesTypeOther)-[:HAS_ANSWER {order: 8}]->(ansTechSecAnythingElse),
+(ansGrpSecTypeSecTechServicesTypeOther)-[:HAS_ANSWER {order: 8, mutex: true}]->(ansTechSecAnythingElse),
 (ansGrpSecTypeSecTechServicesTypeOther)-[:HAS_OUTCOME]->(agrRM6089b:Agreement:Outcome {number: 'RM6089'}),
 (agrRM6089b)-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
 (agrRM6089b)-[:HAS_LOT]->(:Lot {number: '1b', url: '', type: 'CAT', scale: true}),
@@ -172,7 +172,7 @@ CREATE
 // Security Type -> Security Services & Technical Security -> Security service type -> Add Fac Mgmt (no)
 (ansGrpSecTechServicesAddFacMgmtNo:AnswerGroup {name: 'ansGrpSecTechServicesAddFacMgmtNo'}),
 (qiAddFacMgmtSecSrvAndTech)-[:HAS_ANSWER_GROUP]->(ansGrpSecTechServicesAddFacMgmtNo),
-(ansGrpSecTechServicesAddFacMgmtNo)-[:HAS_ANSWER {order: 8}]->(ansNoIHaveEverything),
+(ansGrpSecTechServicesAddFacMgmtNo)-[:HAS_ANSWER {order: 8, mutex: true}]->(ansNoIHaveEverything),
 (ansGrpSecTechServicesAddFacMgmtNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
 
 // Security Type -> Security Services & Technical Security -> Security service type -> Add Fac Mgmt (yes) -> Sector (MoD)
@@ -211,7 +211,7 @@ CREATE
 (ansGrpSecServicesTypeTechType)-[:HAS_ANSWER {order: 1}]->(ansRiskAssess),
 (ansGrpSecServicesTypeTechType)-[:HAS_ANSWER {order: 2}]->(ansDesInstallElecSecurity),
 (ansGrpSecServicesTypeTechType)-[:HAS_ANSWER {order: 3}]->(ansDesInstallPhysSecurity),
-(ansGrpSecServicesTypeTechType)-[:HAS_ANSWER {order: 4}]->(ansTechSecAnythingElse),
+(ansGrpSecServicesTypeTechType)-[:HAS_ANSWER {order: 4, mutex: true}]->(ansTechSecAnythingElse),
 (ansGrpSecServicesTypeTechType)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '1b', url: '', type: 'CAT', scale: true}),
 
 // SOFTWARE SECURITY

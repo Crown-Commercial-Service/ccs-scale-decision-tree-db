@@ -40,8 +40,9 @@ CREATE
 (ansLitigation:Answer {uuid: 'ccb5db3a-75b5-11ea-bc55-0242ac130003', text: 'Litigation', hint: 'Legal services related to the process of taking or defending legal action'}),
 (ansFinanceComplex:Answer {uuid: 'ccb5dbee-75b5-11ea-bc55-0242ac130003', text: 'Finance & Complex', hint: 'Legal advice on complex corporate finance matters'}),
 (ansPropertyConstruction:Answer {uuid: 'ccb5df2c-75b5-11ea-bc55-0242ac130003', text: 'Property and construction', hint: 'This is for large-scale and high-value building works, such as a hospital'}),
-(ansTransport:Answer {uuid: 'ccb5dff4-75b5-11ea-bc55-0242ac130003', text: 'Transport', hint: 'Transport-specific legal advice'}),
+(ansTransportAndRail:Answer {uuid: 'caf3bc1a-ee8f-11ea-adc1-0242ac120002', text: 'Transport and rail', hint: 'Transport-specific legal advice'}),
 (ansAnythingElse:Answer {uuid: 'ccb5dd74-75b5-11ea-bc55-0242ac130003', text: 'Anything else', hint: 'A legal service not listed here'}),
+(ansMultipleServices:Answer {uuid: '8d8c81ec-ee9c-11ea-adc1-0242ac120002', text: 'Multiple services', hint: 'More than one item from this list'}),
 
 // Tree Structure
 (jrnyLegalServices)-[:FIRST_QUESTION]->(qiSector:QuestionInstance:Outcome {uuid: 'ccb5e0bc-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnSector),
@@ -50,6 +51,7 @@ CREATE
 (ansGrpSectorCentGov:AnswerGroup {name: 'ansGrpSectorCentGov'}),
 (qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSectorCentGov),
 (ansGrpSectorCentGov)-[:HAS_ANSWER {order: 1}]->(ansSectorCG),
+(ansGrpSectorCentGov)-[:HAS_ANSWER {order: 2}]->(ansSectorMoD),
 (ansGrpSectorCentGov)-[:HAS_OUTCOME]->(qiCentGovService:QuestionInstance:Outcome {uuid: 'ccb5e184-75b5-11ea-bc55-0242ac130003'})-[:DEFINED_BY]->(qstnServiceArea),
 
 // Sector(CG) -> Service(Rail)
@@ -119,7 +121,6 @@ CREATE
 (ansGrpSectorWPS:AnswerGroup {name: 'ansGrpSectorWPS'}),
 (qiSector)-[:HAS_ANSWER_GROUP]->(ansGrpSectorWPS),
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 2}]->(ansSectorLG),
-(ansGrpSectorWPS)-[:HAS_ANSWER {order: 3}]->(ansSectorMoD),
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 4}]->(ansSectorDevolved),
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 5}]->(ansSectorEdu),
 (ansGrpSectorWPS)-[:HAS_ANSWER {order: 6}]->(ansSectorHealth),
@@ -157,8 +158,7 @@ CREATE
 // Sector(WPS) -> Service(Transport, Rail)
 (ansGrpWPSServiceTransRail:AnswerGroup {name: 'ansGrpWPSServiceTransRail'}),
 (qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceTransRail),
-(ansGrpWPSServiceTransRail)-[:HAS_ANSWER {order: 6}]->(ansTransport),
-(ansGrpWPSServiceTransRail)-[:HAS_ANSWER {order: 7}]->(ansRail),
+(ansGrpWPSServiceTransRail)-[:HAS_ANSWER {order: 6}]->(ansTransportAndRail),
 (ansGrpWPSServiceTransRail)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
 (ansGrpWPSServiceTransRail)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'cb1c9133-822b-4234-9a88-d746b4c450e4', group: 'wps_multi_trans_rail', mixPrecedence: 2, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
 (ansGrpWPSServiceTransRail)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'fbc3aa56-ed2f-481b-9c37-cbdb34b2afa3', group: 'wps_multi_svcs', mixPrecedence: 1})-[:HAS_OUTCOME]->(qiWPSLocation),
@@ -166,6 +166,7 @@ CREATE
 // Sector(WPS) -> Service(Multiple, Other)
 (ansGrpWPSServiceMultiOther:AnswerGroup {name: 'ansGrpWPSServiceMultiOther'}),
 (qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceMultiOther),
+(ansGrpWPSServiceMultiOther)-[:HAS_ANSWER {order: 7}]->(ansMultipleServices),
 (ansGrpWPSServiceMultiOther)-[:HAS_ANSWER {order: 8, mutex: true}]->(ansAnythingElse),
 (ansGrpWPSServiceMultiOther)-[:HAS_OUTCOME]->(qiWPSLocation),
 

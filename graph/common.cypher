@@ -54,7 +54,7 @@ CREATE
 (:Answer {uuid: 'b879a5ec-654e-11ea-bc55-0242ac130003', text: 'Local Government', hint: 'Councils and other local government funded bodies'}),
 (:Answer {uuid: 'b879a6b4-654e-11ea-bc55-0242ac130003', text: 'Blue light', hint: 'Emergency services, such as fire brigade, ambulance and police'}),
 (:Answer {uuid: 'b879a8d0-654e-11ea-bc55-0242ac130003', text: 'Housing', hint: 'National and regional housing'}),
-(:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003', text: 'Charities', hint: 'Charities and charitible foundations'}),
+(:Answer {uuid: 'b879a9de-654e-11ea-bc55-0242ac130003', text: 'Charities', hint: 'Charities and charitable foundations'}),
 
 // locations
 (:Answer {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'Nationwide'}),

@@ -148,6 +148,7 @@ CREATE
 (ansGrpSecTypeSecTechServicesType)-[:HAS_ANSWER {order: 6}]->(ansElectronicSecurity),
 (ansGrpSecTypeSecTechServicesType)-[:HAS_ANSWER {order: 7}]->(ansPhysicalSecurity),
 (ansGrpSecTypeSecTechServicesType)-[:HAS_OUTCOME]->(qiAddFacMgmtSecSrvAndTech:QuestionInstance:Outcome {uuid: 'befdac95-7220-4591-9f59-b4ee9ac36bc9'})-[:DEFINED_BY]->(qstnAddFacMgmtSingleSelect),
+(ansGrpSecTypeSecTechServicesType)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'd9afed98-4803-4b00-970b-f7ca7947f587', group: 'sec_svcs_type_sec_tech_mixed', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(qiAddFacMgmtSecSrvAndTech),
 
 // Security Type -> Security Services & Technical Security -> Security service type (anything else)
 (ansGrpSecTypeSecTechServicesTypeOther:AnswerGroup {name: 'ansGrpSecTypeSecTechServicesTypeOther'}),

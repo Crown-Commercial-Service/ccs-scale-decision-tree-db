@@ -19,8 +19,8 @@ MATCH
 
 CREATE
 // Answers
-(ansHousingMgmtMaintenance:Answer {uuid: 'a70a802f-a0cf-4a97-87ba-f2cf1647e72d', text: 'Housing management and maintenance'}),
-(ansEstateServices:Answer {uuid: '26f9107e-75a5-460e-ac62-a41fad737d2a', text: 'Estate services'}),
+(ansHousingMgmtMaintenance:Answer {uuid: 'a70a802f-a0cf-4a97-87ba-f2cf1647e72d', text: 'Housing maintenance and management', hint: 'Reactive and planned maintenance for existing properties. Includes management of vacant properties, and maintaining lettable standards'}),
+(ansEstateServices:Answer {uuid: '26f9107e-75a5-460e-ac62-a41fad737d2a', text: 'Estate services', hint: 'Housing management consultancy services such as advice on converting a building into flats'}),
 
 // Journey
 (jrnyFM2Housing:Journey {uuid: 'f08a2055-6502-4d5f-81f8-2e3f111ff7ae', name: 'FM Marketplace Phase 2 - Housing'}),

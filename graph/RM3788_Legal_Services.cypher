@@ -156,6 +156,7 @@ CREATE
 (ansGrpWPSLocationEngWales)-[:HAS_OUTCOME]->(wpsLot1_2a:Agreement:Outcome {number: 'RM3788'}),
 (wpsLot1_2a)-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 (wpsLot1_2a)-[:HAS_LOT]->(:Lot {number: '2a', url: '', type: 'CAT', scale: true}),
+(ansGrpWPSLocationEngWales)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '8cbc8ca0-7801-4332-bae3-697b06f4627a', group: 'wps_loc', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'}),
 
 // Sector(WPS) -> Service(Multiple, Other) -> Location(England or Wales)
 (ansGrpWPSLocationScotland:AnswerGroup {name: 'ansGrpWPSLocationScotland'}),
@@ -164,6 +165,7 @@ CREATE
 (ansGrpWPSLocationScotland)-[:HAS_OUTCOME]->(wpsLot1_2b:Agreement:Outcome {number: 'RM3788'}),
 (wpsLot1_2b)-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 (wpsLot1_2b)-[:HAS_LOT]->(:Lot {number: '2b', url: '', type: 'CAT', scale: true}),
+(ansGrpWPSLocationScotland)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: 'a1b070b4-d5c8-4cf5-875a-41a173dfd6ad', group: 'wps_loc', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'}),
 
 // Sector(WPS) -> Service(Multiple, Other) -> Location(England or Wales)
 (ansGrpWPSLocationNorthIreland:AnswerGroup {name: 'ansGrpWPSLocationNorthIreland'}),
@@ -171,4 +173,5 @@ CREATE
 (ansGrpWPSLocationNorthIreland)-[:HAS_ANSWER {order: 3}]->(ansLocNorthernIreland),
 (ansGrpWPSLocationNorthIreland)-[:HAS_OUTCOME]->(wpsLot1_2c:Agreement:Outcome {number: 'RM3788'}),
 (wpsLot1_2c)-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
-(wpsLot1_2c)-[:HAS_LOT]->(:Lot {number: '2c', url: '', type: 'CAT', scale: true});
+(wpsLot1_2c)-[:HAS_LOT]->(:Lot {number: '2c', url: '', type: 'CAT', scale: true}),
+(ansGrpWPSLocationNorthIreland)-[:HAS_MULTI_SELECT]->(:MultiSelect {uuid: '3651cd6e-2735-409c-8184-5dd117d5dfea', group: 'wps_loc', mixPrecedence: 1, primary: true})-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'});

@@ -586,7 +586,6 @@ CREATE
   (ansGrpApprenticeshipServ:AnswerGroup {name: 'ansGrpApprenticeshipServ'}),
   (qiPeople)-[:HAS_ANSWER_GROUP]->(ansGrpApprenticeshipServ),
   (ansGrpApprenticeshipServ)-[:HAS_ANSWER {order: 1}]->(ansApprenticeshipServ),
-  (ansGrpApprenticeshipServ)-[:HAS_OUTCOME]->(qiApprenticeshipServ:QuestionInstance:Outcome {uuid: '0c14f710-5798-45e8-bd1f-3ee4884da850'})-[:DEFINED_BY]->(qstnApprenticeshipServ),
   (ansGrpApprenticeshipServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6102'}),
   (ansGrpApprenticeshipServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6107'}),
 

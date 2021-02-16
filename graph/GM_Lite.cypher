@@ -55,7 +55,13 @@ CREATE
   (ansLinenServ:Answer {uuid: 'b20e8141-643c-4362-9853-982955af9f6c', text: 'Linen services', hint: 'Collect owned or hired laundry, wash, finish and return'}),
 
 
+  // Buildings (Level 4 question)
+  (qstnFacilManag:Question {uuid: '27ee54bc-dfed-41d0-80f1-0f239c9c3405', text: 'You chose Facilities management. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
 
+  // Buildings (Level 4 answer)
+  (ansFacilManagServ:Answer {uuid: '9864339d-519c-4d46-a6dd-0202c9f55add', text: 'Facilities management services', hint: 'Specialist services for defence and facilities management'}),
+  (ansGovHubFitOutServ:Answer {uuid: '5dd3e412-9110-432d-bc6e-29babc26bdee', text: 'Government hub fit-out service', hint: 'Office renovation and refurbishment'}),
+  (ansTrainEstate:Answer {uuid: '51c1b997-58d7-4546-8976-e33af1b63042', text: 'Training estate', hint: 'Defence and training estate facilities management'}),
 
 
 
@@ -170,7 +176,7 @@ CREATE
   (ansCorpFinance:Answer {uuid: 'f01daf51-0b45-4728-829b-0ee21f992177', text: 'Corporate finance', hint: 'Expert advice for corporate finance'}),
   (ansManagConsult:Answer {uuid: 'aaff9315-1917-4062-bcc5-bf7d543b6a2c', text: 'Management consultancy', hint: 'Expert advice, strategy, supply-chain and managing complex solutions'}),
 
-  (ansHealthRela:Answer {uuid: 'aae1460e-2306-4272-80c0-c3e975f90b95', text: 'Healthcare related', hint: 'Clinical, healthcare or medical workers'}),
+  (ansHealth:Answer {uuid: 'aae1460e-2306-4272-80c0-c3e975f90b95', text: 'Healthcare', hint: 'Clinical, healthcare or medical workers'}),
   (ansSuppTeachAndEducatStaff:Answer {uuid: 'e7892975-7db2-4773-8fbf-cbf299fbcf9b', text: 'Supply teachers and educational staff', hint: 'Temporary and fixed-term teaching and non-teaching workers'}),
   (ansAnyelseForTempResouOrRecruit:Answer {uuid: '44023ba5-5ec4-4a2c-9d4c-ac8c4f4df7cd', text: 'Anything else', hint: 'Flexible workers for the NHS'}),
 
@@ -313,7 +319,26 @@ CREATE
     (ansGrpFacilManag:AnswerGroup {name: 'ansGrpFacilManag'}),
     (qiFacEstOrWorkP)-[:HAS_ANSWER_GROUP]->(ansGrpFacilManag),
     (ansGrpFacilManag)-[:HAS_ANSWER {order: 3}]->(ansFacilManag),
-    (ansGrpFacilManag)-[:HAS_OUTCOME]->(qiFM2FacilitiesFirstQuestion), // SWITCH TREES
+    (ansGrpFacilManag)-[:HAS_OUTCOME]->(qiFacilManag:QuestionInstance:Outcome {uuid: 'e99d4c01-277c-47c0-80fc-e6080c5f94a7'})-[:DEFINED_BY]->(qstnFacilManag),
+
+      // A4 Facilities management services
+      (ansGrpFacilManagServ:AnswerGroup {name: 'ansGrpFacilManagServ'}),
+      (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpFacilManagServ),
+      (ansGrpFacilManagServ)-[:HAS_ANSWER {order: 1}]->(ansFacilManagServ),
+      (ansGrpFacilManagServ)-[:HAS_OUTCOME]->(qiFM2FacilitiesFirstQuestion), // SWITCH TREES
+
+      // A4 Government hub fit-out service
+      (ansGrpGovHubFitOutServ:AnswerGroup {name: 'ansGrpGovHubFitOutServ'}),
+      (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpGovHubFitOutServ),
+      (ansGrpGovHubFitOutServ)-[:HAS_ANSWER {order: 2}]->(ansGovHubFitOutServ),
+      (ansGrpGovHubFitOutServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6073'}),
+
+      // A4 Training estate
+      (ansGrpTrainEstate:AnswerGroup {name: 'ansGrpTrainEstate'}),
+      (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpTrainEstate),
+      (ansGrpTrainEstate)-[:HAS_ANSWER {order: 3}]->(ansTrainEstate),
+      (ansGrpTrainEstate)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6155'}),
+
 
     // A3 Furniture services
     (ansGrpFurniServ:AnswerGroup {name: 'ansGrpFurniServ'}),
@@ -680,12 +705,12 @@ CREATE
     (ansGrpTempResouOrRecruit)-[:HAS_ANSWER {order: 3}]->(ansTempResouOrRecruit),
     (ansGrpTempResouOrRecruit)-[:HAS_OUTCOME]->(qiTempResouOrRecrui:QuestionInstance:Outcome {uuid: 'd0fd76fe-de44-435b-b234-8b4ae3d856a2'})-[:DEFINED_BY]->(qstnTempResouOrRecrui),
 
-      // A4 Healthcare related
-      (ansGrpHealthRela:AnswerGroup {name: 'ansGrpHealthRela'}),
-      (qiTempResouOrRecrui)-[:HAS_ANSWER_GROUP]->(ansGrpHealthRela),
-      (ansGrpHealthRela)-[:HAS_ANSWER {order: 1}]->(ansHealthRela),
-      (ansGrpHealthRela)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3711'}),
-      (ansGrpHealthRela)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6161'}),
+      // A4 Healthcare
+      (ansGrpHealth:AnswerGroup {name: 'ansGrpHealth'}),
+      (qiTempResouOrRecrui)-[:HAS_ANSWER_GROUP]->(ansGrpHealth),
+      (ansGrpHealth)-[:HAS_ANSWER {order: 1}]->(ansHealth),
+      (ansGrpHealth)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3711'}),
+      (ansGrpHealth)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6161'}),
 
       // A4 Supply teachers and educational staff
       (ansGrpSuppTeachAndEducatStaff:AnswerGroup {name: 'ansGrpSuppTeachAndEducatStaff'}),

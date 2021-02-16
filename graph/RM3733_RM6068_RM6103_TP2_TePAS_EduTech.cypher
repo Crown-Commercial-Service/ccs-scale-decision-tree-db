@@ -86,7 +86,7 @@ CREATE
 (ansGrpProductSectorNonEdu)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpProductSectorNonEdu)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpProductSectorNonEdu)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpProductSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3733'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'BAT', scale: true}),
+(ansGrpProductSectorNonEdu)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6147'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'BAT', scale: true}),
 
 // Product / Service? (Service)
 (ansGrpService:AnswerGroup {name: 'ansGrpService'}),

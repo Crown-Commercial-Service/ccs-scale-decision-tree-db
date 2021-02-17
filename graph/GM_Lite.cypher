@@ -59,8 +59,8 @@ CREATE
   (qstnFacilManag:Question {uuid: '27ee54bc-dfed-41d0-80f1-0f239c9c3405', text: 'You chose Facilities management. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
 
   // Buildings (Level 4 answer)
-  (ansFacilManagServ:Answer {uuid: '9864339d-519c-4d46-a6dd-0202c9f55add', text: 'Facilities management services', hint: 'Specialist services for defence and facilities management'}),
-  (ansGovHubFitOutServ:Answer {uuid: '5dd3e412-9110-432d-bc6e-29babc26bdee', text: 'Government hub fit-out service', hint: 'Office renovation and refurbishment'}),
+  (ansWorkpServ:Answer {uuid: '9864339d-519c-4d46-a6dd-0202c9f55add', text: 'Workplace services', hint: 'Regional facilities management and specialist services'}),
+  (ansGovHubFitOutServ:Answer {uuid: '5dd3e412-9110-432d-bc6e-29babc26bdee', text: 'Government hubs fit-out', hint: 'Office renovation and refurbishment'}),
   (ansTrainEstate:Answer {uuid: '51c1b997-58d7-4546-8976-e33af1b63042', text: 'Training estate', hint: 'Defence and training estate facilities management'}),
 
 
@@ -321,13 +321,13 @@ CREATE
     (ansGrpFacilManag)-[:HAS_ANSWER {order: 3}]->(ansFacilManag),
     (ansGrpFacilManag)-[:HAS_OUTCOME]->(qiFacilManag:QuestionInstance:Outcome {uuid: 'e99d4c01-277c-47c0-80fc-e6080c5f94a7'})-[:DEFINED_BY]->(qstnFacilManag),
 
-      // A4 Facilities management services
-      (ansGrpFacilManagServ:AnswerGroup {name: 'ansGrpFacilManagServ'}),
-      (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpFacilManagServ),
-      (ansGrpFacilManagServ)-[:HAS_ANSWER {order: 1}]->(ansFacilManagServ),
-      (ansGrpFacilManagServ)-[:HAS_OUTCOME]->(qiFM2FacilitiesFirstQuestion), // SWITCH TREES
+      // A4 Workplace services
+      (ansGrpWorkpServ:AnswerGroup {name: 'ansGrpWorkpServ'}),
+      (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpWorkpServ),
+      (ansGrpWorkpServ)-[:HAS_ANSWER {order: 1}]->(ansWorkpServ),
+      (ansGrpWorkpServ)-[:HAS_OUTCOME]->(qiFM2FacilitiesFirstQuestion), // SWITCH TREES
 
-      // A4 Government hub fit-out service
+      // A4 Government hub fit-out
       (ansGrpGovHubFitOutServ:AnswerGroup {name: 'ansGrpGovHubFitOutServ'}),
       (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpGovHubFitOutServ),
       (ansGrpGovHubFitOutServ)-[:HAS_ANSWER {order: 2}]->(ansGovHubFitOutServ),

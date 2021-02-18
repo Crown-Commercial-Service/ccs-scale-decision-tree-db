@@ -25,12 +25,17 @@ CREATE
 (:Question {uuid: 'b879c784-654e-11ea-bc55-0242ac130003', text: 'What type of security do you need?', hint: "Choose one option:", type: 'LIST'}),
 (:Question {uuid: '1b99e1a4-432f-4700-bcc2-7cbb2538fc20', text: 'What type of security services do you need?', hint: "Select all that apply.", type: 'MULTI_SELECT_LIST'}),
 (:Question {uuid: '9a6301b0-e9f7-46b4-ad64-14da3396b2c7', text: 'What type of technical security do you need?', hint: "Choose one option:", type: 'LIST'}),
-(:Question {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003', text: 'Where do you need this service?', hint: "Choose one option:", type: 'LIST'}),
+(:Question {uuid: 'ccb5c64a-75b5-11ea-bc55-0242ac130003', text: 'Where do you need this service?', hint: "Select all that apply", type: 'MULTI_SELECT_LIST'}),
 (:Question {uuid: '59561c74-8d8f-4863-a01d-5cca0a289986', text: 'Which service area do you need?', hint: "Choose one option:", type: 'LIST'}),
 (:Question {uuid: '931a3024-8612-422b-8e6f-480007105c2e', text: 'How much is your budget?', hint: 'An estimate is fine (£)', type: 'NUMBER', unit: 'CURRENCY'}),
 (:Question {uuid: '754c6fbb-4525-4468-89d6-148ac26ec7f9', text: 'How long will the contract be for?', hint: 'Enter a time period in months. An estimate is fine.', type: 'NUMBER', unit: 'MONTHS'}),
 (:Question {uuid: 'd3a82a1e-ed20-11ea-adc1-0242ac120002', text: 'Do you know your budget?', type: 'BOOLEAN', conditionalInput: true, hint: "This question refers to your fees per legal matter"}),
 (:Question {uuid: '6a122d52-ed20-11ea-adc1-0242ac120002', text: 'How much are your legal fees per matter?', hint: 'An estimate is fine (£)', type: 'NUMBER', unit: 'CURRENCY'}),
+(:Question {uuid: '2efb026a-f85c-42d1-b294-3d72f2b95736', text: 'Which area suits your requirements?', hint: 'Select one option:', type: 'LIST'}),
+(:Question {uuid: '22462bd6-9323-4f8a-9672-a724e19eafeb', text: 'Which area of buildings do you need help with?', hint: 'Select one option:', type: 'LIST'}),
+(:Question {uuid: 'd180386a-fe18-42ac-add8-2e1341c750a5', text: 'Which area of corporate solutions do you need help with?', hint: 'Select one option:', type: 'LIST'}),
+(:Question {uuid: '6c166ea3-63a3-4e0e-82a1-f36ce6040122', text: 'Which area of people do you need help with?', hint: 'Select one option:', type: 'LIST'}),
+(:Question {uuid: '95d78c62-141b-4621-8431-6c94c97bb0ea', text: 'Which area of technology do you need help with?', hint: 'Select one option:', type: 'LIST'}),
 
 // Answer definitions
 // Yes, No, Other
@@ -44,6 +49,12 @@ CREATE
 (:Answer {uuid: 'b879fe0c-654e-11ea-bc55-0242ac130003', text: 'Service', hint: 'A service is a contract for something to happen, one time or regularly, such as window cleaning. Some contracts may involve hiring a product as part of the service, such as leasing a company car.'}),
 (:Answer {uuid: '17877ddd-910d-48cc-b219-fb910fb696a3', text: 'Service', hint: 'A service is a contract for something to happen, one time or regularly, such as window cleaning. Some contracts may involve hiring a product as part of the service, such as leasing a company car. Where this is the case, select the service option.'}),
 (:Answer {uuid: 'ccb61596-75b5-11ea-bc55-0242ac130003', text: 'Both, product and service', hint: 'Some contracts involve buying products and a related service. For example, buying an office coffee machine with an extended warranty'}),
+
+// Pillar
+(:Answer {uuid: 'b52be1f7-b621-4f2f-888e-cadbe70103ea', text: 'Buildings', hint: "Anything you need to build, power or manage a building like construction materials, electricity, water, furniture, maintenance and security."}),
+(:Answer {uuid: '19fdb85e-f224-4842-b856-6119039c3acd', text: 'Corporate Solutions', hint: "Anything you need to run your organisation like office supplies, post, payments, travel, vehicle, marketing and communications services."}),
+(:Answer {uuid: 'cf484bfe-13a9-4ac9-8489-bb39239751a6', text: 'People', hint: "Anyone who gets work done like employees, apprentices or experts in legal, language, consultancy and recruitment services."}),
+(:Answer {uuid: '023a7ca0-d772-4471-ba3c-12df811cf816', text: 'Technology', hint: "Anything that helps you work digitally, protect and manage information like AI, cloud, network, software and cyber security."}),
 
 // Sectors
 (:Answer {uuid: 'b8799ee4-654e-11ea-bc55-0242ac130003', text: 'Ministry of Defence or defence infrastructure organisation', hint: 'Ministry of Defence projects and operations'}),

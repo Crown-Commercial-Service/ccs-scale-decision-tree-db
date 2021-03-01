@@ -94,13 +94,14 @@ CREATE
   (ansGrantServ:Answer {uuid: 'f75796b7-ac1d-49be-ba94-8122b9ed62e0', text: 'Grant services', hint: 'Services for all areas of grants from programme design to apllication review to award.'}),
   (ansInsurServ:Answer {uuid: '6e96c8a3-d9f9-4d29-a6a9-eb5d730018b3', text: 'Insurance services', hint: 'Help selecting the right insurance and making claims for compensation'}),
   (ansPayServ:Answer {uuid: '6977b2c1-d718-41b5-a0da-b10ad88716b3', text: 'Payment services', hint: 'The ability to accept or make a payment'}),
+  (ansLeasAdvis:Answer {uuid: '373cc6bd-630a-442f-a3be-e70d24593ef7', text: 'Lease advisory', hint: 'Expert advice on leasing options, asset classes and saving initiatives'}),
   (ansSpendRec:Answer {uuid: 'b7ce3ea5-893f-4553-bb64-ed72dd442b00', text: 'Spend recovery', hint: 'Spot and stop overpayments and get back money owed'}),
 
   (ansMediaServ:Answer {uuid: '5163e632-48f0-47a3-ae6c-6e5992e54003', text: 'Media services', hint: 'Media buying or placement and monitoring all forms of media coverage'}),
   (ansResearchServ:Answer {uuid: '95d0e681-9ae8-468a-8252-0b00e4cbac28', text: 'Research services', hint: 'Services to advise, audit, analyse and review performance '}),
 
   (ansOffSupp:Answer {uuid: 'c3a46607-1a4e-4177-917b-acfe5e727696', text: 'Office supplies', hint: 'Stationery, products and electronic supplies'}),
-  (ansPrintReServ:Answer {uuid: '1fcda0d6-ecf3-48be-87c2-80b39d08108a', text: 'Print related services', hint: 'Printing, scanning and copying devices; software and printed goods'}),
+  (ansPrintReServ:Answer {uuid: '1fcda0d6-ecf3-48be-87c2-80b39d08108a', text: 'Print related services', hint: 'Printing, scanning and copying devices, software and printed goods'}),
 
   (ansCourServ:Answer {uuid: '499a06d4-7d02-44a5-8877-e78a99bf815d', text: 'Courier services', hint: 'Collection and delivery of regulated items and substances'}),
   (ansLogiAndWare:Answer {uuid: '182c129d-d049-4664-abb4-88745941d4dd', text: 'Logisitics and warehousing', hint: 'Transport and storage solutions'}),
@@ -121,6 +122,7 @@ CREATE
   // Corporate Solutions (Level 4 question)
   (qstnPayServ:Question {uuid: '32b9c366-6fdd-4a04-baee-7b0053fc6847', text: 'You chose Payment services. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
   (qstnReseServ:Question {uuid: 'eb1f6aa9-6b7d-48b7-a70a-307292c18de2', text: 'You chose Research services. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
+  (qstnPrintReServ:Question {uuid: '253f3736-f7eb-4f86-990b-d00d508025d9', text: 'You chose Print related services. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
 
   // Corporate Solutions (Level 4 answer)
 
@@ -132,7 +134,8 @@ CREATE
   (ansComPerform:Answer {uuid: '64af52ad-2e9c-4d2a-9e81-0159c02cedf6', text: 'Communication performance', hint: 'Strategic advice, audits and analysis of campaign performance'}),
   (ansReseaMarket:Answer {uuid: 'f5dfa134-22d1-4587-aaa2-090d0b72e598', text: 'Research marketplace', hint: 'Buy research for projects of all sizes and value'}),
 
-
+  (ansMultifunDev:Answer {uuid: '1a1b4108-4957-4252-8107-3b1f5b871b43', text: 'Multifunctional devices', hint: 'Devices with more than one function'}),
+  (ansPrintServ:Answer {uuid: '28a4bddc-70f1-4db2-bbf6-56169f4ab2a7', text: 'Print services', hint: 'Expertise and support with print products and services'}),
 
 
 // People
@@ -141,7 +144,7 @@ CREATE
   (ansEmployeeServOrBenefits:Answer {uuid: '45857306-cedb-439e-8d0a-9f7c109b0380', text: 'Employee services or benefits', hint: 'Benefits and services to improve employee performance at work'}),
   (ansLegalOrConsServ:Answer {uuid: '337a6c77-393e-468a-875c-8f88fb405bc0', text: 'Legal or consultancy services', hint: 'Expert advice for specialised fields'}),
   (ansRecruitOrEmployServ:Answer {uuid: '619c940e-d00d-4da6-96dc-35fcbacade42', text: 'Recruitment or employment services', hint: 'Temporary, interim and permanent employees'}),
-  (ansAnyForPeople:Answer {uuid: '393e2f80-2102-4e4e-894a-c069be8637cc', text: 'Anything else', hint: 'Telephone, email andonline communications'}),
+  (ansAnyForPeople:Answer {uuid: '393e2f80-2102-4e4e-894a-c069be8637cc', text: 'Anything else', hint: 'Telephone, email and online communications'}),
 
   // People (Level 3 question)
   (qstnApprenticeshipServ:Question {uuid: 'ba8a29f9-e578-4079-9259-5553574ccc1b', text: 'You chose Apprenticeship services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
@@ -173,7 +176,7 @@ CREATE
 
   // People (Level 4 answer)
   (ansCorpFinance:Answer {uuid: 'f01daf51-0b45-4728-829b-0ee21f992177', text: 'Corporate finance', hint: 'Expert advice for corporate finance'}),
-  (ansManagConsult:Answer {uuid: 'aaff9315-1917-4062-bcc5-bf7d543b6a2c', text: 'Management consultancy', hint: 'Expert advice, strategy, supply-chain and managing complex solutions'}),
+  (ansManagConsult:Answer {uuid: 'aaff9315-1917-4062-bcc5-bf7d543b6a2c', text: 'Management consultancy', hint: 'Expert advice, strategy, supply chain and managing complex solutions'}),
 
   (ansHealth:Answer {uuid: 'aae1460e-2306-4272-80c0-c3e975f90b95', text: 'Healthcare', hint: 'Clinical, healthcare or medical workers'}),
   (ansSuppTeachAndEducatStaff:Answer {uuid: 'e7892975-7db2-4773-8fbf-cbf299fbcf9b', text: 'Supply teachers and educational staff', hint: 'Temporary and fixed-term teaching and non-teaching workers'}),
@@ -190,13 +193,13 @@ CREATE
   (ansDigitalFut:Answer {uuid: '81c0196d-5002-45c2-a6f0-e5ebe929b30b', text: 'Digital future', hint: 'Digital technology advice, products and services'}),
   (ansNetworkServ:Answer {uuid: '65fac7e9-5d7b-4157-9776-bcbfbb167a3b', text: 'Network services', hint: 'Services that secure data, allow it to be shared, connect users to data and manage the cost of network tools and upkeep'}),
   (ansSoftwAndCyberSec:Answer {uuid: 'bdd8abd2-35dd-4461-af39-cf21568bd397', text: 'Software and cyber security', hint: 'Services and solutions to protect data and computer tools'}),
-  (ansTechProdAndServ:Answer {uuid: '53f42502-2344-4d1f-add8-24f82139c9d6', text: 'Technology Products & Services', hint: 'Find and buy technology products and services'}),
+  (ansTechProdAndServ:Answer {uuid: '53f42502-2344-4d1f-add8-24f82139c9d6', text: 'Technology products and services', hint: 'Find and buy technology products and services'}),
 
   // Technology (Level 3 question)
   (qstnDigitalFut:Question {uuid: 'e608f643-a749-4ccc-892d-6e05ad942258', text: 'You chose Digital future. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
   (qstnNetworkServ:Question {uuid: '4a2642ba-71ae-4391-a3b7-a81bc103f463', text: 'You chose Network services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
   (qstnSoftwAndCyberSec:Question {uuid: '5a22109d-12c4-47a2-a7f9-698331c774d0', text: 'You chose Software and cyber security. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnTechProdAndServ:Question {uuid: 'bbeea78d-c39f-4bf9-887c-e17b5164ca88', text: 'You chose Technology Products & Services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnTechProdAndServ:Question {uuid: 'bbeea78d-c39f-4bf9-887c-e17b5164ca88', text: 'You chose Technology products and services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 
   // Technology (Level 3 answer)
   (ansArtIntel:Answer {uuid: '915c59a5-b595-4e2c-ad2d-97b57837ddb9', text: 'Artificial Intelligence', hint: 'Services to learn about artificial intelligence and how to use it'}),
@@ -212,7 +215,8 @@ CREATE
   (ansCybSecurity:Answer {uuid: 'b1dca2ed-8f2e-4ba2-bea2-bc152ec08f55', text: 'Cyber security', hint: 'Services to protect computer networks, data, equipment and software '}),
   (ansEnterpApp:Answer {uuid: '493d031b-2498-4959-8fc4-a86c3834f7e3', text: 'Enterprise applications', hint: 'Software solutions, equipment and professional services'}),
 
-  (ansTechProd:Answer {uuid: 'e3e7ebb1-c9b9-436c-8cb2-749cc5b7347e', text: 'Technology products', hint: 'Physical or digital items like laptops, routers, cables, software, warranties and more'}),
+  (ansTechInnovation:Answer {uuid: '61b2a601-5142-4452-8a6f-aae29965affd', text: 'Technology innovation', hint: 'New and emerging technology products'}),
+  (ansHardAndSoftware:Answer {uuid: 'e3e7ebb1-c9b9-436c-8cb2-749cc5b7347e', text: 'Hardware and software', hint: 'Computers, servers, mobile phones, packaged software, software licenses and warranties'}),
   (ansTechServ:Answer {uuid: '7ed852bf-3323-4d2b-bb61-edaf487f6880', text: 'Technology services', hint: 'Help desk support, training, expert advice and services'}),
   (ansTraffServ:Answer {uuid: '28e438cf-42a6-4fa4-9e84-e55c87a122de', text: 'Traffic services', hint: 'Technology and equipment to manage traffic'}),
 
@@ -223,6 +227,7 @@ CREATE
   // Technology (Level 4 answer)
   (ansDigiOutAndSpec:Answer {uuid: '7b5be8f5-0ac7-4b4d-be61-2dff469d9047', text: 'Digital outcomes and specialists', hint: 'Buy, design, build and deliver digital outcomes with specialist help'}),
   (ansQualAssurTest:Answer {uuid: '704cc6b1-6d9a-4dd6-a7dd-977236c682d4', text: 'Quality assurance testing', hint: 'Independent quality assurance testing services'}),
+  (ansDigiCapForHealth:Answer {uuid: 'de948c45-b876-424d-b409-1a8bc1244ae6', text: 'Digital capability for health', hint: 'Development, data management and support services'}),
   (ansDigiTrainIncluAndSupp:Answer {uuid: 'b17fa3bf-7c14-4abc-b9c8-e8580d36a1cd', text: 'Digital training, inclusion and support', hint: 'Training, research, analysis and support services for digital inclusion'}),
 
 
@@ -286,6 +291,7 @@ CREATE
     (qiEnerFuelOrWat)-[:HAS_ANSWER_GROUP]->(ansGrpFuels),
     (ansGrpFuels)-[:HAS_ANSWER {order: 3}]->(ansFuels),
     (ansGrpFuels)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3801'}),
+    (ansGrpFuels)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6177'}),
 
     // A3 Water or wastewater
     (ansGrpWaterOrWaste:AnswerGroup {name: 'ansGrpWaterOrWaste'}),
@@ -420,11 +426,16 @@ CREATE
       (ansGrpSuppEarlyPay)-[:HAS_ANSWER {order: 3}]->(ansSuppEarlyPay),
       (ansGrpSuppEarlyPay)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6001'}),
 
+    // A3 Lease advisory
+    (ansGrpLeasAdvis:AnswerGroup {name: 'ansGrpLeasAdvis'}),
+    (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpLeasAdvis),
+    (ansGrpLeasAdvis)-[:HAS_ANSWER {order: 6}]->(ansLeasAdvis),
+    (ansGrpLeasAdvis)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6146'}),
 
     // A3 Spend recovery
     (ansGrpSpendRec:AnswerGroup {name: 'ansGrpSpendRec'}),
     (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpSpendRec),
-    (ansGrpSpendRec)-[:HAS_ANSWER {order: 6}]->(ansSpendRec),
+    (ansGrpSpendRec)-[:HAS_ANSWER {order: 7}]->(ansSpendRec),
     (ansGrpSpendRec)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3820'}),
 
 
@@ -482,11 +493,23 @@ CREATE
     (ansGrpPrintReServ:AnswerGroup {name: 'ansGrpPrintReServ'}),
     (qiOffPrintOrMultiDev)-[:HAS_ANSWER_GROUP]->(ansGrpPrintReServ),
     (ansGrpPrintReServ)-[:HAS_ANSWER {order: 2}]->(ansPrintReServ),
-    (ansGrpPrintReServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3781'}),
-    (ansGrpPrintReServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6071'}),
+    (ansGrpPrintReServ)-[:HAS_OUTCOME]->(qiPrintReServ:QuestionInstance:Outcome {uuid: '8cf47463-d2ba-4c47-8765-d5bb506a1c99'})-[:DEFINED_BY]->(qstnPrintReServ),
+
+      // A4 Multifunctional devices
+      (ansGrpMultifunDev:AnswerGroup {name: 'ansGrpMultifunDev'}),
+      (qiPrintReServ)-[:HAS_ANSWER_GROUP]->(ansGrpMultifunDev),
+      (ansGrpMultifunDev)-[:HAS_ANSWER {order: 1}]->(ansMultifunDev),
+      (ansGrpMultifunDev)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3781'}),
+
+      // A4 Print services
+      (ansGrpPrintServ:AnswerGroup {name: 'ansGrpPrintServ'}),
+      (qiPrintReServ)-[:HAS_ANSWER_GROUP]->(ansGrpPrintServ),
+      (ansGrpPrintServ)-[:HAS_ANSWER {order: 2}]->(ansPrintServ),
+      (ansGrpPrintServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6170'}),
+      (ansGrpPrintServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6071'}),
 
 
-  // A2 Post, courier or logistic services
+// A2 Post, courier or logistic services
   (ansGrpPostCourOrLogServ:AnswerGroup {name: 'ansGrpPostCourOrLogServ'}),
   (qiCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpPostCourOrLogServ),
   (ansGrpPostCourOrLogServ)-[:HAS_ANSWER {order: 4}]->(ansPostCourOrLogServ),
@@ -782,6 +805,7 @@ CREATE
       (qiDigiServ)-[:HAS_ANSWER_GROUP]->(ansGrpDigiOutAndSpec),
       (ansGrpDigiOutAndSpec)-[:HAS_ANSWER {order: 1}]->(ansDigiOutAndSpec),
       (ansGrpDigiOutAndSpec)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1043.6'}),
+      (ansGrpDigiOutAndSpec)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1043.7'}),
 
 
       // A4 Quality assurance testing
@@ -790,10 +814,16 @@ CREATE
       (ansGrpQualAssurTest)-[:HAS_ANSWER {order: 2}]->(ansQualAssurTest),
       (ansGrpQualAssurTest)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3765'}),
 
+      // A4 Digital capability for health
+      (ansGrpDigiCapForHealth:AnswerGroup {name: 'ansGrpDigiCapForHealth'}),
+      (qiDigiServ)-[:HAS_ANSWER_GROUP]->(ansGrpDigiCapForHealth),
+      (ansGrpDigiCapForHealth)-[:HAS_ANSWER {order: 3}]->(ansDigiCapForHealth),
+      (ansGrpDigiCapForHealth)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6221'}),
+
       // A4 Digital training, inclusion and support
       (ansGrpDigiTrainIncluAndSupp:AnswerGroup {name: 'ansGrpDigiTrainIncluAndSupp'}),
       (qiDigiServ)-[:HAS_ANSWER_GROUP]->(ansGrpDigiTrainIncluAndSupp),
-      (ansGrpDigiTrainIncluAndSupp)-[:HAS_ANSWER {order: 3}]->(ansDigiTrainIncluAndSupp),
+      (ansGrpDigiTrainIncluAndSupp)-[:HAS_ANSWER {order: 4}]->(ansDigiTrainIncluAndSupp),
       (ansGrpDigiTrainIncluAndSupp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6148'}),
       (ansGrpDigiTrainIncluAndSupp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6209'}),
 
@@ -852,28 +882,34 @@ CREATE
 
 
 
-// A2 Software and cyber security
+  // A2 Software and cyber security
   (ansGrpTechProdAndServ:AnswerGroup {name: 'ansGrpTechProdAndServ'}),
   (qiTechnology)-[:HAS_ANSWER_GROUP]->(ansGrpTechProdAndServ),
   (ansGrpTechProdAndServ)-[:HAS_ANSWER {order: 4}]->(ansTechProdAndServ),
   (ansGrpTechProdAndServ)-[:HAS_OUTCOME]->(qiTechProdAndServ:QuestionInstance:Outcome {uuid: '8ba73606-5335-42d1-ab45-8650e7d8becc'})-[:DEFINED_BY]->(qstnTechProdAndServ),
 
-    // A3 Technology products
-    (ansGrpTechProd:AnswerGroup {name: 'ansGrpTechProd'}),
-    (qiTechProdAndServ)-[:HAS_ANSWER_GROUP]->(ansGrpTechProd),
-    (ansGrpTechProd)-[:HAS_ANSWER {order: 1}]->(ansTechProd),
-    (ansGrpTechProd)-[:HAS_OUTCOME]->(qiTechProductsFirstQuestion), // SWITCH TREES
+    // A3 Technology innovation
+    (ansGrpTechInnovation:AnswerGroup {name: 'ansGrpTechInnovation'}),
+    (qiTechProdAndServ)-[:HAS_ANSWER_GROUP]->(ansGrpTechInnovation),
+    (ansGrpTechInnovation)-[:HAS_ANSWER {order: 1}]->(ansTechInnovation),
+    (ansGrpTechInnovation)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6094'}),
+
+    // A3 Hardware and software
+    (ansGrpHardAndSoftware:AnswerGroup {name: 'ansGrpHardAndSoftware'}),
+    (qiTechProdAndServ)-[:HAS_ANSWER_GROUP]->(ansGrpHardAndSoftware),
+    (ansGrpHardAndSoftware)-[:HAS_ANSWER {order: 2}]->(ansHardAndSoftware),
+    (ansGrpHardAndSoftware)-[:HAS_OUTCOME]->(qiTechProductsFirstQuestion), // SWITCH TREES
 
     // A3 Technology services
     (ansGrpTechServ:AnswerGroup {name: 'ansGrpTechServ'}),
     (qiTechProdAndServ)-[:HAS_ANSWER_GROUP]->(ansGrpTechServ),
-    (ansGrpTechServ)-[:HAS_ANSWER {order: 2}]->(ansTechServ),
+    (ansGrpTechServ)-[:HAS_ANSWER {order: 3}]->(ansTechServ),
     (ansGrpTechServ)-[:HAS_OUTCOME]->(qiTechProductsFirstQuestion), // SWITCH TREES
 
     // A3 Traffic services
     (ansGrpTraffServ:AnswerGroup {name: 'ansGrpTraffServ'}),
     (qiTechProdAndServ)-[:HAS_ANSWER_GROUP]->(ansGrpTraffServ),
-    (ansGrpTraffServ)-[:HAS_ANSWER {order: 3}]->(ansTraffServ),
+    (ansGrpTraffServ)-[:HAS_ANSWER {order: 4}]->(ansTraffServ),
     (ansGrpTraffServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1089'})
 
 ;

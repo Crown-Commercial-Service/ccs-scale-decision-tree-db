@@ -31,11 +31,11 @@ CREATE
 (:Question {uuid: '754c6fbb-4525-4468-89d6-148ac26ec7f9', text: 'How long will the contract be for?', hint: 'Enter a time period in months. An estimate is fine.', type: 'NUMBER', unit: 'MONTHS'}),
 (:Question {uuid: 'd3a82a1e-ed20-11ea-adc1-0242ac120002', text: 'Do you know your budget?', type: 'BOOLEAN', conditionalInput: true, hint: "This question refers to your fees per legal matter"}),
 (:Question {uuid: '6a122d52-ed20-11ea-adc1-0242ac120002', text: 'How much are your legal fees per matter?', hint: 'An estimate is fine (£)', type: 'NUMBER', unit: 'CURRENCY'}),
-(:Question {uuid: '2efb026a-f85c-42d1-b294-3d72f2b95736', text: 'Which area suits your requirements?', hint: 'Select one option:', type: 'LIST'}),
-(:Question {uuid: '22462bd6-9323-4f8a-9672-a724e19eafeb', text: 'Which area of buildings do you need help with?', hint: 'Select one option:', type: 'LIST'}),
-(:Question {uuid: 'd180386a-fe18-42ac-add8-2e1341c750a5', text: 'Which area of corporate solutions do you need help with?', hint: 'Select one option:', type: 'LIST'}),
-(:Question {uuid: '6c166ea3-63a3-4e0e-82a1-f36ce6040122', text: 'Which area of people do you need help with?', hint: 'Select one option:', type: 'LIST'}),
-(:Question {uuid: '95d78c62-141b-4621-8431-6c94c97bb0ea', text: 'Which area of technology do you need help with?', hint: 'Select one option:', type: 'LIST'}),
+(:Question {uuid: '2efb026a-f85c-42d1-b294-3d72f2b95736', text: 'Which area best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
+(:Question {uuid: '22462bd6-9323-4f8a-9672-a724e19eafeb', text: 'You chose buildings. Select the area which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+(:Question {uuid: 'd180386a-fe18-42ac-add8-2e1341c750a5', text: 'You chose corporate solutions. Select the area which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+(:Question {uuid: '6c166ea3-63a3-4e0e-82a1-f36ce6040122', text: 'You chose people. Select the area which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+(:Question {uuid: '95d78c62-141b-4621-8431-6c94c97bb0ea', text: 'You chose technology. Select the area which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 
 // Answer definitions
 // Yes, No, Other

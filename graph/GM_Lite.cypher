@@ -34,9 +34,9 @@ CREATE
   (ansFacEstOrWorkP:Answer {uuid: 'aea2ebec-423f-48fb-80b0-e396803813bc', text: 'Facilities, estate or workplace management', hint: 'Services for inside and outside of a building'}),
 
   // Buildings (Level 3 question)
-  (qstnBuildOrCons:Question {uuid: 'b96c9d64-f049-4b48-b07d-10853b016ffd', text: 'You chose Buildings or construction. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnEnerFuelOrWat:Question {uuid: '078539c7-61c9-414a-bdc8-3337187287d3', text: 'You chose Energy, fuel or water. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnFacEstOrWorkP:Question {uuid: '7c6644ee-0c9c-402f-9880-5a59aa9333d1', text: 'You chose Facilities, estate or workplace management. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnBuildOrCons:Question {uuid: 'b96c9d64-f049-4b48-b07d-10853b016ffd', text: 'You chose buildings or construction. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnEnerFuelOrWat:Question {uuid: '078539c7-61c9-414a-bdc8-3337187287d3', text: 'You chose energy, fuel or water. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnFacEstOrWorkP:Question {uuid: '7c6644ee-0c9c-402f-9880-5a59aa9333d1', text: 'You chose facilities, estate or workplace management. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 
   // Buildings (Level 3 answer)
   (ansBuildSolutions:Answer {uuid: 'ea4e7e54-cff4-4403-bd7a-86360d0eda44', text: 'Building solutions', hint: 'Advisory services, design and project management '}),
@@ -55,7 +55,7 @@ CREATE
 
 
   // Buildings (Level 4 question)
-  (qstnFacilManag:Question {uuid: '27ee54bc-dfed-41d0-80f1-0f239c9c3405', text: 'You chose Facilities management. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
+  (qstnFacilManag:Question {uuid: '27ee54bc-dfed-41d0-80f1-0f239c9c3405', text: 'You chose facilities management. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 
   // Buildings (Level 4 answer)
   (ansWorkpServ:Answer {uuid: '9864339d-519c-4d46-a6dd-0202c9f55add', text: 'Workplace services', hint: 'Regional facilities management and specialist services'}),
@@ -76,12 +76,12 @@ CREATE
   (ansAnyForCorpSolutions:Answer {uuid: '3592bc95-4bda-47a5-b6ca-edf3462be04a', text: 'Anything else', hint: 'Marketing campaign and communication services'}),
 
   // Corporate Solutions (Level 3 question)
-  (qstnFinaServices:Question {uuid: '7b5f8442-08bc-4d2d-8802-30261c41e08f', text: 'You chose Financial services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnMediaOrResearch:Question {uuid: '3ae2dd16-0cbe-4817-bb61-77cf404c392e', text: 'You chose Media or research. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnOffPrintOrMultiDev:Question {uuid: '3f34ac96-0e84-40a2-823a-99699027e3af', text: 'You chose Office, print or multifunctional devices. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnPostCourOrLogServ:Question {uuid: '1c3abfaa-2efd-4588-934c-14a654fd9545', text: 'You chose Post, courier or logistic services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnTravelServ:Question {uuid: '458fbaf9-e5f9-4200-b9d5-3230138520ec', text: 'You chose Travel services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnVehicServ:Question {uuid: 'ffa7e553-59f0-4ecd-a29e-6e2d1fd532eb', text: 'You chose Vehicle services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnFinaServices:Question {uuid: '7b5f8442-08bc-4d2d-8802-30261c41e08f', text: 'You chose financial services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnMediaOrResearch:Question {uuid: '3ae2dd16-0cbe-4817-bb61-77cf404c392e', text: 'You chose media or research. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnOffPrintOrMultiDev:Question {uuid: '3f34ac96-0e84-40a2-823a-99699027e3af', text: 'You chose office, print or multifunctional devices. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnPostCourOrLogServ:Question {uuid: '1c3abfaa-2efd-4588-934c-14a654fd9545', text: 'You chose post, courier or logistic services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnTravelServ:Question {uuid: '458fbaf9-e5f9-4200-b9d5-3230138520ec', text: 'You chose travel services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnVehicServ:Question {uuid: 'ffa7e553-59f0-4ecd-a29e-6e2d1fd532eb', text: 'You chose vehicle services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
   (qstnAnyForCorpSolutions:Question {uuid: '616badb5-90bd-4569-8976-f3f6e8391a1a', text: 'You chose Anything else. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 
 
@@ -120,9 +120,9 @@ CREATE
 
 
   // Corporate Solutions (Level 4 question)
-  (qstnPayServ:Question {uuid: '32b9c366-6fdd-4a04-baee-7b0053fc6847', text: 'You chose Payment services. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
-  (qstnReseServ:Question {uuid: 'eb1f6aa9-6b7d-48b7-a70a-307292c18de2', text: 'You chose Research services. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
-  (qstnPrintReServ:Question {uuid: '253f3736-f7eb-4f86-990b-d00d508025d9', text: 'You chose Print related services. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
+  (qstnPayServ:Question {uuid: '32b9c366-6fdd-4a04-baee-7b0053fc6847', text: 'You chose payment services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnReseServ:Question {uuid: 'eb1f6aa9-6b7d-48b7-a70a-307292c18de2', text: 'You chose research services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnPrintReServ:Question {uuid: '253f3736-f7eb-4f86-990b-d00d508025d9', text: 'You chose print related services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 
   // Corporate Solutions (Level 4 answer)
 
@@ -147,10 +147,10 @@ CREATE
   (ansAnyForPeople:Answer {uuid: '393e2f80-2102-4e4e-894a-c069be8637cc', text: 'Anything else', hint: 'Telephone, email and online communications'}),
 
   // People (Level 3 question)
-  (qstnApprenticeshipServ:Question {uuid: 'ba8a29f9-e578-4079-9259-5553574ccc1b', text: 'You chose Apprenticeship services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnEmployeeServOrBenefits:Question {uuid: 'e6d01fe3-aed3-4636-b078-5948e4150d38', text: 'You chose Employee services or benefits. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnLegalOrConsServ:Question {uuid: '77bd757c-a54b-4a49-9b74-0181e1da1cfc', text: 'You chose Legal or consultancy services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnRecruitOrEmployServ:Question {uuid: '1654a87f-feda-41b8-92bd-ba5ddf57ee2b', text: 'You chose Recruitment or employment services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnApprenticeshipServ:Question {uuid: 'ba8a29f9-e578-4079-9259-5553574ccc1b', text: 'You chose apprenticeship services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnEmployeeServOrBenefits:Question {uuid: 'e6d01fe3-aed3-4636-b078-5948e4150d38', text: 'You chose employee services or benefits. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnLegalOrConsServ:Question {uuid: '77bd757c-a54b-4a49-9b74-0181e1da1cfc', text: 'You chose legal or consultancy services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnRecruitOrEmployServ:Question {uuid: '1654a87f-feda-41b8-92bd-ba5ddf57ee2b', text: 'You chose recruitment or employment services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
   (qstnAnyForPeople:Question {uuid: '6cd833c7-8fea-4843-86b3-177822804ce5', text: 'You chose Anything else. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 
   // People (Level 3 answer)
@@ -170,8 +170,8 @@ CREATE
 
 
   // People (Level 4 question)
-  (qstnConsulServ:Question {uuid: '69f740df-3d43-4694-a4b1-61d6bd7743d1', text: 'You chose Consultancy services. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
-  (qstnTempResouOrRecrui:Question {uuid: '53c720e7-965d-4e5e-a4de-19a056fd0a10', text: 'You chose Temporary resoucing or recruitment. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
+  (qstnConsulServ:Question {uuid: '69f740df-3d43-4694-a4b1-61d6bd7743d1', text: 'You chose consultancy services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnTempResouOrRecrui:Question {uuid: '53c720e7-965d-4e5e-a4de-19a056fd0a10', text: 'You chose temporary resoucing or recruitment. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 
 
   // People (Level 4 answer)
@@ -190,26 +190,26 @@ CREATE
 
 // Technology
   // Technology (Level 2 answer)
-  (ansDigitalFut:Answer {uuid: '81c0196d-5002-45c2-a6f0-e5ebe929b30b', text: 'Digital future', hint: 'Digital technology advice, products and services'}),
+  (ansDigitalFut:Answer {uuid: '81c0196d-5002-45c2-a6f0-e5ebe929b30b', text: 'Digital future', hint: 'Digital technology, advice, products and services'}),
   (ansNetworkServ:Answer {uuid: '65fac7e9-5d7b-4157-9776-bcbfbb167a3b', text: 'Network services', hint: 'Services that secure data, allow it to be shared, connect users to data and manage the cost of network tools and upkeep'}),
-  (ansSoftwAndCyberSec:Answer {uuid: 'bdd8abd2-35dd-4461-af39-cf21568bd397', text: 'Software and cyber security', hint: 'Services and solutions to protect data and computer tools'}),
+  (ansSoftwAndCyberSec:Answer {uuid: 'bdd8abd2-35dd-4461-af39-cf21568bd397', text: 'Software and cyber security', hint: 'Services to protect computer networks and software solutions for office systems'}),
   (ansTechProdAndServ:Answer {uuid: '53f42502-2344-4d1f-add8-24f82139c9d6', text: 'Technology products and services', hint: 'Find and buy technology products and services'}),
 
   // Technology (Level 3 question)
-  (qstnDigitalFut:Question {uuid: 'e608f643-a749-4ccc-892d-6e05ad942258', text: 'You chose Digital future. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnNetworkServ:Question {uuid: '4a2642ba-71ae-4391-a3b7-a81bc103f463', text: 'You chose Network services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnSoftwAndCyberSec:Question {uuid: '5a22109d-12c4-47a2-a7f9-698331c774d0', text: 'You chose Software and cyber security. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnTechProdAndServ:Question {uuid: 'bbeea78d-c39f-4bf9-887c-e17b5164ca88', text: 'You chose Technology products and services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnDigitalFut:Question {uuid: 'e608f643-a749-4ccc-892d-6e05ad942258', text: 'You chose digital future. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnNetworkServ:Question {uuid: '4a2642ba-71ae-4391-a3b7-a81bc103f463', text: 'You chose network services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnSoftwAndCyberSec:Question {uuid: '5a22109d-12c4-47a2-a7f9-698331c774d0', text: 'You chose software and cyber security. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnTechProdAndServ:Question {uuid: 'bbeea78d-c39f-4bf9-887c-e17b5164ca88', text: 'You chose technology products and services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 
   // Technology (Level 3 answer)
-  (ansArtIntel:Answer {uuid: '915c59a5-b595-4e2c-ad2d-97b57837ddb9', text: 'Artificial Intelligence', hint: 'Services to learn about artificial intelligence and how to use it'}),
+  (ansArtIntel:Answer {uuid: '915c59a5-b595-4e2c-ad2d-97b57837ddb9', text: 'Artificial Intelligence', hint: 'Services like intelligent automation, machine learning, intelligent assistants, AI consultancy and support'}),
   (ansCloudServ:Answer {uuid: '759bcb7f-e540-4664-9ea0-93e7e612694c', text: 'Cloud services', hint: 'Solutions for cloud-based computing'}),
-  (ansCrownHost:Answer {uuid: '24ea21a4-db3b-4e94-b1b8-d02e441e03a3', text: 'Crown hosting', hint: 'Data centre space and storage solutions'}),
+  (ansCrownHost:Answer {uuid: '24ea21a4-db3b-4e94-b1b8-d02e441e03a3', text: 'Crown hosting', hint: 'Data centre colocation facilities solutions'}),
   (ansDigiServ:Answer {uuid: 'f44332b3-1515-4e37-b967-94a40323280d', text: 'Digital services', hint: 'Training, expert advice, design, research and testing of digital services'}),
 
   (ansFibreOpInfraServ:Answer {uuid: 'aa6f2552-8a92-4bc9-8ce3-5c155ec9bc38', text: 'Fibre optic infrastructure services', hint: 'Find, track and manage the cost of telecoms and technology'}),
   (ansHealAndSoCare:Answer {uuid: '21eae4d7-65f5-40c6-a87d-beab89daf5a2', text: 'Health and social care', hint: 'Build, install or manage broadband connections'}),
-  (ansNetwServ:Answer {uuid: 'ee85b9ce-d528-485c-bf9a-8cfaa7c76ee7', text: 'Network services', hint: 'Access to health and social care databases'}),
+  (ansNetwServ:Answer {uuid: 'ee85b9ce-d528-485c-bf9a-8cfaa7c76ee7', text: 'Network services', hint: 'Telecoms services that connect users, secure shared data, and manage the cost and upkeep of the network'}),
   (ansAnyelseForNetwork:Answer {uuid: '2af98cce-159a-4f40-a2b9-4d12ebe29b4c', text: 'Anything else', hint: 'Secure communications and data sharing services'}),
 
   (ansCybSecurity:Answer {uuid: 'b1dca2ed-8f2e-4ba2-bea2-bc152ec08f55', text: 'Cyber security', hint: 'Services to protect computer networks, data, equipment and software '}),
@@ -222,7 +222,7 @@ CREATE
 
 
   // Technology (Level 4 question)
-  (qstnDigiServ:Question {uuid: '9daf3e3d-7783-44c5-975a-b9e3fb8ae29e', text: 'You chose Digital services. Select the area that best matches your needs?', hint: 'Select one option:', type: 'LIST'}),
+  (qstnDigiServ:Question {uuid: '9daf3e3d-7783-44c5-975a-b9e3fb8ae29e', text: 'You chose digital services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 
   // Technology (Level 4 answer)
   (ansDigiOutAndSpec:Answer {uuid: '7b5be8f5-0ac7-4b4d-be61-2dff469d9047', text: 'Digital outcomes and specialists', hint: 'Buy, design, build and deliver digital outcomes with specialist help'}),
@@ -882,7 +882,7 @@ CREATE
 
 
 
-  // A2 Software and cyber security
+  // A2 Technology products and services
   (ansGrpTechProdAndServ:AnswerGroup {name: 'ansGrpTechProdAndServ'}),
   (qiTechnology)-[:HAS_ANSWER_GROUP]->(ansGrpTechProdAndServ),
   (ansGrpTechProdAndServ)-[:HAS_ANSWER {order: 4}]->(ansTechProdAndServ),

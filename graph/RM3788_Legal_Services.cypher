@@ -64,7 +64,7 @@ CREATE
 (ansGrpCGServiceEDisc:AnswerGroup {name: 'ansGrpCGServiceEDisc'}),
 (qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceEDisc),
 (ansGrpCGServiceEDisc)-[:HAS_ANSWER {order: 2}]->(ansEDisc),
-(ansGrpCGServiceEDisc)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3717'}),
+(ansGrpCGServiceEDisc)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6203'}),
 
 // Sector(CG) -> Service(Costs Lawyer, Legal Costs Draftsmen)
 (ansGrpCGServiceCostsLawyer:AnswerGroup {name: 'ansGrpCGServiceCostsLawyer'}),
@@ -128,7 +128,7 @@ CREATE
 (ansGrpWPSServiceEDisc:AnswerGroup {name: 'ansGrpWPSServiceEDisc'}),
 (qiWPSService)-[:HAS_ANSWER_GROUP]->(ansGrpWPSServiceEDisc),
 (ansGrpWPSServiceEDisc)-[:HAS_ANSWER {order: 2}]->(ansEDisc),
-(ansGrpWPSServiceEDisc)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3717'}),
+(ansGrpWPSServiceEDisc)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6203'}),
 
 // Sector(WPS) -> Service(Costs Lawyer, Legal Costs Draftsmen)
 (ansGrpWPSServiceCostsLawyer:AnswerGroup {name: 'ansGrpWPSServiceCostsLawyer'}),

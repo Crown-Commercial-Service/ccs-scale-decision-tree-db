@@ -260,7 +260,7 @@ CREATE
     (ansGrpConst:AnswerGroup {name: 'ansGrpConst'}),
     (qiBuildOrCons)-[:HAS_ANSWER_GROUP]->(ansGrpConst),
     (ansGrpConst)-[:HAS_ANSWER {order: 2}]->(ansConst),
-    (ansGrpConst)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3837'}),
+    (ansGrpConst)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6157'}),
     (ansGrpConst)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6088'}),
 
 

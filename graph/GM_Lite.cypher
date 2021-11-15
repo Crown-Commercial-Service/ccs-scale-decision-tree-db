@@ -191,7 +191,7 @@ CREATE
 // Technology
   // Technology (Level 2 answer)
   (ansDigitalFut:Answer {uuid: '81c0196d-5002-45c2-a6f0-e5ebe929b30b', text: 'Digital future', hint: 'Digital technology, advice, products and services'}),
-  (ansNetworkServ:Answer {uuid: '65fac7e9-5d7b-4157-9776-bcbfbb167a3b', text: 'Network services', hint: 'Services that secure data, allow it to be shared, connect users to data and manage the cost of network tools and upkeep'}),
+  (ansNetworkServ:Answer {uuid: '65fac7e9-5d7b-4157-9776-bcbfbb167a3b', text: 'Network services', hint: 'Telecoms services that connect users, secure shared data, and manage the cost and upkeep of the network'}),
   (ansSoftwAndCyberSec:Answer {uuid: 'bdd8abd2-35dd-4461-af39-cf21568bd397', text: 'Software and cyber security', hint: 'Services to protect computer networks and software solutions for office systems'}),
   (ansTechProdAndServ:Answer {uuid: '53f42502-2344-4d1f-add8-24f82139c9d6', text: 'Technology products and services', hint: 'Find and buy technology products and services'}),
 
@@ -207,10 +207,10 @@ CREATE
   (ansCrownHost:Answer {uuid: '24ea21a4-db3b-4e94-b1b8-d02e441e03a3', text: 'Crown hosting', hint: 'Data centre colocation facilities solutions'}),
   (ansDigiServ:Answer {uuid: 'f44332b3-1515-4e37-b967-94a40323280d', text: 'Digital services', hint: 'Training, expert advice, design, research and testing of digital services'}),
 
-  (ansFibreOpInfraServ:Answer {uuid: 'aa6f2552-8a92-4bc9-8ce3-5c155ec9bc38', text: 'Fibre optic infrastructure services', hint: 'Find, track and manage the cost of telecoms and technology'}),
-  (ansHealAndSoCare:Answer {uuid: '21eae4d7-65f5-40c6-a87d-beab89daf5a2', text: 'Health and social care', hint: 'Build, install or manage broadband connections'}),
-  (ansNetwServ:Answer {uuid: 'ee85b9ce-d528-485c-bf9a-8cfaa7c76ee7', text: 'Network services', hint: 'Telecoms services that connect users, secure shared data, and manage the cost and upkeep of the network'}),
-  (ansAnyelseForNetwork:Answer {uuid: '2af98cce-159a-4f40-a2b9-4d12ebe29b4c', text: 'Anything else', hint: 'Secure communications and data sharing services'}),
+  (ansFibreOpInfraServ:Answer {uuid: 'aa6f2552-8a92-4bc9-8ce3-5c155ec9bc38', text: 'Fibre optic infrastructure services', hint: 'Build, install or manage broadband connections'}),
+  (ansHealAndSoCare:Answer {uuid: '21eae4d7-65f5-40c6-a87d-beab89daf5a2', text: 'Health and social care', hint: 'Access to health and social care databases'}),
+  (ansNetwServ:Answer {uuid: 'ee85b9ce-d528-485c-bf9a-8cfaa7c76ee7', text: 'Network services', hint: 'Secure communications and data sharing services'}),
+  (ansAnyelseForNetwork:Answer {uuid: '2af98cce-159a-4f40-a2b9-4d12ebe29b4c', text: 'Anything else', hint: 'Find, track and manage the cost of telecoms and technology'}),
 
   (ansCybSecurity:Answer {uuid: 'b1dca2ed-8f2e-4ba2-bea2-bc152ec08f55', text: 'Cyber security', hint: 'Services to protect computer networks, data, equipment and software '}),
   (ansEnterpApp:Answer {uuid: '493d031b-2498-4959-8fc4-a86c3834f7e3', text: 'Enterprise applications', hint: 'Software solutions, equipment and professional services'}),

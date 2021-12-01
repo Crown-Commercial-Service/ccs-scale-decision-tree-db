@@ -692,8 +692,7 @@ CREATE
       (ansGrpManagConsult:AnswerGroup {name: 'ansGrpManagConsult'}),
       (qiConsulServ)-[:HAS_ANSWER_GROUP]->(ansGrpManagConsult),
       (ansGrpManagConsult)-[:HAS_ANSWER {order: 2}]->(ansManagConsult),
-      (ansGrpManagConsult)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3745'}),
-      (ansGrpManagConsult)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6008'}),
+      (ansGrpManagConsult)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6187'}),
 
 
     // A3 Legal services

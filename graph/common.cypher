@@ -93,5 +93,8 @@ CREATE
 (:Answer {uuid: '6c0ff503-4aac-4e80-84d1-26c9c106c992', text: 'Computer Aided Facility Management (CAFM) and helpdesk provision', hint: 'CAFM to support service delivery, and helpdesk services for ad-hoc requests and reporting faults'}),
 (:Answer {uuid: '6a6b0c54-2bee-4a73-864d-beb1f7a3ef1e', text: 'Anything else', hint: 'A facilities management services not listed here'}),
 
+// Something else
+(:Answer {uuid: '4cd9f791-1ca4-43d3-8f25-c3edfccf6e29', text: 'Something else', hint: 'What I need is not listed here'}),
+
 // Reusable outcome types
 (:Support:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', text: 'CCS Escape Page'});

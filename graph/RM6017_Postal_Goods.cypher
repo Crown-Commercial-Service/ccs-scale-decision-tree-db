@@ -3,6 +3,7 @@ MATCH
 // Level 1 question
 (qstnProductOrService:Question {uuid: 'b879c040-654e-11ea-bc55-0242ac130003'}),
 (resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'}),
+(qstnServiceType:Question {uuid: '18df190c-ef8e-4cda-a760-68929965b86a'}),
 (ansElse:Answer {uuid: '4cd9f791-1ca4-43d3-8f25-c3edfccf6e29'})
 
 
@@ -10,7 +11,6 @@ MATCH
 CREATE
 (qstnProductType:Question {uuid: '77fb6b2a-630e-4154-9340-1ebe71d4ed95', text: 'What product type do you need?', type: 'LIST'}),
 (qstnMailroom:Question {uuid: 'b0bc8862-4a90-4b5b-a31f-982d25f49013', text: 'Do you need mail room equipment that can print large volumes of material daily?', type: 'LIST'}),
-(qstnServiceType:Question {uuid: '58fc98a4-61be-4824-829b-6d65a5f553e4', text: 'What type of service do you need?', type: 'LIST'}),
 
 (qstnWhereServiceNeeded:Question {uuid: '203b27fd-0754-4333-8347-b2e5cb9019e1', text: 'Where are the services needed?', type: 'LIST'}),
 

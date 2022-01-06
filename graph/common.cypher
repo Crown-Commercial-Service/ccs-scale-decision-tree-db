@@ -36,6 +36,7 @@ CREATE
 (:Question {uuid: 'd180386a-fe18-42ac-add8-2e1341c750a5', text: 'You chose corporate solutions. Select the area which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 (:Question {uuid: '6c166ea3-63a3-4e0e-82a1-f36ce6040122', text: 'You chose people. Select the area which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 (:Question {uuid: '95d78c62-141b-4621-8431-6c94c97bb0ea', text: 'You chose technology. Select the area which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+(:Question {uuid: '18df190c-ef8e-4cda-a760-68929965b86a', text: 'What type of service do you need?', hint: 'Select one option:', type: 'LIST'}),
 
 // Answer definitions
 // Yes, No, Other

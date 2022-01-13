@@ -34,6 +34,7 @@ load_gm_data "RM3788_Legal_Services.cypher"
 load_gm_data "GM_Lite.cypher"
 load_gm_data "RM6017_Postal_Goods.cypher"
 load_gm_data "Payment_Solutions.cypher"
+load_gm_data "RM6071_RM6170_Print_Marketplace.cypher"
 #load_gm_data "MCF2_Consultancy.cypher"
 
 echo "Data load complete"

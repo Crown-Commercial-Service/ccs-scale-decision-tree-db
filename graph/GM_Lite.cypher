@@ -599,7 +599,7 @@ CREATE
     (ansGrpTyreServ:AnswerGroup {name: 'ansGrpTyreServ'}),
     (qiVehicServ)-[:HAS_ANSWER_GROUP]->(ansGrpTyreServ),
     (ansGrpTyreServ)-[:HAS_ANSWER {order: 6}]->(ansTyreServ),
-    (ansGrpTyreServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3767'}),
+    (ansGrpTyreServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6142'}),
 
   // A2 Anything else (Corporate Solutions)
   (ansGrpAnyForCorpSolutions:AnswerGroup {name: 'ansGrpAnyForCorpSolutions'}),

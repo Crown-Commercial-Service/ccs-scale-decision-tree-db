@@ -76,6 +76,20 @@ CREATE
 (:Answer {uuid: 'ccb5c104-75b5-11ea-bc55-0242ac130003', text: 'Scotland'}),
 (:Answer {uuid: 'ccb5c1cc-75b5-11ea-bc55-0242ac130003', text: 'Northern Ireland'}),
 
+(:Answer {uuid: '5523f058-843a-11ec-a8a3-0242ac120002', text: 'North West of England'}),
+(:Answer {uuid: '5523f2ba-843a-11ec-a8a3-0242ac120002', text: 'North East of England'}),
+(:Answer {uuid: '5523f3f0-843a-11ec-a8a3-0242ac120002', text: 'Midlands'}),
+(:Answer {uuid: '5523f602-843a-11ec-a8a3-0242ac120002', text: 'East Anglia'}),
+(:Answer {uuid: '5523f71a-843a-11ec-a8a3-0242ac120002', text: 'London and South East'}),
+(:Answer {uuid: '5523f832-843a-11ec-a8a3-0242ac120002', text: 'South of England'}),
+(:Answer {uuid: '5523f936-843a-11ec-a8a3-0242ac120002', text: 'South West of England'}),
+(:Answer {uuid: '5523fd3c-843a-11ec-a8a3-0242ac120002', text: 'North Wales'}),
+(:Answer {uuid: '5523fe40-843a-11ec-a8a3-0242ac120002', text: 'South Wales'}),
+(:Answer {uuid: '55240106-843a-11ec-a8a3-0242ac120002', text: 'North Scotland'}),
+(:Answer {uuid: '5524020a-843a-11ec-a8a3-0242ac120002', text: 'West Scotland'}),
+(:Answer {uuid: '5523ff58-843a-11ec-a8a3-0242ac120002', text: 'Central Scotland'}),
+(:Answer {uuid: '55240494-843a-11ec-a8a3-0242ac120002', text: 'South Scotland'}),
+
 // Security
 (:Answer {uuid: 'b879d490-654e-11ea-bc55-0242ac130003', text: 'Security services', hint: 'For example guarding, patrols, CCTV monitoring and alarm response'}),
 (:Answer {uuid: 'b879d54e-654e-11ea-bc55-0242ac130003', text: 'Technical security', hint: 'For example risk assessments, and the design and installation of electronic or physical security systems'}),

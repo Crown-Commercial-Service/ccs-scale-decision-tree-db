@@ -38,6 +38,9 @@ CREATE
 (:Question {uuid: '95d78c62-141b-4621-8431-6c94c97bb0ea', text: 'You chose technology. Select the area which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 (:Question {uuid: '18df190c-ef8e-4cda-a760-68929965b86a', text: 'What type of service do you need?', hint: 'Select one option:', type: 'LIST'}),
 
+(:Question {uuid: 'b74c2815-db1c-49ee-b6dc-ce7cfb4f8d8b', text: 'What product do you need?', type: 'LIST'}),
+(:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92', text: 'What service do you need?', type: 'LIST'}),
+
 // Answer definitions
 // Yes, No, Other
 (:Answer {uuid: 'ccb598c8-75b5-11ea-bc55-0242ac130003', text: 'Yes'}),

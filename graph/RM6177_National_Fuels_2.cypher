@@ -1,5 +1,8 @@
 MATCH
 (resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'}),
+(qstnProduct:Question {uuid: 'b74c2815-db1c-49ee-b6dc-ce7cfb4f8d8b'}),
+(qstnService:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'}),
+
 (ansElse:Answer {uuid: '4cd9f791-1ca4-43d3-8f25-c3edfccf6e29'}),
 
 (ansNorthEngland:Answer {uuid: '5523f058-843a-11ec-a8a3-0242ac120002'}),
@@ -23,8 +26,6 @@ MATCH
 CREATE
 // Questions
 (qstnProductOrService:Question {uuid: '53051f51-c1ea-4b45-b8c0-cbb60f6a0446', text: 'Do you need a product or service?', type: 'LIST'}),
-(qstnProduct:Question {uuid: 'b74c2815-db1c-49ee-b6dc-ce7cfb4f8d8b', text: 'What product do you need?', type: 'LIST'}),
-(qstnService:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92', text: 'What service do you need?', type: 'LIST'}),
 (qstnLocation:Question {uuid: 'eb910af9-a2e8-46c2-8537-c0853b72dc7c', text: 'Where do you need the fuel to be delivered?', type: 'LIST'}),
 
 // Answer

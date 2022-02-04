@@ -35,6 +35,7 @@ load_gm_data "GM_Lite.cypher"
 load_gm_data "RM6017_Postal_Goods.cypher"
 load_gm_data "Payment_Solutions.cypher"
 load_gm_data "RM6071_RM6170_Print_Marketplace.cypher"
+load_gm_data "RM6177_National_Fuels_2.cypher"
 load_gm_data "RM6059_Office_Supplies.cypher"
 #load_gm_data "MCF2_Consultancy.cypher"
 

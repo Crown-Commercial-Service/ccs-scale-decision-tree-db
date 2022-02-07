@@ -11,8 +11,8 @@ CREATE
 <li>emergency support</li>
 </ul>
 '}),
-(ansAncillary:Answer {uuid: '561cb9be-aacc-4dac-a39f-5f4dba43f2bc', text: 'Ancillary (supporting) services', hint: 'Buy supporting services such as contingency planning, water audit surveys, water footprint assessments and leak detection and repair services. Also includes bill validation and cost recovery services.'}),
-(ansWwAncillary:Answer {uuid: '8eae0130-4075-42a3-9583-4f2fc2136835', text: 'Water and waste water and ancillary services', hint: 'Buy water and waste water supply and ancillary (supporting) services. Includes management of sites and meters such as switching water retailers, billing, meter installation or removal. Also includes automated meter readings, water audit surveys and leak detection and repair services.'}),
+(ansAncillary:Answer {uuid: '561cb9be-aacc-4dac-a39f-5f4dba43f2bc', text: 'Ancillary (supporting) services', hint: 'Buy supporting services such as contingency planning, water audit surveys, water footprint assessments and leak detection and repair services. Also includes bill validation and cost recovery services'}),
+(ansWwAncillary:Answer {uuid: '8eae0130-4075-42a3-9583-4f2fc2136835', text: 'Water and waste water and ancillary services', hint: 'Buy water and waste water supply and ancillary (supporting) services. Includes management of sites and meters such as switching water retailers, billing, meter installation or removal. Also includes automated meter readings, water audit surveys and leak detection and repair services'}),
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

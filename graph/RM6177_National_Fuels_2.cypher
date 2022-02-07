@@ -29,15 +29,15 @@ CREATE
 (qstnLocation:Question {uuid: 'eb910af9-a2e8-46c2-8537-c0853b72dc7c', text: 'Where do you need the fuel to be delivered?', type: 'LIST'}),
 
 // Answer
-(ansProduct:Answer {uuid: 'b237073c-accc-4305-9f21-bfa2ab6f262f', text: 'Product', hint: 'A product is an item you can buy. It\'s a one-off purchase and involves no ongoing contract.'}),
-(ansService:Answer {uuid: 'b3a6e609-5b61-4e88-82d4-4241fc8cfa93', text: 'Service', hint: 'A service is a contract for something to happen, either once or on a regular basis.'}),
+(ansProduct:Answer {uuid: 'b237073c-accc-4305-9f21-bfa2ab6f262f', text: 'Product', hint: 'A product is an item you can buy. It\'s a one-off purchase and involves no ongoing contract'}),
+(ansService:Answer {uuid: 'b3a6e609-5b61-4e88-82d4-4241fc8cfa93', text: 'Service', hint: 'A service is a contract for something to happen, either once or on a regular basis'}),
 
-(ansAssociatedServices:Answer {uuid: 'd85a5157-0dfb-4034-a9a4-5340f65d427b', text: 'Associated services', hint: 'Buy products and services associated with using solid fuels such as fuel testing and spillage kits and tank replacement and maintenance services.'}),
+(ansAssociatedServices:Answer {uuid: 'd85a5157-0dfb-4034-a9a4-5340f65d427b', text: 'Associated services', hint: 'Buy products and services associated with using solid fuels such as fuel testing and spillage kits and tank replacement and maintenance services'}),
 
-(ansLiquidFuels:Answer {uuid: 'bf6f812f-88a8-45d8-acac-83f32f58bcc9', text: 'Liquid fuels', hint: 'Liquid fuels for heating and transport. Includes items such as heating oil (biodiesel, kerosene), road fuel additives (for example, ad blue), diesel, petrol and aviation fuels.'}),
-(ansSolidFuels:Answer {uuid: '02e1f446-c695-4be2-a97b-42346b7bfbba', text: 'Solid fuels', hint: 'Materials such as wood pellets and wood chips that can be burnt to provide energy.'}),
-(ansLiquefiedGas:Answer {uuid: '18a8a12a-73c0-4fe3-b940-b37e9119b308', text: 'Liquefied gas', hint: 'Products such as liquid petroleum gas (LPG) in butane, propane or hydrogen cylinders and liquified natural gasses (LNG).'}),
-(ansGlAndAntifreeze:Answer {uuid: '3d384381-89ac-4ca0-a1ef-aa7a6ca72e05', text: 'Greases, lubricants and antifreeze', hint: 'Lubricants and antifreeze products to use in vehicles such as cars, vans and buses.'}),
+(ansLiquidFuels:Answer {uuid: 'bf6f812f-88a8-45d8-acac-83f32f58bcc9', text: 'Liquid fuels', hint: 'Liquid fuels for heating and transport. Includes items such as heating oil (biodiesel, kerosene), road fuel additives (for example, ad blue), diesel, petrol and aviation fuels'}),
+(ansSolidFuels:Answer {uuid: '02e1f446-c695-4be2-a97b-42346b7bfbba', text: 'Solid fuels', hint: 'Materials such as wood pellets and wood chips that can be burnt to provide energy'}),
+(ansLiquefiedGas:Answer {uuid: '18a8a12a-73c0-4fe3-b940-b37e9119b308', text: 'Liquefied gas', hint: 'Products such as liquid petroleum gas (LPG) in butane, propane or hydrogen cylinders and liquified natural gasses (LNG)'}),
+(ansGlAndAntifreeze:Answer {uuid: '3d384381-89ac-4ca0-a1ef-aa7a6ca72e05', text: 'Greases, lubricants and antifreeze', hint: 'Lubricants and antifreeze products to use in vehicles such as cars, vans and buses'}),
 
 (ansEngland:Answer {uuid: 'd9ce52ee-bfa5-442b-8de7-dc0e76186d83', text: 'England', hint: 'You can select the region where you would like your fuel to be delivered. '}),
 (ansWales:Answer {uuid: '5a5b32c8-70bb-47fb-901b-c0f9eb60a3f4', text: 'Wales', hint: 'You can select the region where you would like your fuel to be delivered. '}),

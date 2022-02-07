@@ -91,7 +91,7 @@ CREATE
 
   (ansDebtManag:Answer {uuid: '6c783892-5608-4897-8a2d-8543108b26f4', text: 'Debt management', hint: 'A single service to track, collect and enforce repayment'}),
   (ansFuelCard:Answer {uuid: 'c4c3ce97-94b0-4406-979e-96d72b576e28', text: 'Fuel cards', hint: 'Pay for and track fuel expenses for vehicles'}),
-  (ansGrantServ:Answer {uuid: 'f75796b7-ac1d-49be-ba94-8122b9ed62e0', text: 'Grant services', hint: 'Services for all areas of grants from programme design to apllication review to award.'}),
+  (ansGrantServ:Answer {uuid: 'f75796b7-ac1d-49be-ba94-8122b9ed62e0', text: 'Grant services', hint: 'Services for all areas of grants from programme design to apllication review to award'}),
   (ansInsurServ:Answer {uuid: '6e96c8a3-d9f9-4d29-a6a9-eb5d730018b3', text: 'Insurance services', hint: 'Help selecting the right insurance and making claims for compensation'}),
   (ansPayServ:Answer {uuid: '6977b2c1-d718-41b5-a0da-b10ad88716b3', text: 'Payment services', hint: 'The ability to accept or make a payment'}),
   (ansLeasAdvis:Answer {uuid: '373cc6bd-630a-442f-a3be-e70d24593ef7', text: 'Lease advisory', hint: 'Expert advice on leasing options, asset classes and saving initiatives'}),
@@ -157,7 +157,7 @@ CREATE
   (ansConCenServ:Answer {uuid: '9547fe18-71d9-4c94-83d3-4a55dd4e4068', text: 'Contact centre services'}),
 
   (ansEmplHealAndWell:Answer {uuid: '0642e87e-3952-411b-8388-de52b4aad4d1', text: 'Employee health and wellbeing', hint: 'Work related injury or health concerns'}),
-  (ansEmplServ:Answer {uuid: 'bfb0a068-735a-4954-b151-4693169c423e', text: 'Employee services', hint: 'Childcare, cycle to work, gym and other benefit schemes for employees.'}),
+  (ansEmplServ:Answer {uuid: 'bfb0a068-735a-4954-b151-4693169c423e', text: 'Employee services', hint: 'Childcare, cycle to work, gym and other benefit schemes for employees'}),
   (ansLangServ:Answer {uuid: 'ee104995-0021-4f9e-95af-85693560ec00', text: 'Language services', hint: 'Spoken and written interpretation, translation and transpcription services'}),
   (ansLearnServ:Answer {uuid: '1e548e90-9e16-4b5c-99ee-dd31189d080e', text: 'Learning services', hint: 'Employees can develop their professional skills'}),
 

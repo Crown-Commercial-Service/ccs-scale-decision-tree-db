@@ -39,9 +39,9 @@ CREATE
 (ansLiquefiedGas:Answer {uuid: '18a8a12a-73c0-4fe3-b940-b37e9119b308', text: 'Liquefied gas', hint: 'Products such as liquid petroleum gas (LPG) in butane, propane or hydrogen cylinders and liquified natural gasses (LNG)'}),
 (ansGlAndAntifreeze:Answer {uuid: '3d384381-89ac-4ca0-a1ef-aa7a6ca72e05', text: 'Greases, lubricants and antifreeze', hint: 'Lubricants and antifreeze products to use in vehicles such as cars, vans and buses'}),
 
-(ansEngland:Answer {uuid: 'd9ce52ee-bfa5-442b-8de7-dc0e76186d83', text: 'England', hint: 'You can select the region where you would like your fuel to be delivered. '}),
-(ansWales:Answer {uuid: '5a5b32c8-70bb-47fb-901b-c0f9eb60a3f4', text: 'Wales', hint: 'You can select the region where you would like your fuel to be delivered. '}),
-(ansScotland:Answer {uuid: '8e4e23a8-1a8c-400b-a3c8-8c9dc9aac043', text: 'Scotland', hint: 'You can select the region where you would like your fuel to be delivered. '}),
+(ansEngland:Answer {uuid: 'd9ce52ee-bfa5-442b-8de7-dc0e76186d83', text: 'England', hint: 'You can select the region where you would like your fuel to be delivered'}),
+(ansWales:Answer {uuid: '5a5b32c8-70bb-47fb-901b-c0f9eb60a3f4', text: 'Wales', hint: 'You can select the region where you would like your fuel to be delivered'}),
+(ansScotland:Answer {uuid: '8e4e23a8-1a8c-400b-a3c8-8c9dc9aac043', text: 'Scotland', hint: 'You can select the region where you would like your fuel to be delivered'}),
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Tree Structure

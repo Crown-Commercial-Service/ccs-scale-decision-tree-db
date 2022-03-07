@@ -9,7 +9,7 @@ function load_gm_data() {
 export NEO4J_AUTH="${DB_ADMIN_USERNAME}/${DB_ADMIN_PASSWORD}"
 
 # Start the primary process in the background
-/docker-entrypoint.sh neo4j &
+/startup/docker-entrypoint.sh neo4j &
 
 # Wait for Neo4j to start
 while true; do

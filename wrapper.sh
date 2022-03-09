@@ -39,6 +39,7 @@ load_gm_data "RM6059_Office_Supplies.cypher"
 load_gm_data "RM6177_National_Fuels_2.cypher"
 load_gm_data "RM6178_Water_and_wastewater.cypher"
 load_gm_data "RM6014_Modular_Buildings.cypher"
+load_gm_data "Network_Services_2.cypher"
 #load_gm_data "MCF2_Consultancy.cypher"
 
 echo "Data load complete"

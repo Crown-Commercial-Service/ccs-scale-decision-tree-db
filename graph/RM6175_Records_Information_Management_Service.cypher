@@ -1,5 +1,6 @@
 MATCH
-(qstnService:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'})
+(qstnService:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'}),
+(resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
 // Answer

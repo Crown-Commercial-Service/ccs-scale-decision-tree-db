@@ -41,6 +41,7 @@ load_gm_data "RM6178_Water_and_wastewater.cypher"
 load_gm_data "RM6014_Modular_Buildings.cypher"
 load_gm_data "Network_Services_2.cypher"
 load_gm_data "RM6171_Courier_Specialist_Movement.cypher"
+load_gm_data "RM6175_Records_Information_Management_Service.cypher"
 load_gm_data "RM6089_FM2_Workplace_Services.cypher"
 #load_gm_data "MCF2_Consultancy.cypher"
 

@@ -1,8 +1,8 @@
 
 MATCH
-(resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'}),
 (qstnFirstQ:Question {uuid: '18df190c-ef8e-4cda-a760-68929965b86a'}),
-(qiTechProductsFirstQuestion:QuestionInstance {uuid: '698c220e-7fc8-11ea-bc55-0242ac130003'})
+(qiTechProductsFirstQuestion:QuestionInstance {uuid: '698c220e-7fc8-11ea-bc55-0242ac130003'}),
+(qiFmFirstQuestion:QuestionInstance {uuid: '1add4fed-cd58-497a-a924-db5c38dfb418'})
 
 CREATE
 // Questions
@@ -165,13 +165,13 @@ CREATE
             (ansGrpMODForYes:AnswerGroup {name: 'ansGrpMODForYes'}),
             (qiSectorForYes)-[:HAS_ANSWER_GROUP]->(ansGrpMODForYes),
             (ansGrpMODForYes)-[:HAS_ANSWER {order: 1}]->(ansMOD),
-            (ansGrpMODForYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
+            (ansGrpMODForYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6155'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
             (ansGrpMODForYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
             (ansGrpNonMODForYes:AnswerGroup {name: 'ansGrpNonMODForYes'}),
             (qiSectorForYes)-[:HAS_ANSWER_GROUP]->(ansGrpNonMODForYes),
             (ansGrpNonMODForYes)-[:HAS_ANSWER {order: 2}]->(ansNonMOD),
-            (ansGrpNonMODForYes)-[:HAS_OUTCOME]->(resultCCSEscapePage),
+            (ansGrpNonMODForYes)-[:HAS_OUTCOME]->(qiFmFirstQuestion), // SWITCH TREES
 
         (ansGrpNo:AnswerGroup {name: 'ansGrpNo'}),
         (qiAdditional)-[:HAS_ANSWER_GROUP]->(ansGrpNo),
@@ -191,7 +191,7 @@ CREATE
         (ansGrpNonMODForSecurityAndFmServices:AnswerGroup {name: 'ansGrpNonMODForSecurityAndFmServices'}),
         (qiSectorForSecurityAndFmServices)-[:HAS_ANSWER_GROUP]->(ansGrpNonMODForSecurityAndFmServices),
         (ansGrpNonMODForSecurityAndFmServices)-[:HAS_ANSWER {order: 2}]->(ansNonMOD),
-        (ansGrpNonMODForSecurityAndFmServices)-[:HAS_OUTCOME]->(resultCCSEscapePage),
+        (ansGrpNonMODForSecurityAndFmServices)-[:HAS_OUTCOME]->(qiFmFirstQuestion), // SWITCH TREES
 
     (ansGrpSoftwareSecurity:AnswerGroup {name: 'ansGrpSoftwareSecurity'}),
     (qiSecurityService)-[:HAS_ANSWER_GROUP]->(ansGrpSoftwareSecurity),
@@ -231,13 +231,13 @@ CREATE
     (ansGrpMODForFacilitiesManagement:AnswerGroup {name: 'ansGrpMODForFacilitiesManagement'}),
     (qiSectorForFacilitiesManagement)-[:HAS_ANSWER_GROUP]->(ansGrpMODForFacilitiesManagement),
     (ansGrpMODForFacilitiesManagement)-[:HAS_ANSWER {order: 1}]->(ansMOD),
-    (ansGrpMODForFacilitiesManagement)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+    (ansGrpMODForFacilitiesManagement)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6155'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
     (ansGrpMODForFacilitiesManagement)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
     (ansGrpNonMODForFacilitiesManagement:AnswerGroup {name: 'ansGrpNonMODForFacilitiesManagement'}),
     (qiSectorForFacilitiesManagement)-[:HAS_ANSWER_GROUP]->(ansGrpNonMODForFacilitiesManagement),
     (ansGrpNonMODForFacilitiesManagement)-[:HAS_ANSWER {order: 2}]->(ansNonMOD),
-    (ansGrpNonMODForFacilitiesManagement)-[:HAS_OUTCOME]->(resultCCSEscapePage),
+    (ansGrpNonMODForFacilitiesManagement)-[:HAS_OUTCOME]->(qiFmFirstQuestion), // SWITCH TREES
 
 (ansGrpCleaning:AnswerGroup {name: 'ansGrpCleaning'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpCleaning),

@@ -8,7 +8,6 @@ CREATE
 (ansDigitalCloud:Answer {uuid: '7267950d-06d0-4023-b77e-6dd9bc4f6596', text: 'Digital workflow and cloud based hosting solutions', hint: 'Services to help you create a digital workflow solution that will meet your individual record management needs. Includes:
 <ul>
 <li>cloud based hosting which will allow you to store documents and records digitally</li>
-<li>management of water meters (including the switching of water retailers and billing)</li>
 <li>the scanning of physical records</li>
 <li>access to resources such as technical or security architects for your project</li>
 </ul>

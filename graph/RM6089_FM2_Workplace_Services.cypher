@@ -45,7 +45,8 @@ CREATE
 <li>litter picking</li>
 <li>reactive cleaning or cleaning which takes place on request</li>
 <li>the collection and disposal of all types of medical and hazardous waste such as medicines and chemicals</li>
-<li>the collection and disposal of sharps such as needles• an analysis of your current cleaning and waste management practices to identify more efficient ways of working</li>
+<li>the collection and disposal of sharps such as needles</li>
+<li>an analysis of your current cleaning and waste management practices to identify more efficient ways of working</li>
 </ul>'}),
 
 

@@ -54,12 +54,12 @@ CREATE
         (ansGrpYes:AnswerGroup {name: 'ansGrpYes'}),
         (qiIncreasedSecurity)-[:HAS_ANSWER_GROUP]->(ansGrpYes),
         (ansGrpYes)-[:HAS_ANSWER {order: 1}]->(ansYes),
-        (ansGrpYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6171'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+        (ansGrpYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6171'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
         (ansGrpNo:AnswerGroup {name: 'ansGrpNo'}),
         (qiIncreasedSecurity)-[:HAS_ANSWER_GROUP]->(ansGrpNo),
         (ansGrpNo)-[:HAS_ANSWER {order: 2}]->(ansNo),
-        (ansGrpNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6171'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+        (ansGrpNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6171'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
     (ansGrpSecureAndDelivery:AnswerGroup {name: 'ansGrpSecureAndDelivery'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpSecureAndDelivery),

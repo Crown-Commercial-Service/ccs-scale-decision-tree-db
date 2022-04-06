@@ -19,35 +19,41 @@ CREATE
     uuid: '19c7975d-5b07-47b5-8a9c-864f4cd90de3',
     text: 'Heavy buildings materials',
     hint: 'Buy or hire a range of building materials and products such as:
-    <br>&#8226; bricks and blocks
-    <br>&#8226; aggregate, sand and cement
-    <br>&#8226; roofing materials, timber and skirting boards
-    <br>&#8226; insulation
-    <br>&#8226; doors and flooring
-    <br>&#8226; screws, adhesives and personal protective equipment (PPE)'
+    <ul>
+    <li> bricks and blocks </li>
+    <li> aggregate, sand and cement </li>
+    <li> roofing materials, timber and skirting boards </li>
+    <li> insliation </li>
+    <li> doors and flooring </li>
+    <li> screws, adhesives and personal protective equipment (PPE) </li>
+    </ul>'
 }),
 
 (ansPlumbingHeatingBathrooms:Answer {
     uuid: '671df648-ea5c-4847-86be-11510d12259f',
     text: 'Plumbing, heating and bathrooms',
     hint: 'Plumbing and heating products such as:
-    <br>&#8226; boilers
-    <br>&#8226; water and immersion heaters
-    <br>&#8226; radiators
-    <br>&#8226; ventilation including air vents, programmers and thermostats'
+    <ul>
+    <li> boilers </li>
+    <li> water and immersion heaters </li>
+    <li> radiators </li>
+    <li> ventilation including air vents, programmers and thermostats </li>
+    </ul>'
 }),
 
 (ansElectricalProducts:Answer {
     uuid: 'b89eba96-e5b3-4fca-af2e-d45cb6b80acd',
     text: 'Electrical products',
     hint: 'Buy electrical products, including:
-    <br>&#8226; residential CCTV cameras
-    <br>&#8226; carbon monoxide and smoke alarms
-    <br>&#8226; air conditioners
-    <br>&#8226; electric heating such as thermostats, smart heating hubs and free standing fan heaters
-    <br>&#8226; lighting products
-    <br>&#8226; meter boxes
-    <br>&#8226; fuses, trunking, conduits, sockets and switches'
+    <ul>
+    <li> residential CCTV cameras
+    <li> carbon monoxide and smoke alarms </li>
+    <li> air conditioners </li>
+    <li> electric heating such as thermostats, smart heating hubs and free standing fan heaters </li>
+    <li> lighting products </li>
+    <li> meter boxes </li>
+    <li> fuses, trunking, conduits, sockets and switches </li>
+    </ul>'
 }),
 
 (ansFlooring:Answer {
@@ -60,10 +66,12 @@ CREATE
     uuid: '94818955-d71a-4164-bbda-f334c0761a38',
     text: 'Paints and Solvents',
     hint: 'Includes products such as:
-    <br>&#8226; undercoat, gloss, matt, silk, floor, metal and outdoor paints
-    <br>&#8226; wood treatments such as oil and water preservers and wood stains
-    <br>&#8226; wallpaper brushes and rollers
-    <br>&#8226; decorating knives and sanding tools'
+    <ul>
+    <li> undercoat, gloss, matt, silk, floor, metal and outdoor paints </li>
+    <li> wood treatments such as oil and water preservers and wood stains </li>
+    <li> wallpaper brushes and rollers </li>
+    <li> decorating knives and sanding tools </li>
+    </ul>'
 }),
 
 (ansKitchens:Answer {
@@ -76,22 +84,26 @@ CREATE
     uuid: 'cff42e8f-6dec-4b69-b445-79b334836b36',
     text: 'Personal protective equipment workwear, general and specialist)',
     hint: 'Buy personal protective equipment and associated products and services, including:
-    <br>&#8226; first aid, such as oxygen monitors, automatic defibrilators and breathing aparatus
-    <br>&#8226; protective clothing, such as coveralls, gloves, footwear and hats
-    <br>&#8226; protective equipment such as spectacles, goggles, face masks, earplugs and earmuffs
-    <br>&#8226; face fitting service which ensures a respiratory protective device (RPD) properly fitts the wearer and prevents dangerous workplace exposure'
+    <ul>
+    <li> first aid, such as oxygen monitors, automatic defibrilators and breathing aparatus </li>
+    <li> protective clothing, such as coveralls, gloves, footwear and hats </li>
+    <li> protective equipment such as spectacles, goggles, face masks, earplugs and earmuffs </li>
+    <li> face fitting service which ensures a respiratory protective device (RPD) properly fitts the wearer and prevents dangerous workplace exposure </li>
+    </ul>'
 }),
 
 (ansBuildingConstructionToolsEquipment:Answer {
     uuid: 'e82b8ce6-e01e-407c-90a6-41815147ad6c',
     text: 'Building and Construction tools & Equipment',
     hint: 'Buy and hire a range of construction tools and equipment, including:
-    <br>&#8226; gardening machinery such as lawn mowers, trimmers and leaf blowers
-    <br>&#8226; gardening tools such as rakes and shears
-    <br>&#8226; fencing materials for a range of fence types including wood, wire and security barriers
-    <br>&#8226; lighting equipment
-    <br>&#8226; site storage
-    <br>&#8226; surveying and location tools, including laser levels, measuring and leveling rods'
+    <ul>
+    <li> gardening machinery such as lawn mowers, trimmers and leaf blowers </li>
+    <li> gardening tools such as rakes and shears </li>
+    <li> fencing materials for a range of fence types including wood, wire and security barriers </li>
+    <li> lighting equipment </li>
+    <li> site storage </li>
+    <li> surveying and location tools, including laser levels, measuring and leveling rods </li>
+    </ul>'
 }),
 
 (ansBuildingConstructionBuy:Answer {

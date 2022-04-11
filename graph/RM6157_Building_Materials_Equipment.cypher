@@ -59,7 +59,7 @@ CREATE
 (ansFlooring:Answer {
     uuid: 'e6ab5111-d83f-431c-97ef-df07a934d319',
     text: 'Flooring',
-    hint: 'Buy carpet, underlay, wood and vinyl flooring. Also includes sealants and adhesives, solutions for damp or contaminated flooring and installation services.'
+    hint: 'Buy carpet, underlay, wood and vinyl flooring. Also includes sealants and adhesives, solutions for damp or contaminated flooring and installation services'
 }),
 
 (ansPaintsAndSolvents:Answer {
@@ -77,7 +77,7 @@ CREATE
 (ansKitchens:Answer {
     uuid: '4ec242b7-b0e2-4444-9031-ce244756f762',
     text: 'Kitchens (domestic)',
-    hint: 'Buy basic, mid and high range kitchen cabinets, kitchen accessories and white goods such as cookers and washing machines. Also includes installation services.'
+    hint: 'Buy basic, mid and high range kitchen cabinets, kitchen accessories and white goods such as cookers and washing machines. Also includes installation services'
 }),
 
 (ansPersonalProtectiveEquipment:Answer {

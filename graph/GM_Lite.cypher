@@ -519,8 +519,7 @@ CREATE
     (ansGrpCourServ:AnswerGroup {name: 'ansGrpCourServ'}),
     (qiPostCourOrLogServ)-[:HAS_ANSWER_GROUP]->(ansGrpCourServ),
     (ansGrpCourServ)-[:HAS_ANSWER {order: 1}]->(ansCourServ),
-    (ansGrpCourServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3798'}),
-    (ansGrpCourServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3799'}),
+    (ansGrpCourServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6171'}),
 
     // A3 Logisitics and warehousing
     (ansGrpLogiAndWare:AnswerGroup {name: 'ansGrpLogiAndWare'}),

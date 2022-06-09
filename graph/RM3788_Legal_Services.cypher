@@ -58,7 +58,7 @@ CREATE
 (ansGrpCGServiceRail:AnswerGroup {name: 'ansGrpCGServiceRail'}),
 (qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceRail),
 (ansGrpCGServiceRail)-[:HAS_ANSWER {order: 1}]->(ansRail),
-(ansGrpCGServiceRail)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3756'}),
+(ansGrpCGServiceRail)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6204'}),
 
 // Sector(CG) -> Service(eDisclosure, eDiscovery)
 (ansGrpCGServiceEDisc:AnswerGroup {name: 'ansGrpCGServiceEDisc'}),
@@ -86,23 +86,23 @@ CREATE
 (qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetKnown),
 (ansGrpCGBudgetKnown)-[:HAS_ANSWER {order: 1}]->(ansYesBudgetKnown)-[:HAS_CONDITIONAL_INPUT]->(qstnLegalFeesValue),
 (ansGrpCGBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 20000}]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
-(ansGrpCGBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 20000}]->(:Agreement:Outcome {number: 'RM3786'}),
-(ansGrpCGBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 20000, upperBoundExclusive: 9223372036854775807}]->(:Agreement:Outcome {number: 'RM3786'}),
+(ansGrpCGBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 0, upperBoundExclusive: 20000}]->(:Agreement:Outcome {number: 'RM6179'}),
+(ansGrpCGBudgetKnown)-[:HAS_OUTCOME {lowerBoundInclusive: 20000, upperBoundExclusive: 9223372036854775807}]->(:Agreement:Outcome {number: 'RM6179'}),
 
 // Sector(CG) -> Service(Employment Litigation, Property, Litigation) -> Budget (unknown)
 (ansGrpCGBudgetUnknown:AnswerGroup {name: 'ansGrpCGBudgetUnknown'}),
 (qiCentGovBudget)-[:HAS_ANSWER_GROUP]->(ansGrpCGBudgetUnknown),
 (ansGrpCGBudgetUnknown)-[:HAS_ANSWER {order: 2}]->(ansNo),
 (ansGrpCGBudgetUnknown)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3788'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
-(ansGrpCGBudgetUnknown)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
+(ansGrpCGBudgetUnknown)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6179'}),
 
 // Sector(CG) -> Service(Finance & Complex)
 (ansGrpCGServiceFinCompMultiOther:AnswerGroup {name: 'ansGrpCGServiceFinCompMultiOther'}),
 (qiCentGovService)-[:HAS_ANSWER_GROUP]->(ansGrpCGServiceFinCompMultiOther),
 (ansGrpCGServiceFinCompMultiOther)-[:HAS_ANSWER {order: 9}]->(ansFinanceComplex),
 (ansGrpCGServiceFinCompMultiOther)-[:HAS_ANSWER {order: 10, mutex: true}]->(ansAnythingElse),
-(ansGrpCGServiceFinCompMultiOther)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3787'}),
-(ansGrpCGServiceFinCompMultiOther)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3786'}),
+(ansGrpCGServiceFinCompMultiOther)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6179'}),
+(ansGrpCGServiceFinCompMultiOther)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6179'}),
 
 // Non CG Branch (WPS)
 (ansGrpSectorWPS:AnswerGroup {name: 'ansGrpSectorWPS'}),

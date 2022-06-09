@@ -37,12 +37,12 @@ CREATE
     (ansGrpDieselPetrolCard:AnswerGroup {name: 'ansGrpDieselPetrolCard'}),
     (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpDieselPetrolCard),
     (ansGrpDieselPetrolCard)-[:HAS_ANSWER {order: 1}]->(ansDieselPetrolCard),
-    (ansGrpDieselPetrolCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6000'}),
+    (ansGrpDieselPetrolCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6186'}),
 
     (ansGrpAlterFuelCard:AnswerGroup {name: 'ansGrpAlterFuelCard'}),
     (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpAlterFuelCard),
     (ansGrpAlterFuelCard)-[:HAS_ANSWER {order: 2}]->(ansAlterFuelCard),
-    (ansGrpAlterFuelCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6000'}),
+    (ansGrpAlterFuelCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6186'}),
  
     (ansGrpProcureCard:AnswerGroup {name: 'ansGrpProcureCard'}),
     (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpProcureCard),

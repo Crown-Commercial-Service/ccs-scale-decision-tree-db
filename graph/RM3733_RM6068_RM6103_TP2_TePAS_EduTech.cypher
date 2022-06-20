@@ -151,7 +151,7 @@ CREATE
 (ansGrpServiceOtherService)-[:HAS_ANSWER {order: 4}]->(ansTransitionTransformation),
 (ansGrpServiceOtherService)-[:HAS_ANSWER {order: 5}]->(ansOperationalServices),
 (ansGrpServiceOtherService)-[:HAS_ANSWER {order: 6}]->(ansProgsLargeProjects),
-(ansGrpServiceOtherService)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3804'}),
+(ansGrpServiceOtherService)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6100'}),
 
 // Product / Service? (Service) -> Service? (Anything Else?) -> Escape Page
 (ansGrpServiceAnythingElse:AnswerGroup {name: 'ansGrpServiceAnythingElse'}),

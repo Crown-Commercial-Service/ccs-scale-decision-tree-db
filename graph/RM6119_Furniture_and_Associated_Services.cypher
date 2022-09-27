@@ -24,17 +24,17 @@ CREATE
     type: 'LIST'
 }),
 
-(qstnRepairAndRenovation:Question {
-    uuid: '5d55a804-361a-465b-a515-48a87688006e',
-    text: 'Repair and Renovation',
-    type: 'LIST'
-}),
+// (qstnRepairAndRenovation:Question {
+//     uuid: '5d55a804-361a-465b-a515-48a87688006e',
+//     text: 'Repair and Renovation',
+//     type: 'LIST'
+// }),
 
 
 // Questions: level 3
 (qstnTypeOfficeFurniture:Question {
     uuid: '8f0e8b24-b61f-4b4b-9bc4-99197d9253ae',
-    text: 'Select type of office furniture:',
+    text: 'What type of office furniture do you need?',
     type: 'LIST'
 }),
 
@@ -56,10 +56,10 @@ CREATE
     hint: 'A product is an item you can buy. It\'s a one-off purchase and involves no ongoing contract.'
 }),
 
-(ansService:Answer {
+(ansRepairAndRenovationService:Answer {
     uuid: '856a42b7-b828-4811-9901-dfd0d0544fb6',
-    text: 'Service',
-    hint: 'A service is a contract for something to happen, either once or on a regular basis.'
+    text: 'Repair and renovation service',
+    hint: 'Buy repair and renovation services to maintain the condition of a range of furniture products.'
 }),
 
 // Answers: level 2 (Product)
@@ -103,7 +103,7 @@ CREATE
 (ansBespokeAndFittedFurniture:Answer {
     uuid: '4e5968b8-45f1-4126-b749-f6ec4006b5cd',
     text: 'Bespoke and Fitted Furniture',
-    hint: 'Provides the supply, delivery and installation of fitted and custom made furniture including beam seating and witness screens.'
+    hint: 'Provides the supply, delivery and installation of fitted and custom made furniture including beam seating and witness screens. Beam or \'bench\' seeting is a type of seating that can either be freestanding or fixed to the floor of a room.'
 }),
 
 (ansEducationalFurniture:Answer {
@@ -258,12 +258,7 @@ CREATE
         (ansGrpHighDensitySteelStorage)-[:HAS_ANSWER {order: 6}]->(ansHighDensitySteelStorage),
         (ansGrpHighDensitySteelStorage)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6119'})-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'CAT', scale: true}),
 
-    (ansGrpService:AnswerGroup {name: 'ansGrpService'}),
-    (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpService),
-    (ansGrpService)-[:HAS_ANSWER {order: 2}]->(ansService),
-    (ansGrpService)-[:HAS_OUTCOME]->(qiRepairAndRenovation:QuestionInstance:Outcome {uuid: '4f40a9e8-f1cf-435c-bc50-7c033e94da9a'})-[:DEFINED_BY]->(qstnRepairAndRenovation),
-
-        (ansGrpRepairAndRenovation:AnswerGroup {name: 'ansGrpRepairAndRenovation'}),
-        (qiRepairAndRenovation)-[:HAS_ANSWER_GROUP]->(ansGrpRepairAndRenovation),
-        (ansGrpRepairAndRenovation)-[:HAS_ANSWER {order: 1}]->(ansRepairAndRenovation),
-        (ansGrpRepairAndRenovation)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6119'})-[:HAS_LOT]->(:Lot {number: '7', url: '', type: 'CAT', scale: true});
+    (ansGrpRepairAndRenovationService:AnswerGroup {name: 'ansGrpRepairAndRenovationService'}),
+    (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpRepairAndRenovationService),
+    (ansGrpRepairAndRenovationService)-[:HAS_ANSWER {order: 2}]->(ansRepairAndRenovationService),
+    (ansGrpRepairAndRenovationService)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6119'})-[:HAS_LOT]->(:Lot {number: '7', url: '', type: 'CAT', scale: true});

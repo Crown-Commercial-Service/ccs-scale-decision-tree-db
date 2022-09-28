@@ -6,7 +6,7 @@ CREATE
 
 (qstnFirstQ:Question {
     uuid: 'e40d4dee-53fc-493b-a1d3-3e86d17add1e',
-    text: 'What Service or Product are you looking for?',
+    text: 'Do you need a service or product?',
     type: 'LIST'
 }),
 
@@ -71,7 +71,7 @@ CREATE
     <ul>
     <li>office desks and workstations</li>
     <li>office seating and storage</li>
-    <li>furniture for break out and conference rooms</li>
+    <li>furniture for breakout and conference rooms</li>
     <li>government hub design guide furniture</li>
     </ul>'
 }),
@@ -103,7 +103,7 @@ CREATE
 (ansBespokeAndFittedFurniture:Answer {
     uuid: '4e5968b8-45f1-4126-b749-f6ec4006b5cd',
     text: 'Bespoke and Fitted Furniture',
-    hint: 'Provides the supply, delivery and installation of fitted and custom made furniture including beam seating and witness screens. Beam or \'bench\' seeting is a type of seating that can either be freestanding or fixed to the floor of a room.'
+    hint: 'Provides the supply, delivery and installation of fitted and custom made furniture including beam seating and witness screens. Beam or \'bench\' seating is a type of seating that can either be freestanding or fixed to the floor of a room.'
 }),
 
 (ansEducationalFurniture:Answer {

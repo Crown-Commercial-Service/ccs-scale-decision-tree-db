@@ -24,13 +24,6 @@ CREATE
     type: 'LIST'
 }),
 
-// (qstnRepairAndRenovation:Question {
-//     uuid: '5d55a804-361a-465b-a515-48a87688006e',
-//     text: 'Repair and Renovation',
-//     type: 'LIST'
-// }),
-
-
 // Questions: level 3
 (qstnTypeOfficeFurniture:Question {
     uuid: '8f0e8b24-b61f-4b4b-9bc4-99197d9253ae',
@@ -53,13 +46,13 @@ CREATE
 (ansProduct:Answer {
     uuid: '518afdfd-c077-41f5-842c-c42b35ad4c3b',
     text: 'Product',
-    hint: 'A product is an item you can buy. It\'s a one-off purchase and involves no ongoing contract.'
+    hint: 'A product is an item you can buy. It\'s a one-off purchase and involves no ongoing contract'
 }),
 
 (ansRepairAndRenovationService:Answer {
     uuid: '856a42b7-b828-4811-9901-dfd0d0544fb6',
     text: 'Repair and renovation service',
-    hint: 'Buy repair and renovation services to maintain the condition of a range of furniture products.'
+    hint: 'Buy repair and renovation services to maintain the condition of a range of furniture products'
 }),
 
 // Answers: level 2 (Product)
@@ -103,7 +96,7 @@ CREATE
 (ansBespokeAndFittedFurniture:Answer {
     uuid: '4e5968b8-45f1-4126-b749-f6ec4006b5cd',
     text: 'Bespoke and Fitted Furniture',
-    hint: 'Provides the supply, delivery and installation of fitted and custom made furniture including beam seating and witness screens. Beam or \'bench\' seating is a type of seating that can either be freestanding or fixed to the floor of a room.'
+    hint: 'Provides the supply, delivery and installation of fitted and custom made furniture including beam seating and witness screens. Beam or \'bench\' seating is a type of seating that can either be freestanding or fixed to the floor of a room'
 }),
 
 (ansEducationalFurniture:Answer {
@@ -140,14 +133,14 @@ CREATE
 (ansGeneralOfficeFurniture:Answer {
     uuid: '212bd8fb-9f78-4fda-9bca-80c0280e747e',
     text: 'General office furniture',
-    hint: 'Buy general office furniture including office desks, seating and storage.'
+    hint: 'Buy general office furniture including office desks, seating and storage'
 }),
 
 
 (ansHigherSpecOfficeFurniture:Answer {
     uuid: '1e00eb44-b4ea-4580-bcf1-eff23d2bb844',
     text: 'Higher specification office furniture',
-    hint: 'Buy a range of office furniture including desks, seating and storage that meets the government hub design guide.'
+    hint: 'Buy a range of office furniture including desks, seating and storage that meets the government hub design guide'
 }),
 
 // Answers: level 3 (Higher and Primary Education Services)
@@ -155,13 +148,13 @@ CREATE
 (ansHigherAndFurtherEduServices:Answer {
     uuid: '42fb458e-6e15-4bea-866f-42aa263cd386',
     text: 'Higher and Further Education needs and associated services',
-    hint: 'Buy furniture for higher and further education settings. Includes furniture for lecture halls and conference rooms such as fixed seating and booths.'
+    hint: 'Buy furniture for higher and further education settings. Includes furniture for lecture halls and conference rooms such as fixed seating and booths'
 }),
 
 (ansPrimaryAndSecondaryEduServices:Answer {
     uuid: '234fa47c-bcf5-4656-9150-2f9d7e8795ff',
     text: 'Primary and Secondary education needs and associated services',
-    hint: 'Buy furniture for primary and secondary education settings including chairs and tables for pupil and teachers.'
+    hint: 'Buy furniture for primary and secondary education settings including chairs and tables for pupil and teachers'
 }),
 
 // Answers: level 4

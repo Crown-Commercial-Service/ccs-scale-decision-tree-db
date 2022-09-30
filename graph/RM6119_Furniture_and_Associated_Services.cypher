@@ -1,9 +1,14 @@
+// IMPORT
+
+MATCH
+
+(qstnWhatProduct:Question {uuid: 'b74c2815-db1c-49ee-b6dc-ce7cfb4f8d8b'})
+
 CREATE
 
 // QUESTIONS
 
 // Questions: level 1
-
 (qstnFirstQ:Question {
     uuid: 'e40d4dee-53fc-493b-a1d3-3e86d17add1e',
     text: 'Do you need a service or product?',
@@ -12,12 +17,6 @@ CREATE
 
 
 // Questions: level 2
-(qstnWhatProduct:Question {
-    uuid: '25e5d903-2f2a-4a55-9382-5fb935dab79d',
-    text: 'What product do you need?',
-    type: 'LIST'
-}),
-
 (qstnWhatService:Question {
     uuid: '06a14aa8-7b90-4e2a-a249-a55e8458e644',
     text: 'What service do you need?',
@@ -56,7 +55,6 @@ CREATE
 }),
 
 // Answers: level 2 (Product)
-
 (ansOfficeFurniture:Answer {
     uuid: '6a0d6b93-d944-43d3-aab1-5316af8b0060',
     text: 'Office Furniture',
@@ -122,14 +120,12 @@ CREATE
 }),
 
 // Answers: level 2 (Service)
-
 (ansRepairAndRenovation:Answer {
     uuid: 'e52aeefb-62e9-466b-8477-0c038164d83d',
-    text: 'Buy repair and renovation services to maintain the condition of a range of furniture products.'
+    text: 'Buy repair and renovation services to maintain the condition of a range of furniture products'
 }),
 
 // Answers: level 3 (Type of Office Furniture)
-
 (ansGeneralOfficeFurniture:Answer {
     uuid: '212bd8fb-9f78-4fda-9bca-80c0280e747e',
     text: 'General office furniture',
@@ -144,7 +140,6 @@ CREATE
 }),
 
 // Answers: level 3 (Higher and Primary Education Services)
-
 (ansHigherAndFurtherEduServices:Answer {
     uuid: '42fb458e-6e15-4bea-866f-42aa263cd386',
     text: 'Higher and Further Education needs and associated services',
@@ -158,7 +153,6 @@ CREATE
 }),
 
 // Answers: level 4
-
 (ansFixedLectureHallSeating:Answer {
     uuid: '506c0394-ecef-4232-9601-12fd14d53d98',
     text: 'I need fixed lecture hall seating'

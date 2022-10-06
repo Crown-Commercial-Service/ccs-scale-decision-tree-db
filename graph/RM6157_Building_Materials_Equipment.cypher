@@ -17,7 +17,7 @@ CREATE
 // Answers
 (ansHeavyBuildingsMaterials:Answer {
     uuid: '19c7975d-5b07-47b5-8a9c-864f4cd90de3',
-    text: 'Heavy buildings materials',
+    text: 'Heavy building materials and one stop shop',
     hint: 'Buy or hire a range of building materials and products such as:
     <ul>
     <li> bricks and blocks </li>

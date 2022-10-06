@@ -89,9 +89,10 @@ CREATE
     (ansGrpInterimTechRes:AnswerGroup {name: 'ansGrpInterimTechRes'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpInterimTechRes),
     (ansGrpInterimTechRes)-[:HAS_ANSWER {order: 3}]->(ansInterimTechRes),
-    (ansGrpInterimTechRes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6174'}),
-    (ansGrpInterimTechRes)-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
-    (ansGrpInterimTechRes)-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+    (ansGrpInterimTechRes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6174'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+    (ansGrpInterimTechRes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6174'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+    // (ansGrpInterimTechRes)-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+    // (ansGrpInterimTechRes)-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
     (ansGrpManagedPrint:AnswerGroup {name: 'ansGrpManagedPrint'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpManagedPrint),

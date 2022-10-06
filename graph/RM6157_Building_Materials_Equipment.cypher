@@ -23,7 +23,7 @@ CREATE
     <li> bricks and blocks </li>
     <li> aggregate, sand and cement </li>
     <li> roofing materials, timber and skirting boards </li>
-    <li> insliation </li>
+    <li> insulation </li>
     <li> doors and flooring </li>
     <li> screws, adhesives and personal protective equipment (PPE) </li>
     </ul>'
@@ -127,12 +127,12 @@ CREATE
     (ansGrpHeavyBuildingsMaterials)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6157'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
     (ansGrpPlumbingHeatingBathrooms:AnswerGroup {name: 'ansGrpPlumbingHeatingBathrooms'}),
-    (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpHeavyBuildingsMaterials),
+    (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpPlumbingHeatingBathrooms),
     (ansGrpPlumbingHeatingBathrooms)-[:HAS_ANSWER {order: 2}]->(ansPlumbingHeatingBathrooms),
     (ansGrpPlumbingHeatingBathrooms)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6157'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
     (ansGrpElectricalProducts:AnswerGroup {name: 'ansGrpElectricalProducts'}),
-    (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpHeavyBuildingsMaterials),
+    (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpElectricalProducts),
     (ansGrpElectricalProducts)-[:HAS_ANSWER {order: 3}]->(ansElectricalProducts),
     (ansGrpElectricalProducts)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6157'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 

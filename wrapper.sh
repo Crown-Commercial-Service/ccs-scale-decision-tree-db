@@ -48,6 +48,7 @@ load_gm_data "RM6157_Building_Materials_Equipment.cypher"
 load_gm_data "Staffing_Solutions.cypher"
 #load_gm_data "MCF2_Consultancy.cypher"
 load_gm_data "RM6119_Furniture_and_Associated_Services.cypher"
+load_gm_data "RM6133_Employee_Benefits.cypher"
 
 echo "Data load complete"
 

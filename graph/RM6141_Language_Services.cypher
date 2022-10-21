@@ -1,7 +1,39 @@
 MATCH
 
+// Questions
+
 (qstnService:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'}),
-(resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
+(resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'}),
+
+// Answers: level 3 - Non Spoken Language Services
+
+(ansNorthEast:Answer {uuid: '2d47d7f7-629e-4488-947d-06ee2786d609'}),
+
+(ansNorthWest:Answer {uuid: 'cf844cbe-e78b-4119-8502-0654c8564427'}),
+
+(ansYorkshireAndHumberside:Answer {uuid: 'ffb0e33c-9ead-49ff-984a-78393e11c182'}),
+
+(ansEastMidlands:Answer {uuid: '43db3900-dac7-44bf-b2d4-6757582df5bf'}),
+
+(ansWestMidlands:Answer {uuid: '38bbf94a-5e01-4184-84da-be871aae9157'}),
+
+(ansMultipleRegions:Answer {uuid: '6737ac40-254d-4b82-be3a-81727c9ddf78'}),
+
+(ansEastOfEngland:Answer {uuid: '93bb4bc5-85a3-4c8d-ae29-ef53f9a37209'}),
+
+(ansLondon:Answer {uuid: '3065fb18-9ff7-42cb-b0f7-a093486bc3e5'}),
+
+(ansSouthEast:Answer {uuid: 'ad0473fa-865c-4b30-a119-aecde4ee7ba6'}),
+
+(ansSouthWest:Answer {uuid: '04475d43-532b-4a95-8b0e-78db40051bd7'}),
+
+(ansWales:Answer {uuid: '481c2d3d-3fa3-4449-8898-5ce3ae220e54'}),
+
+(ansScotland:Answer {uuid: '519372cf-a917-40c6-8b20-5fef8e46440a'}),
+
+(ansNorthernIreland:Answer {uuid: '3a92a0fa-5e95-4525-a4a3-1067d7b82598'}),
+
+(ansNational:Answer {uuid: '601af67d-0055-4e63-9941-70ab799d4194'})
 
 
 CREATE
@@ -127,78 +159,6 @@ CREATE
         <li>spoken telephone and spoken and unspoken video interpreting</li>
         <li>spoken and unspoken face to face interpreting</li>
     </ul>'
-}),
-
-// Answers: level 3 - Non Spoken Language Services
-
-(ansNorthEast:Answer {
-    uuid: '2d47d7f7-629e-4488-947d-06ee2786d609',
-    text: 'North East'
-}),
-
-(ansNorthWest:Answer {
-    uuid: 'cf844cbe-e78b-4119-8502-0654c8564427',
-    text: 'North West'
-}),
-
-(ansYorkshireAndHumberside:Answer {
-    uuid: 'ffb0e33c-9ead-49ff-984a-78393e11c182',
-    text: 'Yorkshire and Humberside'
-}),
-
-(ansEastMidlands:Answer {
-    uuid: '43db3900-dac7-44bf-b2d4-6757582df5bf',
-    text: 'East Midlands'
-}),
-
-(ansWestMidlands:Answer {
-    uuid: '38bbf94a-5e01-4184-84da-be871aae9157',
-    text: 'West Midlands'
-}),
-
-(ansMultipleRegions:Answer {
-    uuid: '6737ac40-254d-4b82-be3a-81727c9ddf78',
-    text: 'Multiple Regions'
-}),
-
-(ansEastOfEngland:Answer {
-    uuid: '93bb4bc5-85a3-4c8d-ae29-ef53f9a37209',
-    text: 'East of England'
-}),
-
-(ansLondon:Answer {
-    uuid: '3065fb18-9ff7-42cb-b0f7-a093486bc3e5',
-    text: 'London'
-}),
-
-(ansSouthEast:Answer {
-    uuid: 'ad0473fa-865c-4b30-a119-aecde4ee7ba6',
-    text: 'South East'
-}),
-
-(ansSouthWest:Answer {
-    uuid: '04475d43-532b-4a95-8b0e-78db40051bd7',
-    text: 'South West'
-}),
-
-(ansWales:Answer {
-    uuid: '481c2d3d-3fa3-4449-8898-5ce3ae220e54',
-    text: 'Wales'
-}),
-
-(ansScotland:Answer {
-    uuid: '519372cf-a917-40c6-8b20-5fef8e46440a',
-    text: 'Scotland'
-}),
-
-(ansNorthernIreland:Answer {
-    uuid: '3a92a0fa-5e95-4525-a4a3-1067d7b82598',
-    text: 'Northern Ireland'
-}),
-
-(ansNational:Answer {
-    uuid: '601af67d-0055-4e63-9941-70ab799d4194',
-    text: 'National'
 }),
 
 

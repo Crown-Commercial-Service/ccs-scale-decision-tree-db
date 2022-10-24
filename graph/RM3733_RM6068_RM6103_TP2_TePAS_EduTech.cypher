@@ -32,9 +32,9 @@ CREATE
 // Services
 (ansBroadbandFibreInfra:Answer {uuid: 'ccb6263a-75b5-11ea-bc55-0242ac130003', text: 'Broadband fibre infrastructure', hint: 'For example, upgrade of broadband installation with new fibres'}),
 (ansBroadbandService:Answer {uuid: 'ccb627ca-75b5-11ea-bc55-0242ac130003', text: 'Broadband service', hint: 'For example, finding an Internet Service Provider (ISP)'}),
-(ansTechStrategyAndSvcDesign:Answer {uuid: 'ccb6289c-75b5-11ea-bc55-0242ac130003', text: 'Technology strategy and service design', hint: 'For example, capability ​​analysis, enterprise ​​architecture, and service ​​design'}),
-(ansTransitionTransformation:Answer {uuid: 'ccb629f0-75b5-11ea-bc55-0242ac130003', text: 'Transition and transformation', hint: 'For example the implementation​​ of ​​new​​ services,​​ service​​ providers or​​ processes'}),
-(ansOperationalServices:Answer {uuid: 'ccb62ab8-75b5-11ea-bc55-0242ac130003', text: 'Operational services', hint: 'The​​ services,​​ processes​​ and​​ tools ​​needed ​​to​​ manage ​​the provisioning,​​ capacity, ​​performance,​​ security ​​and availability​​ of​​ the​​ technology ​​environment'}),
+(ansTechStrategyAndSvcDesign:Answer {uuid: 'ccb6289c-75b5-11ea-bc55-0242ac130003', text: 'Technology strategy and service design', hint: 'For example, capability analysis, enterprise architecture, and service design'}),
+(ansTransitionTransformation:Answer {uuid: 'ccb629f0-75b5-11ea-bc55-0242ac130003', text: 'Transition and transformation', hint: 'For example the implementation of new services, service providers or processes'}),
+(ansOperationalServices:Answer {uuid: 'ccb62ab8-75b5-11ea-bc55-0242ac130003', text: 'Operational services', hint: 'The services, processes and tools needed to manage the provisioning, capacity, performance, security and availability of the technology environment'}),
 (ansProgsLargeProjects:Answer {uuid: 'ccb62be4-75b5-11ea-bc55-0242ac130003', text: 'Programmes and large projects', hint: 'Technology services offered at or above official government security level. You should only choose this if you require secret or top secret level programmes or large projects'}),
 
 // Service & product

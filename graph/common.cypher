@@ -104,6 +104,8 @@ CREATE
 (:Answer {uuid: 'ad0473fa-865c-4b30-a119-aecde4ee7ba6', text: 'South East'}),
 (:Answer {uuid: '04475d43-532b-4a95-8b0e-78db40051bd7', text: 'South West'}),
 (:Answer {uuid: '481c2d3d-3fa3-4449-8898-5ce3ae220e54', text: 'Wales'}),
+(:Answer {uuid: '3a92a0fa-5e95-4525-a4a3-1067d7b82598', text: 'Northern Ireland'}),
+(:Answer {uuid: '601af67d-0055-4e63-9941-70ab799d4194', text: 'National'}),
 
 // Security
 (:Answer {uuid: 'b879d490-654e-11ea-bc55-0242ac130003', text: 'Security services', hint: 'For example guarding, patrols, CCTV monitoring and alarm response'}),
@@ -127,8 +129,4 @@ CREATE
 (:Answer {uuid: '4cd9f791-1ca4-43d3-8f25-c3edfccf6e29', text: 'Something else', hint: 'What I need is not listed here'}),
 
 // Reusable outcome types
-(:Support:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', text: 'CCS Escape Page'}),
-
-(ansNorthernIreland:Answer {uuid: '3a92a0fa-5e95-4525-a4a3-1067d7b82598', text: 'Northern Ireland'}),
-
-(ansNational:Answer {uuid: '601af67d-0055-4e63-9941-70ab799d4194', text: 'National'});
+(:Support:Outcome {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003', text: 'CCS Escape Page'});

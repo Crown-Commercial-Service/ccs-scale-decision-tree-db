@@ -29,7 +29,7 @@ MATCH
 
 (ansWales:Answer {uuid: '481c2d3d-3fa3-4449-8898-5ce3ae220e54'}),
 
-(ansScotland:Answer {uuid: '519372cf-a917-40c6-8b20-5fef8e46440a'}),
+(ansScotland:Answer {uuid: 'ccb5c104-75b5-11ea-bc55-0242ac130003'}),
 
 (ansNorthernIreland:Answer {uuid: '3a92a0fa-5e95-4525-a4a3-1067d7b82598'}),
 

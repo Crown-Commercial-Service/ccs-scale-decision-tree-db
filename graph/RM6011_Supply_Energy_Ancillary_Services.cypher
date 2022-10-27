@@ -4,7 +4,7 @@ CREATE
 
 (qstnFirstQ:Question {
     uuid: 'e212194f-7780-43c3-a028-277e168d5951',
-    text: 'What Service are you looking for?',
+    text: 'What service are you looking for?',
     type: 'LIST'
 }),
 

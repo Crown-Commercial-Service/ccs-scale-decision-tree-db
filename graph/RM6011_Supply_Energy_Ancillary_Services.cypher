@@ -37,8 +37,8 @@ CREATE
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Tree Structure
-(jrnyLanguageServices:Journey {uuid: '103db792-d07f-4885-afcd-dc0324d0a968', name: 'Energy'}),
-(jrnyLanguageServices)-[:FIRST_QUESTION]->(qiFirstQuestion:QuestionInstance:Outcome {uuid: '0a8b5f65-a531-4110-a49a-2ff2d48a94f1'})-[:DEFINED_BY]->(qstnFirstQ),
+(jrnySupplyEnergy:Journey {uuid: '103db792-d07f-4885-afcd-dc0324d0a968', name: 'Energy'}),
+(jrnySupplyEnergy)-[:FIRST_QUESTION]->(qiFirstQuestion:QuestionInstance:Outcome {uuid: '0a8b5f65-a531-4110-a49a-2ff2d48a94f1'})-[:DEFINED_BY]->(qstnFirstQ),
 
     (ansGrpElectricityAndPower:AnswerGroup {name: 'ansGrpElectricityAndPower'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpElectricityAndPower),

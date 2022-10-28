@@ -51,6 +51,7 @@ load_gm_data "RM6119_Furniture_and_Associated_Services.cypher"
 load_gm_data "RM6133_Employee_Benefits.cypher"
 load_gm_data "RM6011_Supply_Energy_Ancillary_Services.cypher"
 load_gm_data "RM6141_Language_Services.cypher"
+load_gm_data "RM6255_Voucher_Schemes.cypher"
 
 echo "Data load complete"
 

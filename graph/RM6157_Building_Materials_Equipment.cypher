@@ -118,8 +118,8 @@ CREATE
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Tree Structure
-(jrnyMFD:Journey {uuid: '8b4ebcd8-4fa3-456c-a01f-af29b973d040', name: 'Building Materials and Equipment'}),
-(jrnyMFD)-[:FIRST_QUESTION]->(qiFirstQuestion:QuestionInstance:Outcome {uuid: '6d82d388-2e35-4b26-801e-9fd5f94912bf'})-[:DEFINED_BY]->(qstnFirstQ),
+(jrnyBuildingMaterials:Journey {uuid: '8b4ebcd8-4fa3-456c-a01f-af29b973d040', name: 'Building Materials and Equipment'}),
+(jrnyBuildingMaterials)-[:FIRST_QUESTION]->(qiFirstQuestion:QuestionInstance:Outcome {uuid: '6d82d388-2e35-4b26-801e-9fd5f94912bf'})-[:DEFINED_BY]->(qstnFirstQ),
 
     (ansGrpHeavyBuildingsMaterials:AnswerGroup {name: 'ansGrpHeavyBuildingsMaterials'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpHeavyBuildingsMaterials),

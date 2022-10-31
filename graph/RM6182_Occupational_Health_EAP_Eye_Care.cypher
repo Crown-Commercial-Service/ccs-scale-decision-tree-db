@@ -3,16 +3,7 @@ CREATE
 // Question
 (qstnFirstQ:Question {
     uuid: '0c9e14e8-07a4-42a6-9bb5-2cc2c46ff53f',
-    text: 'What type of Service do you need?',
-    hint: 'A range of occupational health services, employee assistance programmes and eye care requirements.
-    The available services reflect the needs and accessibility requirements of the modern and diverse workforce. This includes traditional occupational health services such as:
-    <ul>
-    <li>advice</li>
-    <li>referrals</li>
-    <li>health screening</li>
-    <li>surveillance</li>
-    <li>treatments</li>
-    </ul>',
+    text: 'What type of service do you need?',
     type: 'LIST'
 }),
 
@@ -25,7 +16,7 @@ CREATE
 (qstnOHandEAP:Question {
     uuid: '1f7763fe-de82-47d9-947c-d0d7a26d2507',
     text: 'Occupational Health (OH) and Employee Assistance Programme (EAP) available on a National / Overseas basis',
-    hint: '<p>Requirement for both OH and EAP services and a wish to procure those services at the same time under one contract with one supplier.</p>
+    hint: '<p>Requirement for both OH and EAP services and a wish to procure those services at the same time under one contract with one supplier</p>
     <p>Occupational health services:</p>
     <ul>
     <li>Telephone Support Services</li>
@@ -128,7 +119,7 @@ CREATE
 (ansBothOHandEAP:Answer {
     uuid: 'd358d0e0-15a0-4d49-9977-1126099451bb',
     text: 'Both OH & EAP services',
-    hint: 'Access both OH and EAP services at the same time under one contract and from one supplier.'
+    hint: 'Access both OH and EAP services at the same time under one contract and from one supplier'
 }),
 
 (ansEAPprograms:Answer {
@@ -171,7 +162,7 @@ CREATE
 (ansRegionalOH:Answer {
     uuid: '6702b452-722f-4c05-a349-612bc6ac9a8f',
     text: 'Regional',
-    hint: 'I need OH services in a specifc region of the UK.'
+    hint: 'I need OH services in a specifc region of the UK'
 }),
 
 (ansRegionalLondon:Answer {
@@ -224,7 +215,7 @@ CREATE
 (ansNationalOverseasOH:Answer {
     uuid: '16f9eeba-8c2e-4bca-aec2-70711cc0d9a7',
     text: 'National and overseas',
-    hint: 'I need OH services across the UK and overseas.'
+    hint: 'I need OH services across the UK and overseas'
 }),
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

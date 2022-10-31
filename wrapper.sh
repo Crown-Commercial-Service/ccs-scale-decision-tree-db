@@ -49,6 +49,8 @@ load_gm_data "Staffing_Solutions.cypher"
 #load_gm_data "MCF2_Consultancy.cypher"
 load_gm_data "RM6119_Furniture_and_Associated_Services.cypher"
 load_gm_data "RM6133_Employee_Benefits.cypher"
+load_gm_data "RM6011_Supply_Energy_Ancillary_Services.cypher"
+load_gm_data "RM6141_Language_Services.cypher"
 load_gm_data "RM6188_Audit_and_Assurance.cypher"
 
 echo "Data load complete"

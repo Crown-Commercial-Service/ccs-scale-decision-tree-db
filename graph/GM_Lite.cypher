@@ -252,7 +252,7 @@ CREATE
     (ansGrpBuildSolutions:AnswerGroup {name: 'ansGrpBuildSolutions'}),
     (qiBuildOrCons)-[:HAS_ANSWER_GROUP]->(ansGrpBuildSolutions),
     (ansGrpBuildSolutions)-[:HAS_ANSWER {order: 1}]->(ansBuildSolutions),
-    (ansGrpBuildSolutions)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3741'}),
+    (ansGrpBuildSolutions)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6165'}),
     (ansGrpBuildSolutions)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6014'}),
 
 
@@ -275,7 +275,6 @@ CREATE
     (ansGrpElectricity:AnswerGroup {name: 'ansGrpElectricity'}),
     (qiEnerFuelOrWat)-[:HAS_ANSWER_GROUP]->(ansGrpElectricity),
     (ansGrpElectricity)-[:HAS_ANSWER {order: 1}]->(ansElectricity),
-    (ansGrpElectricity)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3809'}),
     (ansGrpElectricity)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6011'}),
 
 
@@ -290,14 +289,12 @@ CREATE
     (ansGrpFuels:AnswerGroup {name: 'ansGrpFuels'}),
     (qiEnerFuelOrWat)-[:HAS_ANSWER_GROUP]->(ansGrpFuels),
     (ansGrpFuels)-[:HAS_ANSWER {order: 3}]->(ansFuels),
-    (ansGrpFuels)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3801'}),
     (ansGrpFuels)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6177'}),
 
     // A3 Water or wastewater
     (ansGrpWaterOrWaste:AnswerGroup {name: 'ansGrpWaterOrWaste'}),
     (qiEnerFuelOrWat)-[:HAS_ANSWER_GROUP]->(ansGrpWaterOrWaste),
     (ansGrpWaterOrWaste)-[:HAS_ANSWER {order: 4}]->(ansWaterOrWaste),
-    (ansGrpWaterOrWaste)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3790'}),
     (ansGrpWaterOrWaste)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6178'}),
 
 
@@ -317,7 +314,7 @@ CREATE
     (ansGrpEstaManag:AnswerGroup {name: 'ansGrpEstaManag'}),
     (qiFacEstOrWorkP)-[:HAS_ANSWER_GROUP]->(ansGrpEstaManag),
     (ansGrpEstaManag)-[:HAS_ANSWER {order: 2}]->(ansEstaManag),
-    (ansGrpEstaManag)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3816'}),
+    (ansGrpEstaManag)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6168'}),
 
 
     // A3 Facilities management
@@ -337,7 +334,7 @@ CREATE
       (ansGrpGovHubFitOutServ:AnswerGroup {name: 'ansGrpGovHubFitOutServ'}),
       (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpGovHubFitOutServ),
       (ansGrpGovHubFitOutServ)-[:HAS_ANSWER {order: 2}]->(ansGovHubFitOutServ),
-      (ansGrpGovHubFitOutServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6073'}),
+      (ansGrpGovHubFitOutServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6119'})-[:HAS_LOT]->(:Lot {number: '8', url: '', type: 'CAT', scale: true}),
 
       // A4 Training estate
       (ansGrpTrainEstate:AnswerGroup {name: 'ansGrpTrainEstate'}),
@@ -350,7 +347,6 @@ CREATE
     (ansGrpFurniServ:AnswerGroup {name: 'ansGrpFurniServ'}),
     (qiFacEstOrWorkP)-[:HAS_ANSWER_GROUP]->(ansGrpFurniServ),
     (ansGrpFurniServ)-[:HAS_ANSWER {order: 4}]->(ansFurniServ),
-    (ansGrpFurniServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3812'}),
     (ansGrpFurniServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6119'}),
 
 
@@ -384,14 +380,13 @@ CREATE
     (ansGrpFuelCard:AnswerGroup {name: 'ansGrpFuelCard'}),
     (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpFuelCard),
     (ansGrpFuelCard)-[:HAS_ANSWER {order: 2}]->(ansFuelCard),
-    (ansGrpFuelCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6000'}),
+    (ansGrpFuelCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6186'}),
 
     // A3 Grant services
     (ansGrpGrantServ:AnswerGroup {name: 'ansGrpGrantServ'}),
     (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpGrantServ),
     (ansGrpGrantServ)-[:HAS_ANSWER {order: 3}]->(ansGrantServ),
     (ansGrpGrantServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6172'}),
-    (ansGrpGrantServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM949'}),
 
     // A3 Insurance services
     (ansGrpInsurServ:AnswerGroup {name: 'ansGrpInsurServ'}),
@@ -421,10 +416,10 @@ CREATE
 
 
       // A4 Supplier early payment
-      (ansGrpSuppEarlyPay:AnswerGroup {name: 'ansGrpSuppEarlyPay'}),
-      (qiPayServ)-[:HAS_ANSWER_GROUP]->(ansGrpSuppEarlyPay),
-      (ansGrpSuppEarlyPay)-[:HAS_ANSWER {order: 3}]->(ansSuppEarlyPay),
-      (ansGrpSuppEarlyPay)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6001'}),
+      // (ansGrpSuppEarlyPay:AnswerGroup {name: 'ansGrpSuppEarlyPay'}),
+      // (qiPayServ)-[:HAS_ANSWER_GROUP]->(ansGrpSuppEarlyPay),
+      // (ansGrpSuppEarlyPay)-[:HAS_ANSWER {order: 3}]->(ansSuppEarlyPay),
+      // (ansGrpSuppEarlyPay)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6001'}),
 
     // A3 Lease advisory
     (ansGrpLeasAdvis:AnswerGroup {name: 'ansGrpLeasAdvis'}),
@@ -436,7 +431,7 @@ CREATE
     (ansGrpSpendRec:AnswerGroup {name: 'ansGrpSpendRec'}),
     (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpSpendRec),
     (ansGrpSpendRec)-[:HAS_ANSWER {order: 7}]->(ansSpendRec),
-    (ansGrpSpendRec)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3820'}),
+    (ansGrpSpendRec)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6226'}),
 
 
   // A2 Media or research
@@ -459,10 +454,10 @@ CREATE
     (ansGrpResearchServ)-[:HAS_OUTCOME]->(qiReseServ:QuestionInstance:Outcome {uuid: 'b992c065-5f04-4995-92cf-ec3c11367afe'})-[:DEFINED_BY]->(qstnReseServ),
 
       // A4 Behavioural insights
-      (ansGrpBehavInsig:AnswerGroup {name: 'ansGrpBehavInsig'}),
-      (qiReseServ)-[:HAS_ANSWER_GROUP]->(ansGrpBehavInsig),
-      (ansGrpBehavInsig)-[:HAS_ANSWER {order: 1}]->(ansBehavInsig),
-      (ansGrpBehavInsig)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6004'}),
+      // (ansGrpBehavInsig:AnswerGroup {name: 'ansGrpBehavInsig'}),
+      // (qiReseServ)-[:HAS_ANSWER_GROUP]->(ansGrpBehavInsig),
+      // (ansGrpBehavInsig)-[:HAS_ANSWER {order: 1}]->(ansBehavInsig),
+      // (ansGrpBehavInsig)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6004'}),
 
       // A4 Communication performance
       (ansGrpComPerform:AnswerGroup {name: 'ansGrpComPerform'}),
@@ -474,7 +469,7 @@ CREATE
       (ansGrpReseaMarket:AnswerGroup {name: 'ansGrpReseaMarket'}),
       (qiReseServ)-[:HAS_ANSWER_GROUP]->(ansGrpReseaMarket),
       (ansGrpReseaMarket)-[:HAS_ANSWER {order: 3}]->(ansReseaMarket),
-      (ansGrpReseaMarket)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6018'}),
+      (ansGrpReseaMarket)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6126'}),
 
 
   // A2 Office, print or multifunctional devices
@@ -499,7 +494,8 @@ CREATE
       (ansGrpMultifunDev:AnswerGroup {name: 'ansGrpMultifunDev'}),
       (qiPrintReServ)-[:HAS_ANSWER_GROUP]->(ansGrpMultifunDev),
       (ansGrpMultifunDev)-[:HAS_ANSWER {order: 1}]->(ansMultifunDev),
-      (ansGrpMultifunDev)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3781'}),
+      (ansGrpMultifunDev)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6174'}),
+      (ansGrpMultifunDev)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6175'}),
 
       // A4 Print services
       (ansGrpPrintServ:AnswerGroup {name: 'ansGrpPrintServ'}),
@@ -519,8 +515,7 @@ CREATE
     (ansGrpCourServ:AnswerGroup {name: 'ansGrpCourServ'}),
     (qiPostCourOrLogServ)-[:HAS_ANSWER_GROUP]->(ansGrpCourServ),
     (ansGrpCourServ)-[:HAS_ANSWER {order: 1}]->(ansCourServ),
-    (ansGrpCourServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3798'}),
-    (ansGrpCourServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3799'}),
+    (ansGrpCourServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6171'}),
 
     // A3 Logisitics and warehousing
     (ansGrpLogiAndWare:AnswerGroup {name: 'ansGrpLogiAndWare'}),
@@ -557,7 +552,7 @@ CREATE
     (ansGrpTrAndVenSol:AnswerGroup {name: 'ansGrpTrAndVenSol'}),
     (qiTravelServ)-[:HAS_ANSWER_GROUP]->(ansGrpTrAndVenSol),
     (ansGrpTrAndVenSol)-[:HAS_ANSWER {order: 3}]->(ansTrAndVenSol),
-    (ansGrpTrAndVenSol)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6016'}),
+    (ansGrpTrAndVenSol)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6217'}),
 
   // A2 Vehicle services
   (ansGrpVehicServ:AnswerGroup {name: 'ansGrpVehicServ'}),
@@ -611,13 +606,13 @@ CREATE
     (ansGrpCampaSolut:AnswerGroup {name: 'ansGrpCampaSolut'}),
     (qiAnyForCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpCampaSolut),
     (ansGrpCampaSolut)-[:HAS_ANSWER {order: 1}]->(ansCampaSolut),
-    (ansGrpCampaSolut)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3774'}),
+    (ansGrpCampaSolut)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6125'}),
 
     // A3 Communication services
     (ansGrpComServices:AnswerGroup {name: 'ansGrpComServices'}),
     (qiAnyForCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpComServices),
     (ansGrpComServices)-[:HAS_ANSWER {order: 2}]->(ansComServices),
-    (ansGrpComServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3796'}),
+    (ansGrpComServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6124'}),
 
 
 
@@ -647,7 +642,7 @@ CREATE
     (ansGrpEmplHealAndWell:AnswerGroup {name: 'ansGrpEmplHealAndWell'}),
     (qiEmployeeServOrBenefits)-[:HAS_ANSWER_GROUP]->(ansGrpEmplHealAndWell),
     (ansGrpEmplHealAndWell)-[:HAS_ANSWER {order: 1}]->(ansEmplHealAndWell),
-    (ansGrpEmplHealAndWell)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3795'}),
+    (ansGrpEmplHealAndWell)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6182'}),
 
     // A3 Employee services
     (ansGrpEmplServ:AnswerGroup {name: 'ansGrpEmplServ'}),
@@ -659,13 +654,13 @@ CREATE
     (ansGrpLangServ:AnswerGroup {name: 'ansGrpLangServ'}),
     (qiEmployeeServOrBenefits)-[:HAS_ANSWER_GROUP]->(ansGrpLangServ),
     (ansGrpLangServ)-[:HAS_ANSWER {order: 3}]->(ansLangServ),
-    (ansGrpLangServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1092'}),
+    (ansGrpLangServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6141'}),
 
     // A3 Learning services
     (ansGrpLearnServ:AnswerGroup {name: 'ansGrpLearnServ'}),
     (qiEmployeeServOrBenefits)-[:HAS_ANSWER_GROUP]->(ansGrpLearnServ),
     (ansGrpLearnServ)-[:HAS_ANSWER {order: 4}]->(ansLearnServ),
-    (ansGrpLearnServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3822'}),
+    (ansGrpLearnServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6219'}),
     (ansGrpLearnServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6145'}),
 
 
@@ -758,7 +753,7 @@ CREATE
     (ansGrpConCenServ:AnswerGroup {name: 'ansGrpConCenServ'}),
     (qiAnyForPeople)-[:HAS_ANSWER_GROUP]->(ansGrpConCenServ),
     (ansGrpConCenServ)-[:HAS_ANSWER {order: 1}]->(ansConCenServ),
-    (ansGrpConCenServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3815'}),
+    (ansGrpConCenServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6181'}),
 
 
 
@@ -803,15 +798,14 @@ CREATE
       (ansGrpDigiOutAndSpec:AnswerGroup {name: 'ansGrpDigiOutAndSpec'}),
       (qiDigiServ)-[:HAS_ANSWER_GROUP]->(ansGrpDigiOutAndSpec),
       (ansGrpDigiOutAndSpec)-[:HAS_ANSWER {order: 1}]->(ansDigiOutAndSpec),
-      (ansGrpDigiOutAndSpec)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1043.6'}),
       (ansGrpDigiOutAndSpec)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1043.7'}),
 
 
       // A4 Quality assurance testing
-      (ansGrpQualAssurTest:AnswerGroup {name: 'ansGrpQualAssurTest'}),
-      (qiDigiServ)-[:HAS_ANSWER_GROUP]->(ansGrpQualAssurTest),
-      (ansGrpQualAssurTest)-[:HAS_ANSWER {order: 2}]->(ansQualAssurTest),
-      (ansGrpQualAssurTest)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3765'}),
+      // (ansGrpQualAssurTest:AnswerGroup {name: 'ansGrpQualAssurTest'}),
+      // (qiDigiServ)-[:HAS_ANSWER_GROUP]->(ansGrpQualAssurTest),
+      // (ansGrpQualAssurTest)-[:HAS_ANSWER {order: 2}]->(ansQualAssurTest),
+      // (ansGrpQualAssurTest)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3765'}),
 
       // A4 Digital capability for health
       (ansGrpDigiCapForHealth:AnswerGroup {name: 'ansGrpDigiCapForHealth'}),
@@ -909,6 +903,6 @@ CREATE
     (ansGrpTraffServ:AnswerGroup {name: 'ansGrpTraffServ'}),
     (qiTechProdAndServ)-[:HAS_ANSWER_GROUP]->(ansGrpTraffServ),
     (ansGrpTraffServ)-[:HAS_ANSWER {order: 4}]->(ansTraffServ),
-    (ansGrpTraffServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1089'})
+    (ansGrpTraffServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6099'})
 
 ;

@@ -1,11 +1,11 @@
+MATCH
+
+(qstnFirstQ:Question {uuid: '18df190c-ef8e-4cda-a760-68929965b86a'})
+
+
 CREATE
 
 // Question
-(qstnFirstQ:Question {
-    uuid: '0c9e14e8-07a4-42a6-9bb5-2cc2c46ff53f',
-    text: 'What type of service do you need?',
-    type: 'LIST'
-}),
 
 (qstnNationalOrOverseasOH:Question {
     uuid: '598caa29-0947-445c-a7ca-70c189f8b11a',

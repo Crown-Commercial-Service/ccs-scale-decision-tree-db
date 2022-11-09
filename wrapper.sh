@@ -53,6 +53,8 @@ load_gm_data "RM6011_Supply_Energy_Ancillary_Services.cypher"
 load_gm_data "RM6141_Language_Services.cypher"
 load_gm_data "RM6188_Audit_and_Assurance.cypher"
 load_gm_data "RM6182_Occupational_Health_EAP_Eye_Care.cypher"
+load_gm_data "RM6255_Voucher_Schemes.cypher"
+load_gm_data "RM6276-Insourced-Services.cypher"
 
 echo "Data load complete"
 

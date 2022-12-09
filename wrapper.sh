@@ -55,6 +55,7 @@ load_gm_data "RM6188_Audit_and_Assurance.cypher"
 load_gm_data "RM6182_Occupational_Health_EAP_Eye_Care.cypher"
 load_gm_data "RM6255_Voucher_Schemes.cypher"
 load_gm_data "RM6276-Insourced-Services.cypher"
+load_gm_data "RM6102_RM6145_RM6219_Apprenticeship_Learning.cypher"
 
 echo "Data load complete"
 

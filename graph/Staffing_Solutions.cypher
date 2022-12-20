@@ -9,6 +9,10 @@ CREATE
 
 (qstnRole:Question {uuid: '75f79f71-3e63-4806-81f6-73229bad44da', text: 'What role do you need?', type: 'LIST'}),
 
+(qstnGeneralRecruitmentRole:Question {uuid: '734de028-beb5-4bb5-a359-6c30c2056d97', text: 'Select the general recruitment  role you need', type: 'LIST'}),
+
+(qstnGrades:Question {uuid: '3afdf068-9df9-4825-9d64-513e3bae3990', text: 'Select the grades you need', type: 'LIST'}),
+
 (qstnSector:Question {uuid: 'd1e5e177-c479-4831-bc9d-dffcb6d085f8', text: 'What sector are your hiring for?', type: 'LIST'}),
 
 (qstnInternalGovernanceForCa:Question {uuid: '01b61a5b-c518-4079-b0fc-80b34937fb9e', text: 'Does your organisation\'s internal governance define the commercial agreement you can use?', type: 'LIST'}),
@@ -71,22 +75,50 @@ CREATE
 </ul>'}),
 
 
-(ansGeneralRecruitment:Answer {uuid: 'cd5e8d09-960e-43fb-9f76-ac256d9dcead', text: 'General recruitment', hint: 'Find and hire candidates for a specific position or job. Includes administrative, finance, corporate and project delivery roles'}),
-(ansExecutiveRecruitment:Answer {uuid: 'c6f10833-d1a4-465a-9e73-63ad2d88264b', text: 'Executive recruitment', hint: 'Find and hire highly skilled candidates for senior management roles. Includes digital, data and technical executives and chief executive and marketing officers'}),
-(ansTalentMapping:Answer {uuid: 'bb8d3554-1548-4807-982d-859da3d0a050', text: 'Talent mapping', hint: 'A research service to help you plan for long-term hiring needs. Talent mapping allows you to assess recruitment gaps and ensure your organisation has the right people and skills in the right roles'}),
+(ansGeneralRecruitment:Answer {uuid: 'cd5e8d09-960e-43fb-9f76-ac256d9dcead', text: 'General recruitment', hint: 'Find and hire candidates for a specific position or job. Roles can be either Clinical or Non-Clinical. Aligned to Civil Service Professions and available on a regional or nationwide basis'}),
 
-(ansAdministrativeAndOperational:Answer {uuid: 'ae6b13a6-1335-4774-a7c2-032a02db2942', text: 'Administrative and operational', hint: 'Includes office administrators, receptionists and personal assistants. Also includes roles such as chefs, catering assistants and drivers'}),
-(ansDDaT:Answer {uuid: '70ba17ec-88b6-45cb-b178-04dc2a56d3b7', text: 'Digital, data and Technology (DDaT)', hint: 'Job roles within digital testing and product delivery. Includes user centred designers, data technicians and IT professionals'}),
-(ansCorporate:Answer {uuid: 'd024bd38-aa5d-4caa-a0f2-a12403d8affa', text: 'Corporate', hint: 'Includes roles in human resources and marketing communications. Also includes legal roles such as legal secretaries and lawyers'}),
-(ansFinance:Answer {uuid: '52af01ac-adc7-4bce-9c4f-893c884b3b45', text: 'Finance', hint: 'Finance, accounting and auditing roles'}),
-(ansProjectDelivery:Answer {uuid: '662e0cf4-d16e-4470-83c1-26954a1c5970', text: 'Project delivery', hint: 'Includes roles to help you plan, manage and achieve business projects such as  project managers'}),
-(ansExecutiveDDaT:Answer {uuid: 'd30b17f2-41ff-4233-9211-091386442bdd', text: 'Executive search digital, data and technology (DDaT)', hint: 'Executive roles within digital testing and product delivery. Includes digital, data and technical executives'}),
-(ansExecutiveSearch:Answer {uuid: '2f653660-dd37-415e-9b74-f31b56a82417', text: 'Executive search', hint: 'Director and senior management positions such as:
-<ul>
-<li>Chief Executive Officer (CEO)</li>
-<li>Chief Information Officer (CIO)</li>
-<li>Chief Marketing Officer (CMO)</li>
-</ul>'}),
+(ansExecutiveRecruitment:Answer {uuid: 'c6f10833-d1a4-465a-9e73-63ad2d88264b', text: 'Executive recruitment', hint: 'Find and hire highly skilled candidates for senior management roles as well as Public Appointments & Non Executive Directors. Aligned to Civil Service Professions and available on a regional or nationwide basis'}),
+
+(ansClinicalRecruitment:Answer {
+    uuid: '55e9b26d-baec-41e8-adf7-a95c56ad7310',
+    text: 'Clinical Recruitment - the general recruitment of delegated roles to clinical positions',
+    hint: '<ul>
+    <li>Clinical & Social Care (Nursing & Midwifery, Medical & Dental, Social Care, Other Clinical)</li>
+    <li>NHS Grades AfC grades 1-9 and VSM (and equivalents)</li>
+    <li>Medical Bands: FY1, FY2</li>
+    <li>Registrar (ST1/2)</li>
+    <li>Core Medical Training</li>
+    <li>Registrar (ST3+)</li>
+    <li>Dental Core Training</li>
+    <li>Specialty Doctor/Staff Grade</li>
+    <li>Associate Specialist</li>
+    <li>Consultant (and equivalents)</li>
+    </ul>'
+}),
+
+(ansNonClinicalRecruitment:Answer {
+    uuid: '141d986f-26df-4a89-875d-b5684b928af1',
+    text: 'Non-Clinical Recruitment - the general recruitment of delegated roles to non-clinical positions',
+    hint: '<b>Civil Service Grades</b>:
+    <ul>
+        <li>AA (Admin Assistant)</li>
+        <li>AO (Admin Officer)</li>
+        <li>EO (Executive Officer)</li>
+        <li>HEO (Higher Executive Officer)</li>
+        <li>SEO (Senior Executive Officer)</li>
+        <li>Grade 7 (and equivalents)</li>
+        <li>Grade 6 (and equivalents)</li>
+    </ul>
+    <p><b>NHS Grades</b>: AfC Bands 1-9, NP1- F1, NP2- F2, NP3 - ST1-2</p>
+    <p><b>Wider Public Sector</b>: Local Government SCP 1- 53, Assistant Director, Senior Officers 1&2, Principal Officers 1-12</p>'
+}),
+
+(ansGrade6:Answer {uuid: '1b0754d6-ccc5-4af1-bea0-48fff3872bc5', text: 'Grade 6, SCS 1 & SCS 2 (and equivelant grades across Public Sector)'}),
+
+(ansSCS3and4:Answer {uuid: '56fced56-5af6-4236-ab83-0c1acacd00a5', text: 'SCS 3 & SCS 4 (and equivelant grades across Public Sector)'}),
+
+(ansPublicAppointments:Answer {uuid: '8d67cd1a-3f0f-4038-81e5-93133ddac695', text: 'Public Appointments & Non-Executive Directors'}),
+
 
 (ansSingleStaffGroups:Answer {uuid: 'dd03b9a0-e919-4bba-b32d-980a37522f67', text: 'Single staff groups', hint: 'Hire specific specialist healthcare staff for example: medical and dental staff, nursing, midwifery and social workers'}),
 (ansMultiStaffGroups:Answer {uuid: 'e777ca97-a671-41d7-bfb9-441313e6314e', text: 'Multi staff groups', hint: 'Hire multiple members of staff to work towards a shared goal. Each member of staff will have different skills that complement each other'}),
@@ -136,7 +168,6 @@ CREATE
 
 
 
-
 // Tree Structure
 (jrnyStaffingSolutions:Journey {uuid: 'af8c0448-8ddc-4c9b-9d36-7ba8573f22bf', name: 'Staffing Solutions'}),
 (jrnyStaffingSolutions)-[:FIRST_QUESTION]->(qiFirstQuestion:QuestionInstance:Outcome {uuid: '18a54ea4-86d8-4b24-8c51-f828a4d14259'})-[:DEFINED_BY]->(qstnFirstQ),
@@ -154,52 +185,37 @@ CREATE
         (ansGrpGeneralRecruitment:AnswerGroup {name: 'ansGrpGeneralRecruitment'}),
         (qiServiceForNationalAndRegional)-[:HAS_ANSWER_GROUP]->(ansGrpGeneralRecruitment),
         (ansGrpGeneralRecruitment)-[:HAS_ANSWER {order: 1}]->(ansGeneralRecruitment),
-        (ansGrpGeneralRecruitment)-[:HAS_OUTCOME]->(qiRoleForGeneralRecruitment:QuestionInstance:Outcome {uuid: 'aafa1f74-5a6e-49d0-a050-4d73f027f0f3'})-[:DEFINED_BY]->(qstnRole),
+        (ansGrpGeneralRecruitment)-[:HAS_OUTCOME]->(qiRoleForGeneralRecruitment:QuestionInstance:Outcome {uuid: 'aafa1f74-5a6e-49d0-a050-4d73f027f0f3'})-[:DEFINED_BY]->(qstnGeneralRecruitmentRole),
 
-            (ansGrpAdministrativeAndOperational:AnswerGroup {name: 'ansGrpAdministrativeAndOperational'}),
-            (qiRoleForGeneralRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpAdministrativeAndOperational),
-            (ansGrpAdministrativeAndOperational)-[:HAS_ANSWER {order: 1}]->(ansAdministrativeAndOperational),
-            (ansGrpAdministrativeAndOperational)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6002'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+            (ansGrpClinicalRecruitment:AnswerGroup {name: 'ansGrpClinicalRecruitment'}),
+            (qiRoleForGeneralRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpClinicalRecruitment),
+            (ansGrpClinicalRecruitment)-[:HAS_ANSWER {order: 1}]->(ansClinicalRecruitment),
+            (ansGrpClinicalRecruitment)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6229'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
-            (ansGrpDDaT:AnswerGroup {name: 'ansGrpDDaT'}),
-            (qiRoleForGeneralRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpDDaT),
-            (ansGrpDDaT)-[:HAS_ANSWER {order: 2}]->(ansDDaT),
-            (ansGrpDDaT)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6002'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
-
-            (ansGrpCorporate:AnswerGroup {name: 'ansGrpCorporate'}),
-            (qiRoleForGeneralRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpCorporate),
-            (ansGrpCorporate)-[:HAS_ANSWER {order: 3}]->(ansCorporate),
-            (ansGrpCorporate)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6002'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
-
-            (ansGrpFinance:AnswerGroup {name: 'ansGrpFinance'}),
-            (qiRoleForGeneralRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpFinance),
-            (ansGrpFinance)-[:HAS_ANSWER {order: 4}]->(ansFinance),
-            (ansGrpFinance)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6002'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
-
-            (ansGrpProjectDelivery:AnswerGroup {name: 'ansGrpProjectDelivery'}),
-            (qiRoleForGeneralRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpProjectDelivery),
-            (ansGrpProjectDelivery)-[:HAS_ANSWER {order: 5}]->(ansProjectDelivery),
-            (ansGrpProjectDelivery)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6002'})-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'CAT', scale: true}),
+            (ansGrpNonClinicalRecruitment:AnswerGroup {name: 'ansGrpNonClinicalRecruitment'}),
+            (qiRoleForGeneralRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpNonClinicalRecruitment),
+            (ansGrpNonClinicalRecruitment)-[:HAS_ANSWER {order: 1}]->(ansNonClinicalRecruitment),
+            (ansGrpNonClinicalRecruitment)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6229'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
         (ansGrpExecutiveRecruitment:AnswerGroup {name: 'ansGrpExecutiveRecruitment'}),
         (qiServiceForNationalAndRegional)-[:HAS_ANSWER_GROUP]->(ansGrpExecutiveRecruitment),
         (ansGrpExecutiveRecruitment)-[:HAS_ANSWER {order: 2}]->(ansExecutiveRecruitment),
-        (ansGrpExecutiveRecruitment)-[:HAS_OUTCOME]->(qiRoleForExecutiveRecruitment:QuestionInstance:Outcome {uuid: 'ff5f2a28-bcf1-4ba9-a5d9-582ddffa2b85'})-[:DEFINED_BY]->(qstnRole),
+        (ansGrpExecutiveRecruitment)-[:HAS_OUTCOME]->(qiGradesForExecutiveRecruitment:QuestionInstance:Outcome {uuid: 'ff5f2a28-bcf1-4ba9-a5d9-582ddffa2b85'})-[:DEFINED_BY]->(qstnGrades),
 
-            (ansGrpExecutiveSearch:AnswerGroup {name: 'ansGrpExecutiveSearch'}),
-            (qiRoleForExecutiveRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpExecutiveSearch),
-            (ansGrpExecutiveSearch)-[:HAS_ANSWER {order: 1}]->(ansExecutiveSearch),
-            (ansGrpExecutiveSearch)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6002'})-[:HAS_LOT]->(:Lot {number: '7', url: '', type: 'CAT', scale: true}),
+            (ansGrpGrade6:AnswerGroup {name: 'ansGrpGrade6'}),
+            (qiGradesForExecutiveRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpGrade6),
+            (ansGrpGrade6)-[:HAS_ANSWER {order: 1}]->(ansGrade6),
+            (ansGrpGrade6)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6290'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
-            (ansGrpExecutiveDDaT:AnswerGroup {name: 'ansGrpExecutiveDDaT'}),
-            (qiRoleForExecutiveRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpExecutiveDDaT),
-            (ansGrpExecutiveDDaT)-[:HAS_ANSWER {order: 2}]->(ansExecutiveDDaT),
-            (ansGrpExecutiveDDaT)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6002'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'CAT', scale: true}),
-           
-        (ansGrpTalentMapping:AnswerGroup {name: 'ansGrpTalentMapping'}),
-        (qiServiceForNationalAndRegional)-[:HAS_ANSWER_GROUP]->(ansGrpTalentMapping),
-        (ansGrpTalentMapping)-[:HAS_ANSWER {order: 3}]->(ansTalentMapping),
-        (ansGrpTalentMapping)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6002'})-[:HAS_LOT]->(:Lot {number: '8', url: '', type: 'CAT', scale: true}),
+            (ansGrpSCS3and4:AnswerGroup {name: 'ansGrpSCS3and4'}),
+            (qiGradesForExecutiveRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpSCS3and4),
+            (ansGrpSCS3and4)-[:HAS_ANSWER {order: 2}]->(ansSCS3and4),
+            (ansGrpSCS3and4)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6290'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+
+            (ansGrpPublicAppointments:AnswerGroup {name: 'ansGrpPublicAppointments'}),
+            (qiGradesForExecutiveRecruitment)-[:HAS_ANSWER_GROUP]->(ansGrpPublicAppointments),
+            (ansGrpPublicAppointments)-[:HAS_ANSWER {order: 3}]->(ansPublicAppointments),
+            (ansGrpPublicAppointments)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6290'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
     (ansGrpInternationalHeathcare:AnswerGroup {name: 'ansGrpInternationalHeathcare'}),
     (qiServiceForPermanentStaffing)-[:HAS_ANSWER_GROUP]->(ansGrpInternationalHeathcare),

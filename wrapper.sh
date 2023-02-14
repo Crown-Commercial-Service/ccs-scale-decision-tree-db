@@ -57,6 +57,7 @@ load_gm_data "RM6255_Voucher_Schemes.cypher"
 load_gm_data "RM6276_Insourced_Services.cypher"
 load_gm_data "RM6181_Outsourced_Contact_Center.cypher"
 load_gm_data "RM6102_6145_6219_Apprenticeship.cypher"
+load_gm_data "RM6074_Logistics_and_Warehousing.cypher"
 
 echo "Data load complete"
 

@@ -5,25 +5,25 @@ MATCH
 CREATE
 // Answer
 (ansHeatNetwork:Answer {
-    uuid: '6aa3d86-bf96-418f-b375-278a2a842179',
+    uuid: 'd71f1f9a-df49-4187-a8a1-549953960422',
     text: 'Heat networks and electricity generation assets',
     hint: 'Access a range of services related to providing heat and electricity. Includes services for simple energy auditing and complex installation projects'
 }),
 
 (ansVehicleCharging:Answer {
-    uuid: '952b871-7efe-4cab-8ce7-7491be92a114',
+    uuid: '43897f52-0184-4378-ab03-221d5ea73975',
     text: 'Vehicle charging solutions',
     hint: 'Find a range of solutions to help you transition to low emission vehicles. Includes services and funding options to develop your charging infrastructure for electric and hybrid vehicles'
 }),
 
 (ansSupplyOfElectricity:Answer {
-    uuid: 'efac365-7157-40b5-9a30-d1ce3f4ee9c3',
+    uuid: '21c66a1e-6e22-441e-986c-29cdc013a16e',
     text: 'Supply of electricity and gas',
     hint: 'Access the supply of electricity and gas to the public sector and their associated bodies and agencies. This includes billing, administration, customer service and ancillary services'
 }),
 
 (ansTechnicalAdvisory:Answer {
-    uuid: 'ce2190e-79ef-4ef2-83d6-6107d774e0a3',
+    uuid: 'f7665285-48e0-43fa-b80f-bba54df74f0e',
     text: 'Technical advisory services for building and civil engineering projects',
     hint: 'Access all types of construction professional services throughout the lifecycle of your construction project. Services include, but are not limited to:
     <ul>
@@ -36,7 +36,7 @@ CREATE
 
 
 (ansEnergyAdvisory:Answer {
-    uuid: 'a3b3673-5acc-4081-9054-ed33a9894bc0',
+    uuid: 'ad078658-b495-45a2-9266-49fa05af4b42',
     text: 'Energy advisory, design and technical services',
     hint: 'Access technical advice and design services for a range of products including: 
     <ul>
@@ -50,7 +50,7 @@ CREATE
 }),
 
 (ansDelivery:Answer {
-    uuid: '3d6cf5a-7328-4ff7-be6a-7097afe1108e',
+    uuid: 'a5fbb26a-4839-4d6a-8b88-b8cbcca0c476',
     text: 'Delivery and maintenance services',
     hint: 'Delivers, installs, manages and maintains a large range of products and systems including (but not limited to): 
     <ul>
@@ -62,13 +62,13 @@ CREATE
 }),
 
 (ansEnergyPurchase:Answer {
-    uuid: 'ca8ed06-2789-452d-81be-28c717e9cac0',
+    uuid: 'b7b3e1b6-8b9a-4254-8dba-12d286458b4e',
     text: 'Energy Purchase Agreement',
     hint: 'Provides energy (heat and electricity) through a power purchase agreement (PPA). A PPA is a long term contract where you agree to buy energy directly from a renewable energy generator for example, a wind farm'
 }),
 
 (ansCommoditisedProducts:Answer {
-    uuid: '4619ce5-ed18-49cf-8750-397582c277ce',
+    uuid: 'c730fc0a-2740-4f4d-aa08-bc6421c37afa',
     text: 'Commoditised Products',
     hint: 'Access commoditised products through bulk buying. Products include:
     <ul>
@@ -82,7 +82,7 @@ CREATE
 
 
 (ansFunding:Answer {
-    uuid: 'b662c6b-35ff-46ee-a9d6-3b0296084079',
+    uuid: '4f6dce74-2954-4cda-b821-fd19393173fe',
     text: 'Funding options and products and services',
     hint: 'Access a full end to end solution or choose specific products and services to meet your electric vehicle needs. You can choose from two funding streams: buyer funded or supplier funded. There is also the option to buy or lease products and services.Products and services can include:
     <ul>
@@ -94,20 +94,20 @@ CREATE
 }),
 
 (ansCharge:Answer {
-    uuid: 'cdcf1e7-0acc-497a-8d11-2d348ec760a1',
+    uuid: '65a722e3-6b07-4a62-ae5a-56d9757bf9ac',
     text: 'Charge point equipment and associated services',
     hint: 'Access electric vehicle (EV) charging point equipment and associated services. Includes installation and back office systems where needed'
 }),
 
 
 (ansElectricity:Answer {
-    uuid: '7b66d3d-32c6-4e67-872a-141f2bffcd77',
+    uuid: 'fc75bc3d-f9af-4d54-b686-46f5a88923c1',
     text: 'Electricity',
     hint: 'Access the supply of electricity. This includes billing, administration, customer service and ancillary services'
 }),
 
 (ansGas:Answer {
-    uuid: '3c4a3e5-43d9-4c52-919b-27748fb00b83',
+    uuid: '5675c301-3cf6-4206-be7d-7a7be7ee2011',
     text: 'Natural gas',
     hint: 'Access the supply of natural gas. This includes billing, administration, customer service and ancillary services'
 }),
@@ -116,37 +116,37 @@ CREATE
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Tree Structure
 (jrnyHELGA:Journey {uuid: 'ffc6a3f0-897e-471f-9045-42a13b22e12d', name: 'HELGA'}),
-(jrnyHELGA)-[:FIRST_QUESTION]->(qiFirstQuestion:QuestionInstance:Outcome {uuid: '07c5d60-b447-4c41-995e-6d08e9f3d3d1'})-[:DEFINED_BY]->(qstnOnlyQ),
+(jrnyHELGA)-[:FIRST_QUESTION]->(qiFirstQuestion:QuestionInstance:Outcome {uuid: 'd0589cd9-eeae-48b1-9ac7-01f305704316'})-[:DEFINED_BY]->(qstnOnlyQ),
 
     (ansGrpHeatNetwork:AnswerGroup {name: 'ansGrpHeatNetwork'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpHeatNetwork),
     (ansGrpHeatNetwork)-[:HAS_ANSWER {order: 1}]->(ansHeatNetwork),
-    (ansGrpHeatNetwork)-[:HAS_OUTCOME]->(qiLV2FirstQ:QuestionInstance:Outcome {uuid: '25c0cdb-9fde-4fd4-8cb7-ab15c5f69b8d'})-[:DEFINED_BY]->(qstnOnlyQ),
+    (ansGrpHeatNetwork)-[:HAS_OUTCOME]->(qiLV2FirstQ:QuestionInstance:Outcome {uuid: 'ac310450-9bb3-4ea1-9c1a-a82f31ee6a90'})-[:DEFINED_BY]->(qstnOnlyQ),
 
         (ansGrpEnergyAdvisory:AnswerGroup {name: 'ansGrpEnergyAdvisory'}),
-        (qiSecondQ)-[:HAS_ANSWER_GROUP]->(ansGrpEnergyAdvisory),
+        (qiLV2FirstQ)-[:HAS_ANSWER_GROUP]->(ansGrpEnergyAdvisory),
         (ansGrpEnergyAdvisory)-[:HAS_ANSWER {order: 1}]->(ansEnergyAdvisory),
         (ansGrpEnergyAdvisory)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3824'}),
 
         (ansGrpDelivery:AnswerGroup {name: 'ansGrpDelivery'}),
-        (qiSecondQ)-[:HAS_ANSWER_GROUP]->(ansGrpDelivery),
+        (qiLV2FirstQ)-[:HAS_ANSWER_GROUP]->(ansGrpDelivery),
         (ansGrpDelivery)-[:HAS_ANSWER {order: 2}]->(ansDelivery),
         (ansGrpDelivery)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3824'}),
 
         (ansGrpEnergyPurchase:AnswerGroup {name: 'ansGrpEnergyPurchase'}),
-        (qiSecondQ)-[:HAS_ANSWER_GROUP]->(ansGrpEnergyPurchase),
+        (qiLV2FirstQ)-[:HAS_ANSWER_GROUP]->(ansGrpEnergyPurchase),
         (ansGrpEnergyPurchase)-[:HAS_ANSWER {order: 3}]->(ansEnergyPurchase),
         (ansGrpEnergyPurchase)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3824'}),
 
         (ansGrpCommoditisedProducts:AnswerGroup {name: 'ansGrpCommoditisedProducts'}),
-        (qiSecondQ)-[:HAS_ANSWER_GROUP]->(ansGrpCommoditisedProducts),
+        (qiLV2FirstQ)-[:HAS_ANSWER_GROUP]->(ansGrpCommoditisedProducts),
         (ansGrpCommoditisedProducts)-[:HAS_ANSWER {order: 4}]->(ansCommoditisedProducts),
         (ansGrpCommoditisedProducts)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3824'}),
     
     (ansGrpVehicleCharging:AnswerGroup {name: 'ansGrpVehicleCharging'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpVehicleCharging),
     (ansGrpVehicleCharging)-[:HAS_ANSWER {order: 2}]->(ansVehicleCharging),
-    (ansGrpVehicleCharging)-[:HAS_OUTCOME]->(qiLV2SecondQ:QuestionInstance:Outcome {uuid: '53c2b3f-8e33-4f02-917f-b933fd7d03e2'})-[:DEFINED_BY]->(qstnOnlyQ),
+    (ansGrpVehicleCharging)-[:HAS_OUTCOME]->(qiLV2SecondQ:QuestionInstance:Outcome {uuid: 'be626e2e-a881-499d-80bf-68b383039b5d'})-[:DEFINED_BY]->(qstnOnlyQ),
 
         (ansGrpFunding:AnswerGroup {name: 'ansGrpFunding'}),
         (qiLV2SecondQ)-[:HAS_ANSWER_GROUP]->(ansGrpFunding),
@@ -161,7 +161,7 @@ CREATE
     (ansGrpSupplyOfElectricity:AnswerGroup {name: 'ansGrpSupplyOfElectricity'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpSupplyOfElectricity),
     (ansGrpSupplyOfElectricity)-[:HAS_ANSWER {order: 3}]->(ansSupplyOfElectricity),
-    (ansGrpSupplyOfElectricity)-[:HAS_OUTCOME]->(qiLV2ThirdQ:QuestionInstance:Outcome {uuid: '8037ed0-1677-4c46-8881-6c4dd59b341d'})-[:DEFINED_BY]->(qstnOnlyQ),
+    (ansGrpSupplyOfElectricity)-[:HAS_OUTCOME]->(qiLV2ThirdQ:QuestionInstance:Outcome {uuid: 'd26fa645-c68f-4899-9a1b-e48875197f10'})-[:DEFINED_BY]->(qstnOnlyQ),
 
         (ansGrpElectricity:AnswerGroup {name: 'ansGrpElectricity'}),
         (qiLV2ThirdQ)-[:HAS_ANSWER_GROUP]->(ansGrpElectricity),

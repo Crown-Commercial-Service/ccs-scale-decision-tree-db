@@ -59,6 +59,7 @@ load_gm_data "RM6181_Outsourced_Contact_Center.cypher"
 load_gm_data "RM6102_6145_6219_Apprenticeship.cypher"
 load_gm_data "RM6074_Logistics_and_Warehousing.cypher"
 load_gm_data "RM6262_Crown_Hosting.cypher"
+load_gm_data "HELGA.cypher"
 
 echo "Data load complete"
 

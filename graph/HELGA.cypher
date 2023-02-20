@@ -115,7 +115,7 @@ CREATE
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Tree Structure
-(jrnyHELGA:Journey {uuid: '9fb5451-7d80-4981-b477-d99d6e72743a', name: 'HELGA'}),
+(jrnyHELGA:Journey {uuid: 'ffc6a3f0-897e-471f-9045-42a13b22e12d', name: 'HELGA'}),
 (jrnyHELGA)-[:FIRST_QUESTION]->(qiFirstQuestion:QuestionInstance:Outcome {uuid: '07c5d60-b447-4c41-995e-6d08e9f3d3d1'})-[:DEFINED_BY]->(qstnOnlyQ),
 
     (ansGrpHeatNetwork:AnswerGroup {name: 'ansGrpHeatNetwork'}),

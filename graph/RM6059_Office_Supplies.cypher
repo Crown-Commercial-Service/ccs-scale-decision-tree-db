@@ -4,12 +4,12 @@ MATCH
 
 CREATE
 // Questions
-(qstnFirstQ:Question {uuid: '6607e294-8094-4a01-aa6b-1399e126cf96', text: 'Are you looking for stationary, electronic office supplies, janitorial supplies and ergonomic Equipment or electronic office supplies only?', type: 'LIST'}),
+(qstnFirstQ:Question {uuid: '6607e294-8094-4a01-aa6b-1399e126cf96', text: 'Are you looking for stationery and electronic office supplies or electronic office supplies only?', type: 'LIST'}),
 (qstnSingleOrMulti:Question {uuid: '5dff2b1e-e952-4741-9443-843395823f6e', text: 'Do you want to buy from a single or multi supplier lot?', type: 'LIST'}),
 
 
 // Answer
-(ansStationAndElectronic:Answer {uuid: 'e81df79e-dc5b-4a8d-a849-be9e27291e7d', text: 'Stationery and electronic office supplies', hint: 'Buy stationery items (such as pencils, pens and paper), catering supplies (such as tea and coffee) and office machines (such as laminators, desktop printers, photographic equipment and fax machines), janitorial supplies (such as hand sanitiser and cleaning products) and ergonomic equipment (such as keyboards, chairs and desks)'}),
+(ansStationAndElectronic:Answer {uuid: 'e81df79e-dc5b-4a8d-a849-be9e27291e7d', text: 'Stationery and electronic office supplies', hint: 'Buy stationery items (such as pencils, pens and paper), catering supplies (such as tea and coffee) and office machines (such as laminators, desktop printers, photographic equipment and fax machines),janitorial supplies (such as hand sanitiser and cleaning products) and ergonomic equipment (such as keyboards, chairs and desks)'}),
 (ansElectronicOfficeSuppliesOnly:Answer {uuid: '6f056fb9-7e75-4b77-bd46-f85e08e76ad4', text: 'Electronic Office Supplies only', hint: 'Buy office machinery and associated products such as laminators, desk top printers, photographic equipment, fax machines, paper shredders, printer ink and toner'}),
 
 (ansSingle:Answer {uuid: '9e435f38-67b3-423b-9eaa-764302445eac', text: 'Single Supplier', hint: 'Buy directly from a single supplier using direct award'}),

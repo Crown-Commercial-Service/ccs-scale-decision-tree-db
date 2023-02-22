@@ -1,4 +1,4 @@
-FROM neo4j:4.4.12
+FROM neo4j:4.4.5
 
 COPY graph graph
 COPY wrapper.sh wrapper.sh

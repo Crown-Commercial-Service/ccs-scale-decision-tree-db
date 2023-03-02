@@ -2,12 +2,13 @@
 MATCH
 (qstnFirstQ:Question {uuid: '18df190c-ef8e-4cda-a760-68929965b86a'}),
 (qiTechProductsFirstQuestion:QuestionInstance {uuid: '698c220e-7fc8-11ea-bc55-0242ac130003'}),
-(qiFmFirstQuestion:QuestionInstance {uuid: '1add4fed-cd58-497a-a924-db5c38dfb418'})
+(qiFmFirstQuestion:QuestionInstance {uuid: '1add4fed-cd58-497a-a924-db5c38dfb418'}),
+(qstnSector:Question {uuid: '64f00811-ebd6-40b1-8870-20e5aeaf891c'})
+
 
 CREATE
 // Questions
 (qstnSecurityService:Question {uuid: '8e74ed26-62ca-4c74-9658-599369ea13b5', text: 'What type of security service do you need?', type: 'LIST'}),
-(qstnSector:Question {uuid: 'fba9ec9a-007c-422c-8237-2cd24ad0c85b', text: 'What sector are you buying for?', type: 'LIST'}),
 (qstnAdditional:Question {uuid: '80753c8e-dad2-4fbd-82d2-1bc9d4f6876b', text: 'Do you need additional services outside of technical and security services?', type: 'LIST'}),
 (qstnHousingManagement:Question {uuid: '9b8b1f17-d5e7-42ee-99a1-46b703947296', text: 'Do you need housing management services or housing maintenance and repair services?', type: 'LIST'}),
 

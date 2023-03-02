@@ -41,6 +41,7 @@ CREATE
 
 (:Question {uuid: 'b74c2815-db1c-49ee-b6dc-ce7cfb4f8d8b', text: 'What product do you need?', type: 'LIST'}),
 (:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92', text: 'What service do you need?', type: 'LIST'}),
+(:Question {uuid: '64f00811-ebd6-40b1-8870-20e5aeaf891c', text: 'What sector are you buying for?', type: 'LIST'}),
 
 // Answer definitions
 // Yes, No, Other

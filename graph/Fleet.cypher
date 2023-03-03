@@ -551,7 +551,7 @@ Also includes a car share option which offers cost saving opportunities through 
 (ansGrpSupply:AnswerGroup {name: 'ansGrpSupply'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpSupply),
 (ansGrpSupply)-[:HAS_ANSWER {order: 6}]->(ansSupply),
-(ansGrpSupply)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6143'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+(ansGrpSupply)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6142'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
 (ansGrpVehicleCharging:AnswerGroup {name: 'ansGrpVehicleCharging'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpVehicleCharging),

@@ -61,6 +61,7 @@ load_gm_data "RM6074_Logistics_and_Warehousing.cypher"
 load_gm_data "RM6262_Crown_Hosting.cypher"
 load_gm_data "HELGA.cypher"
 load_gm_data "Fleet.cypher"
+load_gm_data "Marcomms.cypher"
 
 echo "Data load complete"
 

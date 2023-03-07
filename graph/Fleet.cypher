@@ -113,6 +113,12 @@ CREATE
     hint: 'I am buying vehicles for non-emergency services'
 }),
 
+(ansOtherSectors2:Answer {
+    uuid: '69b11626-d0b9-42de-9af3-7c354f1ad9cc',
+    text: 'Other sectors',
+    hint: 'I need tyres and/or fast fit products and services for non-emergency service vehicles'
+}),
+
 (ansBluelightCars:Answer {
     uuid: '8a0ce46e-079a-4587-b4d2-8eb365e13e86',
     text: 'Bluelight Cars and Motorcycles (Emergency Services)',
@@ -545,7 +551,7 @@ Also includes a car share option which offers cost saving opportunities through 
 
     (ansGrpOtherSectors2:AnswerGroup {name: 'ansGrpOtherSectors2'}),
     (qiTyres)-[:HAS_ANSWER_GROUP]->(ansGrpOtherSectors2),
-    (ansGrpOtherSectors2)-[:HAS_ANSWER {order: 2}]->(ansOtherSectors),
+    (ansGrpOtherSectors2)-[:HAS_ANSWER {order: 2}]->(ansOtherSectors2),
     (ansGrpOtherSectors2)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6142'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
 (ansGrpSupply:AnswerGroup {name: 'ansGrpSupply'}),

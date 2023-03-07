@@ -1,11 +1,10 @@
 MATCH
-(qstnFirstQ:Question {uuid: '64f00811-ebd6-40b1-8870-20e5aeaf891c'})
+(qstnFirstQ:Question {uuid: '64f00811-ebd6-40b1-8870-20e5aeaf891c'}),
+(qstnBudget:Question {uuid: '6076dccc-cd9b-4bbf-a70e-0fe7b48db1a0'})
 
 CREATE
-
 // Questions
 (qstnPermanentOrTemporary:Question {uuid: '5da2615f-22d7-4686-a2aa-50fc6a652164', text: 'Do you want to buy permanent buildings or hire temporary buildings?', type: 'LIST'}),
-(qstnBudget:Question {uuid: '6076dccc-cd9b-4bbf-a70e-0fe7b48db1a0', text: 'What is your budget?', type: 'LIST'}),
 
 
 // Answer

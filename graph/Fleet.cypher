@@ -376,7 +376,7 @@ Also includes a car share option which offers cost saving opportunities through 
     (ansGrpBlueLight:AnswerGroup {name: 'ansGrpBlueLight'}),
     (qiVehiclePurchase)-[:HAS_ANSWER_GROUP]->(ansGrpBlueLight),
     (ansGrpBlueLight)-[:HAS_ANSWER {order: 1}]->(ansBlueLight),
-    (ansGrpBlueLight)-[:HAS_OUTCOME]->(qiBlueLight:QuestionInstance:Outcome {uuid: '58bcb119-9bfc-4fd2-8aaf-d50e94779f16'})-[:DEFINED_BY]->(qstnTypeOfService),
+    (ansGrpBlueLight)-[:HAS_OUTCOME]->(qiBlueLight:QuestionInstance:Outcome {uuid: '58bcb119-9bfc-4fd2-8aaf-d50e94779f16'})-[:DEFINED_BY]->(qstnVehicle),
 
         (ansGrpBluelightCars:AnswerGroup {name: 'ansGrpBluelightCars'}),
         (qiBlueLight)-[:HAS_ANSWER_GROUP]->(ansGrpBluelightCars),

@@ -59,10 +59,19 @@ CREATE
     </ul>'
 }),
 
-(ansCommunicationPerformance:Answer {
+(ansMediaMonitoring:Answer {
     uuid: '2294120c-6245-4749-81a8-b0056a80e679',
-    text: 'Communication performance audit and analysis solution',
-    hint: 'Provides all the services you need to improve campaign outcomes for all campaign types. Includes marketing audits, performance reviews and strategic advice services'
+    text: 'Media monitoring and associated services',
+    hint: 'Access all the services you need to monitor and analyse the media coverage of public communications. Services include:
+    <ul>
+        <li>monitoring, evaluating and/or analysing media coverage across a range of channels including print, broadcast, online, digital and social media</li>
+        <li>online media monitoring of news website content including non-written content like infographics and imagery</li>
+        <li>monitoring of social media content  </li>
+        <li>evaluation of communication campaigns</li>
+        <li>establishing best practice cross communication activities</li>
+        <li>identifying inefficiencies and improving behaviours</li>
+        <li>optional services including: automated evaluation and analysis, parliamentary monitoring and a social media monitoring tool </li>
+    </ul>'
 }),
 
 
@@ -176,25 +185,6 @@ CREATE
     </ul>'
 }),
 
-
-(ansContract:Answer {
-    uuid: '2fac282a-a3db-4834-b91b-9cc27d0a58c8',
-    text: 'Contract and pricing compliance',
-    hint: 'The measurement and validation of marketing services provided under the buyers call-off contract against the delivery of: commercial and contractual commitments, benchmarking and validation of pricing commitments and rebates'
-}),
-
-(ansEffectiveness:Answer {
-    uuid: 'd1227e62-76d7-4111-8623-5bd01c91294f',
-    text: 'Effectiveness and outcomes',
-    hint: 'Identifies opportunities and strategies for media, creative, production, social and overall campaign effectiveness. Including price and quality improvements and the measurement of outcome performance and delivery across marketing'
-}),
-
-(ansEcosystem:Answer {
-    uuid: '3a591c02-f6eb-41b6-a783-d34795b86abb',
-    text: 'Ecosystem strategic advice and support',
-    hint: 'Strategic market advice including: brand/ campaign communication strategies, thought leadership, business transformation/change programmes, briefing advice, identifying new technologies and best practice'
-}),
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Tree Structure
 
@@ -271,22 +261,7 @@ CREATE
     (ansGrpMajor)-[:HAS_ANSWER {order: 5}]->(ansMajor),
     (ansGrpMajor)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6125'})-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'CAT', scale: true}),
 
-(ansGrpCommunicationPerformance:AnswerGroup {name: 'ansGrpCommunicationPerformance'}),
-(qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpCommunicationPerformance),
-(ansGrpCommunicationPerformance)-[:HAS_ANSWER {order: 5}]->(ansCommunicationPerformance),
-(ansGrpCommunicationPerformance)-[:HAS_OUTCOME]->(qiCommunicationPerformance:QuestionInstance:Outcome {uuid: '589eda13-1bf7-472d-98a9-33f2200e85cf'})-[:DEFINED_BY]->(qstnCommunication),
-
-    (ansGrpContract:AnswerGroup {name: 'ansGrpContract'}),
-    (qiCommunicationPerformance)-[:HAS_ANSWER_GROUP]->(ansGrpContract),
-    (ansGrpContract)-[:HAS_ANSWER {order: 1}]->(ansContract),
-    (ansGrpContract)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6135'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
-
-    (ansGrpEffectiveness:AnswerGroup {name: 'ansGrpEffectiveness'}),
-    (qiCommunicationPerformance)-[:HAS_ANSWER_GROUP]->(ansGrpEffectiveness),
-    (ansGrpEffectiveness)-[:HAS_ANSWER {order: 2}]->(ansEffectiveness),
-    (ansGrpEffectiveness)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6135'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
-
-    (ansGrpEcosystem:AnswerGroup {name: 'ansGrpEcosystem'}),
-    (qiCommunicationPerformance)-[:HAS_ANSWER_GROUP]->(ansGrpEcosystem),
-    (ansGrpEcosystem)-[:HAS_ANSWER {order: 3}]->(ansEcosystem),
-    (ansGrpEcosystem)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6135'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true});
+(ansGrpMediaMonitoring:AnswerGroup {name: 'ansGrpMediaMonitoring'}),
+(qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpMediaMonitoring),
+(ansGrpMediaMonitoring)-[:HAS_ANSWER {order: 5}]->(ansMediaMonitoring),
+(ansGrpMediaMonitoring)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6134'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true});

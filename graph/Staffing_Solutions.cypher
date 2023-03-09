@@ -528,7 +528,7 @@ CREATE
                 (ansGrpNonClinical:AnswerGroup {name: 'ansGrpNonClinical'}),
                 (qiYes)-[:HAS_ANSWER_GROUP]->(ansGrpNonClinical),
                 (ansGrpNonClinical)-[:HAS_ANSWER {order: 2}]->(ansNonClinical),
-                (ansGrpPSR)-[:HAS_OUTCOME]->(qiFixedTerm),
+                (ansGrpNonClinical)-[:HAS_OUTCOME]->(qiFixedTerm),
             
             (ansGrpNo:AnswerGroup {name: 'ansGrpNo'}),
             (qiAllOtherSectors)-[:HAS_ANSWER_GROUP]->(ansGrpNo),

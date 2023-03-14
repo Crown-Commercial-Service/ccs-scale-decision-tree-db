@@ -166,12 +166,12 @@ CREATE
 
   (ansPermaRecruit:Answer {uuid: 'a624f4ad-d253-4649-85ce-d84a639eb05e', text: 'Permanent recruitment', hint: 'Find permanent employees'}),
   (ansPubSecResour:Answer {uuid: '6b851125-4a71-4b2c-93ae-bf5c4e7de334', text: 'Public sector resourcing', hint: 'Find contractors and temporary workers'}),
-  (ansTempResouOrRecruit:Answer {uuid: '0f84dbbf-2d71-4daf-906f-6dde69b99ede', text: 'Temporary resoucing or recruitment', hint: 'Find flexible workers'}),
+  (ansTempResouOrRecruit:Answer {uuid: '0f84dbbf-2d71-4daf-906f-6dde69b99ede', text: 'Temporary resourcing or recruitment', hint: 'Find flexible workers'}),
 
 
   // People (Level 4 question)
   (qstnConsulServ:Question {uuid: '69f740df-3d43-4694-a4b1-61d6bd7743d1', text: 'You chose consultancy services. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
-  (qstnTempResouOrRecrui:Question {uuid: '53c720e7-965d-4e5e-a4de-19a056fd0a10', text: 'You chose temporary resoucing or recruitment. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
+  (qstnTempResouOrRecrui:Question {uuid: '53c720e7-965d-4e5e-a4de-19a056fd0a10', text: 'You chose temporary resourcing or recruitment. Select the product or service which best matches your needs.', hint: 'Select one option:', type: 'LIST'}),
 
 
   // People (Level 4 answer)
@@ -716,7 +716,7 @@ CREATE
     (ansGrpPubSecResour)-[:HAS_ANSWER {order: 2}]->(ansPubSecResour),
     (ansGrpPubSecResour)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3749'}),
 
-    // A3 Temporary resoucing or recruitment
+    // A3 Temporary resourcing or recruitment
     (ansGrpTempResouOrRecruit:AnswerGroup {name: 'ansGrpTempResouOrRecruit'}),
     (qiRecruitOrEmployServ)-[:HAS_ANSWER_GROUP]->(ansGrpTempResouOrRecruit),
     (ansGrpTempResouOrRecruit)-[:HAS_ANSWER {order: 3}]->(ansTempResouOrRecruit),
@@ -735,7 +735,7 @@ CREATE
       (ansGrpSuppTeachAndEducatStaff)-[:HAS_ANSWER {order: 2}]->(ansSuppTeachAndEducatStaff),
       (ansGrpSuppTeachAndEducatStaff)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3826'}),
 
-      // A4 Anything else (Temporary resoucing or recruitment)
+      // A4 Anything else (Temporary resourcing or recruitment)
       (ansGrpAnyelseForTempResouOrRecruit:AnswerGroup {name: 'ansGrpAnyelseForTempResouOrRecruit'}),
       (qiTempResouOrRecrui)-[:HAS_ANSWER_GROUP]->(ansGrpAnyelseForTempResouOrRecruit),
       (ansGrpAnyelseForTempResouOrRecruit)-[:HAS_ANSWER {order: 3, mutex: true}]->(ansAnyelseForTempResouOrRecruit),

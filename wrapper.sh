@@ -62,6 +62,7 @@ load_gm_data "HELGA.cypher"
 load_gm_data "Fleet.cypher"
 load_gm_data "Marcomms.cypher"
 load_gm_data "Consultancy.cypher"
+load_gm_data "e_Disclosure_2.cypher"
 
 echo "Data load complete"
 

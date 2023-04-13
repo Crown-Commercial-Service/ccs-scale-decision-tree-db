@@ -110,6 +110,12 @@ CREATE
 (:Answer {uuid: '3a92a0fa-5e95-4525-a4a3-1067d7b82598', text: 'Northern Ireland'}),
 (:Answer {uuid: '601af67d-0055-4e63-9941-70ab799d4194', text: 'National'}),
 
+(:Answer {uuid: 'f6492d92-dc0b-4749-8465-3139c761aa93', text: 'North England'}),
+(:Answer {uuid: 'ec18ac05-89f9-43ec-8399-446871648bbc', text: 'South England'}),
+(:Answer {uuid: 'dc599cd9-6a28-4e22-8e59-b51c2c7ceb28', text: 'England and/or Wales'}),
+(:Answer {uuid: 'b06eaf74-dda5-43c6-910e-0fdae69c216f', text: 'Midlands (East and West)'}),
+(:Answer {uuid: '67d2ca63-f3d3-4fe8-8367-d54a28a95836', text: 'South East of England'}),
+
 // Security
 (:Answer {uuid: 'b879d490-654e-11ea-bc55-0242ac130003', text: 'Security services', hint: 'For example guarding, patrols, CCTV monitoring and alarm response'}),
 (:Answer {uuid: 'b879d54e-654e-11ea-bc55-0242ac130003', text: 'Technical security', hint: 'For example risk assessments, and the design and installation of electronic or physical security systems'}),

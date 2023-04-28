@@ -64,6 +64,7 @@ load_gm_data "Marcomms.cypher"
 load_gm_data "Consultancy.cypher"
 load_gm_data "e_Disclosure_2.cypher"
 load_gm_data "CWAS.cypher"
+load_gm_data "RM6257_Physical_Technical_and_Support.cypher"
 
 echo "Data load complete"
 

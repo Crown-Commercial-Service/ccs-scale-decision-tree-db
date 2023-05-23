@@ -96,7 +96,7 @@ CREATE
 (ansGrpDocument:AnswerGroup {name: 'ansGrpDocument'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpDocument),
 (ansGrpDocument)-[:HAS_ANSWER {order: 2}]->(ansDocument),
-(ansGrpLow)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6336'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+(ansGrpDocument)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6336'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
 (ansGrpEnd:AnswerGroup {name: 'ansGrpEnd'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpEnd),

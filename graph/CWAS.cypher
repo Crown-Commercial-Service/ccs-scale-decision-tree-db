@@ -197,7 +197,7 @@ CREATE
                     (ansGrpWales3:AnswerGroup {name: 'ansGrpWales3'}),
                     (qiWhere4)-[:HAS_ANSWER_GROUP]->(ansGrpWales3),
                     (ansGrpWales3)-[:HAS_ANSWER {order: 3}]->(ansWales),
-                    (ansGrpWales3)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6088'})-[:HAS_LOT]->(:Lot {number: '2.2', url: '', type: 'CAT', scale: true}),
+                    (ansGrpWales3)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6088'})-[:HAS_LOT]->(:Lot {number: '2.3', url: '', type: 'CAT', scale: true}),
 
                     (ansGrpScotland3:AnswerGroup {name: 'ansGrpScotland3'}),
                     (qiWhere4)-[:HAS_ANSWER_GROUP]->(ansGrpScotland3),

@@ -415,12 +415,6 @@ CREATE
       (ansGrpPaySolut)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3828'}),
 
 
-      // A4 Supplier early payment
-      // (ansGrpSuppEarlyPay:AnswerGroup {name: 'ansGrpSuppEarlyPay'}),
-      // (qiPayServ)-[:HAS_ANSWER_GROUP]->(ansGrpSuppEarlyPay),
-      // (ansGrpSuppEarlyPay)-[:HAS_ANSWER {order: 3}]->(ansSuppEarlyPay),
-      // (ansGrpSuppEarlyPay)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6001'}),
-
     // A3 Lease advisory
     (ansGrpLeasAdvis:AnswerGroup {name: 'ansGrpLeasAdvis'}),
     (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpLeasAdvis),
@@ -452,12 +446,6 @@ CREATE
     (qiMediaOrResearch)-[:HAS_ANSWER_GROUP]->(ansGrpResearchServ),
     (ansGrpResearchServ)-[:HAS_ANSWER {order: 2}]->(ansResearchServ),
     (ansGrpResearchServ)-[:HAS_OUTCOME]->(qiReseServ:QuestionInstance:Outcome {uuid: 'b992c065-5f04-4995-92cf-ec3c11367afe'})-[:DEFINED_BY]->(qstnReseServ),
-
-      // A4 Behavioural insights
-      // (ansGrpBehavInsig:AnswerGroup {name: 'ansGrpBehavInsig'}),
-      // (qiReseServ)-[:HAS_ANSWER_GROUP]->(ansGrpBehavInsig),
-      // (ansGrpBehavInsig)-[:HAS_ANSWER {order: 1}]->(ansBehavInsig),
-      // (ansGrpBehavInsig)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6004'}),
 
       // A4 Communication performance
       (ansGrpComPerform:AnswerGroup {name: 'ansGrpComPerform'}),
@@ -799,13 +787,6 @@ CREATE
       (qiDigiServ)-[:HAS_ANSWER_GROUP]->(ansGrpDigiOutAndSpec),
       (ansGrpDigiOutAndSpec)-[:HAS_ANSWER {order: 1}]->(ansDigiOutAndSpec),
       (ansGrpDigiOutAndSpec)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1043.7'}),
-
-
-      // A4 Quality assurance testing
-      // (ansGrpQualAssurTest:AnswerGroup {name: 'ansGrpQualAssurTest'}),
-      // (qiDigiServ)-[:HAS_ANSWER_GROUP]->(ansGrpQualAssurTest),
-      // (ansGrpQualAssurTest)-[:HAS_ANSWER {order: 2}]->(ansQualAssurTest),
-      // (ansGrpQualAssurTest)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3765'}),
 
       // A4 Digital capability for health
       (ansGrpDigiCapForHealth:AnswerGroup {name: 'ansGrpDigiCapForHealth'}),

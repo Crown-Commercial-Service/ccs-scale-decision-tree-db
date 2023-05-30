@@ -47,17 +47,17 @@ CREATE
     (ansGrpProcureCard:AnswerGroup {name: 'ansGrpProcureCard'}),
     (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpProcureCard),
     (ansGrpProcureCard)-[:HAS_ANSWER {order: 3}]->(ansProcureCard),
-    (ansGrpProcureCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3828'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+    (ansGrpProcureCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6248'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
     (ansGrpPrePaidCard:AnswerGroup {name: 'ansGrpPrePaidCard'}),
     (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpPrePaidCard),
     (ansGrpPrePaidCard)-[:HAS_ANSWER {order: 4}]->(ansPrePaidCard),
-    (ansGrpPrePaidCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3828'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+    (ansGrpPrePaidCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6248'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
     (ansGrpFundsDisburse:AnswerGroup {name: 'ansGrpFundsDisburse'}),
     (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpFundsDisburse),
     (ansGrpFundsDisburse)-[:HAS_ANSWER {order: 5}]->(ansFundsDisburse),
-    (ansGrpFundsDisburse)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3828'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+    (ansGrpFundsDisburse)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6248'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
 (ansGrpReceiveAPayment:AnswerGroup {name: 'ansGrpReceiveAPayment'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpReceiveAPayment),

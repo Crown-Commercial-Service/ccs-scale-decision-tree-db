@@ -7,7 +7,7 @@ CREATE
 
 (ansFacilitiesManagenet:Answer {
     uuid: 'a314a412-9a2b-4d9d-8151-5f0f63a1cc23',
-    text: 'Facilities managenet (FM) services',
+    text: 'Facilities management (FM) services',
     hint: 'Provides services to help you maintain and manage your facility or building. Includes:
     <ul>
         <li>catering services such as meeting hospitality, event catering, full restaurant services and vending services</li>

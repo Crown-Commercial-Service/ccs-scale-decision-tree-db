@@ -127,7 +127,7 @@ CREATE
 (ansGrpSecServicesWPS)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpSecServicesWPS)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpSecServicesWPS)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpSecServicesWPS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSecServicesWPS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6232'}),
 
 
 // SECURITY SERVICES & TECHNICAL SECURITY
@@ -196,7 +196,7 @@ CREATE
 (ansGrpSecTechServicesWPS)-[:HAS_ANSWER {order: 7}]->(ansSectorBlueLight),
 (ansGrpSecTechServicesWPS)-[:HAS_ANSWER {order: 8}]->(ansSectorHousing),
 (ansGrpSecTechServicesWPS)-[:HAS_ANSWER {order: 9}]->(ansSectorCharities),
-(ansGrpSecTechServicesWPS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3830'}),
+(ansGrpSecTechServicesWPS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6232'}),
 (ansGrpSecTechServicesWPS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
 
 

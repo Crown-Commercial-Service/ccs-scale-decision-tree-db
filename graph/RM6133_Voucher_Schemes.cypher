@@ -36,7 +36,7 @@ CREATE
     (ansGrpUKcitizens:AnswerGroup {name: 'ansGrpUKcitizens'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpUKcitizens),
     (ansGrpUKcitizens)-[:HAS_ANSWER {order: 1}]->(ansUKcitizens),
-    (ansGrpUKcitizens)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6255'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+    (ansGrpUKcitizens)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6133'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
     (ansGrpPublicSectorEmpl:AnswerGroup {name: 'ansGrpPublicSectorEmpl'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpPublicSectorEmpl),

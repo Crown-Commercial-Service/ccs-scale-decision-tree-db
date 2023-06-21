@@ -328,7 +328,6 @@ CREATE
       (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpWorkpServ),
       (ansGrpWorkpServ)-[:HAS_ANSWER {order: 1}]->(ansWorkpServ),
       (ansGrpWorkpServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6232'}),
-      (ansGrpWorkpServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'}),
 
       // A4 Government hub fit-out
       (ansGrpGovHubFitOutServ:AnswerGroup {name: 'ansGrpGovHubFitOutServ'}),

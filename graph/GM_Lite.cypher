@@ -18,7 +18,7 @@ MATCH
 
 //Outcome
 (qiTechProductsFirstQuestion:QuestionInstance {uuid: '698c220e-7fc8-11ea-bc55-0242ac130003'}),
-(qiLinenFirstQuestion:QuestionInstance {uuid: 'ccb5a43a-75b5-11ea-bc55-0242ac130003'}),
+(qiLinenFirstQuestion:QuestionInstance {uuid: 'cecb1c0a-973d-463d-a145-4fc7992b4636'}),
 (qiLegalFirstQuestion:QuestionInstance {uuid: 'ccb5e0bc-75b5-11ea-bc55-0242ac130003'})
 
 
@@ -328,7 +328,6 @@ CREATE
       (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpWorkpServ),
       (ansGrpWorkpServ)-[:HAS_ANSWER {order: 1}]->(ansWorkpServ),
       (ansGrpWorkpServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6232'}),
-      (ansGrpWorkpServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6089'}),
 
       // A4 Government hub fit-out
       (ansGrpGovHubFitOutServ:AnswerGroup {name: 'ansGrpGovHubFitOutServ'}),

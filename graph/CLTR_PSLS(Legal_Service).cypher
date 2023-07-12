@@ -5,7 +5,7 @@ Match
 
 CREATE
 (qstnLegalJurisdiction:Question {uuid: 'a4d0225c-c24e-46ae-b0e2-14ca47d8e047', text: 'What legal jurisdiction do you need?', type: 'LIST'}),
-(qstnEnhancedSC:Question {uuid: '2593741f-be57-4f87-9906-6cd410f4fc5b', text: 'Do you need enhanced (sensitive information) security clearance ?', type: 'LIST'}),
+(qstnEnhancedSC:Question {uuid: '2593741f-be57-4f87-9906-6cd410f4fc5b', text: 'Do you need enhanced (sensitive information) security clearance?', type: 'LIST'}),
 
 (ansCG:Answer {uuid: '9760b303-74c1-475f-88fc-f938f1307d1f', text: 'Central government'}),
 (ansWPS:Answer {uuid: '33cb74be-1742-44aa-8527-7996ee8cca4b', text: 'Wider public sector'}),

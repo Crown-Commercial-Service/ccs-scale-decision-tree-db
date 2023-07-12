@@ -176,7 +176,7 @@ CREATE
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Tree Structure
-(jrnyCLTR_PSLS:Journey {uuid: '80f5eef0-de75-4bce-b301-7b87dd87a2a7', name: 'CLTR_PSLS'}),
+(jrnyCLTR_PSLS:Journey {uuid: '80f5eef0-de75-4bce-b301-7b87dd87a2a7', name: 'CLTR_PSLS(Legal_Service)'}),
 (jrnyCLTR_PSLS)-[:FIRST_QUESTION]->(qiFirstQuestion:QuestionInstance:Outcome {uuid: '7bb5099d-3618-4e21-aa6d-ac49b91ad434'})-[:DEFINED_BY]->(qstnService),
 
 (ansGrpCG:AnswerGroup {name: 'ansGrpCG'}),

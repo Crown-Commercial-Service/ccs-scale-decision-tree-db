@@ -68,6 +68,7 @@ load_gm_data "Payment_Solutions_2.cypher"
 load_gm_data "Facilities.cypher"
 load_gm_data "CLTR_PSLS(Legal_Service).cypher"
 load_gm_data "GM_Lite.cypher"
+load_gm_data "Offsite_construction_solutions.cypher"
 
 echo "Data load complete"
 

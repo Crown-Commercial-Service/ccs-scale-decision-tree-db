@@ -142,7 +142,7 @@ CREATE
     (ansGrp3D_2:AnswerGroup {name: 'ansGrp3D_2'}),
     (qiHealthSector)-[:HAS_ANSWER_GROUP]->(ansGrp3D_2),
     (ansGrp3D_2)-[:HAS_ANSWER {order: 2}]->(ans3D),
-    (ansGrp2D_2)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6184'})-[:HAS_LOT]->(:Lot {number: '2.1', url: '', type: 'CAT', scale: true}),
+    (ansGrp3D_2)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6184'})-[:HAS_LOT]->(:Lot {number: '2.1', url: '', type: 'CAT', scale: true}),
 
 (ansGrpResidential:AnswerGroup {name: 'ansGrpResidential'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpResidential),

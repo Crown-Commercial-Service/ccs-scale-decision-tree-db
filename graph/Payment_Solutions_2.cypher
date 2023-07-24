@@ -1,12 +1,15 @@
 MATCH
 (qstnServiceType:Question {uuid: '18df190c-ef8e-4cda-a760-68929965b86a'}),
 (qstnService:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'}),
+(qstnRequirements:Question {uuid: '7a61da23-0caf-4e75-be8d-8ec9ca5680d9'}),
 (resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'}),
 (ansElse:Answer {uuid: '4cd9f791-1ca4-43d3-8f25-c3edfccf6e29'})
 
 CREATE
 // Answer
-(ansMakeAPayment:Answer {uuid: '511b0949-1c75-4f03-84b3-d2886f83ae3c', text: 'Make a payment', hint: 'Use payment cards to buy goods and services and prepaid solutions to make payments to individuals'}),
+ (ansFinancialServices:Answer {uuid: 'd335673d-b8bb-4108-8e1b-b4b2ce734d5d', text: 'Financial Services', hint: 'I want to able to make or receive payments'}),
+
+(ansMakeAPayment:Answer {uuid: '511b0949-1c75-4f03-84b3-d2886f83ae3c', text: 'Make a payment', hint: 'Use Procurement Cards (physical, virtual, lodged cards) to pay suppliers for goods and services. Use prepaid solutions (cards and vouchers) to make payments to individuals'}),
 (ansReceiveAPayment:Answer {uuid: 'd23445dd-5f20-4dce-b2c8-1c4aa4722ed6', text: 'Receive a payment', hint: 'Accept card and alternative payment methods in person or online'}),
 (ansPayConsultServ:Answer {uuid: '1cf90c12-8648-4e87-80d2-5bd58105d392', text: 'Payment consultancy services', hint: 'Access strategic advice to help you define your needs for receiving and making payments'}),
 
@@ -25,74 +28,79 @@ CREATE
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Tree Structure
 (jrnyPayment2:Journey {uuid: '1f4cf853-00f9-4078-858c-82092bd88e64', name: 'Payment solutions 2'}),
-(jrnyPayment2)-[:FIRST_QUESTION]->(qiFirstQuestion:QuestionInstance:Outcome {uuid: '208fe360-562d-4b19-bf2e-37265ea21110'})-[:DEFINED_BY]->(qstnServiceType),
+(jrnyPayment2)-[:FIRST_QUESTION]->(qiFirstQuestion:QuestionInstance:Outcome {uuid: '208fe360-562d-4b19-bf2e-37265ea21110'})-[:DEFINED_BY]->(qstnRequirements),
 
-(ansGrpMakeAPayment:AnswerGroup {name: 'ansGrpMakeAPayment'}),
-(qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpMakeAPayment),
-(ansGrpMakeAPayment)-[:HAS_ANSWER {order: 1}]->(ansMakeAPayment),
-(ansGrpMakeAPayment)-[:HAS_OUTCOME]->(qiPaymentCardType:QuestionInstance:Outcome {uuid: '3198b9b0-df30-4b06-95d5-a37c2e290ded'})-[:DEFINED_BY]->(qstnService),
+(ansGrpFinancialServices:AnswerGroup {name: 'ansGrpFinancialServices'}),
+(qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpFinancialServices),
+(ansGrpFinancialServices)-[:HAS_ANSWER {order: 1}]->(ansFinancialServices),
+(ansGrpFinancialServices)-[:HAS_OUTCOME]->(qiFinancialServices:QuestionInstance:Outcome {uuid: '5d6c1ebd-1304-4598-9068-604d7e3a30ea'})-[:DEFINED_BY]->(qstnServiceType),
 
-    (ansGrpDieselPetrolCard:AnswerGroup {name: 'ansGrpDieselPetrolCard'}),
-    (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpDieselPetrolCard),
-    (ansGrpDieselPetrolCard)-[:HAS_ANSWER {order: 1}]->(ansDieselPetrolCard),
-    (ansGrpDieselPetrolCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6186'}),
+    (ansGrpMakeAPayment:AnswerGroup {name: 'ansGrpMakeAPayment'}),
+    (qiFinancialServices)-[:HAS_ANSWER_GROUP]->(ansGrpMakeAPayment),
+    (ansGrpMakeAPayment)-[:HAS_ANSWER {order: 1}]->(ansMakeAPayment),
+    (ansGrpMakeAPayment)-[:HAS_OUTCOME]->(qiPaymentCardType:QuestionInstance:Outcome {uuid: '3198b9b0-df30-4b06-95d5-a37c2e290ded'})-[:DEFINED_BY]->(qstnService),
 
-    (ansGrpAlterFuelCard:AnswerGroup {name: 'ansGrpAlterFuelCard'}),
-    (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpAlterFuelCard),
-    (ansGrpAlterFuelCard)-[:HAS_ANSWER {order: 2}]->(ansAlterFuelCard),
-    (ansGrpAlterFuelCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6186'}),
- 
-    (ansGrpProcureCard:AnswerGroup {name: 'ansGrpProcureCard'}),
-    (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpProcureCard),
-    (ansGrpProcureCard)-[:HAS_ANSWER {order: 3}]->(ansProcureCard),
-    (ansGrpProcureCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6248'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+        (ansGrpDieselPetrolCard:AnswerGroup {name: 'ansGrpDieselPetrolCard'}),
+        (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpDieselPetrolCard),
+        (ansGrpDieselPetrolCard)-[:HAS_ANSWER {order: 1}]->(ansDieselPetrolCard),
+        (ansGrpDieselPetrolCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6186'}),
 
-    (ansGrpPrePaidCard:AnswerGroup {name: 'ansGrpPrePaidCard'}),
-    (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpPrePaidCard),
-    (ansGrpPrePaidCard)-[:HAS_ANSWER {order: 4}]->(ansPrePaidCard),
-    (ansGrpPrePaidCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6248'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
-
-    (ansGrpVouchers:AnswerGroup {name: 'ansGrpVouchers'}),
-    (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpVouchers),
-    (ansGrpVouchers)-[:HAS_ANSWER {order: 5}]->(ansVouchers),
-    (ansGrpVouchers)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6248'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
-
-(ansGrpReceiveAPayment:AnswerGroup {name: 'ansGrpReceiveAPayment'}),
-(qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpReceiveAPayment),
-(ansGrpReceiveAPayment)-[:HAS_ANSWER {order: 2}]->(ansReceiveAPayment),
-(ansGrpReceiveAPayment)-[:HAS_OUTCOME]->(qiServiceType:QuestionInstance:Outcome {uuid: 'a213a440-962a-48e6-934a-f3ef6b098cbc'})-[:DEFINED_BY]->(qstnServiceType),
+        (ansGrpAlterFuelCard:AnswerGroup {name: 'ansGrpAlterFuelCard'}),
+        (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpAlterFuelCard),
+        (ansGrpAlterFuelCard)-[:HAS_ANSWER {order: 2}]->(ansAlterFuelCard),
+        (ansGrpAlterFuelCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6186'}),
     
-    (ansGrpSolutionsForFaceToFaceAndCNP:AnswerGroup {name: 'ansGrpSolutionsForFaceToFaceAndCNP'}),
-    (qiServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpSolutionsForFaceToFaceAndCNP),
-    (ansGrpSolutionsForFaceToFaceAndCNP)-[:HAS_ANSWER {order: 1}]->(ansSolutionsForFaceToFaceAndCNP),
-    (ansGrpSolutionsForFaceToFaceAndCNP)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+        (ansGrpProcureCard:AnswerGroup {name: 'ansGrpProcureCard'}),
+        (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpProcureCard),
+        (ansGrpProcureCard)-[:HAS_ANSWER {order: 3}]->(ansProcureCard),
+        (ansGrpProcureCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6248'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
-    (ansGrpCardNotPresent:AnswerGroup {name: 'ansGrpCardNotPresent'}),
-    (qiServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpCardNotPresent),
-    (ansGrpCardNotPresent)-[:HAS_ANSWER {order: 2}]->(ansCardNotPresent),
-    (ansGrpCardNotPresent)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+        (ansGrpPrePaidCard:AnswerGroup {name: 'ansGrpPrePaidCard'}),
+        (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpPrePaidCard),
+        (ansGrpPrePaidCard)-[:HAS_ANSWER {order: 4}]->(ansPrePaidCard),
+        (ansGrpPrePaidCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6248'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
-    (ansGrpMerCardAcquirServ:AnswerGroup {name: 'ansGrpMerCardAcquirServ'}),
-    (qiServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpMerCardAcquirServ),
-    (ansGrpMerCardAcquirServ)-[:HAS_ANSWER {order: 3}]->(ansMerCardAcquirServ),
-    (ansGrpMerCardAcquirServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+        (ansGrpVouchers:AnswerGroup {name: 'ansGrpVouchers'}),
+        (qiPaymentCardType)-[:HAS_ANSWER_GROUP]->(ansGrpVouchers),
+        (ansGrpVouchers)-[:HAS_ANSWER {order: 5}]->(ansVouchers),
+        (ansGrpVouchers)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6248'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
-    (ansGrpGatewayServices:AnswerGroup {name: 'ansGrpGatewayServices'}),
-    (qiServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpGatewayServices),
-    (ansGrpGatewayServices)-[:HAS_ANSWER {order: 4}]->(ansGatewayServices),
-    (ansGrpGatewayServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
+    (ansGrpReceiveAPayment:AnswerGroup {name: 'ansGrpReceiveAPayment'}),
+    (qiFinancialServices)-[:HAS_ANSWER_GROUP]->(ansGrpReceiveAPayment),
+    (ansGrpReceiveAPayment)-[:HAS_ANSWER {order: 2}]->(ansReceiveAPayment),
+    (ansGrpReceiveAPayment)-[:HAS_OUTCOME]->(qiServiceType:QuestionInstance:Outcome {uuid: 'a213a440-962a-48e6-934a-f3ef6b098cbc'})-[:DEFINED_BY]->(qstnServiceType),
+        
+        (ansGrpSolutionsForFaceToFaceAndCNP:AnswerGroup {name: 'ansGrpSolutionsForFaceToFaceAndCNP'}),
+        (qiServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpSolutionsForFaceToFaceAndCNP),
+        (ansGrpSolutionsForFaceToFaceAndCNP)-[:HAS_ANSWER {order: 1}]->(ansSolutionsForFaceToFaceAndCNP),
+        (ansGrpSolutionsForFaceToFaceAndCNP)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
-    (ansGrpPaymentInitiationServ:AnswerGroup {name: 'ansGrpPaymentInitiationServ'}),
-    (qiServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpPaymentInitiationServ),
-    (ansGrpPaymentInitiationServ)-[:HAS_ANSWER {order: 5}]->(ansPaymentInitiationServ),
-    (ansGrpPaymentInitiationServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'})-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'CAT', scale: true}),
+        (ansGrpCardNotPresent:AnswerGroup {name: 'ansGrpCardNotPresent'}),
+        (qiServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpCardNotPresent),
+        (ansGrpCardNotPresent)-[:HAS_ANSWER {order: 2}]->(ansCardNotPresent),
+        (ansGrpCardNotPresent)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+
+        (ansGrpMerCardAcquirServ:AnswerGroup {name: 'ansGrpMerCardAcquirServ'}),
+        (qiServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpMerCardAcquirServ),
+        (ansGrpMerCardAcquirServ)-[:HAS_ANSWER {order: 3}]->(ansMerCardAcquirServ),
+        (ansGrpMerCardAcquirServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+
+        (ansGrpGatewayServices:AnswerGroup {name: 'ansGrpGatewayServices'}),
+        (qiServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpGatewayServices),
+        (ansGrpGatewayServices)-[:HAS_ANSWER {order: 4}]->(ansGatewayServices),
+        (ansGrpGatewayServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
+
+        (ansGrpPaymentInitiationServ:AnswerGroup {name: 'ansGrpPaymentInitiationServ'}),
+        (qiServiceType)-[:HAS_ANSWER_GROUP]->(ansGrpPaymentInitiationServ),
+        (ansGrpPaymentInitiationServ)-[:HAS_ANSWER {order: 5}]->(ansPaymentInitiationServ),
+        (ansGrpPaymentInitiationServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'})-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'CAT', scale: true}),
 
 (ansGrpPayConsultServ:AnswerGroup {name: 'ansGrpPayConsultServ'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpPayConsultServ),
-(ansGrpPayConsultServ)-[:HAS_ANSWER {order: 3}]->(ansPayConsultServ),
+(ansGrpPayConsultServ)-[:HAS_ANSWER {order: 2}]->(ansPayConsultServ),
 (ansGrpPayConsultServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'})-[:HAS_LOT]->(:Lot {number: '7', url: '', type: 'CAT', scale: true}),
 
 (ansGrpElse:AnswerGroup {name: 'ansGrpElse'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpElse),
-(ansGrpElse)-[:HAS_ANSWER {order: 4}]->(ansElse),
+(ansGrpElse)-[:HAS_ANSWER {order: 3}]->(ansElse),
 (ansGrpElse)-[:HAS_OUTCOME]->(resultCCSEscapePage);

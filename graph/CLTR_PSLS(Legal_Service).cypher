@@ -279,14 +279,14 @@ CREATE
         (ansGrpYes:AnswerGroup {name: 'ansGrpYes'}),
         (qiGeneralLegalCostServices)-[:HAS_ANSWER_GROUP]->(ansGrpYes),
         (ansGrpYes)-[:HAS_ANSWER {order: 1}]->(ansYes),
-        (ansGrpYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6137'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+        (ansGrpYes)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6284'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
         (ansGrpNo:AnswerGroup {name: 'ansGrpNo'}),
         (qiGeneralLegalCostServices)-[:HAS_ANSWER_GROUP]->(ansGrpNo),
         (ansGrpNo)-[:HAS_ANSWER {order: 2}]->(ansNo),
-        (ansGrpNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6137'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+        (ansGrpNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6284'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
     (ansGrpClinicalNegligenceLegal:AnswerGroup {name: 'ansGrpClinicalNegligenceLegal'}),
     (qiCGandWPS)-[:HAS_ANSWER_GROUP]->(ansGrpClinicalNegligenceLegal),
     (ansGrpClinicalNegligenceLegal)-[:HAS_ANSWER {order: 2}]->(ansClinicalNegligenceLegal),
-    (ansGrpClinicalNegligenceLegal)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6137'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true});
+    (ansGrpClinicalNegligenceLegal)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6284'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true});

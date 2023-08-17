@@ -573,4 +573,4 @@ CREATE
 (ansGrpManagedStaffAndFlexible:AnswerGroup {name: 'ansGrpManagedStaffAndFlexible'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpManagedStaffAndFlexible),
 (ansGrpManagedStaffAndFlexible)-[:HAS_ANSWER {order: 4}]->(ansManagedStaffAndFlexible),
-(ansGrpManagedStaffAndFlexible)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6158'});
+(ansGrpManagedStaffAndFlexible)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6278'});

@@ -69,7 +69,8 @@ load_gm_data "Facilities.cypher"
 load_gm_data "CLTR_PSLS(Legal_Service).cypher"
 load_gm_data "GM_Lite.cypher"
 load_gm_data "Offsite_construction_solutions.cypher"
-load_gm_data "DPS_Demand_Management_Renewables.cypher"
+# load_gm_data "DPS_Demand_Management_Renewables.cypher"
+load_gm_data "Insurance_Services_3.cypher"
 
 echo "Data load complete"
 

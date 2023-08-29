@@ -28,10 +28,10 @@ CREATE
     text: 'Battery and energy storage',
     hint: 'Access energy storage services. Enables customers to store energy from renewable sources (like solar and wind) and use the power when they need it most. Services include:
     <ul>
-        <li>battery optimisation</li>
-        <li>solar thermal storage</li>
-        <li>compressed air energy storage</li>
-        <li>flow batteries</li>
+        <li>battery optimisation which helps to conserve battery power on a device</li>
+        <li>solar thermal storage (STS) refers to the energy collected by solar panels which you can use at another time </li>
+        <li>compressed air energy storage (CAES) is a way to store energy generated and collected at one time so that you can use it at another time</li>
+        <li>flow batteries are liquid-based rechargeable batteries with a lifespan of up to 30 years</li>
         <li>mechanical gravity energy storage</li>
     </ul>'
 }),

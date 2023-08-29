@@ -242,7 +242,7 @@ CREATE
     (ansGrpSolar:AnswerGroup {name: 'ansGrpSolar'}),
     (qiYesForFirst)-[:HAS_ANSWER_GROUP]->(ansGrpSolar),
     (ansGrpSolar)-[:HAS_ANSWER {order: 1}]->(ansSolar),
-    (ansGrpSolar)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6314'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+    (ansGrpSolar)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6314'})-[:HAS_LOT]->(:Lot {number: '1.1', url: '', type: 'CAT', scale: true}),
 
     (ansGrpBattery:AnswerGroup {name: 'ansGrpBattery'}),
     (qiYesForFirst)-[:HAS_ANSWER_GROUP]->(ansGrpBattery),

@@ -253,12 +253,12 @@ CREATE
                     (ansGrpNorthernIreland:AnswerGroup {name: 'ansGrpNorthernIreland'}),
                     (qiWhere2)-[:HAS_ANSWER_GROUP]->(ansGrpNorthernIreland),
                     (ansGrpNorthernIreland)-[:HAS_ANSWER {order: 2}]->(ansNorthernIreland),
-                    (ansGrpNorthernIreland)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6088'})-[:HAS_LOT]->(:Lot {number: '4.2', url: '', type: 'CAT', scale: true}),
+                    (ansGrpNorthernIreland)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6088'})-[:HAS_LOT]->(:Lot {number: '4.3', url: '', type: 'CAT', scale: true}),
 
                     (ansGrpScotland5:AnswerGroup {name: 'ansGrpScotland5'}),
                     (qiWhere2)-[:HAS_ANSWER_GROUP]->(ansGrpScotland5),
                     (ansGrpScotland5)-[:HAS_ANSWER {order: 3}]->(ansScotland),
-                    (ansGrpScotland5)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6088'})-[:HAS_LOT]->(:Lot {number: '4.3', url: '', type: 'CAT', scale: true}),
+                    (ansGrpScotland5)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6088'})-[:HAS_LOT]->(:Lot {number: '4.2', url: '', type: 'CAT', scale: true}),
 
                 (ansGrpGreaterThan80:AnswerGroup {name: 'ansGrpGreaterThan80'}),
                 (qiBudget)-[:HAS_ANSWER_GROUP]->(ansGrpGreaterThan80),

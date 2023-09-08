@@ -2,8 +2,6 @@ MATCH
 
 (qstnFirstQuestion:Question {uuid: '6530dfa4-a1b1-40c7-8f06-77045302fa4a'}),
 (qiEmployeeBenefitFirstQuestion:QuestionInstance {uuid: 'c0081903-92f0-4ca8-9f09-c5c6d6b23876'})
-
-
 CREATE
 
 // ANSWERS - Level 1

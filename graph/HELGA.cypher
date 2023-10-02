@@ -126,22 +126,22 @@ CREATE
         (ansGrpEnergyAdvisory:AnswerGroup {name: 'ansGrpEnergyAdvisory'}),
         (qiLV2FirstQ)-[:HAS_ANSWER_GROUP]->(ansGrpEnergyAdvisory),
         (ansGrpEnergyAdvisory)-[:HAS_ANSWER {order: 1}]->(ansEnergyAdvisory),
-        (ansGrpEnergyAdvisory)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3824'}),
+        (ansGrpEnergyAdvisory)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6314'}),
 
         (ansGrpDelivery:AnswerGroup {name: 'ansGrpDelivery'}),
         (qiLV2FirstQ)-[:HAS_ANSWER_GROUP]->(ansGrpDelivery),
         (ansGrpDelivery)-[:HAS_ANSWER {order: 2}]->(ansDelivery),
-        (ansGrpDelivery)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3824'}),
+        (ansGrpDelivery)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6314'}),
 
         (ansGrpEnergyPurchase:AnswerGroup {name: 'ansGrpEnergyPurchase'}),
         (qiLV2FirstQ)-[:HAS_ANSWER_GROUP]->(ansGrpEnergyPurchase),
         (ansGrpEnergyPurchase)-[:HAS_ANSWER {order: 3}]->(ansEnergyPurchase),
-        (ansGrpEnergyPurchase)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3824'}),
+        (ansGrpEnergyPurchase)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6314'}),
 
         (ansGrpCommoditisedProducts:AnswerGroup {name: 'ansGrpCommoditisedProducts'}),
         (qiLV2FirstQ)-[:HAS_ANSWER_GROUP]->(ansGrpCommoditisedProducts),
         (ansGrpCommoditisedProducts)-[:HAS_ANSWER {order: 4}]->(ansCommoditisedProducts),
-        (ansGrpCommoditisedProducts)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3824'}),
+        (ansGrpCommoditisedProducts)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6314'}),
     
     (ansGrpVehicleCharging:AnswerGroup {name: 'ansGrpVehicleCharging'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpVehicleCharging),

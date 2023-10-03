@@ -282,7 +282,7 @@ CREATE
     (ansGrpEnergy:AnswerGroup {name: 'ansGrpEnergy'}),
     (qiEnerFuelOrWat)-[:HAS_ANSWER_GROUP]->(ansGrpEnergy),
     (ansGrpEnergy)-[:HAS_ANSWER {order: 2}]->(ansEnergy),
-    (ansGrpEnergy)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3824'}),
+    (ansGrpEnergy)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6314'}),
     (ansGrpEnergy)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6213'}),
 
     // A3 Fuels
@@ -444,19 +444,19 @@ CREATE
     (ansGrpResearchServ:AnswerGroup {name: 'ansGrpResearchServ'}),
     (qiMediaOrResearch)-[:HAS_ANSWER_GROUP]->(ansGrpResearchServ),
     (ansGrpResearchServ)-[:HAS_ANSWER {order: 2}]->(ansResearchServ),
-    (ansGrpResearchServ)-[:HAS_OUTCOME]->(qiReseServ:QuestionInstance:Outcome {uuid: 'b992c065-5f04-4995-92cf-ec3c11367afe'})-[:DEFINED_BY]->(qstnReseServ),
+    (ansGrpResearchServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6126'}),
 
       // A4 Communication performance
-      (ansGrpComPerform:AnswerGroup {name: 'ansGrpComPerform'}),
-      (qiReseServ)-[:HAS_ANSWER_GROUP]->(ansGrpComPerform),
-      (ansGrpComPerform)-[:HAS_ANSWER {order: 2}]->(ansComPerform),
-      (ansGrpComPerform)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6135'}),
+      // (ansGrpComPerform:AnswerGroup {name: 'ansGrpComPerform'}),
+      // (qiReseServ)-[:HAS_ANSWER_GROUP]->(ansGrpComPerform),
+      // (ansGrpComPerform)-[:HAS_ANSWER {order: 2}]->(ansComPerform),
+      // (ansGrpComPerform)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6135'}),
 
       // A4 Research marketplace
-      (ansGrpReseaMarket:AnswerGroup {name: 'ansGrpReseaMarket'}),
-      (qiReseServ)-[:HAS_ANSWER_GROUP]->(ansGrpReseaMarket),
-      (ansGrpReseaMarket)-[:HAS_ANSWER {order: 3}]->(ansReseaMarket),
-      (ansGrpReseaMarket)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6126'}),
+      // (ansGrpReseaMarket:AnswerGroup {name: 'ansGrpReseaMarket'}),
+      // (qiReseServ)-[:HAS_ANSWER_GROUP]->(ansGrpReseaMarket),
+      // (ansGrpReseaMarket)-[:HAS_ANSWER {order: 3}]->(ansReseaMarket),
+      // (ansGrpReseaMarket)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6126'}),
 
 
   // A2 Office, print or multifunctional devices
@@ -557,13 +557,13 @@ CREATE
     (ansGrpHireServ:AnswerGroup {name: 'ansGrpHireServ'}),
     (qiVehicServ)-[:HAS_ANSWER_GROUP]->(ansGrpHireServ),
     (ansGrpHireServ)-[:HAS_ANSWER {order: 2}]->(ansHireServ),
-    (ansGrpHireServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6013'}),
+    (ansGrpHireServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6265'}),
 
     // A3 Leases and vehicle management
     (ansGrpLeAndVehManag:AnswerGroup {name: 'ansGrpLeAndVehManag'}),
     (qiVehicServ)-[:HAS_ANSWER_GROUP]->(ansGrpLeAndVehManag),
     (ansGrpLeAndVehManag)-[:HAS_ANSWER {order: 3}]->(ansLeAndVehManag),
-    (ansGrpLeAndVehManag)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6096'}),
+    (ansGrpLeAndVehManag)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6268'}),
 
     // A3 Purchases
     (ansGrpPurchases:AnswerGroup {name: 'ansGrpPurchases'}),
@@ -635,7 +635,7 @@ CREATE
     (ansGrpEmplServ:AnswerGroup {name: 'ansGrpEmplServ'}),
     (qiEmployeeServOrBenefits)-[:HAS_ANSWER_GROUP]->(ansGrpEmplServ),
     (ansGrpEmplServ)-[:HAS_ANSWER {order: 2}]->(ansEmplServ),
-    (ansGrpEmplServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6133'}),
+    (ansGrpEmplServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6273'}),
 
     // A3 Language services
     (ansGrpLangServ:AnswerGroup {name: 'ansGrpLangServ'}),
@@ -713,7 +713,7 @@ CREATE
       (ansGrpHealth:AnswerGroup {name: 'ansGrpHealth'}),
       (qiTempResouOrRecrui)-[:HAS_ANSWER_GROUP]->(ansGrpHealth),
       (ansGrpHealth)-[:HAS_ANSWER {order: 1}]->(ansHealth),
-      (ansGrpHealth)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3711'}),
+      (ansGrpHealth)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6281'}),
       (ansGrpHealth)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6161'}),
 
       // A4 Supply teachers and educational staff
@@ -726,8 +726,8 @@ CREATE
       (ansGrpAnyelseForTempResouOrRecruit:AnswerGroup {name: 'ansGrpAnyelseForTempResouOrRecruit'}),
       (qiTempResouOrRecrui)-[:HAS_ANSWER_GROUP]->(ansGrpAnyelseForTempResouOrRecruit),
       (ansGrpAnyelseForTempResouOrRecruit)-[:HAS_ANSWER {order: 3, mutex: true}]->(ansAnyelseForTempResouOrRecruit),
-      (ansGrpAnyelseForTempResouOrRecruit)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6158'}),
-      (ansGrpAnyelseForTempResouOrRecruit)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6160'}),
+      (ansGrpAnyelseForTempResouOrRecruit)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6278'}),
+      (ansGrpAnyelseForTempResouOrRecruit)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'}),
 
 
   // A2 Anything else (People)
@@ -785,7 +785,7 @@ CREATE
       (ansGrpDigiOutAndSpec:AnswerGroup {name: 'ansGrpDigiOutAndSpec'}),
       (qiDigiServ)-[:HAS_ANSWER_GROUP]->(ansGrpDigiOutAndSpec),
       (ansGrpDigiOutAndSpec)-[:HAS_ANSWER {order: 1}]->(ansDigiOutAndSpec),
-      (ansGrpDigiOutAndSpec)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1043.7'}),
+      (ansGrpDigiOutAndSpec)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1043.8'}),
 
       // A4 Digital capability for health
       (ansGrpDigiCapForHealth:AnswerGroup {name: 'ansGrpDigiCapForHealth'}),
@@ -823,7 +823,7 @@ CREATE
     (ansGrpNetwServ:AnswerGroup {name: 'ansGrpNetwServ'}),
     (qiNetworkServ)-[:HAS_ANSWER_GROUP]->(ansGrpNetwServ),
     (ansGrpNetwServ)-[:HAS_ANSWER {order: 3}]->(ansNetwServ),
-    (ansGrpNetwServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3808'}),
+    (ansGrpNetwServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6116'}),
     (ansGrpNetwServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6167'}),
 
     // A3 Anything else
@@ -850,7 +850,7 @@ CREATE
     (ansGrpEnterpApp:AnswerGroup {name: 'ansGrpEnterpApp'}),
     (qiSoftwAndCyberSec)-[:HAS_ANSWER_GROUP]->(ansGrpEnterpApp),
     (ansGrpEnterpApp)-[:HAS_ANSWER {order: 2}]->(ansEnterpApp),
-    (ansGrpEnterpApp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3821'}),
+    (ansGrpEnterpApp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6259'}),
     (ansGrpEnterpApp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6194'}),
 
 

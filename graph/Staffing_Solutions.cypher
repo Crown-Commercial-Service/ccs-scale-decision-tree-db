@@ -207,6 +207,16 @@ CREATE
     </ul>'
 }),
 
+(ansClinicalCodingRolesShort:Answer {
+    uuid: '71fd0a4f-e555-444d-8c1c-9d4470801131', 
+    text: 'Clinical coding roles', 
+    hint: 'Clinical coders including:
+    <ul>
+        <li>entry and higher level coding officers</li>
+        <li>health record secretaries</li>
+    </ul>'
+}),
+
 (ansAncillaryStaff:Answer {
     uuid: 'dc128d94-cc2c-4780-ab8d-6eb410e9e5de', 
     text: 'Ancillary staff', 
@@ -218,6 +228,24 @@ CREATE
         <li>estate and maintenance roles such as electricians and surveyors</li>
         <li>environmental and scientific roles such as senior assistant scientists</li>
     </ul>'
+}),
+
+(ansManagedServiceProvider:Answer {
+    uuid: 'b9bd0348-63eb-4d5c-845b-85b60147d56a', 
+    text: 'Managed service provider', 
+    hint: 'The managed service provider can manage the temporary workforce needs of your whole organisation. The end to end service can include:
+    <ul>
+        <li>incorporation of the whole worker journey across multiple worker disciplines, worker engagement types and locations</li>
+        <li>be a single point of contact for your temporary workforce needs instead of using single or transactional contracting</li>
+        <li>direct placement of workers from the prime supplier and supply chain management, including niche or specialist agencies</li>
+        <li>centralised worker compliance checking, reporting, consolidated invoicing and workforce planning services</li>
+    </ul>'
+}),
+
+(ansManagedServiceProviderShort:Answer {
+    uuid: 'dee1f8b8-5171-40b2-ae9f-8f9d3e7aa630', 
+    text: 'Managed service provider', 
+    hint: 'Access a managed service provider who will manage temporary worker recruitment for your organisation. Also includes the end to end management of the contingent/contract workforce'
 }),
 
 (ansClinicalAndHealthcare:Answer {
@@ -433,32 +461,37 @@ CREATE
     (ansGrpClericalRoles:AnswerGroup {name: 'ansGrpClericalRoles'}),
     (qiFixedTerm)-[:HAS_ANSWER_GROUP]->(ansGrpClericalRoles),
     (ansGrpClericalRoles)-[:HAS_ANSWER {order: 1}]->(ansClericalRoles),
-    (ansGrpClericalRoles)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6160'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+    (ansGrpClericalRoles)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
     (ansGrpCorporateRoles:AnswerGroup {name: 'ansGrpCorporateRoles'}),
     (qiFixedTerm)-[:HAS_ANSWER_GROUP]->(ansGrpCorporateRoles),
     (ansGrpCorporateRoles)-[:HAS_ANSWER {order: 2}]->(ansCorporateRoles),
-    (ansGrpCorporateRoles)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6160'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+    (ansGrpCorporateRoles)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
     (ansGrpItProfessionals:AnswerGroup {name: 'ansGrpItProfessionals'}),
     (qiFixedTerm)-[:HAS_ANSWER_GROUP]->(ansGrpItProfessionals),
     (ansGrpItProfessionals)-[:HAS_ANSWER {order: 3}]->(ansItProfessionals),
-    (ansGrpItProfessionals)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6160'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+    (ansGrpItProfessionals)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
     (ansGrpLegalRoles:AnswerGroup {name: 'ansGrpLegalRoles'}),
     (qiFixedTerm)-[:HAS_ANSWER_GROUP]->(ansGrpLegalRoles),
     (ansGrpLegalRoles)-[:HAS_ANSWER {order: 4}]->(ansLegalRoles),
-    (ansGrpLegalRoles)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6160'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
+    (ansGrpLegalRoles)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
 
     (ansGrpClinicalCodingRoles:AnswerGroup {name: 'ansGrpClinicalCodingRoles'}),
     (qiFixedTerm)-[:HAS_ANSWER_GROUP]->(ansGrpClinicalCodingRoles),
     (ansGrpClinicalCodingRoles)-[:HAS_ANSWER {order: 5}]->(ansClinicalCodingRoles),
-    (ansGrpClinicalCodingRoles)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6160'})-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'CAT', scale: true}),
+    (ansGrpClinicalCodingRoles)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'CAT', scale: true}),
 
     (ansGrpAncillaryStaff:AnswerGroup {name: 'ansGrpAncillaryStaff'}),
     (qiFixedTerm)-[:HAS_ANSWER_GROUP]->(ansGrpAncillaryStaff),
     (ansGrpAncillaryStaff)-[:HAS_ANSWER {order: 6}]->(ansAncillaryStaff),
-    (ansGrpAncillaryStaff)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6160'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'CAT', scale: true}),
+    (ansGrpAncillaryStaff)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'CAT', scale: true}),
+
+    (ansGrpManagedServiceProvider:AnswerGroup {name: 'ansGrpManagedServiceProvider'}),
+    (qiFixedTerm)-[:HAS_ANSWER_GROUP]->(ansGrpManagedServiceProvider),
+    (ansGrpManagedServiceProvider)-[:HAS_ANSWER {order: 6}]->(ansManagedServiceProvider),
+    (ansGrpManagedServiceProvider)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '7', url: '', type: 'CAT', scale: true}),
 
 (ansGrpAgency:AnswerGroup {name: 'ansGrpAgency'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpAgency),
@@ -508,7 +541,42 @@ CREATE
         (ansGrpNHS:AnswerGroup {name: 'ansGrpNHS'}),
         (qiNonClinicalStaff)-[:HAS_ANSWER_GROUP]->(ansGrpNHS),
         (ansGrpNHS)-[:HAS_ANSWER {order: 1}]->(ansNHS),
-        (ansGrpNHS)-[:HAS_OUTCOME]->(qiFixedTerm),
+        (ansGrpNHS)-[:HAS_OUTCOME]->(qiNHS:QuestionInstance:Outcome {uuid: 'af25e789-dbfb-464e-9542-398d1b68aece'})-[:DEFINED_BY]->(qstnRole),
+
+            (ansGrpClericalRoles_1:AnswerGroup {name: 'ansGrpClericalRoles_1'}),
+            (qiNHS)-[:HAS_ANSWER_GROUP]->(ansGrpClericalRoles_1),
+            (ansGrpClericalRoles_1)-[:HAS_ANSWER {order: 1}]->(ansClericalRoles),
+            (ansGrpClericalRoles_1)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+
+            (ansGrpCorporateRoles_1:AnswerGroup {name: 'ansGrpCorporateRoles_1'}),
+            (qiNHS)-[:HAS_ANSWER_GROUP]->(ansGrpCorporateRoles_1),
+            (ansGrpCorporateRoles_1)-[:HAS_ANSWER {order: 2}]->(ansCorporateRoles),
+            (ansGrpCorporateRoles_1)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+
+            (ansGrpItProfessionals_1:AnswerGroup {name: 'ansGrpItProfessionals_1'}),
+            (qiNHS)-[:HAS_ANSWER_GROUP]->(ansGrpItProfessionals_1),
+            (ansGrpItProfessionals_1)-[:HAS_ANSWER {order: 3}]->(ansItProfessionals),
+            (ansGrpItProfessionals_1)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+
+            (ansGrpLegalRoles_1:AnswerGroup {name: 'ansGrpLegalRoles_1'}),
+            (qiNHS)-[:HAS_ANSWER_GROUP]->(ansGrpLegalRoles_1),
+            (ansGrpLegalRoles_1)-[:HAS_ANSWER {order: 4}]->(ansLegalRoles),
+            (ansGrpLegalRoles_1)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
+
+            (ansGrpClinicalCodingRolesShort_1:AnswerGroup {name: 'ansGrpClinicalCodingRolesShort_1'}),
+            (qiNHS)-[:HAS_ANSWER_GROUP]->(ansGrpClinicalCodingRolesShort_1),
+            (ansGrpClinicalCodingRolesShort_1)-[:HAS_ANSWER {order: 5}]->(ansClinicalCodingRolesShort),
+            (ansGrpClinicalCodingRolesShort_1)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'CAT', scale: true}),
+
+            (ansGrpAncillaryStaff_1:AnswerGroup {name: 'ansGrpAncillaryStaff_1'}),
+            (qiNHS)-[:HAS_ANSWER_GROUP]->(ansGrpAncillaryStaff_1),
+            (ansGrpAncillaryStaff_1)-[:HAS_ANSWER {order: 6}]->(ansAncillaryStaff),
+            (ansGrpAncillaryStaff_1)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'CAT', scale: true}),
+            
+            (ansGrpManagedServiceProviderShort_1:AnswerGroup {name: 'ansGrpManagedServiceProviderShort_1'}),
+            (qiNHS)-[:HAS_ANSWER_GROUP]->(ansGrpManagedServiceProviderShort_1),
+            (ansGrpManagedServiceProviderShort_1)-[:HAS_ANSWER {order: 7}]->(ansManagedServiceProviderShort),
+            (ansGrpManagedServiceProviderShort_1)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '7', url: '', type: 'CAT', scale: true}),
 
         (ansGrpAllOtherSectors:AnswerGroup {name: 'ansGrpAllOtherSectors'}),
         (qiNonClinicalStaff)-[:HAS_ANSWER_GROUP]->(ansGrpAllOtherSectors),
@@ -528,8 +596,8 @@ CREATE
                 (ansGrpNonClinical:AnswerGroup {name: 'ansGrpNonClinical'}),
                 (qiYes)-[:HAS_ANSWER_GROUP]->(ansGrpNonClinical),
                 (ansGrpNonClinical)-[:HAS_ANSWER {order: 2}]->(ansNonClinical),
-                (ansGrpNonClinical)-[:HAS_OUTCOME]->(qiFixedTerm),
-            
+                (ansGrpNonClinical)-[:HAS_OUTCOME]->(qiNHS),
+
             (ansGrpNo:AnswerGroup {name: 'ansGrpNo'}),
             (qiAllOtherSectors)-[:HAS_ANSWER_GROUP]->(ansGrpNo),
             (ansGrpNo)-[:HAS_ANSWER {order: 2}]->(ansNo),
@@ -563,7 +631,7 @@ CREATE
         (ansGrpAncillaryStaff2:AnswerGroup {name: 'ansGrpAncillaryStaff2'}),
         (qiEducationAndAncillaryStaff)-[:HAS_ANSWER_GROUP]->(ansGrpAncillaryStaff2),
         (ansGrpAncillaryStaff2)-[:HAS_ANSWER {order: 3}]->(ansAncillaryStaff2),
-        (ansGrpAncillaryStaff2)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6160'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'CAT', scale: true}),
+        (ansGrpAncillaryStaff2)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'CAT', scale: true}),
 
         (ansGrpEducationTechnology:AnswerGroup {name: 'ansGrpEducationTechnology'}),
         (qiEducationAndAncillaryStaff)-[:HAS_ANSWER_GROUP]->(ansGrpEducationTechnology),

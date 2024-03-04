@@ -228,25 +228,21 @@ CREATE
         (qiService1)-[:HAS_ANSWER_GROUP]->(ansGrpCleanroom),
         (ansGrpCleanroom)-[:HAS_ANSWER {order: 1}]->(ansCleanroom),
         (ansGrpCleanroom)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6264'}),
-        (ansGrpCleanroom)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
         (ansGrpTheatrePack:AnswerGroup {name: 'ansGrpTheatrePack'}),
         (qiService1)-[:HAS_ANSWER_GROUP]->(ansGrpTheatrePack),
         (ansGrpTheatrePack)-[:HAS_ANSWER {order: 2}]->(ansTheatrePack),
         (ansGrpTheatrePack)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6264'}),
-        (ansGrpTheatrePack)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
         (ansGrpStandardWash:AnswerGroup {name: 'ansGrpStandardWash'}),
         (qiService1)-[:HAS_ANSWER_GROUP]->(ansGrpStandardWash),
         (ansGrpStandardWash)-[:HAS_ANSWER {order: 3}]->(ansStandardWash),
         (ansGrpStandardWash)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6264'}),
-        (ansGrpStandardWash)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '1b', url: '', type: 'CAT', scale: true}),
 
         (ansGrpLinenHire:AnswerGroup {name: 'ansGrpLinenHire'}),
         (qiService1)-[:HAS_ANSWER_GROUP]->(ansGrpLinenHire),
         (ansGrpLinenHire)-[:HAS_ANSWER {order: 4}]->(ansLinenHire),
         (ansGrpLinenHire)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6264'}),
-        (ansGrpLinenHire)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6154'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
 
     (ansGrpSecurityServices:AnswerGroup {name: 'ansGrpSecurityServices'}),
     (qiService)-[:HAS_ANSWER_GROUP]->(ansGrpSecurityServices),
@@ -257,7 +253,6 @@ CREATE
     (qiService)-[:HAS_ANSWER_GROUP]->(ansGrpCleaning),
     (ansGrpCleaning)-[:HAS_ANSWER {order: 6}]->(ansCleaning),
     (ansGrpCleaning)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6264'}),
-    (ansGrpCleaning)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6130'}),
 
 (ansGrpHousingMaintenance:AnswerGroup {name: 'ansGrpHousingMaintenance'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpHousingMaintenance),

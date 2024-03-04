@@ -1,5 +1,6 @@
 Match
-(qstnService:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'})
+(qstnService:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'}),
+(resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
 
@@ -50,7 +51,7 @@ CREATE
     (ansGrpBroker:AnswerGroup {name: 'ansGrpBroker'}),
     (qiBrokerage)-[:HAS_ANSWER_GROUP]->(ansGrpBroker),
     (ansGrpBroker)-[:HAS_ANSWER {order: 1}]->(ansBroker),
-    (ansGrpBroker)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6020'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+    (ansGrpBroker)-[:HAS_OUTCOME]->(resultCCSEscapePage),
 
     (ansGrpDirect:AnswerGroup {name: 'ansGrpDirect'}),
     (qiBrokerage)-[:HAS_ANSWER_GROUP]->(ansGrpDirect),
@@ -60,4 +61,4 @@ CREATE
 (ansGrpClaims:AnswerGroup {name: 'ansGrpClaims'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpClaims),
 (ansGrpClaims)-[:HAS_ANSWER {order: 2}]->(ansClaims),
-(ansGrpClaims)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6020'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true});
+(ansGrpClaims)-[:HAS_OUTCOME]->(resultCCSEscapePage);

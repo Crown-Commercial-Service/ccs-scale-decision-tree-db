@@ -1,5 +1,6 @@
 MATCH
-(qstnOnlyQ:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'})
+(qstnOnlyQ:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'}),
+(resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
 
 
 CREATE
@@ -166,12 +167,12 @@ CREATE
         (ansGrpElectricity:AnswerGroup {name: 'ansGrpElectricity'}),
         (qiLV2ThirdQ)-[:HAS_ANSWER_GROUP]->(ansGrpElectricity),
         (ansGrpElectricity)-[:HAS_ANSWER {order: 1}]->(ansElectricity),
-        (ansGrpElectricity)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6011'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+        (ansGrpElectricity)-[:HAS_OUTCOME]->(resultCCSEscapePage),
 
         (ansGrpGas:AnswerGroup {name: 'ansGrpGas'}),
         (qiLV2ThirdQ)-[:HAS_ANSWER_GROUP]->(ansGrpGas),
         (ansGrpGas)-[:HAS_ANSWER {order: 2}]->(ansGas),
-        (ansGrpGas)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6011'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+        (ansGrpGas)-[:HAS_OUTCOME]->(resultCCSEscapePage),
 
     (ansGrpTechnicalAdvisory:AnswerGroup {name: 'ansGrpTechnicalAdvisory'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpTechnicalAdvisory),

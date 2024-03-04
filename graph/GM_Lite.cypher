@@ -271,11 +271,11 @@ CREATE
   (ansGrpEnerFuelOrWat)-[:HAS_ANSWER {order: 2}]->(ansEnerFuelOrWat),
   (ansGrpEnerFuelOrWat)-[:HAS_OUTCOME]->(qiEnerFuelOrWat:QuestionInstance:Outcome {uuid: '54e2ca09-f21c-408a-a87f-9b6ad2e922dd'})-[:DEFINED_BY]->(qstnEnerFuelOrWat),
 
-    // A3 Electricity
-    (ansGrpElectricity:AnswerGroup {name: 'ansGrpElectricity'}),
-    (qiEnerFuelOrWat)-[:HAS_ANSWER_GROUP]->(ansGrpElectricity),
-    (ansGrpElectricity)-[:HAS_ANSWER {order: 1}]->(ansElectricity),
-    (ansGrpElectricity)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6011'}),
+    // // A3 Electricity
+    // (ansGrpElectricity:AnswerGroup {name: 'ansGrpElectricity'}),
+    // (qiEnerFuelOrWat)-[:HAS_ANSWER_GROUP]->(ansGrpElectricity),
+    // (ansGrpElectricity)-[:HAS_ANSWER {order: 1}]->(ansElectricity),
+    // (ansGrpElectricity)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6011'}),
 
 
     // A3 Energy
@@ -304,11 +304,11 @@ CREATE
   (ansGrpFacEstOrWorkP)-[:HAS_ANSWER {order: 3}]->(ansFacEstOrWorkP),
   (ansGrpFacEstOrWorkP)-[:HAS_OUTCOME]->(qiFacEstOrWorkP:QuestionInstance:Outcome {uuid: 'bf0492f8-66ff-4c0d-a10a-a79b88133c8b'})-[:DEFINED_BY]->(qstnFacEstOrWorkP),
 
-    // A3 Cleaning services
-    (ansGrpCleanServ:AnswerGroup {name: 'ansGrpCleanServ'}),
-    (qiFacEstOrWorkP)-[:HAS_ANSWER_GROUP]->(ansGrpCleanServ),
-    (ansGrpCleanServ)-[:HAS_ANSWER {order: 1}]->(ansCleanServ),
-    (ansGrpCleanServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6130'}),
+    // // A3 Cleaning services
+    // (ansGrpCleanServ:AnswerGroup {name: 'ansGrpCleanServ'}),
+    // (qiFacEstOrWorkP)-[:HAS_ANSWER_GROUP]->(ansGrpCleanServ),
+    // (ansGrpCleanServ)-[:HAS_ANSWER {order: 1}]->(ansCleanServ),
+    // (ansGrpCleanServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6130'}),
 
     // A3 Estates management
     (ansGrpEstaManag:AnswerGroup {name: 'ansGrpEstaManag'}),
@@ -368,11 +368,11 @@ CREATE
   (ansGrpFinaServices)-[:HAS_ANSWER {order: 1}]->(ansFinaServices),
   (ansGrpFinaServices)-[:HAS_OUTCOME]->(qiFinaServices:QuestionInstance:Outcome {uuid: 'e9346929-7bc9-4a23-9b2e-35984a3c39b2'})-[:DEFINED_BY]->(qstnFinaServices),
 
-    // A3 Debt management
-    (ansGrpDebtManag:AnswerGroup {name: 'ansGrpDebtManag'}),
-    (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpDebtManag),
-    (ansGrpDebtManag)-[:HAS_ANSWER {order: 1}]->(ansDebtManag),
-    (ansGrpDebtManag)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6208'}),
+    // // A3 Debt management
+    // (ansGrpDebtManag:AnswerGroup {name: 'ansGrpDebtManag'}),
+    // (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpDebtManag),
+    // (ansGrpDebtManag)-[:HAS_ANSWER {order: 1}]->(ansDebtManag),
+    // (ansGrpDebtManag)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6208'}),
 
 
     // A3 Fuel cards
@@ -391,7 +391,6 @@ CREATE
     (ansGrpInsurServ:AnswerGroup {name: 'ansGrpInsurServ'}),
     (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpInsurServ),
     (ansGrpInsurServ)-[:HAS_ANSWER {order: 4}]->(ansInsurServ),
-    (ansGrpInsurServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6020'}),
     (ansGrpInsurServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6138'}),
 
     // A3 Payment services
@@ -400,11 +399,11 @@ CREATE
     (ansGrpPayServ)-[:HAS_ANSWER {order: 5}]->(ansPayServ),
     (ansGrpPayServ)-[:HAS_OUTCOME]->(qiPayServ:QuestionInstance:Outcome {uuid: '18fc2090-c8f5-4677-804b-2bc7d233b69f'})-[:DEFINED_BY]->(qstnPayServ),
 
-      // A4 Payment acceptance
-      (ansGrpPayAccept:AnswerGroup {name: 'ansGrpPayAccept'}),
-      (qiPayServ)-[:HAS_ANSWER_GROUP]->(ansGrpPayAccept),
-      (ansGrpPayAccept)-[:HAS_ANSWER {order: 1}]->(ansPayAccept),
-      (ansGrpPayAccept)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'}),
+      // // A4 Payment acceptance
+      // (ansGrpPayAccept:AnswerGroup {name: 'ansGrpPayAccept'}),
+      // (qiPayServ)-[:HAS_ANSWER_GROUP]->(ansGrpPayAccept),
+      // (ansGrpPayAccept)-[:HAS_ANSWER {order: 1}]->(ansPayAccept),
+      // (ansGrpPayAccept)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6118'}),
 
 
       // A4 Payment solutions
@@ -510,11 +509,11 @@ CREATE
     (ansGrpLogiAndWare)-[:HAS_ANSWER {order: 2}]->(ansLogiAndWare),
     (ansGrpLogiAndWare)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6074'}),
 
-    // A3 Postal services
-    (ansGrpPostServ:AnswerGroup {name: 'ansGrpPostServ'}),
-    (qiPostCourOrLogServ)-[:HAS_ANSWER_GROUP]->(ansGrpPostServ),
-    (ansGrpPostServ)-[:HAS_ANSWER {order: 3}]->(ansPostServ),
-    (ansGrpPostServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6017'}),
+    // // A3 Postal services
+    // (ansGrpPostServ:AnswerGroup {name: 'ansGrpPostServ'}),
+    // (qiPostCourOrLogServ)-[:HAS_ANSWER_GROUP]->(ansGrpPostServ),
+    // (ansGrpPostServ)-[:HAS_ANSWER {order: 3}]->(ansPostServ),
+    // (ansGrpPostServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6017'}),
 
 
   // A2 Travel services
@@ -697,11 +696,11 @@ CREATE
     (ansGrpPermaRecruit)-[:HAS_ANSWER {order: 1}]->(ansPermaRecruit),
     (ansGrpPermaRecruit)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6290'}),
 
-    // A3 Public sector resourcing
-    (ansGrpPubSecResour:AnswerGroup {name: 'ansGrpPubSecResour'}),
-    (qiRecruitOrEmployServ)-[:HAS_ANSWER_GROUP]->(ansGrpPubSecResour),
-    (ansGrpPubSecResour)-[:HAS_ANSWER {order: 2}]->(ansPubSecResour),
-    (ansGrpPubSecResour)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3749'}),
+    // // A3 Public sector resourcing
+    // (ansGrpPubSecResour:AnswerGroup {name: 'ansGrpPubSecResour'}),
+    // (qiRecruitOrEmployServ)-[:HAS_ANSWER_GROUP]->(ansGrpPubSecResour),
+    // (ansGrpPubSecResour)-[:HAS_ANSWER {order: 2}]->(ansPubSecResour),
+    // (ansGrpPubSecResour)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3749'}),
 
     // A3 Temporary resourcing or recruitment
     (ansGrpTempResouOrRecruit:AnswerGroup {name: 'ansGrpTempResouOrRecruit'}),

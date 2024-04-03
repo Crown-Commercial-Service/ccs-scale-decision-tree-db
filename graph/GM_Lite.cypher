@@ -321,32 +321,32 @@ CREATE
     (ansGrpFacilManag:AnswerGroup {name: 'ansGrpFacilManag'}),
     (qiFacEstOrWorkP)-[:HAS_ANSWER_GROUP]->(ansGrpFacilManag),
     (ansGrpFacilManag)-[:HAS_ANSWER {order: 3}]->(ansFacilManag),
-    (ansGrpFacilManag)-[:HAS_OUTCOME]->(qiFacilManag:QuestionInstance:Outcome {uuid: 'e99d4c01-277c-47c0-80fc-e6080c5f94a7'})-[:DEFINED_BY]->(qstnFacilManag),
+    (ansGrpFacilManag)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6232'}),
 
       // A4 Workplace services
-      (ansGrpWorkpServ:AnswerGroup {name: 'ansGrpWorkpServ'}),
-      (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpWorkpServ),
-      (ansGrpWorkpServ)-[:HAS_ANSWER {order: 1}]->(ansWorkpServ),
-      (ansGrpWorkpServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6232'}),
+      // (ansGrpWorkpServ:AnswerGroup {name: 'ansGrpWorkpServ'}),
+      // (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpWorkpServ),
+      // (ansGrpWorkpServ)-[:HAS_ANSWER {order: 1}]->(ansWorkpServ),
+      // (ansGrpWorkpServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6232'}),
 
       // A4 Government hub fit-out
-      (ansGrpGovHubFitOutServ:AnswerGroup {name: 'ansGrpGovHubFitOutServ'}),
-      (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpGovHubFitOutServ),
-      (ansGrpGovHubFitOutServ)-[:HAS_ANSWER {order: 2}]->(ansGovHubFitOutServ),
-      (ansGrpGovHubFitOutServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6119'})-[:HAS_LOT]->(:Lot {number: '8', url: '', type: 'CAT', scale: true}),
+      // (ansGrpGovHubFitOutServ:AnswerGroup {name: 'ansGrpGovHubFitOutServ'}),
+      // (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpGovHubFitOutServ),
+      // (ansGrpGovHubFitOutServ)-[:HAS_ANSWER {order: 2}]->(ansGovHubFitOutServ),
+      // (ansGrpGovHubFitOutServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6119'})-[:HAS_LOT]->(:Lot {number: '8', url: '', type: 'CAT', scale: true}),
 
       // A4 Training estate
-      (ansGrpTrainEstate:AnswerGroup {name: 'ansGrpTrainEstate'}),
-      (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpTrainEstate),
-      (ansGrpTrainEstate)-[:HAS_ANSWER {order: 3}]->(ansTrainEstate),
-      (ansGrpTrainEstate)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6155'}),
+      // (ansGrpTrainEstate:AnswerGroup {name: 'ansGrpTrainEstate'}),
+      // (qiFacilManag)-[:HAS_ANSWER_GROUP]->(ansGrpTrainEstate),
+      // (ansGrpTrainEstate)-[:HAS_ANSWER {order: 3}]->(ansTrainEstate),
+      // (ansGrpTrainEstate)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6155'}),
 
 
     // A3 Furniture services
-    (ansGrpFurniServ:AnswerGroup {name: 'ansGrpFurniServ'}),
-    (qiFacEstOrWorkP)-[:HAS_ANSWER_GROUP]->(ansGrpFurniServ),
-    (ansGrpFurniServ)-[:HAS_ANSWER {order: 4}]->(ansFurniServ),
-    (ansGrpFurniServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6119'}),
+    // (ansGrpFurniServ:AnswerGroup {name: 'ansGrpFurniServ'}),
+    // (qiFacEstOrWorkP)-[:HAS_ANSWER_GROUP]->(ansGrpFurniServ),
+    // (ansGrpFurniServ)-[:HAS_ANSWER {order: 4}]->(ansFurniServ),
+    // (ansGrpFurniServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6119'}),
 
 
     // A3 Linen services
@@ -663,10 +663,10 @@ CREATE
     (ansGrpConsulServ)-[:HAS_OUTCOME]->(qiConsulServ:QuestionInstance:Outcome {uuid: '1498b581-31a1-4176-ad78-d86bd78cb2a2'})-[:DEFINED_BY]->(qstnConsulServ),
 
       // A4 Corporate finance
-      (ansGrpCorpFinance:AnswerGroup {name: 'ansGrpCorpFinance'}),
-      (qiConsulServ)-[:HAS_ANSWER_GROUP]->(ansGrpCorpFinance),
-      (ansGrpCorpFinance)-[:HAS_ANSWER {order: 1}]->(ansCorpFinance),
-      (ansGrpCorpFinance)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6169'}),
+      // (ansGrpCorpFinance:AnswerGroup {name: 'ansGrpCorpFinance'}),
+      // (qiConsulServ)-[:HAS_ANSWER_GROUP]->(ansGrpCorpFinance),
+      // (ansGrpCorpFinance)-[:HAS_ANSWER {order: 1}]->(ansCorpFinance),
+      // (ansGrpCorpFinance)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6169'}),
 
 
       // A4 Management consultancy

@@ -1,5 +1,6 @@
 MATCH
-(qstnServiceType:Question {uuid: '18df190c-ef8e-4cda-a760-68929965b86a'})
+(qstnServiceType:Question {uuid: '18df190c-ef8e-4cda-a760-68929965b86a'}),
+(resultCCSEscapePage:Support {uuid: 'ccb5beb6-75b5-11ea-bc55-0242ac130003'})
 
 CREATE
 
@@ -100,12 +101,15 @@ CREATE
             (ansGrpServiceIntegration:AnswerGroup {name: 'ansGrpServiceIntegration'}),
             (qiThirdQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpServiceIntegration),
             (ansGrpServiceIntegration)-[:HAS_ANSWER {order: 1}]->(ansServiceIntegration),
-            (ansGrpServiceIntegration)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6145'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+            // (ansGrpServiceIntegration)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6145'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+            (ansGrpServiceIntegration)-[:HAS_OUTCOME]->(resultCCSEscapePage),
+            
             
             (ansGrpLearningDesign:AnswerGroup {name: 'ansGrpLearningDesign'}),
             (qiThirdQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpLearningDesign),
             (ansGrpLearningDesign)-[:HAS_ANSWER {order: 2}]->(ansLearningDesign),
-            (ansGrpLearningDesign)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6145'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'CAT', scale: true}),
+            // (ansGrpLearningDesign)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6145'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'CAT', scale: true}),
+            (ansGrpLearningDesign)-[:HAS_OUTCOME]->(resultCCSEscapePage),
 
             (ansGrpOther:AnswerGroup {name: 'ansGrpOther'}),
             (qiThirdQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpOther),

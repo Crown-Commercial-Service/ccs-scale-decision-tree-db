@@ -152,7 +152,7 @@ CREATE
         (ansGrpFunding:AnswerGroup {name: 'ansGrpFunding'}),
         (qiLV2SecondQ)-[:HAS_ANSWER_GROUP]->(ansGrpFunding),
         (ansGrpFunding)-[:HAS_ANSWER {order: 1}]->(ansFunding),
-        (ansGrpFunding)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6213'}),
+        (ansGrpFunding)-[:HAS_OUTCOME]->(resultCCSEscapePage),
 
         (ansGrpCharge:AnswerGroup {name: 'ansGrpCharge'}),
         (qiLV2SecondQ)-[:HAS_ANSWER_GROUP]->(ansGrpCharge),

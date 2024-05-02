@@ -283,7 +283,7 @@ CREATE
     (qiEnerFuelOrWat)-[:HAS_ANSWER_GROUP]->(ansGrpEnergy),
     (ansGrpEnergy)-[:HAS_ANSWER {order: 2}]->(ansEnergy),
     (ansGrpEnergy)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6314'}),
-    (ansGrpEnergy)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6213'}),
+    // (ansGrpEnergy)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6213'}),
 
     // A3 Fuels
     (ansGrpFuels:AnswerGroup {name: 'ansGrpFuels'}),
@@ -465,10 +465,10 @@ CREATE
   (ansGrpOffPrintOrMultiDev)-[:HAS_OUTCOME]->(qiOffPrintOrMultiDev:QuestionInstance:Outcome {uuid: '9fefe89f-2b9a-49e0-887d-d8e365e6a755'})-[:DEFINED_BY]->(qstnOffPrintOrMultiDev),
 
     // A3 Office supplies
-    (ansGrpOffSupp:AnswerGroup {name: 'ansGrpOffSupp'}),
-    (qiOffPrintOrMultiDev)-[:HAS_ANSWER_GROUP]->(ansGrpOffSupp),
-    (ansGrpOffSupp)-[:HAS_ANSWER {order: 1}]->(ansOffSupp),
-    (ansGrpOffSupp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6059'}),
+    // (ansGrpOffSupp:AnswerGroup {name: 'ansGrpOffSupp'}),
+    // (qiOffPrintOrMultiDev)-[:HAS_ANSWER_GROUP]->(ansGrpOffSupp),
+    // (ansGrpOffSupp)-[:HAS_ANSWER {order: 1}]->(ansOffSupp),
+    // (ansGrpOffSupp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6059'}),
 
     // A3 Print related services
     (ansGrpPrintReServ:AnswerGroup {name: 'ansGrpPrintReServ'}),
@@ -571,10 +571,10 @@ CREATE
     (ansGrpPurchases)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6244'}),
 
     // A3 Telematics
-    (ansGrpTelematics:AnswerGroup {name: 'ansGrpTelematics'}),
-    (qiVehicServ)-[:HAS_ANSWER_GROUP]->(ansGrpTelematics),
-    (ansGrpTelematics)-[:HAS_ANSWER {order: 5}]->(ansTelematics),
-    (ansGrpTelematics)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6143'}),
+    // (ansGrpTelematics:AnswerGroup {name: 'ansGrpTelematics'}),
+    // (qiVehicServ)-[:HAS_ANSWER_GROUP]->(ansGrpTelematics),
+    // (ansGrpTelematics)-[:HAS_ANSWER {order: 5}]->(ansTelematics),
+    // (ansGrpTelematics)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6143'}),
 
     // A3 Tyre services
     (ansGrpTyreServ:AnswerGroup {name: 'ansGrpTyreServ'}),
@@ -647,7 +647,7 @@ CREATE
     (qiEmployeeServOrBenefits)-[:HAS_ANSWER_GROUP]->(ansGrpLearnServ),
     (ansGrpLearnServ)-[:HAS_ANSWER {order: 4}]->(ansLearnServ),
     (ansGrpLearnServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6219'}),
-    (ansGrpLearnServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6145'}),
+    // (ansGrpLearnServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6145'}),
 
 
   // A2 Legal or consultancy services
@@ -713,7 +713,7 @@ CREATE
       (qiTempResouOrRecrui)-[:HAS_ANSWER_GROUP]->(ansGrpHealth),
       (ansGrpHealth)-[:HAS_ANSWER {order: 1}]->(ansHealth),
       (ansGrpHealth)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6281'}),
-      (ansGrpHealth)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6161'}),
+      // (ansGrpHealth)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6161'}),
 
       // A4 Supply teachers and educational staff
       (ansGrpSuppTeachAndEducatStaff:AnswerGroup {name: 'ansGrpSuppTeachAndEducatStaff'}),

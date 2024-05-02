@@ -465,10 +465,10 @@ CREATE
   (ansGrpOffPrintOrMultiDev)-[:HAS_OUTCOME]->(qiOffPrintOrMultiDev:QuestionInstance:Outcome {uuid: '9fefe89f-2b9a-49e0-887d-d8e365e6a755'})-[:DEFINED_BY]->(qstnOffPrintOrMultiDev),
 
     // A3 Office supplies
-    (ansGrpOffSupp:AnswerGroup {name: 'ansGrpOffSupp'}),
-    (qiOffPrintOrMultiDev)-[:HAS_ANSWER_GROUP]->(ansGrpOffSupp),
-    (ansGrpOffSupp)-[:HAS_ANSWER {order: 1}]->(ansOffSupp),
-    (ansGrpOffSupp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6059'}),
+    // (ansGrpOffSupp:AnswerGroup {name: 'ansGrpOffSupp'}),
+    // (qiOffPrintOrMultiDev)-[:HAS_ANSWER_GROUP]->(ansGrpOffSupp),
+    // (ansGrpOffSupp)-[:HAS_ANSWER {order: 1}]->(ansOffSupp),
+    // (ansGrpOffSupp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6059'}),
 
     // A3 Print related services
     (ansGrpPrintReServ:AnswerGroup {name: 'ansGrpPrintReServ'}),
@@ -571,10 +571,10 @@ CREATE
     (ansGrpPurchases)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6244'}),
 
     // A3 Telematics
-    (ansGrpTelematics:AnswerGroup {name: 'ansGrpTelematics'}),
-    (qiVehicServ)-[:HAS_ANSWER_GROUP]->(ansGrpTelematics),
-    (ansGrpTelematics)-[:HAS_ANSWER {order: 5}]->(ansTelematics),
-    (ansGrpTelematics)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6143'}),
+    // (ansGrpTelematics:AnswerGroup {name: 'ansGrpTelematics'}),
+    // (qiVehicServ)-[:HAS_ANSWER_GROUP]->(ansGrpTelematics),
+    // (ansGrpTelematics)-[:HAS_ANSWER {order: 5}]->(ansTelematics),
+    // (ansGrpTelematics)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6143'}),
 
     // A3 Tyre services
     (ansGrpTyreServ:AnswerGroup {name: 'ansGrpTyreServ'}),

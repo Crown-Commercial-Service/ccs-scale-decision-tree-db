@@ -60,6 +60,7 @@ load_gm_data "Offsite_construction_solutions.cypher"
 load_gm_data "Energy.cypher"
 load_gm_data "Demand_Management.cypher"
 load_gm_data "Insurance_Services_3.cypher"
+load_gm_data "Travel.cypher"
 
 echo "Data load complete"
 

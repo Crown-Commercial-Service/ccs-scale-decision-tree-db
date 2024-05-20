@@ -59,9 +59,8 @@ CREATE
 (:Answer {uuid: 'ccb61596-75b5-11ea-bc55-0242ac130003', text: 'Both, product and service', hint: 'Some contracts involve buying products and a related service. For example, buying an office coffee machine with an extended warranty'}),
 
 // Pillar
-(:Answer {uuid: 'b52be1f7-b621-4f2f-888e-cadbe70103ea', text: 'Buildings', hint: "Anything you need to build, power or manage a building like construction materials, electricity, water, furniture, maintenance and security."}),
-(:Answer {uuid: '19fdb85e-f224-4842-b856-6119039c3acd', text: 'Corporate Solutions', hint: "Anything you need to run your organisation like office supplies, post, payments, travel, vehicle, marketing and communications services."}),
-(:Answer {uuid: 'cf484bfe-13a9-4ac9-8489-bb39239751a6', text: 'People', hint: "Anyone who gets work done like employees, apprentices or experts in legal, language, consultancy and recruitment services."}),
+(:Answer {uuid: 'b52be1f7-b621-4f2f-888e-cadbe70103ea', text: 'Estates', hint: "Anything you need to build, power or manage a building like construction materials, electricity, water, furniture, maintenance and security."}),
+(:Answer {uuid: '19fdb85e-f224-4842-b856-6119039c3acd', text: 'Corporate', hint: "Anything you need to run your organisation like office supplies, post, payments, travel, vehicle, marketing and communications services, apprentices, legal experts and recruitment services."}),
 (:Answer {uuid: '023a7ca0-d772-4471-ba3c-12df811cf816', text: 'Technology', hint: "Anything that helps you work digitally, protect and manage information like AI, cloud, network, software and cyber security."}),
 
 // Sectors

@@ -4,15 +4,14 @@ MATCH
 (qstnWhichPillar:Question {uuid: '2efb026a-f85c-42d1-b294-3d72f2b95736'}),
 
 // Level 1 answer
-(ansBuildings:Answer {uuid: 'b52be1f7-b621-4f2f-888e-cadbe70103ea'}),
-(ansCorporateSolutions:Answer {uuid: '19fdb85e-f224-4842-b856-6119039c3acd'}),
-(ansPeople:Answer {uuid: 'cf484bfe-13a9-4ac9-8489-bb39239751a6'}),
+(ansEstates:Answer {uuid: 'b52be1f7-b621-4f2f-888e-cadbe70103ea'}),
+(ansCorporate:Answer {uuid: '19fdb85e-f224-4842-b856-6119039c3acd'}),
 (ansTechnology:Answer {uuid: '023a7ca0-d772-4471-ba3c-12df811cf816'}),
 
 // Level 2 questions
 (qstnBuildings:Question {uuid: '22462bd6-9323-4f8a-9672-a724e19eafeb'}),
 (qstnCorpSolutions:Question {uuid: 'd180386a-fe18-42ac-add8-2e1341c750a5'}),
-(qstnPeople:Question {uuid: '6c166ea3-63a3-4e0e-82a1-f36ce6040122'}),
+
 (qstnTechnology:Question {uuid: '95d78c62-141b-4621-8431-6c94c97bb0ea'}),
 
 
@@ -239,7 +238,7 @@ CREATE
 // A1 Buildings
 (ansGrpBuildings:AnswerGroup {name: 'ansGrpBuildings'}),
 (qiWhichPillar)-[:HAS_ANSWER_GROUP]->(ansGrpBuildings),
-(ansGrpBuildings)-[:HAS_ANSWER {order: 1}]->(ansBuildings),
+(ansGrpBuildings)-[:HAS_ANSWER {order: 1}]->(ansEstates),
 (ansGrpBuildings)-[:HAS_OUTCOME]->(qiBuildings:QuestionInstance:Outcome {uuid: 'a4238ac3-c0f9-44cf-85c2-529f4455a841'})-[:DEFINED_BY]->(qstnBuildings),
 
   // A2 Buildings or construction
@@ -359,7 +358,7 @@ CREATE
 // A1 Corporate Solutions
 (ansGrpCorpSolutions:AnswerGroup {name: 'ansGrpCorpSolutions'}),
 (qiWhichPillar)-[:HAS_ANSWER_GROUP]->(ansGrpCorpSolutions),
-(ansGrpCorpSolutions)-[:HAS_ANSWER {order: 2}]->(ansCorporateSolutions),
+(ansGrpCorpSolutions)-[:HAS_ANSWER {order: 2}]->(ansCorporate),
 (ansGrpCorpSolutions)-[:HAS_OUTCOME]->(qiCorpSolutions:QuestionInstance:Outcome {uuid: '4a885ee4-22b8-4670-9a60-ffe87dc8c308'})-[:DEFINED_BY]->(qstnCorpSolutions),
 
   // A2 Financial services
@@ -582,46 +581,17 @@ CREATE
     (ansGrpTyreServ)-[:HAS_ANSWER {order: 6}]->(ansTyreServ),
     (ansGrpTyreServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6142'}),
 
-  // A2 Anything else (Corporate Solutions)
-  (ansGrpAnyForCorpSolutions:AnswerGroup {name: 'ansGrpAnyForCorpSolutions'}),
-  (qiCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpAnyForCorpSolutions),
-  (ansGrpAnyForCorpSolutions)-[:HAS_ANSWER {order: 7, mutex: true}]->(ansAnyForCorpSolutions),
-  (ansGrpAnyForCorpSolutions)-[:HAS_OUTCOME]->(qiAnyForCorpSolutions:QuestionInstance:Outcome {uuid: '6d2d8d07-2e5e-4521-a8b8-c0abec7d65b4'})-[:DEFINED_BY]->(qstnAnyForCorpSolutions),
-
-    // A3 Campaign solutions
-    (ansGrpCampaSolut:AnswerGroup {name: 'ansGrpCampaSolut'}),
-    (qiAnyForCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpCampaSolut),
-    (ansGrpCampaSolut)-[:HAS_ANSWER {order: 1}]->(ansCampaSolut),
-    (ansGrpCampaSolut)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6125'}),
-
-    // A3 Communication services
-    (ansGrpComServices:AnswerGroup {name: 'ansGrpComServices'}),
-    (qiAnyForCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpComServices),
-    (ansGrpComServices)-[:HAS_ANSWER {order: 2}]->(ansComServices),
-    (ansGrpComServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6124'}),
-
-
-
-
-
-
-// A1 People
-(ansGrpPeople:AnswerGroup {name: 'ansGrpPeople'}),
-(qiWhichPillar)-[:HAS_ANSWER_GROUP]->(ansGrpPeople),
-(ansGrpPeople)-[:HAS_ANSWER {order: 3}]->(ansPeople),
-(ansGrpPeople)-[:HAS_OUTCOME]->(qiPeople:QuestionInstance:Outcome {uuid: 'f631f951-2665-497f-a4cd-79973c65bb9d'})-[:DEFINED_BY]->(qstnPeople),
-
-  // A2 Apprenticeship services
+// A2 Apprenticeship services
   (ansGrpApprenticeshipServ:AnswerGroup {name: 'ansGrpApprenticeshipServ'}),
-  (qiPeople)-[:HAS_ANSWER_GROUP]->(ansGrpApprenticeshipServ),
-  (ansGrpApprenticeshipServ)-[:HAS_ANSWER {order: 1}]->(ansApprenticeshipServ),
+  (qiCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpApprenticeshipServ),
+  (ansGrpApprenticeshipServ)-[:HAS_ANSWER {order: 7}]->(ansApprenticeshipServ),
   (ansGrpApprenticeshipServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6102'}),
   (ansGrpApprenticeshipServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6102'}),
 
   // A2 Employee services or benefits
   (ansGrpEmployeeServOrBenefits:AnswerGroup {name: 'ansGrpEmployeeServOrBenefits'}),
-  (qiPeople)-[:HAS_ANSWER_GROUP]->(ansGrpEmployeeServOrBenefits),
-  (ansGrpEmployeeServOrBenefits)-[:HAS_ANSWER {order: 2}]->(ansEmployeeServOrBenefits),
+  (qiCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpEmployeeServOrBenefits),
+  (ansGrpEmployeeServOrBenefits)-[:HAS_ANSWER {order: 8}]->(ansEmployeeServOrBenefits),
   (ansGrpEmployeeServOrBenefits)-[:HAS_OUTCOME]->(qiEmployeeServOrBenefits:QuestionInstance:Outcome {uuid: '3da205c3-c066-4be8-b28b-be911e878f05'})-[:DEFINED_BY]->(qstnEmployeeServOrBenefits),
 
     // A3 Employee health and wellbeing
@@ -652,8 +622,8 @@ CREATE
 
   // A2 Legal or consultancy services
   (ansGrpLegalOrConsServ:AnswerGroup {name: 'ansGrpLegalOrConsServ'}),
-  (qiPeople)-[:HAS_ANSWER_GROUP]->(ansGrpLegalOrConsServ),
-  (ansGrpLegalOrConsServ)-[:HAS_ANSWER {order: 3}]->(ansLegalOrConsServ),
+  (qiCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpLegalOrConsServ),
+  (ansGrpLegalOrConsServ)-[:HAS_ANSWER {order: 9}]->(ansLegalOrConsServ),
   (ansGrpLegalOrConsServ)-[:HAS_OUTCOME]->(qiLegalOrConsServ:QuestionInstance:Outcome {uuid: 'dc819f0e-2711-410e-a017-0b53befed5ee'})-[:DEFINED_BY]->(qstnLegalOrConsServ),
 
     // A3 Consultancy services
@@ -686,8 +656,8 @@ CREATE
 
   // A2 Recruitment or employment services
   (ansGrpRecruitOrEmployServ:AnswerGroup {name: 'ansGrpRecruitOrEmployServ'}),
-  (qiPeople)-[:HAS_ANSWER_GROUP]->(ansGrpRecruitOrEmployServ),
-  (ansGrpRecruitOrEmployServ)-[:HAS_ANSWER {order: 4}]->(ansRecruitOrEmployServ),
+  (qiCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpRecruitOrEmployServ),
+  (ansGrpRecruitOrEmployServ)-[:HAS_ANSWER {order: 10}]->(ansRecruitOrEmployServ),
   (ansGrpRecruitOrEmployServ)-[:HAS_OUTCOME]->(qiRecruitOrEmployServ:QuestionInstance:Outcome {uuid: '1e388d5a-cd82-4b15-825f-d55a3cb99e17'})-[:DEFINED_BY]->(qstnRecruitOrEmployServ),
 
     // A3 Permanent recruitment
@@ -727,21 +697,30 @@ CREATE
       (ansGrpAnyelseForTempResouOrRecruit)-[:HAS_ANSWER {order: 3, mutex: true}]->(ansAnyelseForTempResouOrRecruit),
       (ansGrpAnyelseForTempResouOrRecruit)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6278'}),
       (ansGrpAnyelseForTempResouOrRecruit)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6277'}),
+  
+  // A2 Anything else (Corporate Solutions)
+  (ansGrpAnyForCorpSolutions:AnswerGroup {name: 'ansGrpAnyForCorpSolutions'}),
+  (qiCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpAnyForCorpSolutions),
+  (ansGrpAnyForCorpSolutions)-[:HAS_ANSWER {order: 11, mutex: true}]->(ansAnyForCorpSolutions),
+  (ansGrpAnyForCorpSolutions)-[:HAS_OUTCOME]->(qiAnyForCorpSolutions:QuestionInstance:Outcome {uuid: '6d2d8d07-2e5e-4521-a8b8-c0abec7d65b4'})-[:DEFINED_BY]->(qstnAnyForCorpSolutions),
 
+    // A3 Campaign solutions
+    (ansGrpCampaSolut:AnswerGroup {name: 'ansGrpCampaSolut'}),
+    (qiAnyForCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpCampaSolut),
+    (ansGrpCampaSolut)-[:HAS_ANSWER {order: 1}]->(ansCampaSolut),
+    (ansGrpCampaSolut)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6125'}),
 
-  // A2 Anything else (People)
-  (ansGrpAnyForPeople:AnswerGroup {name: 'ansGrpAnyForPeople'}),
-  (qiPeople)-[:HAS_ANSWER_GROUP]->(ansGrpAnyForPeople),
-  (ansGrpAnyForPeople)-[:HAS_ANSWER {order: 5, mutex: true}]->(ansAnyForPeople),
-  (ansGrpAnyForPeople)-[:HAS_OUTCOME]->(qiAnyForPeople:QuestionInstance:Outcome {uuid: '03aaeaa2-8c9a-4a14-b669-3efe694e6dfa'})-[:DEFINED_BY]->(qstnAnyForPeople),
+    // A3 Communication services
+    (ansGrpComServices:AnswerGroup {name: 'ansGrpComServices'}),
+    (qiAnyForCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpComServices),
+    (ansGrpComServices)-[:HAS_ANSWER {order: 2}]->(ansComServices),
+    (ansGrpComServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6124'}),
 
     // A3 Contact centre services
     (ansGrpConCenServ:AnswerGroup {name: 'ansGrpConCenServ'}),
-    (qiAnyForPeople)-[:HAS_ANSWER_GROUP]->(ansGrpConCenServ),
-    (ansGrpConCenServ)-[:HAS_ANSWER {order: 1}]->(ansConCenServ),
+    (qiAnyForCorpSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpConCenServ),
+    (ansGrpConCenServ)-[:HAS_ANSWER {order: 3}]->(ansConCenServ),
     (ansGrpConCenServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6181'}),
-
-
 
 // A1 Technology
 (ansGrpTechnology:AnswerGroup {name: 'ansGrpTechnology'}),

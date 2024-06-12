@@ -25,7 +25,6 @@ done
 
 # Load Guided Match decision trees
 load_gm_data "common.cypher"
-load_gm_data "RM3733_RM6068_RM6103_TP2_TePAS_EduTech.cypher"
 load_gm_data "RM6071_RM6170_Print_Marketplace.cypher"
 load_gm_data "RM6177_National_Fuels_2.cypher"
 load_gm_data "RM6178_Water_and_wastewater.cypher"
@@ -59,6 +58,7 @@ load_gm_data "Energy.cypher"
 load_gm_data "Demand_Management.cypher"
 load_gm_data "Insurance_Services_3.cypher"
 load_gm_data "Joint_network_solutions.cypher"
+load_gm_data "Technology_products_2.cypher"
 
 echo "Data load complete"
 

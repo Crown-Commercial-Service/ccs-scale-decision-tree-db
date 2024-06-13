@@ -59,6 +59,7 @@ load_gm_data "Demand_Management.cypher"
 load_gm_data "Insurance_Services_3.cypher"
 load_gm_data "Joint_network_solutions.cypher"
 load_gm_data "Technology_products_2.cypher"
+load_gm_data "Travel.cypher"
 
 echo "Data load complete"
 

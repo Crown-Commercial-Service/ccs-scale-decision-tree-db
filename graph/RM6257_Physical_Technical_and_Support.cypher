@@ -1,6 +1,6 @@
 MATCH
 (qstnFirstQ:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'}),
-(qiTechFirstQuestion:QuestionInstance {uuid: '698c220e-7fc8-11ea-bc55-0242ac130003'})
+(qiTechFirstQuestion:QuestionInstance {uuid: '5cfba8a0-902c-4ca8-a396-ed791522c9db'})
 
 CREATE
 (ansSoftwareSecurity:Answer {

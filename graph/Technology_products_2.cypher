@@ -96,7 +96,6 @@ CREATE
     text: 'Technolog catalogue',
     hint: 'Buy simple and ready made hardware and software services through an online catalogue such as:
     <ul>
-        <li>Buy simple and ready made hardware and software services through an online catalogue such as:</li>
         <li>laptops, desktops, mobiles and tablet devices</li>
         <li>hardware and device management</li>
         <li>consumables such as cabling, connectors, data storage and memory sticks</li>

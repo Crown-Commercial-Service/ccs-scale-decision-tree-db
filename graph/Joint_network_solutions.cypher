@@ -328,7 +328,7 @@ CREATE
         (qiWANorLAN)-[:HAS_ANSWER_GROUP]->(ansGrpWAN),
         (ansGrpWAN)-[:HAS_ANSWER {order: 1}]->(ansWAN),
         (ansGrpWAN)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6116'})-[:HAS_LOT]->(:Lot {number: '1a', url: '', type: 'CAT', scale: true}),
-        (ansGrpHSCN)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3825'}),
+        (ansGrpWAN)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3825'}),
 
         (ansGrpLAN:AnswerGroup {name: 'ansGrpLAN'}),
         (qiWANorLAN)-[:HAS_ANSWER_GROUP]->(ansGrpLAN),
@@ -509,7 +509,7 @@ CREATE
     (ansGrpIntegrated:AnswerGroup {name: 'ansGrpIntegrated'}),
     (qiCritical)-[:HAS_ANSWER_GROUP]->(ansGrpIntegrated),
     (ansGrpIntegrated)-[:HAS_ANSWER {order: 1}]->(ansIntegrated),
-    (ansGrpNo2)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6116'})-[:HAS_LOT]->(:Lot {number: '1d', url: '', type: 'CAT', scale: true}),
+    (ansGrpIntegrated)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6116'})-[:HAS_LOT]->(:Lot {number: '1d', url: '', type: 'CAT', scale: true}),
 
     (ansGrpPublic:AnswerGroup {name: 'ansGrpPublic'}),
     (qiCritical)-[:HAS_ANSWER_GROUP]->(ansGrpPublic),
@@ -528,5 +528,5 @@ CREATE
 
 (ansGrpSomething:AnswerGroup {name: 'ansGrpSomething'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpSomething),
-(ansGrpSomething)-[:HAS_ANSWER {order: 1}]->(ansSomething),
+(ansGrpSomething)-[:HAS_ANSWER {order: 12}]->(ansSomething),
 (ansGrpSomething)-[:HAS_OUTCOME]->(resultCCSEscapePage);

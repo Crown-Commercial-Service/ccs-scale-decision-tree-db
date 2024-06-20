@@ -14,17 +14,6 @@ CREATE
     </ul>'
 }),
 
-(ansTravelAndVenue:Answer {
-    uuid: 'b1077a6c-dc4f-42c2-8df3-1e08e04dce3a',
-    text: 'Travel and venue services',
-    hint: 'Use our travel and venue solution to find and book travel and meeting spaces for your organisation. You can book:
-    <ul>
-        <li>domestic and international travel from within the uk including air, rail, ferry, taxi and vehicle hire</li>
-        <li>accommodation </li>
-        <li>meeting venues</li>
-    </ul>'
-}),
-
 (ansVenueServices:Answer {
     uuid: 'c464da50-3249-4ff3-9047-b62b85d53d1a',
     text: 'Venue services',
@@ -75,18 +64,6 @@ CREATE
     </ul>'
 }),
 
-(ansPublic:Answer {
-    uuid: '12db5d0e-2c16-48b4-8366-40db2db21e79',
-    text: 'Public sector global travel management service',
-    hint: 'Access our travel management service which will allow you to book travel and meeting venues both in the UK and overseas. Services include:
-    <ul>
-        <li>access to a single supplier who will provide complex travel services locally</li>
-        <li>domestic and international travel including air, rail, ferry, vehicle hire and taxis</li>
-        <li>booking meeting venues and accommodation both in the UK and overseas</li>
-    </ul>'
-}),
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Tree Structure
 
@@ -108,26 +85,12 @@ CREATE
     (ansGrpOnlineAndOfflineUK)-[:HAS_ANSWER {order: 2}]->(ansOnlineAndOfflineUK),
     (ansGrpOnlineAndOfflineUK)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6217'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
-
     (ansGrpOnlineAndOfflineMOD:AnswerGroup {name: 'ansGrpOnlineAndOfflineMOD'}),
     (qiService)-[:HAS_ANSWER_GROUP]->(ansGrpOnlineAndOfflineMOD),
     (ansGrpOnlineAndOfflineMOD)-[:HAS_ANSWER {order: 3}]->(ansOnlineAndOfflineMOD),
     (ansGrpOnlineAndOfflineMOD)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6217'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
-
-    (ansGrpPublic:AnswerGroup {name: 'ansGrpPublic'}),
-    (qiService)-[:HAS_ANSWER_GROUP]->(ansGrpPublic),
-    (ansGrpPublic)-[:HAS_ANSWER {order: 4}]->(ansPublic),
-    (ansGrpPublic)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6164'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
-
-
-(ansGrpTravelAndVenue:AnswerGroup {name: 'ansGrpTravelAndVenue'}),
-(qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpTravelAndVenue),
-(ansGrpTravelAndVenue)-[:HAS_ANSWER {order: 2}]->(ansTravelAndVenue),
-(ansGrpTravelAndVenue)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6164'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
-
-
 (ansGrpVenueServices:AnswerGroup {name: 'ansGrpVenueServices'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpVenueServices),
-(ansGrpVenueServices)-[:HAS_ANSWER {order: 3}]->(ansVenueServices),
+(ansGrpVenueServices)-[:HAS_ANSWER {order: 2}]->(ansVenueServices),
 (ansGrpVenueServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6217'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true});

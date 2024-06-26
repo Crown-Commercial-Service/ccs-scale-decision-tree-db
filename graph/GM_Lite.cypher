@@ -381,10 +381,10 @@ CREATE
     (ansGrpFuelCard)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6186'}),
 
     // A3 Grant services
-    (ansGrpGrantServ:AnswerGroup {name: 'ansGrpGrantServ'}),
-    (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpGrantServ),
-    (ansGrpGrantServ)-[:HAS_ANSWER {order: 3}]->(ansGrantServ),
-    (ansGrpGrantServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6172'}),
+    // (ansGrpGrantServ:AnswerGroup {name: 'ansGrpGrantServ'}),
+    // (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpGrantServ),
+    // (ansGrpGrantServ)-[:HAS_ANSWER {order: 3}]->(ansGrantServ),
+    // (ansGrpGrantServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6172'}),
 
     // A3 Insurance services
     (ansGrpInsurServ:AnswerGroup {name: 'ansGrpInsurServ'}),
@@ -617,7 +617,6 @@ CREATE
     (qiEmployeeServOrBenefits)-[:HAS_ANSWER_GROUP]->(ansGrpLearnServ),
     (ansGrpLearnServ)-[:HAS_ANSWER {order: 4}]->(ansLearnServ),
     (ansGrpLearnServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6219'}),
-    (ansGrpLearnServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6145'}),
 
 
   // A2 Legal or consultancy services

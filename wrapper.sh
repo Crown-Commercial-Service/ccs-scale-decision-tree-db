@@ -60,6 +60,7 @@ load_gm_data "Travel.cypher"
 load_gm_data "RM6257_Physical_Technical_and_Support.cypher"
 load_gm_data "Facilities.cypher"
 load_gm_data "GM_Lite.cypher"
+load_gm_data "Software.cypher"
 
 echo "Data load complete"
 

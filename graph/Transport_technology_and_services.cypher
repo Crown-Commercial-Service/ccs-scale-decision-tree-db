@@ -200,7 +200,7 @@ CREATE
 }),
 
 (Agreement_RM6094:Agreement:Outcome {number: 'RM6094'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
-(Agreement_RM6213:Agreement:Outcome {number: 'RM6094'}),
+(Agreement_RM6213:Agreement:Outcome {number: 'RM6213'}),
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

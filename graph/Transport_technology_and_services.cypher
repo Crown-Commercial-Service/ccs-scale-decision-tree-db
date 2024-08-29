@@ -42,7 +42,7 @@ CREATE
     hint: 'This refers to the programming environment of a computer that is dedicated to systems simulation and is created to imitate a real-world process over time. Service examples includes: 
     <ul>
         <li>spatial computing: computers blend data from the world around them to perform real actions in a natural way (such as using software to control lights in a room)</li>
-        <li>augmented reality: use apps, software and hardware to create an interactive experience by blending reality with digital content</li>§
+        <li>augmented reality: use apps, software and hardware to create an interactive experience by blending reality with digital content</li>
         <li>virtual reality</li>
     </ul>'
 }),

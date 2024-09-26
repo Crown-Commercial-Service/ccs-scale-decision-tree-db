@@ -63,6 +63,7 @@ load_gm_data "GM_Lite.cypher"
 load_gm_data "Software.cypher"
 load_gm_data "Cloud_compute.cypher"
 load_gm_data "Transport_technology_and_services.cypher"
+load_gm_data "Bespoke_application_development.cypher"
 
 echo "Data load complete"
 

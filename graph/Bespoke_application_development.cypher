@@ -119,9 +119,9 @@ CREATE
 (ansGrpUserResearchStudios:AnswerGroup {name: 'ansGrpUserResearchStudios'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpUserResearchStudios),
 (ansGrpUserResearchStudios)-[:HAS_ANSWER {order: 4}]->(ansUserResearchStudios),
-(ansGrpDigitalOutcomesOrAchievementRequirement)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1043.8'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+(ansGrpUserResearchStudios)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1043.8'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
 (ansGrpTesting:AnswerGroup {name: 'ansGrpTesting'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpTesting),
 (ansGrpTesting)-[:HAS_ANSWER {order: 5}]->(ansTesting),
-(ansGrpDigitalOutcomesOrAchievementRequirement)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1043.8'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true});
+(ansGrpTesting)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1043.8'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true});

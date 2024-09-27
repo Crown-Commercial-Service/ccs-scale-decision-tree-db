@@ -204,18 +204,6 @@ CREATE
     (ansGrpRailLegalServices)-[:HAS_ANSWER {order: 2}]->(ansRailLegalServices),
     (ansGrpRailLegalServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6204'}),
 
-    (ansGrpGeneral:AnswerGroup {name: 'ansGrpGeneral'}),
-    (qiCG)-[:HAS_ANSWER_GROUP]->(ansGrpGeneral),
-    (ansGrpGeneral)-[:HAS_ANSWER {order: 3}]->(ansGeneral),
-    (ansGrpGeneral)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6179'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
-
-
-    (ansGrpFinancialAndComplexLS:AnswerGroup {name: 'ansGrpFinancialAndComplexLS'}),
-    (qiCG)-[:HAS_ANSWER_GROUP]->(ansGrpFinancialAndComplexLS),
-    (ansGrpFinancialAndComplexLS)-[:HAS_ANSWER {order: 4}]->(ansFinancialAndComplexLS),
-    (ansGrpFinancialAndComplexLS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6179'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
-
-
 (ansGrpWPS:AnswerGroup {name: 'ansGrpWPS'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpWPS),
 (ansGrpWPS)-[:HAS_ANSWER {order: 2}]->(ansWPS),

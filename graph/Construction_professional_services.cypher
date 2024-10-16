@@ -25,7 +25,7 @@ CREATE
         <li>town centre regeneration</li>
         <li>SMART and digital cities consultancy </li>
         <li>transportation links (rail, bus and road)</li>
-        <li>sciene and tech campus development</li>
+        <li>science and tech campus development</li>
     </ul>'
 }),
 
@@ -35,7 +35,7 @@ CREATE
     hint: 'Multi-disciplinary construction advisory services to support a wide range of projects and programmes in overseas locations across the world, including:
     <ul>
         <li>embassies</li>
-        <li>ambassaor\'s Residences </li>
+        <li>ambassador\'s residence </li>
         <li>staff accommodation</li>
     </ul>'
 }),

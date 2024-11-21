@@ -6,6 +6,11 @@ function load_gm_data() {
   cypher-shell -u ${DB_ADMIN_USERNAME} -p "${DB_ADMIN_PASSWORD}" -a bolt://localhost:7687 --debug -f ./graph/$1
 }
 
+function load_cnz_data() {
+    echo "Loading CNZ data from file: ${1}"
+    cypher-shell -u ${DB_ADMIN_USERNAME} -p "${DB_ADMIN_PASSWORD}" -a bolt://localhost:7687 --debug -f $1
+}
+
 export NEO4J_AUTH="${DB_ADMIN_USERNAME}/${DB_ADMIN_PASSWORD}"
 
 # Start the primary process in the background
@@ -66,6 +71,11 @@ load_gm_data "Transport_technology_and_services.cypher"
 load_gm_data "Bespoke_application_development.cypher"
 load_gm_data "Construction_professional_services.cypher"
 load_gm_data "Tech_Strategy_and_Info_Security_Services.cypher"
+
+cd ./graph/CNZ
+for f in * ;
+   do load_cnz_data "$f" 
+done
 
 echo "Data load complete"
 

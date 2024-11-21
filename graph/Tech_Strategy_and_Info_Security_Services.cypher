@@ -128,4 +128,4 @@ CREATE
 (ansGrpCloud:AnswerGroup {name: 'ansGrpCloud'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpCloud),
 (ansGrpCloud)-[:HAS_ANSWER {order: 3}]->(ansCloud),
-(ansGrpCyberSecurityServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6193'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true});
+(ansGrpCloud)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6193'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true});

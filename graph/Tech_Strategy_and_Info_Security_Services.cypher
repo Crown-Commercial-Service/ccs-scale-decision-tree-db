@@ -24,14 +24,14 @@ CREATE
     text: 'Strategy, design and operational technology services',
     hint: 'These agreements will give you access to a range of technology services, including:
     <ul>
-        <li>strategy and service designA</li>
-        <li>transition of servicesA</li>
-        <li>operational management of IT servicesA</li>
-        <li>large projects, including top secret classification and a range of other technology servicesA</li>
-        <li>end user device supportA</li>
-        <li>network supportA</li>
-        <li>asset disposal and application maintenanceA</li>
-        <li>IT infrastructure support (for example, server and storage hardware)A</li>
+        <li>strategy and service design</li>
+        <li>transition of services</li>
+        <li>operational management of IT services</li>
+        <li>large projects, including top secret classification and a range of other technology services</li>
+        <li>end user device support</li>
+        <li>network support</li>
+        <li>asset disposal and application maintenance</li>
+        <li>IT infrastructure support (for example, server and storage hardware)</li>
     </ul>'
 }),
 

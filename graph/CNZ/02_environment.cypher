@@ -219,12 +219,12 @@ CREATE
 (ansGrpVehicleChargingPoints)-[:HAS_OUTCOME]->(qiVehicleChargingPoints:QuestionInstance:Outcome {uuid: '78699126-16e6-4be6-bfb1-9ae5f3a884c2'})-[:DEFINED_BY]->(qstnService),
 
     (ansGrpVCIS:AnswerGroup {name: 'ansGrpVCIS'}),
-    (qiSoftware)-[:HAS_ANSWER_GROUP]->(ansGrpVCIS),
+    (qiVehicleChargingPoints)-[:HAS_ANSWER_GROUP]->(ansGrpVCIS),
     (ansGrpVCIS)-[:HAS_ANSWER {order: 1}]->(ansVCIS),
     (ansGrpVCIS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6213'}),
 
     (ansGrpTTS:AnswerGroup {name: 'ansGrpTTS'}),
-    (qiSoftware)-[:HAS_ANSWER_GROUP]->(ansGrpTTS),
+    (qiVehicleChargingPoints)-[:HAS_ANSWER_GROUP]->(ansGrpTTS),
     (ansGrpTTS)-[:HAS_ANSWER {order: 2}]->(ansTTS),
     (ansGrpTTS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6099'}),
     (ansGrpTTS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6165'}),

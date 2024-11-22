@@ -52,12 +52,12 @@ CREATE
 (ansGrpRefurb)-[:HAS_OUTCOME]->(qiRefurb:QuestionInstance:Outcome {uuid: '7fe6440e-333a-4ea0-8b70-a2d46d315b33'})-[:DEFINED_BY]->(qstnService),
 
     (ansGrpFurniture:AnswerGroup {name: 'ansGrpFurniture'}),
-    (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpFurniture),
+    (qiRefurb)-[:HAS_ANSWER_GROUP]->(ansGrpFurniture),
     (ansGrpFurniture)-[:HAS_ANSWER {order: 1}]->(ansFurniture),
     (ansGrpFurniture)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6308'}),
 
     (ansGrpTechnologyAndVehicle:AnswerGroup {name: 'ansGrpTechnologyAndVehicle'}),
-    (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpTechnologyAndVehicle),
+    (qiRefurb)-[:HAS_ANSWER_GROUP]->(ansGrpTechnologyAndVehicle),
     (ansGrpTechnologyAndVehicle)-[:HAS_ANSWER {order: 2}]->(ansTechnologyAndVehicle),
     (ansGrpTechnologyAndVehicle)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6098'}),
     (ansGrpTechnologyAndVehicle)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6315'}),

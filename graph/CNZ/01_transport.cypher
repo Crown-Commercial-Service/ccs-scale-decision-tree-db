@@ -101,8 +101,8 @@ CREATE
     (ansGrpVCP)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6099'}),
 
     (ansGrpULEVs:AnswerGroup {name: 'ansGrpULEVs'}),
-    (qiVehicles)-[:HAS_ANSWER_GROUP]->(ansULEVs),
-    (ansGrpULEVs)-[:HAS_ANSWER {order: 4}]->(ansMobility),
+    (qiVehicles)-[:HAS_ANSWER_GROUP]->(ansGrpULEVs),
+    (ansGrpULEVs)-[:HAS_ANSWER {order: 4}]->(ansULEVs),
     (ansGrpULEVs)-[:HAS_OUTCOME]->(qiULEVs:QuestionInstance:Outcome {uuid: 'bd47469a-7dc4-402b-b79a-2f698fac534f'})-[:DEFINED_BY]->(qstnSolution),
 
         (ansGrpVehicleLease:AnswerGroup {name: 'ansGrpVehicleLease'}),
@@ -119,9 +119,8 @@ CREATE
 (ansGrpTrafficManagement:AnswerGroup {name: 'ansGrpTrafficManagement'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpTrafficManagement),
 (ansGrpTrafficManagement)-[:HAS_ANSWER {order: 2}]->(ansTrafficManagement),
-(ansGrpTrafficManagement)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM3615'}),
+(ansGrpTrafficManagement)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6315'}),
 (ansGrpTrafficManagement)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6099'}),
-
 
 (ansGrpZeroEmission:AnswerGroup {name: 'ansGrpZeroEmission'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpZeroEmission),

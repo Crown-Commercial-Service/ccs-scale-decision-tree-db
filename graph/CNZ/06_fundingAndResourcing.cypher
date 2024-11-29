@@ -9,11 +9,11 @@ CREATE
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-(ansGrpCNZ:AnswerGroup {name: 'ansGrpCNZ'}),
-(startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpCNZ),
-(ansGrpCNZ)-[:HAS_ANSWER {order: 1}]->(ansCNZ),
-//TODO This is dummy value 
-(ansGrpCNZ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1234'}),
+// (ansGrpCNZ:AnswerGroup {name: 'ansGrpCNZ'}),
+// (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpCNZ),
+// (ansGrpCNZ)-[:HAS_ANSWER {order: 1}]->(ansCNZ),
+// //TODO This is dummy value 
+// (ansGrpCNZ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1234'}),
 
 (ansGrpLeasingAndLoans:AnswerGroup {name: 'ansGrpLeasingAndLoans'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpLeasingAndLoans),

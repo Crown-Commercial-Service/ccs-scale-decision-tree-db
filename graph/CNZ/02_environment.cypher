@@ -50,7 +50,7 @@ CREATE
 
 
 (ansEnergyAndFuels:Answer {uuid: '51033e14-6ba3-43ef-8aa0-5e801e22b16a', text: 'Energy and fuels', hint: 'Access renewable electricity and sustainable fuels'}),
-(ansConstructionProfessional:Answer {uuid: 'a2f2780a-11f5-4744-b5b9-99f5331d4906', text: 'ConstructionProfessional', hint: 'Access technical advisory services in support of building and civil engineering projects of all scales and sizes'}),
+(ansConstructionProfessional:Answer {uuid: 'a2f2780a-11f5-4744-b5b9-99f5331d4906', text: 'Construction Professional Services', hint: 'Access technical advisory services in support of building and civil engineering projects of all scales and sizes'}),
 (ansDemandManagementDiff:Answer {uuid: 'a0691f5a-084b-4792-b332-7a90c4f73c13', text: 'Demand Management and Renewables', hint: 'Access decarbonisation products and people services that support your carbon net zero strategy'}),
 
 // ansConstructionProfessional

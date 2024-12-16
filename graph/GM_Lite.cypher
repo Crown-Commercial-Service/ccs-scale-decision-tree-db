@@ -294,7 +294,7 @@ CREATE
     (ansGrpWaterOrWaste:AnswerGroup {name: 'ansGrpWaterOrWaste'}),
     (qiEnerFuelOrWat)-[:HAS_ANSWER_GROUP]->(ansGrpWaterOrWaste),
     (ansGrpWaterOrWaste)-[:HAS_ANSWER {order: 4}]->(ansWaterOrWaste),
-    (ansGrpWaterOrWaste)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6178'}),
+    (ansGrpWaterOrWaste)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6306'}),
 
 
 // A2 Facilities, estate or workplace management
@@ -416,7 +416,7 @@ CREATE
     (ansGrpLeasAdvis:AnswerGroup {name: 'ansGrpLeasAdvis'}),
     (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpLeasAdvis),
     (ansGrpLeasAdvis)-[:HAS_ANSWER {order: 6}]->(ansLeasAdvis),
-    (ansGrpLeasAdvis)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6146'}),
+    (ansGrpLeasAdvis)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6344'}),
 
     // A3 Spend recovery
     (ansGrpSpendRec:AnswerGroup {name: 'ansGrpSpendRec'}),
@@ -486,8 +486,8 @@ CREATE
       (ansGrpPrintServ:AnswerGroup {name: 'ansGrpPrintServ'}),
       (qiPrintReServ)-[:HAS_ANSWER_GROUP]->(ansGrpPrintServ),
       (ansGrpPrintServ)-[:HAS_ANSWER {order: 2}]->(ansPrintServ),
-      (ansGrpPrintServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6170'}),
-      (ansGrpPrintServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6071'}),
+      (ansGrpPrintServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6297'}),
+      (ansGrpPrintServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6371'}),
 
 
 // A2 Post, courier or logistic services
@@ -506,7 +506,7 @@ CREATE
     (ansGrpLogiAndWare:AnswerGroup {name: 'ansGrpLogiAndWare'}),
     (qiPostCourOrLogServ)-[:HAS_ANSWER_GROUP]->(ansGrpLogiAndWare),
     (ansGrpLogiAndWare)-[:HAS_ANSWER {order: 2}]->(ansLogiAndWare),
-    (ansGrpLogiAndWare)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6074'}),
+    (ansGrpLogiAndWare)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'}),
 
     // // A3 Postal services
     // (ansGrpPostServ:AnswerGroup {name: 'ansGrpPostServ'}),
@@ -531,13 +531,13 @@ CREATE
     (ansGrpTranServ:AnswerGroup {name: 'ansGrpTranServ'}),
     (qiTravelServ)-[:HAS_ANSWER_GROUP]->(ansGrpTranServ),
     (ansGrpTranServ)-[:HAS_ANSWER {order: 2}]->(ansTranServ),
-    (ansGrpTranServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6217'}),
+    (ansGrpTranServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6342'}),
 
     // A3 Travel and venue solutions
     (ansGrpTrAndVenSol:AnswerGroup {name: 'ansGrpTrAndVenSol'}),
     (qiTravelServ)-[:HAS_ANSWER_GROUP]->(ansGrpTrAndVenSol),
     (ansGrpTrAndVenSol)-[:HAS_ANSWER {order: 3}]->(ansTrAndVenSol),
-    (ansGrpTrAndVenSol)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6217'}),
+    (ansGrpTrAndVenSol)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6342'}),
 
   // A2 Vehicle services
   (ansGrpVehicServ:AnswerGroup {name: 'ansGrpVehicServ'}),
@@ -744,7 +744,7 @@ CREATE
     (ansGrpCloudServ:AnswerGroup {name: 'ansGrpCloudServ'}),
     (qiDigitalFut)-[:HAS_ANSWER_GROUP]->(ansGrpCloudServ),
     (ansGrpCloudServ)-[:HAS_ANSWER {order: 2}]->(ansCloudServ),
-    (ansGrpCloudServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1557.13'}),
+    (ansGrpCloudServ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1557.14'}),
 
     // A3 Crown hosting
     (ansGrpCrownHost:AnswerGroup {name: 'ansGrpCrownHost'}),

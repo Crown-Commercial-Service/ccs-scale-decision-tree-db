@@ -23,14 +23,14 @@ CREATE
     (ansGrpWwwSupply:AnswerGroup {name: 'ansGrpWwwSupply'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpWwwSupply),
     (ansGrpWwwSupply)-[:HAS_ANSWER {order: 1}]->(ansWwwSupply),
-    (ansGrpWwwSupply)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6178'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+    (ansGrpWwwSupply)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6306'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
     (ansGrpAncillary:AnswerGroup {name: 'ansGrpAncillary'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpAncillary),
     (ansGrpAncillary)-[:HAS_ANSWER {order: 2}]->(ansAncillary),
-    (ansGrpAncillary)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6178'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+    (ansGrpAncillary)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6306'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
     (ansGrpWwAncillary:AnswerGroup {name: 'ansGrpWwAncillary'}),
     (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpWwAncillary),
     (ansGrpWwAncillary)-[:HAS_ANSWER {order: 3}]->(ansWwAncillary),
-    (ansGrpWwAncillary)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6178'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true});
+    (ansGrpWwAncillary)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6306'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true});

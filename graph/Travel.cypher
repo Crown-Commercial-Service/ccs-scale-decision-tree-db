@@ -78,19 +78,19 @@ CREATE
     (ansGrpOnlineOnly:AnswerGroup {name: 'ansGrpOnlineOnly'}),
     (qiService)-[:HAS_ANSWER_GROUP]->(ansGrpOnlineOnly),
     (ansGrpOnlineOnly)-[:HAS_ANSWER {order: 1}]->(ansOnlineOnly),
-    (ansGrpOnlineOnly)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6217'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+    (ansGrpOnlineOnly)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6342'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
     (ansGrpOnlineAndOfflineUK:AnswerGroup {name: 'ansGrpOnlineAndOfflineUK'}),
     (qiService)-[:HAS_ANSWER_GROUP]->(ansGrpOnlineAndOfflineUK),
     (ansGrpOnlineAndOfflineUK)-[:HAS_ANSWER {order: 2}]->(ansOnlineAndOfflineUK),
-    (ansGrpOnlineAndOfflineUK)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6217'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
+    (ansGrpOnlineAndOfflineUK)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6342'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
     (ansGrpOnlineAndOfflineMOD:AnswerGroup {name: 'ansGrpOnlineAndOfflineMOD'}),
     (qiService)-[:HAS_ANSWER_GROUP]->(ansGrpOnlineAndOfflineMOD),
     (ansGrpOnlineAndOfflineMOD)-[:HAS_ANSWER {order: 3}]->(ansOnlineAndOfflineMOD),
-    (ansGrpOnlineAndOfflineMOD)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6217'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+    (ansGrpOnlineAndOfflineMOD)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6342'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
 
 (ansGrpVenueServices:AnswerGroup {name: 'ansGrpVenueServices'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpVenueServices),
 (ansGrpVenueServices)-[:HAS_ANSWER {order: 2}]->(ansVenueServices),
-(ansGrpVenueServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6217'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true});
+(ansGrpVenueServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6342'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true});

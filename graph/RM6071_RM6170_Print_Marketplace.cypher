@@ -33,7 +33,7 @@ CREATE
 (ansGrpCommAndHousePapers:AnswerGroup {name: 'ansGrpCommAndHousePapers'}),
 (qiProductOrService)-[:HAS_ANSWER_GROUP]->(ansGrpCommAndHousePapers),
 (ansGrpCommAndHousePapers)-[:HAS_ANSWER {order: 1}]->(ansCommAndHousePapers),
-(ansGrpCommAndHousePapers)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6170'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+(ansGrpCommAndHousePapers)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6297'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
 (ansGrpDirectMail:AnswerGroup {name: 'ansGrpDirectMail'}),
 (qiProductOrService)-[:HAS_ANSWER_GROUP]->(ansGrpDirectMail),
@@ -48,7 +48,7 @@ CREATE
 (ansGrpTransactPrint:AnswerGroup {name: 'ansGrpTransactPrint'}),
 (qiProductOrService)-[:HAS_ANSWER_GROUP]->(ansGrpTransactPrint),
 (ansGrpTransactPrint)-[:HAS_ANSWER {order: 4}]->(ansTransactPrint),
-(ansGrpTransactPrint)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6071'}),
+(ansGrpTransactPrint)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6371'}),
 
 (ansGrpOtherPrint:AnswerGroup {name: 'ansGrpOtherPrint'}),
 (qiProductOrService)-[:HAS_ANSWER_GROUP]->(ansGrpOtherPrint),
@@ -69,16 +69,16 @@ CREATE
     (ansGrpNo:AnswerGroup {name: 'ansGrpNo'}),
     (qiPrintManagService)-[:HAS_ANSWER_GROUP]->(ansGrpNo),
     (ansGrpNo)-[:HAS_ANSWER {order: 2}]->(ansNo),
-    (ansGrpNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6071'}),
+    (ansGrpNo)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6371'}),
             
             //Level 3
             (ansGrpDirectAward:AnswerGroup {name: 'ansGrpDirectAward'}),
             (qiPreferredRoute)-[:HAS_ANSWER_GROUP]->(ansGrpDirectAward),
             (ansGrpDirectAward)-[:HAS_ANSWER {order: 1}]->(ansDirectAward),
-            (ansGrpDirectAward)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6170'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
+            (ansGrpDirectAward)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6297'})-[:HAS_LOT]->(:Lot {number: '1', url: '', type: 'CAT', scale: true}),
 
             (ansGrpFurtherComp:AnswerGroup {name: 'ansGrpFurtherComp'}),
             (qiPreferredRoute)-[:HAS_ANSWER_GROUP]->(ansGrpFurtherComp),
             (ansGrpFurtherComp)-[:HAS_ANSWER {order: 2}]->(ansFurtherComp),
-            (ansGrpFurtherComp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6170'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true})
+            (ansGrpFurtherComp)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6297'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true})
 ;

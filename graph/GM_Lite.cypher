@@ -413,10 +413,10 @@ CREATE
 
 
     // A3 Lease advisory
-    (ansGrpLeasAdvis:AnswerGroup {name: 'ansGrpLeasAdvis'}),
-    (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpLeasAdvis),
-    (ansGrpLeasAdvis)-[:HAS_ANSWER {order: 6}]->(ansLeasAdvis),
-    (ansGrpLeasAdvis)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6344'}),
+    // (ansGrpLeasAdvis:AnswerGroup {name: 'ansGrpLeasAdvis'}),
+    // (qiFinaServices)-[:HAS_ANSWER_GROUP]->(ansGrpLeasAdvis),
+    // (ansGrpLeasAdvis)-[:HAS_ANSWER {order: 6}]->(ansLeasAdvis),
+    // (ansGrpLeasAdvis)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6146'}),
 
     // A3 Spend recovery
     (ansGrpSpendRec:AnswerGroup {name: 'ansGrpSpendRec'}),

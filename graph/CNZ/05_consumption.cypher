@@ -10,13 +10,13 @@ CREATE
 (ansCloud:Answer {uuid: '262e06d6-089d-4592-a5eb-004e11685f2c', text: 'Cloud and hosted servers', hint: 'Access cloud-based and hosted services to significantly reduce your organisation\'s carbon emissions and operational costs. Moving to cloud services can cut building electricity use by over 50%'}),
 (ansElimination:Answer {uuid: 'cc8ec4c6-1def-4060-bb1b-36f95bb6d38d', text: 'Elimination of single-use plastics', hint: 'Access solutions to reduce food packaging and single-use plastics in your supply chain. This helps reduce the 3.8% of global greenhouse gases produced by these materials'}),
 (ansTechnology:Answer {uuid: 'd318b72f-44fe-431d-b186-2f28b7fb5f24', text: 'Technology products', hint: 'Access sustainable technology hardware, software, and services, including energy-efficient devices that can reduce both environmental impact and energy costs'}),
-(ansFacilitiesManagement:Answer {uuid: 'c5bcffca-8acc-4dd4-b144-93338e36f75b', text: 'Facilities Management', hint: 'Access to eco-friendly cleaning, waste management and plastic reduction services to lower your organisation\'s environmental impact'}),
+(ansFacilitiesManagement:Answer {uuid: 'c5bcffca-8acc-4dd4-b144-93338e36f75b', text: 'Facilities management', hint: 'Access to eco-friendly cleaning, waste management and plastic reduction services to lower your organisation\'s environmental impact'}),
 
-(ansHealthcare:Answer {uuid: '9976a3c8-6413-4d62-88e3-79c3cf28e347', text: 'Healthcare Soft Facilities Management', hint: 'Soft facilities management services designed for the healthcare sector. Includes linen and laundry, catering, waste, cleaning and security services'}),
-(ansFM:Answer {uuid: '19cbda25-dba3-40db-8944-0a2093531912', text: 'Facilities Management (FM) and Workplace Services', hint: 'Access services including linen and laundry, cleaning and waste services management'}),
+(ansHealthcare:Answer {uuid: '9976a3c8-6413-4d62-88e3-79c3cf28e347', text: 'Healthcare soft facilities management', hint: 'Soft facilities management services designed for the healthcare sector. Includes linen and laundry, catering, waste, cleaning and security services'}),
+(ansFM:Answer {uuid: '19cbda25-dba3-40db-8944-0a2093531912', text: 'Facilities management and workplace services', hint: 'Access services including linen and laundry, cleaning and waste services management'}),
 
-(ansFurniture:Answer {uuid: '8f8d9bd5-148d-4fd1-8f36-7a1991a35d6c', text: 'Furniture and Associated Services', hint: 'Access furniture, second-life furniture (refurbished furniture), sustainable repair and renovation services'}),
-(ansTechnologyAndVehicle:Answer {uuid: '6e06b540-4949-4c16-8f5b-b4e1ac56eccf', text: 'Technology and Vehicle Telematics', hint: 'Access technology hardware, software, services and vehicle telematics solutions. Includes devices, infrastructure, licences and options to lease, hire or buy'}),
+(ansFurniture:Answer {uuid: '8f8d9bd5-148d-4fd1-8f36-7a1991a35d6c', text: 'Furniture and associated services', hint: 'Access furniture, second-life furniture (refurbished furniture), sustainable repair and renovation services'}),
+(ansTechnologyAndVehicle:Answer {uuid: '6e06b540-4949-4c16-8f5b-b4e1ac56eccf', text: 'Technology and vehicle telematics', hint: 'Access technology hardware, software, services and vehicle telematics solutions. Includes devices, infrastructure, licences and options to lease, hire or buy'}),
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

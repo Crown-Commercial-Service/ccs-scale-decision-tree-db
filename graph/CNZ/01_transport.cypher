@@ -3,32 +3,12 @@ MATCH
 (startingPoint:QuestionInstance {uuid: '21794ee2-aa77-47e4-9ab2-ad399676d0f5'})
 
 CREATE
-(ansVehicles:Answer {
-    uuid: 'e6980e87-bfbf-41c7-833d-d96d655a0589',
-    text: 'Vehicles',
-    hint: 'Access services such as:
-    <ul>
-        <li>green salary sacrifice</li>
-        <li>fleet vehicles</li>
-        <li>charging points</li>
-        <li>low emission vehicles</li>
-    </ul>'
-}),
-(ansTrafficManagement:Answer {
-    uuid: '1a49a557-c562-432c-ae42-45b18595d573',
-    text: 'Traffic management',
-    hint: 'Lease or buy transport technologies:
-    <ul>
-        <li>telematics</li>
-        <li>tracking</li>
-        <li>data systems for road, rail, air, and sea sectors</li>
-    </ul>'
-}),
+(ansVehicles:Answer {uuid: 'e6980e87-bfbf-41c7-833d-d96d655a0589', text: 'Vehicles', hint: 'Access services such as: green salary sacrifice, fleet vehicles, charging points and low emission vehicles'}),
+(ansTrafficManagement:Answer {uuid: '1a49a557-c562-432c-ae42-45b18595d573', text: 'Traffic management', hint: 'Lease or buy transport technologies: telematics, tracking, and data systems for road, rail, air, and sea sectors'}),
 (ansZeroEmission:Answer {uuid: 'f81374f6-8c06-40a3-8038-4f7f0ecbe3ba', text: 'Zero emission public transport', hint: 'Zero or low emission vehicles of all sizes, specifications and fuel types'}),
 (ansCycle:Answer {uuid: 'd993bd75-e8dd-4691-bcf4-d72873a34df1', text: 'Cycle to work scheme', hint: 'Provides a cycle to work scheme for your workforce. Includes those who are working remotely or travelling'}),
 (ansLogistics:Answer {uuid: '776b413f-803e-4c6e-ba09-b3d3b5653dd9', text: 'Logistics and warehousing', hint: 'Comprehensive logistics services: storage, food, warehousing, distribution and transport solutions, both UK and international, with quality control'}),
 (ansMobility:Answer {uuid: 'eb0980bf-43c8-4d98-ad51-69abb59f353b', text: 'Mobility solutions', hint: 'Find reduced or zero-emissions options for your workforce or customers\' travel, accommodation and transport needs'}),
-
 
 (ansGreenSalary:Answer {uuid: 'f3968bee-de1b-4b72-84ea-75ad6b18193d', text: 'Green salary sacrifice', hint: 'This scheme offers employees new, cost-effective Ultra Low Emissions Vehicles (ULEVs), through pre-tax salary deductions'}),
 (ansOperationalFleet:Answer {uuid: '841a8676-3953-4c68-a11f-fbae1c40fc76', text: 'Operational fleet vehicles', hint: 'Access leasing and hiring options, purchase vehicles, manage your fleet and get quick, efficient repairs and parts replacement'}),
@@ -36,18 +16,7 @@ CREATE
 (ansULEVs:Answer {uuid: 'a8026258-fd5d-42f1-a51d-0547ed0dab4b', text: 'Ultra low and zero emission vehicles (ULEVs)', hint: 'Buy, hire and lease ULEVs, to help reduce your organisations carbon commissions'}),
 
 (ansBetterFood:Answer {uuid: 'c1549f07-b1af-4068-b639-6cc7a36d4517', text: 'Buying Better Food Portal', hint: 'Buy food and drink online. Simplify logistics to reduce food miles and emissions'}),
-(ansLogisticsAndWarehousing:Answer {
-    uuid: '5d76cd71-4330-4c84-8a40-e196dfe2ab23',
-    text: 'Logistics and warehousing solutions',
-    hint: 'Comprehensive logistics services:
-    <ul>
-        <li>storage</li>
-        <li>warehousing </li>
-        <li>distribution</li>
-        <li>transport solutions, both UK and international, with quality control</li>
-
-    </ul>'
-}),
+(ansLogisticsAndWarehousing:Answer {uuid: '5d76cd71-4330-4c84-8a40-e196dfe2ab23', text: 'Logistics and warehousing solutions', hint: 'Comprehensive logistics services: storage, warehousing, distribution and transport solutions, both UK and international, with quality control'}),
 
 (ansTravelAndVenue:Answer {uuid: '74f4d91b-0b20-432f-a722-c246302aeac6', text: 'Travel and Venue Solutions', hint: 'Book air, rail, accommodation, meeting venues and additional travel services in the UK and overseas through leading travel suppliers'}),
 (ansVehiclePurchase:Answer {uuid: '3043a182-122a-4c8b-9fe8-98407b2c07aa', text: 'Vehicle purchase, lease and hiring solutions', hint: 'Hire or buy various vehicles for all needs, from fleet operations to specialised requirements, locally and abroad'}),

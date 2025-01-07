@@ -8,14 +8,14 @@ CREATE
 
 
 (ansBuildings:Answer {uuid: '557d01df-eb15-4f72-a219-afb592c5bc29', text: 'Buildings and construction', hint: 'Building and construction solutions, including: modular buildings, low carbon construction material, building refurbishments, reusable temporary buildings and heated buildings'}),
-(ansFacilitiesManagement:Answer {uuid: 'ff8073fa-0fe7-43f0-b30c-d73edb35a113', text: 'Facilities management', hint: 'Access a range of Facilities Management (FM) services from cleaning and waste services to maintenance services and landscaping'}),
+(ansFacilitiesManagement:Answer {uuid: 'ff8073fa-0fe7-43f0-b30c-d73edb35a113', text: 'Facilities management', hint: 'Access a range of facilities management services from cleaning and waste services to maintenance services and landscaping'}),
 (ansEnergyAndRenewables:Answer {uuid: '7d3e94ad-af65-41cf-b173-e41f42878363', text: 'Energy and renewables', hint: 'Lower building emissions with green energy tariffs and renewable energy'}),
 (ansVehicleChargingPoints:Answer {uuid: '92505a3f-2f25-4028-86d8-96c9d071d99f', text: 'Vehicle charging points', hint: 'Electric vehicle (EV) charging options, including consultancy, installation, and ongoing support'}),
 (ansIndustryProfessionals:Answer {uuid: '7176c1fe-ee19-43ef-945c-b1a81f6e72b8', text: 'Industry professionals', hint: 'Access decarbonisation services including project management, technical advisors and products for construction projects'}),
 
 
 
-(ansModular:Answer {uuid: '7d598d2a-f522-404f-bac9-a250103a11bd', text: 'Modular', hint: 'Modular buildings use pre-fabricated parts for fast, efficient on-site assembly. Offering quick and sustainable solutions. This also includes reusable temporary buildings'}),
+(ansModular:Answer {uuid: '7d598d2a-f522-404f-bac9-a250103a11bd', text: 'Modular', hint: 'Modular buildings use pre-fabricated parts for fast, efficient on-site assembly, offering quick and sustainable solutions. This also includes reusable temporary buildings'}),
 (ansConstruction:Answer {uuid: '6c5e05a4-9a2e-4973-ba26-dfb2fa19b70a', text: 'Construction using low carbon materials', hint: 'Agreements that help you to buy low carbon construction materials and professional sustainability advisory services'}),
 (ansBuildingRefurbs:Answer {uuid: 'd876ea20-aca7-46dd-9b8d-ebbe7b3fdf5c', text: 'Building refurbs', hint: 'Refurbish buildings with energy-efficient solutions and sustainable furniture to help your organisation reduce carbon emissions'}),
 (ansHeatingBuildings:Answer {uuid: 'cde912a9-97d9-42b5-9fcf-7a2bea3aa8a6', text: 'Heating buildings', hint: 'Agreements that give you access to sustainable solutions to help heat your buildings'}),
@@ -24,34 +24,34 @@ CREATE
 (ansEnergyStorage:Answer {uuid: '332a80a0-c8ee-4b24-9b6e-fc0fa2b563a1', text: 'Energy storage', hint: 'Access energy storage solutions including products and advisory services'}),
 (ansOnAndOff:Answer {uuid: '4f6ca0b8-fd1c-481e-9612-1fc0769eb07d', text: 'On and off-site renewables', hint: 'On and off-site renewable power and energy storage solutions'}),
 
-(ansVCIS:Answer {uuid: '319d1f02-ea93-4392-9fab-408a90cea905', text: 'Vehicle Charging Infrastructure Solutions (VCIS)', hint: 'Find solutions to help develop charging infrastructure for electric and hybrid vehicles'}),
+(ansVCIS:Answer {uuid: '319d1f02-ea93-4392-9fab-408a90cea905', text: 'Vehicle charging infrastructure solutions', hint: 'Find solutions to help develop charging infrastructure for electric and hybrid vehicles'}),
 (ansTTS:Answer {uuid: '216efd0f-1f08-4fe4-a748-3dd61789a032', text: 'Transport technology solutions for infrastructure and advisory services', hint: 'Transport technology and advisory services for the aviation, road, rail and maritime sectors'}),
 
-(ansCPS:Answer {uuid: '3bf29e93-b3fa-4f2f-a15c-2bab1436b334', text: 'Construction Professional Services', hint: 'Access advisory services that support building and civil engineering projects'}),
-(ansDemandManagement:Answer {uuid: '153ee072-7e0b-47c3-9d9e-33d161a8d705', text: 'Demand Management and Renewables', hint: 'Access decarbonisation products and services. Includes solar panels, heat pumps and battery storage units'}),
+(ansCPS:Answer {uuid: '3bf29e93-b3fa-4f2f-a15c-2bab1436b334', text: 'Construction professional services', hint: 'Access advisory services that support building and civil engineering projects'}),
+(ansDemandManagement:Answer {uuid: '153ee072-7e0b-47c3-9d9e-33d161a8d705', text: 'Demand management and renewables', hint: 'Access decarbonisation products and services. Includes solar panels, heat pumps and battery storage units'}),
 
 
 
-(ansConstructionProfessionalServices:Answer {uuid: 'f0b1ed28-b3f7-4092-ba1c-d71b6631d1e3', text: 'Construction Professional Services', hint: 'Access a wide range of technical advisory services in support of building and civil engineering projects of all scales and sizes'}),
-(ansOffsiteConstruction:Answer {uuid: '1dbd02d4-a147-48ad-bd77-184ec2a270c5', text: 'Offsite Construction Solutions', hint: 'Access the design, fabrication, physical delivery, construction or installation and maintenance of prefabricated (modular) buildings'}),
+(ansConstructionProfessionalServices:Answer {uuid: 'f0b1ed28-b3f7-4092-ba1c-d71b6631d1e3', text: 'Construction professional services', hint: 'Access a wide range of technical advisory services in support of building and civil engineering projects of all scales and sizes'}),
+(ansOffsiteConstruction:Answer {uuid: '1dbd02d4-a147-48ad-bd77-184ec2a270c5', text: 'Offsite construction solutions', hint: 'Access the design, fabrication, physical delivery, construction or installation and maintenance of prefabricated (modular) buildings'}),
 
 (ansModularBuildings:Answer {uuid: 'c1d9af11-43ab-4672-bb1b-ab1cfc1341d4', text: 'Modular buildings', hint: 'Access the design, fabrication, physical delivery, construction or installation and maintenance of prefabricated (modular) buildings'}),
 // Construction Professional Services option
 (ansConstructionServicesMaterials:Answer {uuid: '3a0b7789-7258-4d61-b3f1-733a5c0871b8', text: 'Construction services and materials', hint: 'Access building materials, equipment, and services for major and minor construction and engineering projects'}),
-(ansDemandManagementAndRenewables:Answer {uuid: 'bfb4d9b2-56a6-4056-8ece-b2c4ee68a8e0', text: 'Demand Management and Renewables', hint: 'Access a range of decarbonisation products and services to support your carbon net zero strategy. Such as, solar panels, heat pumps and battery storage units'}),
+(ansDemandManagementAndRenewables:Answer {uuid: 'bfb4d9b2-56a6-4056-8ece-b2c4ee68a8e0', text: 'Demand management and renewables', hint: 'Access a range of decarbonisation products and services to support your carbon net zero strategy, such as solar panels, heat pumps and battery storage units'}),
 
-(ansCPSDiffHint:Answer {uuid: 'b5c316ff-4f12-48d1-a259-ba7f64a820fb', text: 'Construction Professional Services', hint: 'Access a wide range of technical advisory services in support of building and civil engineering projects of all scales and sizes'}),
+(ansCPSDiffHint:Answer {uuid: 'b5c316ff-4f12-48d1-a259-ba7f64a820fb', text: 'Construction professional services', hint: 'Access a wide range of technical advisory services in support of building and civil engineering projects of all scales and sizes'}),
 // Demand Management and Renewables
-(ansBME:Answer {uuid: 'e1b4d919-36b4-4740-b6ae-1134dc2e9d8a', text: 'Building Materials and Equipment', hint: 'Access a range of building materials, equipment and associated services that can help you meet your carbon net zero goals'}),
+(ansBME:Answer {uuid: 'e1b4d919-36b4-4740-b6ae-1134dc2e9d8a', text: 'Building materials and equipment', hint: 'Access a range of building materials, equipment and associated services that can help you meet your carbon net zero goals'}),
 
-(ansCPSDiffDiffHint:Answer {uuid: '78e8eacd-4a1c-47fa-85d5-cfaf374f3283', text: 'Construction Professional Services', hint: 'Access a wide range of advisory services that support building and civil engineering projects'}),
+(ansCPSDiffDiffHint:Answer {uuid: '78e8eacd-4a1c-47fa-85d5-cfaf374f3283', text: 'Construction professional services', hint: 'Access a wide range of advisory services that support building and civil engineering projects'}),
 // Demand Management and Renewables
 (ansPPA:Answer {uuid: '7139a700-e18e-480a-8998-735773eef474', text: 'Provision of Power Purchase Agreement (PPA)', hint: 'Access renewable electricity by securing long term contracts with suppliers'}),
 
 
 (ansEnergyAndFuels:Answer {uuid: '51033e14-6ba3-43ef-8aa0-5e801e22b16a', text: 'Energy and fuels', hint: 'Access renewable electricity and sustainable fuels'}),
-(ansConstructionProfessional:Answer {uuid: 'a2f2780a-11f5-4744-b5b9-99f5331d4906', text: 'Construction Professional Services', hint: 'Access technical advisory services in support of building and civil engineering projects of all scales and sizes'}),
-(ansDemandManagementDiff:Answer {uuid: 'a0691f5a-084b-4792-b332-7a90c4f73c13', text: 'Demand Management and Renewables', hint: 'Access decarbonisation products and people services that support your carbon net zero strategy'}),
+(ansConstructionProfessional:Answer {uuid: 'a2f2780a-11f5-4744-b5b9-99f5331d4906', text: 'Construction professional services', hint: 'Access technical advisory services in support of building and civil engineering projects of all scales and sizes'}),
+(ansDemandManagementDiff:Answer {uuid: 'a0691f5a-084b-4792-b332-7a90c4f73c13', text: 'Demand management and renewables', hint: 'Access decarbonisation products and people services that support your carbon net zero strategy'}),
 
 // ansConstructionProfessional
 // ansDemandManagement

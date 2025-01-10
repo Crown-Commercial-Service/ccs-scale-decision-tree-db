@@ -175,7 +175,7 @@ CREATE
         (qiEnergySupply)-[:HAS_ANSWER_GROUP]->(ansGrpEnergyAndFuels),
         (ansGrpEnergyAndFuels)-[:HAS_ANSWER {order: 1}]->(ansEnergyAndFuels),
         (ansGrpEnergyAndFuels)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6289'}),
-        (ansGrpEnergyAndFuels)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6177'}),
+        (ansGrpEnergyAndFuels)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6305'}),
 
         (ansGrpConstructionProfessional:AnswerGroup {name: 'ansGrpConstructionProfessional'}),
         (qiEnergySupply)-[:HAS_ANSWER_GROUP]->(ansGrpConstructionProfessional),

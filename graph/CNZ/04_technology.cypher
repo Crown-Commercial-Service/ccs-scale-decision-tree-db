@@ -10,7 +10,7 @@ CREATE
 (ansAi:Answer {uuid: '08bb3b60-c7a9-4033-bc3e-c70b90da79f3', text: 'Artificial Intelligence (AI)', hint: 'Artificial intelligence (AI) discovery and consultancy services. Includes implementation, support of AI systems, end-to-end partnerships, and AI technologies'}),
 (ansGeospatial:Answer {uuid: '2aea111d-a385-429a-8df0-75a77d8b0c00', text: 'Geospatial', hint: 'Access space and geospatial, services such as data, technology solutions and aerial and land-based platforms'}),
 (ansRefurbished:Answer {uuid: 'cd15dccd-bffd-4d07-ab0d-3df285291718', text: 'Refurbished hardware and devices', hint: 'Buy refurbished technology, including personal computing devices, servers, storage systems, network equipment and vehicle tracking units'}),
-(ansSustainability:Answer {uuid: 'a78cd82f-5481-4400-8505-9d9bb7022f21', text: 'Sustainability and Circular IT', hint: 'Access technology hardware, software and services including end user devices, servers, storage, infrastructure devices, software licences and accessories'}),
+(ansSustainability:Answer {uuid: 'a78cd82f-5481-4400-8505-9d9bb7022f21', text: 'Sustainability and circular IT', hint: 'Access technology hardware, software and services including end user devices, servers, storage, infrastructure devices, software licences and accessories'}),
 
 (ansTechnologyPandS:Answer {uuid: '89e61883-619b-4fbe-b31c-6d406ef69774', text: 'Technology products and services', hint: 'Buy technology services ranging from strategy and design to operational deployment'}),
 (ansBackOffice:Answer {uuid: 'd6f97a54-2638-4b1a-a610-62e7944a56b2', text: 'Back office software and digital outcomes', hint: 'Software as a service (Saas) for back office, cloud, and on-premise, plus agile and user-centred design'}),

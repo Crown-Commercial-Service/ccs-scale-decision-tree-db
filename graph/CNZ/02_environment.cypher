@@ -31,8 +31,7 @@ CREATE
 (ansDemandManagement:Answer {uuid: '153ee072-7e0b-47c3-9d9e-33d161a8d705', text: 'Demand management and renewables', hint: 'Access decarbonisation products and services. Includes solar panels, heat pumps and battery storage units'}),
 
 
-
-(ansConstructionProfessionalServices:Answer {uuid: 'f0b1ed28-b3f7-4092-ba1c-d71b6631d1e3', text: 'Construction professional services', hint: 'Access a wide range of technical advisory services in support of building and civil engineering projects of all scales and sizes'}),
+// Construction Professional Services option
 (ansOffsiteConstruction:Answer {uuid: '1dbd02d4-a147-48ad-bd77-184ec2a270c5', text: 'Offsite construction solutions', hint: 'Access the design, fabrication, physical delivery, construction or installation and maintenance of prefabricated (modular) buildings'}),
 
 (ansModularBuildings:Answer {uuid: 'c1d9af11-43ab-4672-bb1b-ab1cfc1341d4', text: 'Modular buildings', hint: 'Access the design, fabrication, physical delivery, construction or installation and maintenance of prefabricated (modular) buildings'}),
@@ -40,17 +39,17 @@ CREATE
 (ansConstructionServicesMaterials:Answer {uuid: '3a0b7789-7258-4d61-b3f1-733a5c0871b8', text: 'Construction services and materials', hint: 'Access building materials, equipment, and services for major and minor construction and engineering projects'}),
 (ansDemandManagementAndRenewables:Answer {uuid: 'bfb4d9b2-56a6-4056-8ece-b2c4ee68a8e0', text: 'Demand management and renewables', hint: 'Access a range of decarbonisation products and services to support your carbon net zero strategy, such as solar panels, heat pumps and battery storage units'}),
 
-(ansCPSDiffHint:Answer {uuid: 'b5c316ff-4f12-48d1-a259-ba7f64a820fb', text: 'Construction professional services', hint: 'Access a wide range of technical advisory services in support of building and civil engineering projects of all scales and sizes'}),
+// Construction Professional Services option
 // Demand Management and Renewables
 (ansBME:Answer {uuid: 'e1b4d919-36b4-4740-b6ae-1134dc2e9d8a', text: 'Building materials and equipment', hint: 'Access a range of building materials, equipment and associated services that can help you meet your carbon net zero goals'}),
 
-(ansCPSDiffDiffHint:Answer {uuid: '78e8eacd-4a1c-47fa-85d5-cfaf374f3283', text: 'Construction professional services', hint: 'Access a wide range of advisory services that support building and civil engineering projects'}),
+// Construction Professional Services option
 // Demand Management and Renewables
-(ansPPA:Answer {uuid: '7139a700-e18e-480a-8998-735773eef474', text: 'Provision of Power Purchase Agreement (PPA)', hint: 'Access renewable electricity by securing long term contracts with suppliers'}),
+(ansPPA:Answer {uuid: '7139a700-e18e-480a-8998-735773eef474', text: 'Provision of power purchase agreement (PPA)', hint: 'Access renewable electricity by securing long term contracts with suppliers'}),
 
 
 (ansEnergyAndFuels:Answer {uuid: '51033e14-6ba3-43ef-8aa0-5e801e22b16a', text: 'Energy and fuels', hint: 'Access renewable electricity and sustainable fuels'}),
-(ansConstructionProfessional:Answer {uuid: 'a2f2780a-11f5-4744-b5b9-99f5331d4906', text: 'Construction professional services', hint: 'Access technical advisory services in support of building and civil engineering projects of all scales and sizes'}),
+// Construction Professional Services option
 (ansDemandManagementDiff:Answer {uuid: 'a0691f5a-084b-4792-b332-7a90c4f73c13', text: 'Demand management and renewables', hint: 'Access decarbonisation products and people services that support your carbon net zero strategy'}),
 
 // ansConstructionProfessional
@@ -74,7 +73,7 @@ CREATE
 
         (ansGrpConstructionProfessionalServices:AnswerGroup {name: 'ansGrpConstructionProfessionalServices'}),
         (qiModular)-[:HAS_ANSWER_GROUP]->(ansGrpConstructionProfessionalServices),
-        (ansGrpConstructionProfessionalServices)-[:HAS_ANSWER {order: 1}]->(ansConstructionProfessionalServices),
+        (ansGrpConstructionProfessionalServices)-[:HAS_ANSWER {order: 1}]->(ansCPS),
         (ansGrpConstructionProfessionalServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6165'}),
         (ansGrpConstructionProfessionalServices)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6242'}),
 
@@ -95,7 +94,7 @@ CREATE
 
         (ansGrpCPS2:AnswerGroup {name: 'ansGrpCPS2'}),
         (qiConstruction)-[:HAS_ANSWER_GROUP]->(ansGrpCPS2),
-        (ansGrpCPS2)-[:HAS_ANSWER {order: 2}]->(ansConstructionProfessionalServices),
+        (ansGrpCPS2)-[:HAS_ANSWER {order: 2}]->(ansCPS),
         (ansGrpCPS2)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6165'}),
         (ansGrpCPS2)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6242'}),
 
@@ -118,7 +117,7 @@ CREATE
 
         (ansGrpCPSDiffHint:AnswerGroup {name: 'ansGrpCPSDiffHint'}),
         (qiBuildingRefurbs)-[:HAS_ANSWER_GROUP]->(ansGrpCPSDiffHint),
-        (ansGrpCPSDiffHint)-[:HAS_ANSWER {order: 1}]->(ansCPSDiffHint),
+        (ansGrpCPSDiffHint)-[:HAS_ANSWER {order: 1}]->(ansCPS),
         (ansGrpCPSDiffHint)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6165'}),
         (ansGrpCPSDiffHint)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6242'}),
         
@@ -140,7 +139,7 @@ CREATE
 
     (ansGrpCPSDiffDiffHint:AnswerGroup {name: 'ansGrpCPSDiffDiffHint'}),
     (qiHeatingBuildings)-[:HAS_ANSWER_GROUP]->(ansGrpCPSDiffDiffHint),
-    (ansGrpCPSDiffDiffHint)-[:HAS_ANSWER {order: 1}]->(ansCPSDiffDiffHint),
+    (ansGrpCPSDiffDiffHint)-[:HAS_ANSWER {order: 1}]->(ansCPS),
     (ansGrpCPSDiffDiffHint)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6165'}),
     (ansGrpCPSDiffDiffHint)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6242'}),
 
@@ -179,7 +178,7 @@ CREATE
 
         (ansGrpConstructionProfessional:AnswerGroup {name: 'ansGrpConstructionProfessional'}),
         (qiEnergySupply)-[:HAS_ANSWER_GROUP]->(ansGrpConstructionProfessional),
-        (ansGrpConstructionProfessional)-[:HAS_ANSWER {order: 2}]->(ansConstructionProfessional),
+        (ansGrpConstructionProfessional)-[:HAS_ANSWER {order: 2}]->(ansCPS),
         (ansGrpConstructionProfessional)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6165'}),
         (ansGrpConstructionProfessional)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6242'}),
 

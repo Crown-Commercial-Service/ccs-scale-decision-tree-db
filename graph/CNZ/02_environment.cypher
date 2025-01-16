@@ -194,7 +194,7 @@ CREATE
     (ansGrpEnergyStorage)-[:HAS_OUTCOME]->(qiEnergyStorage:QuestionInstance:Outcome {uuid: '4df6e04f-a94a-4254-b2a0-18d08879f24d'})-[:DEFINED_BY]->(qstnService),
 
         (qiEnergyStorage)-[:HAS_ANSWER_GROUP]->(ansGrpConstructionProfessional),
-        (qiEnergyStorage)-[:HAS_ANSWER_GROUP]->(ansGrpDemandManagementDiff),
+        (qiEnergyStorage)-[:HAS_ANSWER_GROUP]->(ansGrpDemandManagementAndRenewables),
 
     (ansGrpOnAndOff:AnswerGroup {name: 'ansGrpOnAndOff'}),
     (qiEnergyAndRenewables)-[:HAS_ANSWER_GROUP]->(ansGrpOnAndOff),

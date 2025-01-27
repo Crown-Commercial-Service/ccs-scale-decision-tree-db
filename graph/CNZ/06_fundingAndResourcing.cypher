@@ -9,11 +9,10 @@ CREATE
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// (ansGrpCNZ:AnswerGroup {name: 'ansGrpCNZ'}),
-// (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpCNZ),
-// (ansGrpCNZ)-[:HAS_ANSWER {order: 1}]->(ansCNZ),
-// //TODO This is dummy value 
-// (ansGrpCNZ)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM1234'}),
+(ansGrpCNZ:AnswerGroup {name: 'ansGrpCNZ'}),
+(startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpCNZ),
+(ansGrpCNZ)-[:HAS_ANSWER {order: 1}]->(ansCNZ),
+(ansGrpCNZ)-[:HAS_OUTCOME]->(:Url:Outcome {text:"Carbon Net Zero Funding and Grants", link: 'https://www.crowncommercial.gov.uk/social-value/carbon-net-zero/funding-and-grants',hint:'Take a look at CNZ grants and funding opportunities from across the government'}),
 
 (ansGrpLeasingAndLoans:AnswerGroup {name: 'ansGrpLeasingAndLoans'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpLeasingAndLoans),

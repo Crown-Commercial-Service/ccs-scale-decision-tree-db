@@ -15,17 +15,17 @@ CREATE
 (ansVCP:Answer {uuid: 'cf507c67-c285-437f-bd42-bdaa61a37c48', text: 'Vehicle charging point', hint: 'Find solutions to help design and install charging infrastructure for electric and hybrid vehicles'}),
 (ansULEVs:Answer {uuid: 'a8026258-fd5d-42f1-a51d-0547ed0dab4b', text: 'Ultra low and zero emission vehicles (ULEVs)', hint: 'Buy, hire and lease ULEVs, to help reduce your organisations carbon commissions'}),
 
-(ansBetterFood:Answer {uuid: 'c1549f07-b1af-4068-b639-6cc7a36d4517', text: 'Buying Better Food Portal', hint: 'Buy food and drink online. Simplify logistics to reduce food miles and emissions'}),
+(ansBetterFood:Answer {uuid: 'c1549f07-b1af-4068-b639-6cc7a36d4517', text: 'Buying better food portal', hint: 'Buy food and drink online. Simplify logistics to reduce food miles and emissions'}),
 (ansLogisticsAndWarehousing:Answer {uuid: '5d76cd71-4330-4c84-8a40-e196dfe2ab23', text: 'Logistics and warehousing solutions', hint: 'Comprehensive logistics services: storage, warehousing, distribution and transport solutions, both UK and international, with quality control'}),
 
-(ansTravelAndVenue:Answer {uuid: '74f4d91b-0b20-432f-a722-c246302aeac6', text: 'Travel and Venue Solutions', hint: 'Book air, rail, accommodation, meeting venues and additional travel services in the UK and overseas through leading travel suppliers'}),
+(ansTravelAndVenue:Answer {uuid: '74f4d91b-0b20-432f-a722-c246302aeac6', text: 'Travel and venue solutions', hint: 'Book air, rail, accommodation, meeting venues and additional travel services in the UK and overseas through leading travel suppliers'}),
 (ansVehiclePurchase:Answer {uuid: '3043a182-122a-4c8b-9fe8-98407b2c07aa', text: 'Vehicle purchase, lease and hiring solutions', hint: 'Hire or buy various vehicles for all needs, from fleet operations to specialised requirements, locally and abroad'}),
 
 (ansLease:Answer {uuid: 'a7e07358-eb32-4e59-b435-909a89094608', text: 'Lease and hiring solutions', hint: 'Central government and wider public sector can lease passenger cars and light, medium and heavy commercial vehicles. Includes fleet management and salary sacrifice car schemes'}),
 (ansPurchasingSolutions:Answer {uuid: '056b8e76-66fc-4ae7-9a5f-2ad8903ade5e', text: 'Purchasing solutions', hint: 'Buy standard, converted and specialist vehicles. Includes access to vehicles of all sizes, specifications and fuel types'}),
 (ansTyre:Answer {uuid: 'd277d935-0f24-4bc3-a2be-13769c034086', text: 'Tyre, glass and fast fit solutions', hint: 'Services to supply and fit tyres, and repair or replace all glass on vehicles'}),
 
-(ansVehicleLease:Answer {uuid: 'e12467f9-89e0-4f63-8e38-5d24ea001848', text: 'Vehicle Lease, Fleet Management and Salary Sacrifice Car Schemes', hint: 'This will allow you to lease passenger cars and commercial vehicles. Includes fleet management and salary sacrifice car schemes'}),
+(ansVehicleLease:Answer {uuid: 'e12467f9-89e0-4f63-8e38-5d24ea001848', text: 'Vehicle lease, fleet management and salary sacrifice car schemes', hint: 'This will allow you to lease passenger cars and commercial vehicles. Includes fleet management and salary sacrifice car schemes'}),
 (ansVehicleHire:Answer {uuid: '9d75e245-5559-4868-8293-1ac96af525ba', text: 'Vehicle hire and purchase solutions', hint: 'Hire or buy vehicles for all needs, from fleet operations to specialised requirements, locally and abroad'}),
 
 

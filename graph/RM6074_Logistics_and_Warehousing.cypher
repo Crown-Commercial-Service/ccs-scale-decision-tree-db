@@ -63,20 +63,28 @@ CREATE
     </ul>'
 }),
 
-(ansWaste:Answer {
-    uuid: 'd9e51555-0b60-4b7b-a933-0454eb2e2571',
-    text: 'Waste logistics, transport and disposal services',
-    hint: 'Provides secure collection, transportation and delivery of waste and waste related services. Includes:
+(ansLCS:Answer {
+    uuid: 'a2b29f82-1327-4fb8-aefd-41e61ed1c28f',
+    text: 'Logistics consultancy services',
+    hint: 'Provides access to a range of industry consultant experts.
     <ul>
-        <li>collection of waste material from origin (wholesaler, manufacturer, storage, field operations, laboratory)</li>
-        <li>delivery of waste material to point of storage or processor</li>
+        <li>logistics planning </li>
+        <li>warehousing design services </li>
+        <li>logistics procurement services </li>
+        <li>market analysis</li>
     </ul>'
+}),
+
+(ansCombined:Answer {
+    uuid: '05b7ece1-1598-4c4f-afa0-005905a9cb03',
+    text: 'Combined distribution, storage and fulfillment services',
+    hint: 'Access combined distribution, storage and fulfillment services'
 }),
 
 (ansRemovals:Answer {
     uuid: '13a92f82-443c-4d5f-959d-fcb6bd499064',
     text: 'Removals and relocations',
-    hint: 'Access fit for purpose vehicles to provide removal and relocation services on a UK and international basis. Vehicles can include lorries, vans and any other appropriate means of transport. You can also access any related services and equipment such as packaging'
+    hint: 'Access vehicles suitable for moving services both within the UK and internationally. These vehicles can include lorries, vans and other appropriate transport options. You can also get related services and equipment like packaging materials'
 }),
 
 (ansVehicle:Answer {
@@ -91,33 +99,23 @@ CREATE
     </ul>'
 }),
 
-(ansConstruction:Answer {
-    uuid: 'c70e90c0-4a76-48bf-8299-020d87cc8b12',
-    text: 'Construction logistics',
-    hint: 'Provides the transportation, storage and management of construction material and related services. Includes secure storage capacity at supplier premises including temporary "lay down" facilities (temporary structures). You can also access the labour and resources needed to carry out the service including qualified engineers, fitters and site agents'
-}),
-
-(ansHealthcare:Answer {
-    uuid: 'd8c8a78e-3b1a-4014-964c-aee17633acce',
-    text: 'Healthcare logistics',
-    hint: 'Provides the transportation, storage and management of:
+(ansEvents:Answer {
+    uuid: '25be1f00-2690-431d-84ea-b0a819a1bd8b',
+    text: 'Events and exhibitions logistics',
+    hint: 'Access logistics support services for events shows and exhibitions, such as:
     <ul>
-        <li>pharmaceuticals</li>
-        <li>blood</li>
-        <li>tissue</li>
-        <li>biological samples</li>
-        <li>healthcare materials</li>
-        <li>medical equipment</li>
-        <li>other healthcare-related services</li>
+        <li>logistics support for events and shows</li>
+        <li>transportation of equipment</li>
+        <li>permanent and temporary storage solutions</li>
+        <li>UK and international services</li>
     </ul>'
 }),
 
-(ansDesign:Answer {
-    uuid: 'b7b6ca80-3a12-490c-ba3b-cbce8034f795',
-    text: 'Design, support and logistics services',
-    hint: 'Access logistics and warehousing design and support services including supply chain integration, optimisation and resource management'
+(ansConstructionLogistics:Answer {
+    uuid: 'a27ac8e3-ce57-42e8-b35d-59a7df45b567',
+    text: 'Construction logistics',
+    hint: 'Access transportation, storage and management services for construction materials. Secure storage is available at supplier locations, including temporary structures. You can also get the necessary labour resources, including qualified engineers, fitters and site agents to carry out the service'
 }),
-
 
 (ansSS:Answer {
     uuid: '54b72380-8093-410f-8315-c7bf66df279a',
@@ -288,35 +286,35 @@ CREATE
     (ansGrpWarehousing)-[:HAS_ANSWER {order: 2}]->(ansWarehousing),
     (ansGrpWarehousing)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '2', url: '', type: 'CAT', scale: true}),
 
-    (ansGrpWaste:AnswerGroup {name: 'ansGrpWaste'}),
-    (qiLAndWSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpWaste),
-    (ansGrpWaste)-[:HAS_ANSWER {order: 3}]->(ansWaste),
-    (ansGrpWaste)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+    (ansGrpLCS:AnswerGroup {name: 'ansGrpLCS'}),
+    (qiLAndWSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpLCS),
+    (ansGrpLCS)-[:HAS_ANSWER {order: 3}]->(ansLCS),
+    (ansGrpLCS)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '3', url: '', type: 'CAT', scale: true}),
+
+    (ansGrpCombined:AnswerGroup {name: 'ansGrpCombined'}),
+    (qiLAndWSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpCombined),
+    (ansGrpCombined)-[:HAS_ANSWER {order: 4}]->(ansCombined),
+    (ansGrpCombined)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
 
     (ansGrpRemovals:AnswerGroup {name: 'ansGrpRemovals'}),
     (qiLAndWSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpRemovals),
-    (ansGrpRemovals)-[:HAS_ANSWER {order: 4}]->(ansRemovals),
-    (ansGrpRemovals)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '4', url: '', type: 'CAT', scale: true}),
+    (ansGrpRemovals)-[:HAS_ANSWER {order: 5}]->(ansRemovals),
+    (ansGrpRemovals)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'CAT', scale: true}),
 
     (ansGrpVehicle:AnswerGroup {name: 'ansGrpVehicle'}),
     (qiLAndWSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpVehicle),
-    (ansGrpVehicle)-[:HAS_ANSWER {order: 5}]->(ansVehicle),
-    (ansGrpVehicle)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '5', url: '', type: 'CAT', scale: true}),
+    (ansGrpVehicle)-[:HAS_ANSWER {order: 6}]->(ansVehicle),
+    (ansGrpVehicle)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'CAT', scale: true}),
 
-    (ansGrpConstruction:AnswerGroup {name: 'ansGrpConstruction'}),
-    (qiLAndWSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpConstruction),
-    (ansGrpConstruction)-[:HAS_ANSWER {order: 6}]->(ansConstruction),
-    (ansGrpConstruction)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '6', url: '', type: 'CAT', scale: true}),
+    (ansGrpEvents:AnswerGroup {name: 'ansGrpEvents'}),
+    (qiLAndWSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpEvents),
+    (ansGrpEvents)-[:HAS_ANSWER {order: 7}]->(ansEvents),
+    (ansGrpEvents)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '7', url: '', type: 'CAT', scale: true}),
 
-    (ansGrpHealthcare:AnswerGroup {name: 'ansGrpHealthcare'}),
-    (qiLAndWSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpHealthcare),
-    (ansGrpHealthcare)-[:HAS_ANSWER {order: 7}]->(ansHealthcare),
-    (ansGrpHealthcare)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '7', url: '', type: 'CAT', scale: true}),
-
-    (ansGrpDesign:AnswerGroup {name: 'ansGrpDesign'}),
-    (qiLAndWSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpDesign),
-    (ansGrpDesign)-[:HAS_ANSWER {order: 8}]->(ansDesign),
-    (ansGrpDesign)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '8', url: '', type: 'CAT', scale: true}),
+    (ansGrpConstructionLogistics:AnswerGroup {name: 'ansGrpConstructionLogistics'}),
+    (qiLAndWSolutions)-[:HAS_ANSWER_GROUP]->(ansGrpConstructionLogistics),
+    (ansGrpConstructionLogistics)-[:HAS_ANSWER {order: 8}]->(ansConstructionLogistics),
+    (ansGrpConstructionLogistics)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6329'})-[:HAS_LOT]->(:Lot {number: '8', url: '', type: 'CAT', scale: true}),
 
 (ansGrpStorage:AnswerGroup {name: 'ansGrpStorage'}),
 (qiFirstQuestion)-[:HAS_ANSWER_GROUP]->(ansGrpStorage),

@@ -1,8 +1,11 @@
 MATCH
-(qstnService:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'}),
 (startingPoint:QuestionInstance {uuid: 'd186a3f1-1396-4116-bbe4-702aed8b6b54'})
 
 CREATE
+(qstnLinen:Question {uuid: 'c861aade-70be-4373-ba9a-a5d8e7ee6877', text: 'What linen and laundry service do you need?', type: 'LIST'}),
+(qstnRefurb:Question {uuid: '0472a7e0-6f98-4194-af9a-d245843e75c3', text: 'What refurb or disposal service do you need?', type: 'LIST'}),
+
+
 (ansHybrid:Answer {uuid: '2874e823-f74b-4c81-a3b4-37dbf4a384f5', text: 'Hybrid mail solutions', hint: 'This agreement provides postal services to the UK public sector and third sector organisations'}),
 (ansLinen:Answer {uuid: '21dd4f44-5a73-4394-b41d-ce812ae25974', text: 'Linen and laundry', hint: 'Access linen and laundry services that help you reduce environmental impact'}),
 (ansPrint:Answer {uuid: 'e4b2d212-7e84-429b-bf89-a79472125409', text: 'Print management service', hint: 'Bulk printing, direct mail and secure print services. All our print framework suppliers have introduced sustainable ways of working, such as the reduced waste (paper and equipment)'}),
@@ -28,7 +31,7 @@ CREATE
 (ansGrpLinen:AnswerGroup {name: 'ansGrpLinen'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpLinen),
 (ansGrpLinen)-[:HAS_ANSWER {order: 2}]->(ansLinen),
-(ansGrpLinen)-[:HAS_OUTCOME]->(qiLinen:QuestionInstance:Outcome {uuid: '17888a02-52aa-476c-b6ca-3b4b87f26752'})-[:DEFINED_BY]->(qstnService),
+(ansGrpLinen)-[:HAS_OUTCOME]->(qiLinen:QuestionInstance:Outcome {uuid: '17888a02-52aa-476c-b6ca-3b4b87f26752'})-[:DEFINED_BY]->(qstnLinen),
 
     (ansGrpHealthcare:AnswerGroup {name: 'ansGrpHealthcare'}),
     (qiLinen)-[:HAS_ANSWER_GROUP]->(ansGrpHealthcare),
@@ -49,7 +52,7 @@ CREATE
 (ansGrpRefurb:AnswerGroup {name: 'ansGrpRefurb'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpRefurb),
 (ansGrpRefurb)-[:HAS_ANSWER {order: 4}]->(ansRefurb),
-(ansGrpRefurb)-[:HAS_OUTCOME]->(qiRefurb:QuestionInstance:Outcome {uuid: '7fe6440e-333a-4ea0-8b70-a2d46d315b33'})-[:DEFINED_BY]->(qstnService),
+(ansGrpRefurb)-[:HAS_OUTCOME]->(qiRefurb:QuestionInstance:Outcome {uuid: '7fe6440e-333a-4ea0-8b70-a2d46d315b33'})-[:DEFINED_BY]->(qstnRefurb),
 
     (ansGrpFurniture:AnswerGroup {name: 'ansGrpFurniture'}),
     (qiRefurb)-[:HAS_ANSWER_GROUP]->(ansGrpFurniture),

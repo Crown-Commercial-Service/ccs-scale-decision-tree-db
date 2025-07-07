@@ -1,8 +1,14 @@
 MATCH
-(qstnSolution:Question {uuid: '8d972d0f-fd89-445f-9aa5-ae7a7854c54f'}),
 (startingPoint:QuestionInstance {uuid: '21794ee2-aa77-47e4-9ab2-ad399676d0f5'})
 
 CREATE
+(qstnVehicle:Question {uuid: 'f7973c36-d7ed-4ae1-a88d-6bc47c72c21b', text: 'What vehicle solution do you need?', type: 'LIST'}),
+(qstnFleet:Question {uuid: '2b860008-e8cf-4d49-97da-60cc96720d13', text: 'What fleet solution do you need?', type: 'LIST'}),
+(qstnUltra:Question {uuid: '0622b9e7-323f-415f-9e50-c9a93c22c11b', text: 'What type of ultra low and zero emission vehicles (ULEVs) solution do you need?', type: 'LIST'}),
+(qstnLogistics:Question {uuid: 'ed7e507d-7acd-4d2a-9e07-ad0b09ae8ccd', text: 'What logistics and warehousing solution do you need?', type: 'LIST'}),
+(qstnMobility:Question {uuid: '302f3ffe-359c-4a29-8f58-294d6b8bcb8a', text: 'What mobility solution do you need?', type: 'LIST'}),
+
+
 (ansVehicles:Answer {uuid: 'e6980e87-bfbf-41c7-833d-d96d655a0589', text: 'Vehicles', hint: 'Access services such as: green salary sacrifice, fleet vehicles, charging points and low emission vehicles'}),
 (ansTrafficManagement:Answer {uuid: '1a49a557-c562-432c-ae42-45b18595d573', text: 'Traffic management', hint: 'Lease or buy transport technologies: telematics, tracking, and data systems for road, rail, air, and sea sectors'}),
 (ansZeroEmission:Answer {uuid: 'f81374f6-8c06-40a3-8038-4f7f0ecbe3ba', text: 'Zero emission public transport', hint: 'Zero or low emission vehicles of all sizes, specifications and fuel types'}),
@@ -35,7 +41,7 @@ CREATE
 (ansGrpVehicles:AnswerGroup {name: 'ansGrpVehicles'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpVehicles),
 (ansGrpVehicles)-[:HAS_ANSWER {order: 1}]->(ansVehicles),
-(ansGrpVehicles)-[:HAS_OUTCOME]->(qiVehicles:QuestionInstance:Outcome {uuid: '1281a5bb-4c07-4f0b-b1ee-26c09c3cfcb9'})-[:DEFINED_BY]->(qstnSolution),
+(ansGrpVehicles)-[:HAS_OUTCOME]->(qiVehicles:QuestionInstance:Outcome {uuid: '1281a5bb-4c07-4f0b-b1ee-26c09c3cfcb9'})-[:DEFINED_BY]->(qstnVehicle),
 
     (ansGrpGreenSalary:AnswerGroup {name: 'ansGrpGreenSalary'}),
     (qiVehicles)-[:HAS_ANSWER_GROUP]->(ansGrpGreenSalary),
@@ -45,7 +51,7 @@ CREATE
     (ansGrpOperationalFleet:AnswerGroup {name: 'ansGrpOperationalFleet'}),
     (qiVehicles)-[:HAS_ANSWER_GROUP]->(ansGrpOperationalFleet),
     (ansGrpOperationalFleet)-[:HAS_ANSWER {order: 2}]->(ansOperationalFleet),
-    (ansGrpOperationalFleet)-[:HAS_OUTCOME]->(qiCycle:QuestionInstance:Outcome {uuid: '98f3998f-86a5-4de2-a434-f157edf30d8e'})-[:DEFINED_BY]->(qstnSolution),
+    (ansGrpOperationalFleet)-[:HAS_OUTCOME]->(qiCycle:QuestionInstance:Outcome {uuid: '98f3998f-86a5-4de2-a434-f157edf30d8e'})-[:DEFINED_BY]->(qstnFleet),
 
         (ansGrpLease:AnswerGroup {name: 'ansGrpLease'}),
         (qiCycle)-[:HAS_ANSWER_GROUP]->(ansGrpLease),
@@ -72,7 +78,7 @@ CREATE
     (ansGrpULEVs:AnswerGroup {name: 'ansGrpULEVs'}),
     (qiVehicles)-[:HAS_ANSWER_GROUP]->(ansGrpULEVs),
     (ansGrpULEVs)-[:HAS_ANSWER {order: 4}]->(ansULEVs),
-    (ansGrpULEVs)-[:HAS_OUTCOME]->(qiULEVs:QuestionInstance:Outcome {uuid: 'bd47469a-7dc4-402b-b79a-2f698fac534f'})-[:DEFINED_BY]->(qstnSolution),
+    (ansGrpULEVs)-[:HAS_OUTCOME]->(qiULEVs:QuestionInstance:Outcome {uuid: 'bd47469a-7dc4-402b-b79a-2f698fac534f'})-[:DEFINED_BY]->(qstnUltra),
 
         (ansGrpVehicleLease:AnswerGroup {name: 'ansGrpVehicleLease'}),
         (qiULEVs)-[:HAS_ANSWER_GROUP]->(ansGrpVehicleLease),
@@ -105,7 +111,7 @@ CREATE
 (ansGrpLogistics:AnswerGroup {name: 'ansGrpLogistics'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpLogistics),
 (ansGrpLogistics)-[:HAS_ANSWER {order: 5}]->(ansLogistics),
-(ansGrpLogistics)-[:HAS_OUTCOME]->(qiLogistics:QuestionInstance:Outcome {uuid: '69747f62-f144-4c8f-96b5-c10ec3d1bff4'})-[:DEFINED_BY]->(qstnSolution),
+(ansGrpLogistics)-[:HAS_OUTCOME]->(qiLogistics:QuestionInstance:Outcome {uuid: '69747f62-f144-4c8f-96b5-c10ec3d1bff4'})-[:DEFINED_BY]->(qstnLogistics),
 
     (ansGrpBetterFood:AnswerGroup {name: 'ansGrpBetterFood'}),
     (qiLogistics)-[:HAS_ANSWER_GROUP]->(ansGrpBetterFood),
@@ -121,7 +127,7 @@ CREATE
 (ansGrpMobility:AnswerGroup {name: 'ansGrpMobility'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpMobility),
 (ansGrpMobility)-[:HAS_ANSWER {order: 6}]->(ansMobility),
-(ansGrpMobility)-[:HAS_OUTCOME]->(qiMobility:QuestionInstance:Outcome {uuid: 'a20237b6-722d-427a-8c7f-c75a6520ad52'})-[:DEFINED_BY]->(qstnSolution),
+(ansGrpMobility)-[:HAS_OUTCOME]->(qiMobility:QuestionInstance:Outcome {uuid: 'a20237b6-722d-427a-8c7f-c75a6520ad52'})-[:DEFINED_BY]->(qstnMobility),
 
     (ansGrpTravelAndVenue:AnswerGroup {name: 'ansGrpTravelAndVenue'}),
     (qiMobility)-[:HAS_ANSWER_GROUP]->(ansGrpTravelAndVenue),

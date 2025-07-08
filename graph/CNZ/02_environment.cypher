@@ -1,10 +1,18 @@
 MATCH
-(qstnSolution:Question {uuid: '8d972d0f-fd89-445f-9aa5-ae7a7854c54f'}),
-(qstnService:Question {uuid: 'c0600456-9a91-49d3-8baa-6067554b4b92'}),
 (startingPoint:QuestionInstance {uuid: 'ac7bbc05-e21e-4ccf-a804-7a7bac5536ea'})
 
 CREATE
-
+(qstnConstruction:Question {uuid: 'd5f047c7-b147-4596-a1ae-5efb3104f153', text: 'What buildings and construction solution do you need?', type: 'LIST'}),
+(qstnModular:Question {uuid: 'de7e21fe-dfc2-423f-99b7-b6e2e143ab3a', text: 'What modular solution do you need?', type: 'LIST'}),
+(qstnLowCM:Question {uuid: '53c097ff-9e60-486d-9852-1ae5565de297', text: 'What low carbon material solution do you need?', type: 'LIST'}),
+(qstnBuildings:Question {uuid: 'c4302909-1ef3-4003-ac15-92f2fbef512d', text: 'What buildings refurb solution do you need?', type: 'LIST'}),
+(qstnHeated:Question {uuid: '65525b6e-ea44-4bad-a2e4-f12bdbe5de16', text: 'What heated building solution do you need?', type: 'LIST'}),
+(qstnEnergyOrRenewables:Question {uuid: '0143b316-9d82-4bd9-ae15-8fe62cddb35f', text: 'What energy or renewables solution you need?', type: 'LIST'}),
+(qstnEnergy:Question {uuid: '2b6d6a1c-c12a-4039-a920-a3b1e63c7c6f', text: 'What energy supply solution you need?', type: 'LIST'}),
+(qstnEnergyStorage:Question {uuid: 'bff6f7c4-e584-4c4f-a635-a30ba022cdfe', text: 'What energy storage solution do you need?', type: 'LIST'}),
+(qstnRenewables:Question {uuid: 'bd08a201-25f0-4356-a857-61155bbfe65b', text: 'What renewables solution do you need?', type: 'LIST'}),
+(qstnCharging:Question {uuid: 'b5211a29-4da4-4186-bfa3-51ea62cba7ad', text: 'What charging solution do you need?', type: 'LIST'}),
+(qstnWorkforce:Question {uuid: 'daa82f8e-f5f6-474a-a2c8-f67273bb8009', text: 'What workforce solution do you need?', type: 'LIST'}),
 
 
 (ansBuildings:Answer {uuid: '557d01df-eb15-4f72-a219-afb592c5bc29', text: 'Buildings and construction', hint: 'Building and construction solutions, including: modular buildings, low carbon construction material, building refurbishments, reusable temporary buildings and heated buildings'}),
@@ -48,9 +56,11 @@ CREATE
 (ansPPA:Answer {uuid: '7139a700-e18e-480a-8998-735773eef474', text: 'Provision of power purchase agreement (PPA)', hint: 'Access renewable electricity by securing long term contracts with suppliers'}),
 
 
-(ansEnergyAndFuels:Answer {uuid: '51033e14-6ba3-43ef-8aa0-5e801e22b16a', text: 'Energy and fuels', hint: 'Access renewable electricity and sustainable fuels'}),
-// Construction Professional Services option
-(ansDemandManagementDiff:Answer {uuid: 'a0691f5a-084b-4792-b332-7a90c4f73c13', text: 'Demand management and renewables', hint: 'Access decarbonisation products and people services that support your carbon net zero strategy'}),
+(ansEnergy:Answer {uuid: 'a0015362-ad47-4274-bd01-85f23c240756', text: 'Energy', hint: 'Access renewable electricity'}),
+(ansFuels:Answer {uuid: '895623c0-9e61-474e-96ab-3bfdd3e9a29e', text: 'Fuels', hint: 'Access sustainable fuels'}),
+//ansCPS
+(ansDemandManagementRenewables:Answer {uuid: '82640cb9-2c88-4b13-a249-ef9da5d8d9be', text: 'Demand management and renewables', hint: 'Access decarbonisation products and people services that support your carbon net zero strategy'}),
+
 
 // ansConstructionProfessional
 // ansDemandManagement
@@ -64,12 +74,12 @@ CREATE
 (ansGrpBuildings:AnswerGroup {name: 'ansGrpBuildings'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpBuildings),
 (ansGrpBuildings)-[:HAS_ANSWER {order: 1}]->(ansBuildings),
-(ansGrpBuildings)-[:HAS_OUTCOME]->(qiBuildings:QuestionInstance:Outcome {uuid: '7458d47d-5f04-4aae-81f4-20c7b81951af'})-[:DEFINED_BY]->(qstnSolution),
+(ansGrpBuildings)-[:HAS_OUTCOME]->(qiBuildings:QuestionInstance:Outcome {uuid: '7458d47d-5f04-4aae-81f4-20c7b81951af'})-[:DEFINED_BY]->(qstnConstruction),
 
     (ansGrpModular:AnswerGroup {name: 'ansGrpModular'}),
     (qiBuildings)-[:HAS_ANSWER_GROUP]->(ansGrpModular),
     (ansGrpModular)-[:HAS_ANSWER {order: 1}]->(ansModular),
-    (ansGrpModular)-[:HAS_OUTCOME]->(qiModular:QuestionInstance:Outcome {uuid: 'a52c706e-b882-447d-a203-62d633680ace'})-[:DEFINED_BY]->(qstnService),
+    (ansGrpModular)-[:HAS_OUTCOME]->(qiModular:QuestionInstance:Outcome {uuid: 'a52c706e-b882-447d-a203-62d633680ace'})-[:DEFINED_BY]->(qstnModular),
 
         (ansGrpConstructionProfessionalServices:AnswerGroup {name: 'ansGrpConstructionProfessionalServices'}),
         (qiModular)-[:HAS_ANSWER_GROUP]->(ansGrpConstructionProfessionalServices),
@@ -85,7 +95,7 @@ CREATE
     (ansGrpConstruction:AnswerGroup {name: 'ansGrpConstruction'}),
     (qiBuildings)-[:HAS_ANSWER_GROUP]->(ansGrpConstruction),
     (ansGrpConstruction)-[:HAS_ANSWER {order: 2}]->(ansConstruction),
-    (ansGrpConstruction)-[:HAS_OUTCOME]->(qiConstruction:QuestionInstance:Outcome {uuid: '340de98c-b0ad-4934-9022-d121add68053'})-[:DEFINED_BY]->(qstnSolution),
+    (ansGrpConstruction)-[:HAS_OUTCOME]->(qiConstruction:QuestionInstance:Outcome {uuid: '340de98c-b0ad-4934-9022-d121add68053'})-[:DEFINED_BY]->(qstnLowCM),
 
         (ansGrpModularBuildings:AnswerGroup {name: 'ansGrpModularBuildings'}),
         (qiConstruction)-[:HAS_ANSWER_GROUP]->(ansGrpModularBuildings),
@@ -113,7 +123,7 @@ CREATE
     (ansGrpBuildingRefurbs:AnswerGroup {name: 'ansGrpBuildingRefurbs'}),
     (qiBuildings)-[:HAS_ANSWER_GROUP]->(ansGrpBuildingRefurbs),
     (ansGrpBuildingRefurbs)-[:HAS_ANSWER {order: 3}]->(ansBuildingRefurbs),
-    (ansGrpBuildingRefurbs)-[:HAS_OUTCOME]->(qiBuildingRefurbs:QuestionInstance:Outcome {uuid: '5e7d6ab0-a6f5-4388-b944-74a3ff5d5e2e'})-[:DEFINED_BY]->(qstnService),
+    (ansGrpBuildingRefurbs)-[:HAS_OUTCOME]->(qiBuildingRefurbs:QuestionInstance:Outcome {uuid: '5e7d6ab0-a6f5-4388-b944-74a3ff5d5e2e'})-[:DEFINED_BY]->(qstnBuildings),
 
         (ansGrpCPSDiffHint:AnswerGroup {name: 'ansGrpCPSDiffHint'}),
         (qiBuildingRefurbs)-[:HAS_ANSWER_GROUP]->(ansGrpCPSDiffHint),
@@ -135,7 +145,7 @@ CREATE
     (ansGrpHeatingBuildings:AnswerGroup {name: 'ansGrpHeatingBuildings'}),
     (qiBuildings)-[:HAS_ANSWER_GROUP]->(ansGrpHeatingBuildings),
     (ansGrpHeatingBuildings)-[:HAS_ANSWER {order: 4}]->(ansHeatingBuildings),
-    (ansGrpHeatingBuildings)-[:HAS_OUTCOME]->(qiHeatingBuildings:QuestionInstance:Outcome {uuid: '02b56e6a-4ef6-499c-957b-1b56dcb5dd4d'})-[:DEFINED_BY]->(qstnService),
+    (ansGrpHeatingBuildings)-[:HAS_OUTCOME]->(qiHeatingBuildings:QuestionInstance:Outcome {uuid: '02b56e6a-4ef6-499c-957b-1b56dcb5dd4d'})-[:DEFINED_BY]->(qstnHeated),
 
     (ansGrpCPSDiffDiffHint:AnswerGroup {name: 'ansGrpCPSDiffDiffHint'}),
     (qiHeatingBuildings)-[:HAS_ANSWER_GROUP]->(ansGrpCPSDiffDiffHint),
@@ -163,35 +173,40 @@ CREATE
 (ansGrpEnergyAndRenewables:AnswerGroup {name: 'ansGrpEnergyAndRenewables'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpEnergyAndRenewables),
 (ansGrpEnergyAndRenewables)-[:HAS_ANSWER {order: 3}]->(ansEnergyAndRenewables),
-(ansGrpEnergyAndRenewables)-[:HAS_OUTCOME]->(qiEnergyAndRenewables:QuestionInstance:Outcome {uuid: 'ec3bf9cb-7570-43fa-a128-c0d36653e2f2'})-[:DEFINED_BY]->(qstnService),
+(ansGrpEnergyAndRenewables)-[:HAS_OUTCOME]->(qiEnergyAndRenewables:QuestionInstance:Outcome {uuid: 'ec3bf9cb-7570-43fa-a128-c0d36653e2f2'})-[:DEFINED_BY]->(qstnEnergyOrRenewables),
 
     (ansGrpEnergySupply:AnswerGroup {name: 'ansGrpEnergySupply'}),
     (qiEnergyAndRenewables)-[:HAS_ANSWER_GROUP]->(ansGrpEnergySupply),
     (ansGrpEnergySupply)-[:HAS_ANSWER {order: 1}]->(ansEnergySupply),
-    (ansGrpEnergySupply)-[:HAS_OUTCOME]->(qiEnergySupply:QuestionInstance:Outcome {uuid: '0c3a22de-b5fa-42bf-bf46-a32968ed375d'})-[:DEFINED_BY]->(qstnSolution),
+    (ansGrpEnergySupply)-[:HAS_OUTCOME]->(qiEnergySupply:QuestionInstance:Outcome {uuid: '0c3a22de-b5fa-42bf-bf46-a32968ed375d'})-[:DEFINED_BY]->(qstnEnergy),
 
-        (ansGrpEnergyAndFuels:AnswerGroup {name: 'ansGrpEnergyAndFuels'}),
-        (qiEnergySupply)-[:HAS_ANSWER_GROUP]->(ansGrpEnergyAndFuels),
-        (ansGrpEnergyAndFuels)-[:HAS_ANSWER {order: 1}]->(ansEnergyAndFuels),
-        (ansGrpEnergyAndFuels)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6289'}),
-        (ansGrpEnergyAndFuels)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6305'}),
+        (ansGrpEnergy:AnswerGroup {name: 'ansGrpEnergy'}),
+        (qiEnergySupply)-[:HAS_ANSWER_GROUP]->(ansGrpEnergy),
+        (ansGrpEnergy)-[:HAS_ANSWER {order: 1}]->(ansEnergy),
+        (ansGrpEnergy)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6289'}),
+        (ansGrpEnergy)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6251'}),
 
-        (ansGrpConstructionProfessional:AnswerGroup {name: 'ansGrpConstructionProfessional'}),
-        (qiEnergySupply)-[:HAS_ANSWER_GROUP]->(ansGrpConstructionProfessional),
-        (ansGrpConstructionProfessional)-[:HAS_ANSWER {order: 2}]->(ansCPS),
-        (ansGrpConstructionProfessional)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6165'}),
-        (ansGrpConstructionProfessional)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6242'}),
+        (ansGrpFuels:AnswerGroup {name: 'ansGrpFuels'}),
+        (qiEnergySupply)-[:HAS_ANSWER_GROUP]->(ansGrpFuels),
+        (ansGrpFuels)-[:HAS_ANSWER {order: 2}]->(ansFuels),
+        (ansGrpFuels)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6305'}),
 
-        (ansGrpDemandManagementDiff:AnswerGroup {name: 'ansGrpDemandManagementDiff'}),
-        (qiEnergySupply)-[:HAS_ANSWER_GROUP]->(ansGrpDemandManagementDiff),
-        (ansGrpDemandManagementDiff)-[:HAS_ANSWER {order: 3}]->(ansDemandManagementDiff),
-        (ansGrpDemandManagementDiff)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6314'}),
-        (ansGrpDemandManagementDiff)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6313'}),
+        (ansGrpCPS4:AnswerGroup {name: 'ansGrpCPS4'}),
+        (qiEnergySupply)-[:HAS_ANSWER_GROUP]->(ansGrpCPS4),
+        (ansGrpCPS4)-[:HAS_ANSWER {order: 3}]->(ansCPS),
+        (ansGrpCPS4)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6165'}),
+        (ansGrpCPS4)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6242'}),
+        
+        (ansGrpDemandManagementRenewables:AnswerGroup {name: 'ansGrpDemandManagementRenewables'}),
+        (qiEnergySupply)-[:HAS_ANSWER_GROUP]->(ansGrpDemandManagementRenewables),
+        (ansGrpDemandManagementRenewables)-[:HAS_ANSWER {order: 4}]->(ansDemandManagementRenewables),
+        (ansGrpDemandManagementRenewables)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6313'}),
+        (ansGrpDemandManagementRenewables)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6314'}),
 
     (ansGrpEnergyStorage:AnswerGroup {name: 'ansGrpEnergyStorage'}),
     (qiEnergyAndRenewables)-[:HAS_ANSWER_GROUP]->(ansGrpEnergyStorage),
     (ansGrpEnergyStorage)-[:HAS_ANSWER {order: 2}]->(ansEnergyStorage),
-    (ansGrpEnergyStorage)-[:HAS_OUTCOME]->(qiEnergyStorage:QuestionInstance:Outcome {uuid: '4df6e04f-a94a-4254-b2a0-18d08879f24d'})-[:DEFINED_BY]->(qstnService),
+    (ansGrpEnergyStorage)-[:HAS_OUTCOME]->(qiEnergyStorage:QuestionInstance:Outcome {uuid: '4df6e04f-a94a-4254-b2a0-18d08879f24d'})-[:DEFINED_BY]->(qstnEnergyStorage),
 
         (qiEnergyStorage)-[:HAS_ANSWER_GROUP]->(ansGrpConstructionProfessional),
         (qiEnergyStorage)-[:HAS_ANSWER_GROUP]->(ansGrpDemandManagementAndRenewables),
@@ -199,7 +214,7 @@ CREATE
     (ansGrpOnAndOff:AnswerGroup {name: 'ansGrpOnAndOff'}),
     (qiEnergyAndRenewables)-[:HAS_ANSWER_GROUP]->(ansGrpOnAndOff),
     (ansGrpOnAndOff)-[:HAS_ANSWER {order: 3}]->(ansOnAndOff),
-    (ansGrpOnAndOff)-[:HAS_OUTCOME]->(qiOnAndOff:QuestionInstance:Outcome {uuid: '2311b491-2c9d-4989-b89f-7209c755d8fd'})-[:DEFINED_BY]->(qstnService),
+    (ansGrpOnAndOff)-[:HAS_OUTCOME]->(qiOnAndOff:QuestionInstance:Outcome {uuid: '2311b491-2c9d-4989-b89f-7209c755d8fd'})-[:DEFINED_BY]->(qstnRenewables),
 
         (ansGrpCPS3:AnswerGroup {name: 'ansGrpCPS3'}),
         (qiOnAndOff)-[:HAS_ANSWER_GROUP]->(ansGrpCPS3),
@@ -215,7 +230,7 @@ CREATE
 (ansGrpVehicleChargingPoints:AnswerGroup {name: 'ansGrpVehicleChargingPoints'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpVehicleChargingPoints),
 (ansGrpVehicleChargingPoints)-[:HAS_ANSWER {order: 4}]->(ansVehicleChargingPoints),
-(ansGrpVehicleChargingPoints)-[:HAS_OUTCOME]->(qiVehicleChargingPoints:QuestionInstance:Outcome {uuid: '78699126-16e6-4be6-bfb1-9ae5f3a884c2'})-[:DEFINED_BY]->(qstnService),
+(ansGrpVehicleChargingPoints)-[:HAS_OUTCOME]->(qiVehicleChargingPoints:QuestionInstance:Outcome {uuid: '78699126-16e6-4be6-bfb1-9ae5f3a884c2'})-[:DEFINED_BY]->(qstnCharging),
 
     (ansGrpVCIS:AnswerGroup {name: 'ansGrpVCIS'}),
     (qiVehicleChargingPoints)-[:HAS_ANSWER_GROUP]->(ansGrpVCIS),
@@ -231,7 +246,7 @@ CREATE
 (ansGrpIndustryProfessionals:AnswerGroup {name: 'ansGrpIndustryProfessionals'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpIndustryProfessionals),
 (ansGrpIndustryProfessionals)-[:HAS_ANSWER {order: 5}]->(ansIndustryProfessionals),
-(ansGrpIndustryProfessionals)-[:HAS_OUTCOME]->(qiIndustryProfessionals:QuestionInstance:Outcome {uuid: '933e0b81-44ed-4872-b77c-a2390a277982'})-[:DEFINED_BY]->(qstnService),
+(ansGrpIndustryProfessionals)-[:HAS_OUTCOME]->(qiIndustryProfessionals:QuestionInstance:Outcome {uuid: '933e0b81-44ed-4872-b77c-a2390a277982'})-[:DEFINED_BY]->(qstnWorkforce),
 
     (ansGrpCPS:AnswerGroup {name: 'ansGrpCPS'}),
     (qiIndustryProfessionals)-[:HAS_ANSWER_GROUP]->(ansGrpCPS),

@@ -30,4 +30,4 @@ CREATE
 (ansGrpFund:AnswerGroup {name: 'ansGrpFund'}),
 (startingPoint)-[:HAS_ANSWER_GROUP]->(ansGrpFund),
 (ansGrpFund)-[:HAS_ANSWER {order: 4}]->(ansFund),
-(ansGrpFund)-[:HAS_OUTCOME]->(:Url:Outcome {text:"Fund Administration & Disbursement Services DPS (FAADS)", link: 'https://www.crowncommercial.gov.uk/agreements/RM6322',hint:'Access a range of services for designing and administering schemes that disburse funds'});
+(ansGrpFund)-[:HAS_OUTCOME]->(:Agreement:Outcome {number: 'RM6322'});

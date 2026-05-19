@@ -1,4 +1,8 @@
-# Scale Decision Tree database
+
+> [!CAUTION]
+> This repo has been retired.
+
+# Scale Decision Tree database 
 
 ## Summary
 This repository contains a Docker image built over the standard Neo4j community edition container that pre-populates the graph database with the following CCS Guided Match decision tree structures:
